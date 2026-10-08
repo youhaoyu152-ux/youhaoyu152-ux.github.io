@@ -3,38 +3,182 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YHY - Portfolio</title>
+    <title>YHY - Physical Oceanography &amp; Programming</title>
+    <meta name="description" content="Personal site of YHY, focused on physical oceanography, ocean data analysis and scientific programming.">
     <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            max-width: 720px;
-            margin: 60px auto;
-            padding: 0 20px;
-            line-height: 1.7;
-            color: #333;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+            line-height: 1.8;
+            color: #24292f;
+            background: #f0f6fc;
         }
-        h1 { color: #0366d6; }
-        .project { margin: 16px 0; padding: 12px; background: #f6f8fa; border-radius: 6px; }
+        .container { max-width: 880px; margin: 0 auto; padding: 40px 24px; }
+        header {
+            background: linear-gradient(135deg, #0969da 0%, #218bff 100%);
+            color: #fff;
+            border-radius: 12px;
+            padding: 44px 40px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 8px rgba(9,105,218,0.25);
+        }
+        header h1 { font-size: 32px; margin-bottom: 8px; }
+        header .subtitle { font-size: 16px; opacity: 0.92; margin-bottom: 18px; }
+        header .intro { font-size: 15px; opacity: 0.96; }
+        section {
+            background: #fff;
+            border-radius: 12px;
+            padding: 32px 40px;
+            margin-bottom: 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+        section h2 {
+            font-size: 22px;
+            color: #24292f;
+            border-bottom: 2px solid #0969da;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+        .skills { display: flex; flex-wrap: wrap; gap: 10px; }
+        .skill-tag {
+            background: #ddf4ff;
+            color: #0969da;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .project {
+            border-left: 4px solid #0969da;
+            padding: 16px 20px;
+            margin-bottom: 18px;
+            background: #f6f8fa;
+            border-radius: 0 8px 8px 0;
+        }
+        .project h3 { font-size: 17px; margin-bottom: 6px; }
+        .project p { font-size: 14px; color: #57606a; margin-bottom: 8px; }
+        .project .meta { font-size: 13px; color: #8b949e; }
+        .project a { color: #0969da; text-decoration: none; font-size: 13px; }
+        .project a:hover { text-decoration: underline; }
+        .note { padding: 14px 0; border-bottom: 1px solid #eaeef2; font-size: 14px; }
+        .note:last-child { border-bottom: none; }
+        .note .date { color: #8b949e; font-size: 13px; margin-right: 12px; }
+        .contact-list { list-style: none; font-size: 15px; }
+        .contact-list li { padding: 8px 0; }
+        .contact-list a { color: #0969da; text-decoration: none; }
+        .contact-list a:hover { text-decoration: underline; }
+        footer {
+            text-align: center;
+            color: #8b949e;
+            font-size: 13px;
+            padding: 24px 0;
+        }
     </style>
 </head>
 <body>
-    <h1>Hi, I'm YHY 👋</h1>
-    <p>欢迎来到我的个人网站。这里用来展示我的软件项目和学习笔记。</p>
+    <div class="container">
 
-    <h2>项目</h2>
-    <div class="project">
-        <strong>Project One</strong><br>
-        这是我正在学习开发的第一个项目。
+        <header>
+            <h1>Hi, I'm YHY 🌊</h1>
+            <p class="subtitle">Physical Oceanography · Ocean Data Analysis · Scientific Programming</p>
+            <p class="intro">
+                欢迎来到我的个人网站。我关注物理海洋学方向，兴趣集中在海洋环流、温盐结构、
+                海气相互作用等主题，同时也喜欢用编程工具（Python、MATLAB）来处理海洋观测与再分析数据。
+                这里记录我的学习笔记、数据分析练习和可视化项目。
+            </p>
+        </header>
+
+        <section>
+            <h2>🛠 Skills &amp; Tools</h2>
+            <div class="skills">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">NumPy</span>
+                <span class="skill-tag">Pandas</span>
+                <span class="skill-tag">Matplotlib</span>
+                <span class="skill-tag">Xarray</span>
+                <span class="skill-tag">NetCDF</span>
+                <span class="skill-tag">MATLAB (Basic)</span>
+                <span class="skill-tag">Git &amp; GitHub</span>
+                <span class="skill-tag">HTML / CSS</span>
+                <span class="skill-tag">Markdown</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>🌊 Research Interests</h2>
+            <div class="project">
+                <h3>Ocean Circulation</h3>
+                <p>关注风生环流与热盐环流的基本理论，学习使用再分析数据（如 ERA5、HYCOM）分析表层流场与海面高度异常。</p>
+            </div>
+            <div class="project">
+                <h3>Temperature &amp; Salinity Structure</h3>
+                <p>研究上层海洋温盐垂直结构，学习用 Argo 浮标数据绘制温盐剖面图，分析混合层深度变化。</p>
+            </div>
+            <div class="project">
+                <h3>Air–Sea Interaction</h3>
+                <p>关注海表热通量、风应力对上层海洋的影响，尝试用 Python 处理时间序列并做相关性分析。</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>📁 Projects</h2>
+
+            <div class="project">
+                <h3>Ocean Data Visualization with Python</h3>
+                <p>使用 Python（NumPy + Matplotlib + Xarray）读取 NetCDF 格式的海洋再分析数据，绘制海表温度分布图和温盐剖面图，练习科学数据可视化流程。</p>
+                <span class="meta">Tech: Python, Xarray, Matplotlib, NetCDF</span>
+            </div>
+
+            <div class="project">
+                <h3>Personal Portfolio Website</h3>
+                <p>使用纯 HTML 和 CSS 构建的个人网站，采用 Flexbox 与响应式布局，部署在 GitHub Pages 上。用于整理研究方向、笔记与项目。</p>
+                <span class="meta">Tech: HTML, CSS, GitHub Pages</span><br>
+                <a href="https://github.com/youhaoyu152-ux/youhaoyu152-ux.github.io">View source on GitHub →</a>
+            </div>
+
+            <div class="project">
+                <h3>Markdown Study Notes</h3>
+                <p>整理物理海洋与编程学习笔记，涵盖海洋动力学基础概念、Python 数据分析常用方法、Git 工作流等，使用 Markdown 编写并持续更新。</p>
+                <span class="meta">Tech: Markdown, Git</span>
+            </div>
+
+        </section>
+
+        <section>
+            <h2>📝 Learning Notes</h2>
+
+            <div class="note">
+                <span class="date">2026-09</span>
+                系统学习物理海洋学基础，梳理了科氏力、地转流、Ekman 螺旋等核心概念。
+            </div>
+            <div class="note">
+                <span class="date">2026-09</span>
+                开始用 Python 处理海洋数据，掌握了 NetCDF 文件读取和基本绘图流程。
+            </div>
+            <div class="note">
+                <span class="date">2026-10</span>
+                学习 Git 与 GitHub 工作流，并用 GitHub Pages 部署了本站。
+            </div>
+            <div class="note">
+                <span class="date">2026-10</span>
+                正在学习 Xarray 做多维海洋数据分析，目标是能独立完成一份温盐剖面分析报告。
+            </div>
+
+        </section>
+
+        <section>
+            <h2>📬 Contact</h2>
+            <ul class="contact-list">
+                <li>Email: <a href="mailto:909381824@qq.com">909381824@qq.com</a></li>
+                <li>GitHub: <a href="https://github.com/youhaoyu152-ux">github.com/youhaoyu152-ux</a></li>
+                <li>Website: <a href="https://youhaoyu152-ux.github.io">youhaoyu152-ux.github.io</a></li>
+            </ul>
+        </section>
+
+        <footer>
+            © 2026 YHY · Physical Oceanography &amp; Programming · Hosted on GitHub Pages
+        </footer>
+
     </div>
-    <div class="project">
-        <strong>Project Two</strong><br>
-        更多内容持续更新中……
-    </div>
-
-    <h2>关于我</h2>
-    <p>我正在学习软件开发，喜欢探索新技术和写代码。</p>
-
-    <h2>联系</h2>
-    <p>GitHub: <a href="https://github.com/youhaoyu152-ux">@youhaoyu152-ux</a></p>
 </body>
 </html>
