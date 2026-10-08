@@ -276,7 +276,119 @@
 
                 </div>
             </details>
+            <details style="margin-top:12px; border:1px solid #eaeef2; border-radius:8px; padding:0;">
+                <summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:16px; background:#f6f8fa; border-radius:8px; list-style:none;">
+                    第4章：海洋热量收支与热通量 (Ocean Heat Budget &amp; Heat Fluxes)
+                </summary>
+                <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
 
+                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">4.1 第一题：影响四种热通量的因素及其重要性</h3>
+                    <p style="color:#57606a;">分别有哪些因素决定 Qs、Qb、Qe 和 Qh？每个因素对各项热通量的重要程度如何？</p>
+
+                    <h4 style="margin-top:18px; font-size:14px; color:#24292f;">① Qs：太阳短波辐射（Shortwave Radiation）</h4>
+                    <ul style="padding-left:24px; margin:8px 0;">
+                        <li><strong>太阳高度角（最重要）：</strong>太阳高度角越大，单位面积接收的太阳辐射通常越多。</li>
+                        <li><strong>云量（非常重要）：</strong>云层反射和吸收太阳辐射，云量越大，海面获得的短波辐射通常越少。</li>
+                        <li><strong>纬度和季节：</strong>影响太阳高度角及日照时长，低纬度地区通常获得较多太阳辐射。</li>
+                        <li><strong>海面反照率（次要）：</strong>海面反射部分入射太阳辐射，反照率越大，海洋吸收的能量越少。</li>
+                    </ul>
+
+                    <h4 style="margin-top:18px; font-size:14px; color:#24292f;">② Qb：海面有效长波辐射（Net Longwave Radiation）</h4>
+                    <ul style="padding-left:24px; margin:8px 0;">
+                        <li><strong>海表温度 SST（非常重要）：</strong>根据斯特藩–玻尔兹曼定律，海温越高，海面发射的长波辐射越强。</li>
+                        <li><strong>云量（非常重要）：</strong>云层增强向下长波辐射，通常减少海洋净长波热量损失。</li>
+                        <li><strong>大气温度和湿度（重要）：</strong>温暖、潮湿的大气会向海面发射更多长波辐射，从而减少净长波冷却。</li>
+                    </ul>
+
+                    <h4 style="margin-top:18px; font-size:14px; color:#24292f;">③ Qe：潜热通量（Latent Heat Flux）</h4>
+                    <p style="margin:6px 0;">主要由海水蒸发决定。</p>
+                    <ul style="padding-left:24px; margin:8px 0;">
+                        <li><strong>海气湿度差（最重要的驱动因素之一）：</strong>海面饱和比湿与近海面空气比湿差越大，蒸发越强。</li>
+                        <li><strong>风速（非常重要）：</strong>风速越大，海气水汽交换通常越强。</li>
+                        <li><strong>海表温度（重要）：</strong>海温升高会提高海表饱和水汽压，在其他条件不变时促进蒸发。</li>
+                    </ul>
+                    <p style="margin:6px 0; color:#57606a;"><em>因此，干燥、强风和较高海温通常有利于海洋通过蒸发损失热量。</em></p>
+
+                    <h4 style="margin-top:18px; font-size:14px; color:#24292f;">④ Qh：感热通量（Sensible Heat Flux）</h4>
+                    <p style="margin:6px 0;">主要通过海气温差引起的湍流交换实现。</p>
+                    <ul style="padding-left:24px; margin:8px 0;">
+                        <li><strong>海气温差（最重要的驱动因素之一）：</strong>海温高于气温时，热量通常由海洋传向大气。</li>
+                        <li><strong>风速（非常重要）：</strong>风速越大，湍流交换越强，感热通量的绝对值通常越大。</li>
+                        <li><strong>大气稳定度（重要）：</strong>影响湍流混合效率，进而影响感热交换。</li>
+                    </ul>
+
+                    <h3 style="margin-top:28px; color:#0969da; font-size:15px;">4.2 第二题：四种热通量的数值范围及极值分布</h3>
+                    <p style="color:#57606a;">四种热通量的大小范围分别是多少？最大值中心和最小值中心在哪里？</p>
+
+                    <div style="background:#fff8e1; border-left:4px solid #f0ad4e; padding:12px 16px; margin:14px 0; border-radius:0 6px 6px 0; font-size:13px;">
+                        <strong>⚠️ 统计条件与符号约定</strong><br>
+                        题目没有说明是全球多年年平均、季节平均还是某个月份，也没有提供对应的全球热通量分布图。以下按<strong>全球海洋多年年平均</strong>情况列出便于学习的近似范围：<strong>Qs 向海洋为正；Qb、Qe、Qh 向大气为正</strong>。不同资料集的极值中心会有所差别。
+                    </div>
+
+                    <h4 style="margin-top:18px; font-size:14px; color:#24292f;">四种热通量的示意性数量级（W/m²）</h4>
+                    <div style="overflow-x:auto; margin:12px 0;">
+                        <table style="width:100%; border-collapse:collapse; font-size:13px;">
+                            <thead>
+                                <tr style="background:#f6f8fa;">
+                                    <th style="padding:10px 12px; border:1px solid #d0d7de; text-align:left;">热通量</th>
+                                    <th style="padding:10px 12px; border:1px solid #d0d7de; text-align:left;">典型范围</th>
+                                    <th style="padding:10px 12px; border:1px solid #d0d7de; text-align:left;">较大值区域</th>
+                                    <th style="padding:10px 12px; border:1px solid #d0d7de; text-align:left;">较小值区域</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de;"><strong>Qs</strong> 短波辐射</td>
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">50–280</td>
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">热带及副热带少云海域，约 250–280</td>
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">高纬度海域，约 50–100</td>
+                                </tr>
+                                <tr style="background:#fafbfc;">
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de;"><strong>Qb</strong> 净长波辐射</td>
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">20–100</td>
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">干燥、少云的副热带海域，约 80–100</td>
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">多云、高湿度海域，约 20–40</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de;"><strong>Qe</strong> 潜热通量</td>
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">0–250</td>
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">黑潮、墨西哥湾流及信风强盛海域，约 150–250</td>
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">赤道无风带及部分高纬海域，约 0–50</td>
+                                </tr>
+                                <tr style="background:#fafbfc;">
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de;"><strong>Qh</strong> 感热通量</td>
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">−30–100</td>
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">冬季西边界流及其延伸区；年平均局地可达约 50–100</td>
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">热带暖空气覆盖区及部分高纬海域，可接近零或为负</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p style="font-size:13px; color:#8b949e;"><em>注：这些是示意性数量级，不是从指定热通量地图读取的严格极值，不能直接当作全球最大和最小中心的精确答案。</em></p>
+
+                    <h4 style="margin-top:22px; font-size:14px; color:#24292f;">为什么这些地区会出现极值？</h4>
+                    <ul style="padding-left:24px; margin:8px 0;">
+                        <li><strong>短波辐射 Qs：</strong>低纬度太阳辐射强，高纬度太阳高度角低，因此整体上从低纬向高纬减少。不过赤道附近云量较大，最高值未必恰好位于赤道。</li>
+                        <li><strong>长波辐射 Qb：</strong>干燥少云地区的大气向下长波辐射相对较弱，海洋净长波损失较大；多云潮湿地区净长波损失较小。</li>
+                        <li><strong>潜热通量 Qe：</strong>黑潮和墨西哥湾流附近，温暖海水遇到较冷、较干燥的空气，尤其在冬季，蒸发强烈，潜热损失较大。</li>
+                        <li><strong>感热通量 Qh：</strong>在冬季西边界流附近，海气温差大、风速较强，因此海洋向大气输送较多感热。</li>
+                    </ul>
+
+                    <h4 style="margin-top:22px; font-size:14px; color:#24292f;">📌 需要记住的重点</h4>
+                    <div style="background:#ddf4ff; border-radius:8px; padding:16px 20px; margin-top:10px;">
+                        <p style="margin:6px 0;"><strong>Qs：</strong>太阳高度角 + 云量</p>
+                        <p style="margin:6px 0;"><strong>Qb：</strong>海表温度 + 大气逆辐射</p>
+                        <p style="margin:6px 0;"><strong>Qe：</strong>海气湿度差 + 风速</p>
+                        <p style="margin:6px 0;"><strong>Qh：</strong>海气温差 + 风速</p>
+                    </div>
+
+                    <div style="background:#fff8e1; border-left:4px solid #f0ad4e; padding:12px 16px; margin:16px 0; border-radius:0 6px 6px 0; font-size:13px;">
+                        <strong>📝 课堂作答提醒</strong><br>
+                        第二题使用了 <em>maximum and minimum center</em>（最大值和最小值中心）的表述，很可能要求根据老师 PPT 中的四张全球热通量分布图读取具体地理位置和数值。精确极值及对应经纬度区域，仍需结合这些分布图补充。
+                    </div>
+
+                </div>
+            </details>
         </section>
         <section>
             <h2>📁 Projects</h2>
