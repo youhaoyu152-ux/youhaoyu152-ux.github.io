@@ -67,6 +67,27 @@
         .contact-list li { padding: 8px 0; }
         .contact-list a { color: #0969da; text-decoration: none; }
         .contact-list a:hover { text-decoration: underline; }
+        .mindmap-wrap {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .mindmap-wrap img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            cursor: zoom-in;
+            transition: transform 0.2s;
+        }
+        .mindmap-wrap img:hover {
+            transform: scale(1.01);
+        }
+        .mindmap-caption {
+            text-align: center;
+            font-size: 13px;
+            color: #8b949e;
+            margin-top: 12px;
+        }
         footer {
             text-align: center;
             color: #8b949e;
@@ -118,6 +139,17 @@
                 <h3>Air–Sea Interaction</h3>
                 <p>关注海表热通量、风应力对上层海洋的影响，尝试用 Python 处理时间序列并做相关性分析。</p>
             </div>
+        </section>
+
+        <section>
+            <h2>🗺 Physical Oceanography Mind Map</h2>
+            <p>这是我整理的物理海洋学知识体系思维导图，涵盖学科概览、海水物理性质、海洋热量收支、环流与波动、海气相互作用、潮汐与混合等核心主题。点击图片可查看大图。</p>
+            <div class="mindmap-wrap">
+                <a href="physical-oceanography.png" target="_blank">
+                    <img src="physical-oceanography.png" alt="Physical Oceanography Mind Map">
+                </a>
+            </div>
+            <p class="mindmap-caption">点击图片查看大图 · Made with XMind</p>
         </section>
 
         <section>
