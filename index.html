@@ -67,27 +67,6 @@
         .contact-list li { padding: 8px 0; }
         .contact-list a { color: #0969da; text-decoration: none; }
         .contact-list a:hover { text-decoration: underline; }
-        .mindmap-wrap {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .mindmap-wrap img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            cursor: zoom-in;
-            transition: transform 0.2s;
-        }
-        .mindmap-wrap img:hover {
-            transform: scale(1.01);
-        }
-        .mindmap-caption {
-            text-align: center;
-            font-size: 13px;
-            color: #8b949e;
-            margin-top: 12px;
-        }
         footer {
             text-align: center;
             color: #8b949e;
@@ -118,6 +97,7 @@
                 <span class="skill-tag">Matplotlib</span>
                 <span class="skill-tag">Xarray</span>
                 <span class="skill-tag">NetCDF</span>
+                <span class="skill-tag">EOF / PCA</span>
                 <span class="skill-tag">MATLAB (Basic)</span>
                 <span class="skill-tag">Git &amp; GitHub</span>
                 <span class="skill-tag">HTML / CSS</span>
@@ -142,18 +122,8 @@
         </section>
 
         <section>
-            <h2>🗺 Physical Oceanography Mind Map</h2>
-            <p>这是我整理的物理海洋学知识体系思维导图，涵盖学科概览、海水物理性质、海洋热量收支、环流与波动、海气相互作用、潮汐与混合等核心主题。点击图片可查看大图。</p>
-            <div class="mindmap-wrap">
-                <a href="physical-oceanography.png" target="_blank">
-                    <img src="physical-oceanography.png" alt="Physical Oceanography Mind Map">
-                </a>
-            </div>
-            <p class="mindmap-caption">点击图片查看大图 · Made with XMind</p>
-        </section>
-        <section>
             <h2>📖 Course Notes</h2>
-            <p>描述性物理海洋学课程笔记，按章节整理核心概念、观测方法与关键结论。点击章节标题可展开阅读。</p>
+            <p>描述性物理海洋学课程笔记与数据分析方法专题，按章节整理核心概念、观测方法、关键结论与习题解析。点击标题可展开阅读。</p>
 
             <details style="margin-top:20px; border:1px solid #eaeef2; border-radius:8px; padding:0;">
                 <summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:16px; background:#f6f8fa; border-radius:8px; list-style:none;">
@@ -173,7 +143,7 @@
                     </ul>
 
                     <h3 style="margin-top:20px; color:#0969da; font-size:15px;">1.2 海洋的时空尺度 (Time and Space Scales)</h3>
-                    <p><strong>：</strong>物理海洋学最重要的概念图之一。横轴是水平空间尺度（1毫米到10,000公里），纵轴是时间尺度（1秒到100年）。</p>
+                    <p><strong>核心图表 (Figure 1.2)：</strong>物理海洋学最重要的概念图之一。横轴是水平空间尺度（1毫米到10,000公里），纵轴是时间尺度（1秒到100年）。</p>
                     <ul style="padding-left:24px; margin:8px 0;">
                         <li><strong>微观尺度：</strong>分子过程（1秒，1毫米）、湍流斑块（分钟级，米级）、表面波（秒级，米级）。</li>
                         <li><strong>中观尺度：</strong>内波（小时到天，公里级）、潮汐（小时到天，百公里级）、中尺度涡（月级，百公里级）。</li>
@@ -276,6 +246,7 @@
 
                 </div>
             </details>
+
             <details style="margin-top:12px; border:1px solid #eaeef2; border-radius:8px; padding:0;">
                 <summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:16px; background:#f6f8fa; border-radius:8px; list-style:none;">
                     第4章：海洋热量收支与热通量 (Ocean Heat Budget &amp; Heat Fluxes)
@@ -389,7 +360,231 @@
 
                 </div>
             </details>
+
+            <details style="margin-top:12px; border:1px solid #eaeef2; border-radius:8px; padding:0;">
+                <summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:16px; background:#f6f8fa; border-radius:8px; list-style:none;">
+                    第5章：经验正交函数 EOF 分析 (Empirical Orthogonal Functions)
+                </summary>
+                <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
+
+                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">5.1 什么是 EOF 分析</h3>
+                    <p>EOF 分析是大气、海洋与气候科学中最常用的多元统计方法之一。它将时空数据分解为：</p>
+                    <ul style="padding-left:24px; margin:8px 0;">
+                        <li><strong>EOFs（空间模态）</strong>：一组正交的空间基函数，代表数据中主要的空间结构。</li>
+                        <li><strong>PCs（主成分）</strong>：对应的时间序列，描述每个空间模态随时间的变化。</li>
+                    </ul>
+                    <p><strong>核心思想：</strong>用尽可能少的模态，在最小二乘意义下捕捉最大的方差。</p>
+                    <p><strong>术语对照：</strong></p>
+                    <ul style="padding-left:24px; margin:8px 0;">
+                        <li>气象/海洋/气候 → <strong>EOF</strong></li>
+                        <li>统计学/机器学习 → <strong>PCA</strong>（主成分分析）</li>
+                        <li>流体力学/工程 → <strong>POD</strong>（本征正交分解）</li>
+                        <li>数值线性代数 → <strong>SVD</strong>（奇异值分解）</li>
+                    </ul>
+                    <p style="color:#57606a;"><em>四者在数学上本质等价，只是不同学科的叫法和侧重点不同。</em></p>
+
+                    <h3 style="margin-top:22px; color:#0969da; font-size:15px;">5.2 数学框架与计算流程</h3>
+
+                    <h4 style="margin-top:14px; font-size:14px;">5.2.1 数据准备</h4>
+                    <ul style="padding-left:24px; margin:8px 0;">
+                        <li>把时空数据整理成二维矩阵 <strong>X</strong>（空间 × 时间，或转置）。</li>
+                        <li><strong>关键步骤：去均值</strong>——EOF 分解的是"距平"（异常），不是原始场。</li>
+                        <li>多变量分析时，需先标准化（除以标准差），使各变量权重相等。</li>
+                    </ul>
+
+                    <h4 style="margin-top:14px; font-size:14px;">5.2.2 协方差矩阵 vs 相关矩阵</h4>
+                    <ul style="padding-left:24px; margin:8px 0;">
+                        <li><strong>协方差矩阵</strong>：变量量纲相同时使用。</li>
+                        <li><strong>相关矩阵</strong>：变量量纲不同或方差差异大时使用。</li>
+                        <li>矩阵对称、半正定，保证特征值为实数、特征向量正交。</li>
+                    </ul>
+
+                    <h4 style="margin-top:14px; font-size:14px;">5.2.3 特征值分解与 SVD</h4>
+                    <p><strong>两种等价途径：</strong></p>
+                    <ol style="padding-left:24px; margin:8px 0;">
+                        <li><strong>特征值分解：</strong>对协方差矩阵求特征向量（= EOF）和特征值（= 方差）。</li>
+                        <li><strong>SVD（推荐）：</strong>直接对距平矩阵做奇异值分解，避免显式计算协方差矩阵，数值更稳定，适合大网格数据。</li>
+                    </ol>
+                    <p><strong>核心关系：</strong>奇异值的平方 = 协方差矩阵的特征值。</p>
+
+                    <h4 style="margin-top:14px; font-size:14px;">5.2.4 主成分与重构</h4>
+                    <ul style="padding-left:24px; margin:8px 0;">
+                        <li>PCs = 数据在 EOFs 上的投影，彼此不相关。</li>
+                        <li>保留前 <em>k</em> 个模态，可近似重构原始数据，实现降维。</li>
+                        <li>第 <em>n</em> 个模态的方差贡献率 = 该特征值 / 总方差。</li>
+                    </ul>
+
+                    <h3 style="margin-top:22px; color:#0969da; font-size:15px;">5.3 EOF / PCA / POD / SVD 的区别</h3>
+                    <div style="overflow-x:auto; margin:12px 0;">
+                        <table style="width:100%; border-collapse:collapse; font-size:13px;">
+                            <thead>
+                                <tr style="background:#f6f8fa;">
+                                    <th style="padding:10px 12px; border:1px solid #d0d7de; text-align:left;">名称</th>
+                                    <th style="padding:10px 12px; border:1px solid #d0d7de; text-align:left;">学科领域</th>
+                                    <th style="padding:10px 12px; border:1px solid #d0d7de; text-align:left;">侧重</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">EOF</td>
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">气象、海洋、气候</td>
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">物理意义的空间模态</td>
+                                </tr>
+                                <tr style="background:#fafbfc;">
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">PCA</td>
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">统计、机器学习</td>
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">降维与去相关</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">POD</td>
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">流体力学、工程</td>
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">能量最优模态</td>
+                                </tr>
+                                <tr style="background:#fafbfc;">
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">SVD</td>
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">数值线性代数</td>
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">底层计算工具</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p><strong>需要注意的实践差异：</strong></p>
+                    <ul style="padding-left:24px; margin:8px 0;">
+                        <li>协方差 vs 相关矩阵的选择</li>
+                        <li>缺失值处理方式</li>
+                        <li>EOFs 和 PCs 的归一化约定</li>
+                        <li><strong>符号不确定性</strong>：特征向量可整体变号，不影响方差贡献率，但不同软件可能符号相反。</li>
+                    </ul>
+
+                    <h3 style="margin-top:22px; color:#0969da; font-size:15px;">5.4 主要扩展方法</h3>
+
+                    <h4 style="margin-top:14px; font-size:14px;">5.4.1 复 EOF（CEOF）——用于传播信号</h4>
+                    <ul style="padding-left:24px; margin:8px 0;">
+                        <li><strong>目的：</strong>捕捉传播型信号（如沿岸陷波、中尺度涡、赤道 Kelvin 波）。</li>
+                        <li><strong>方法：</strong>用 Hilbert 变换把实数据转为复解析信号，再进行 EOF 分解。</li>
+                        <li><strong>优势：</strong>同时给出<strong>振幅</strong>（强度）和<strong>相位</strong>（传播）。相位随时间的斜率 → 频率；随空间的斜率 → 波数。</li>
+                        <li><strong>局限：</strong>信号波数带宽过宽、非均匀采样时，精度下降。</li>
+                    </ul>
+
+                    <h4 style="margin-top:14px; font-size:14px;">5.4.2 旋转 EOF（REOF）——提升物理可解释性</h4>
+                    <ul style="padding-left:24px; margin:8px 0;">
+                        <li><strong>动机：</strong>标准 EOF 的正交约束常导致空间模态"混合"，难以物理解释。</li>
+                        <li><strong>方法：</strong>对前几个模态做旋转（Varimax、Promax 等），使高载荷集中在局部区域。</li>
+                        <li><strong>效果：</strong>牺牲严格正交性，换取<strong>区域化</strong>和<strong>物理清晰度</strong>。</li>
+                        <li><strong>注意：</strong>旋转可能产生"伪模态"，需用分割样本或 Monte Carlo 验证稳健性。</li>
+                    </ul>
+
+                    <h4 style="margin-top:14px; font-size:14px;">5.4.3 多变量 EOF（MEOF / MV-EOF）——研究变量耦合</h4>
+                    <ul style="padding-left:24px; margin:8px 0;">
+                        <li><strong>方法：</strong>将多个变量（相同网格、相同时间）标准化后拼接成一个大矩阵，再做 EOF。</li>
+                        <li><strong>优势：</strong>能同时揭示多变量的<strong>耦合模态</strong>和<strong>联合演变</strong>。</li>
+                        <li><strong>典型应用：</strong>ENSO（SST + SLP + 风应力）、NAO、印度洋偶极子等。</li>
+                    </ul>
+
+                    <h4 style="margin-top:14px; font-size:14px;">5.4.4 非平稳 EOF——处理时变模态</h4>
+                    <ul style="padding-left:24px; margin:8px 0;">
+                        <li><strong>问题：</strong>标准 EOF 假设空间模态不随时间变化，长期气候数据中常被违反。</li>
+                        <li><strong>CSEOF（循环平稳 EOF）：</strong>允许模态在周期内演变，适合季节循环等周期现象。</li>
+                        <li><strong>STEOF（时空 EOF）：</strong>把时间信息整合进空间模态，让模态本身随时间演化。</li>
+                        <li><strong>滑动窗口 EOF：</strong>在滑动时间窗上做 EOF，追踪模态的演变。</li>
+                    </ul>
+
+                    <h4 style="margin-top:14px; font-size:14px;">5.4.5 DINEOF——处理缺失数据</h4>
+                    <ul style="padding-left:24px; margin:8px 0;">
+                        <li><strong>目的：</strong>填补卫星观测、稀疏站位数据中的缺失值。</li>
+                        <li><strong>流程：</strong>缺失值先填 0 → SVD 分解 → 截断重构 → 把缺失位置的重构值填回 → 迭代至收敛。</li>
+                        <li><strong>优势：</strong>无需先验信息（无参数），自动利用数据内部协变关系。</li>
+                        <li><strong>局限：</strong>假设缺失随机、模态平稳；数据缺失严重时收敛慢。</li>
+                    </ul>
+
+                    <h3 style="margin-top:22px; color:#0969da; font-size:15px;">5.5 显著性检验与模态选择</h3>
+                    <div style="overflow-x:auto; margin:12px 0;">
+                        <table style="width:100%; border-collapse:collapse; font-size:13px;">
+                            <thead>
+                                <tr style="background:#f6f8fa;">
+                                    <th style="padding:10px 12px; border:1px solid #d0d7de; text-align:left;">方法</th>
+                                    <th style="padding:10px 12px; border:1px solid #d0d7de; text-align:left;">原理</th>
+                                    <th style="padding:10px 12px; border:1px solid #d0d7de; text-align:left;">特点</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de;"><strong>North 准则</strong></td>
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">基于特征值分离度与采样误差</td>
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">需要估计有效自由度</td>
+                                </tr>
+                                <tr style="background:#fafbfc;">
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de;"><strong>Rule N</strong></td>
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">Monte Carlo：与随机噪声特征值比较</td>
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">需数据正态、独立</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de;"><strong>Scree 图</strong></td>
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">看特征值谱"拐点"</td>
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">主观，但直观</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p><strong>重要提醒：</strong>当特征值接近（退化）时，对应 EOF 不唯一，任何线性组合也是解。此时需用旋转或其他方法获得物理解释。</p>
+
+                    <h3 style="margin-top:22px; color:#0969da; font-size:15px;">5.6 与 DMD 的比较</h3>
+                    <ul style="padding-left:24px; margin:8px 0;">
+                        <li><strong>排序标准不同：</strong>EOF/POD 按<strong>能量（方差）</strong>排序；DMD 按<strong>频率与增长率</strong>识别模态。</li>
+                        <li><strong>时间动态：</strong>EOF 不提供频率/增长率信息；DMD 每个模态带明确的频率和增长/衰减率。</li>
+                        <li><strong>选择依据：</strong>要找能量最大的空间结构 → EOF；要找特定频率的振荡模态 → DMD。</li>
+                        <li><strong>DMD 局限：</strong>要求等时间间隔采样；POD 可处理随机采样。</li>
+                    </ul>
+
+                    <h3 style="margin-top:22px; color:#0969da; font-size:15px;">5.7 地学中的典型应用</h3>
+                    <ul style="padding-left:24px; margin:8px 0;">
+                        <li><strong>遥相关型识别：</strong>NAO、PNA、ENSO 等大尺度模态。</li>
+                        <li><strong>数据降维与预测：</strong>用前几个 PC 作为回归或机器学习预测因子。</li>
+                        <li><strong>传播波追踪：</strong>CEOF 分析沿岸陷波、赤道 Kelvin 波、中尺度涡。</li>
+                        <li><strong>耦合模态：</strong>MEOF 研究 ENSO、印度洋偶极子等海气耦合现象。</li>
+                        <li><strong>缺失数据填补：</strong>DINEOF 用于卫星海色、SST 等网格产品。</li>
+                        <li><strong>区域化：</strong>REOF 识别局地气候模态。</li>
+                    </ul>
+
+                    <h3 style="margin-top:22px; color:#0969da; font-size:15px;">5.8 最佳实践清单</h3>
+                    <div style="background:#ddf4ff; border-radius:8px; padding:16px 20px; margin-top:10px;">
+                        <p style="margin:6px 0;">✅ <strong>预处理：</strong>去均值、必要时标准化、纬度网格需面积加权</p>
+                        <p style="margin:6px 0;">✅ <strong>域选择：</strong>域大小显著影响结果，建议做敏感性测试</p>
+                        <p style="margin:6px 0;">✅ <strong>符号约定：</strong>记录并统一 EOF/PC 的正负号约定</p>
+                        <p style="margin:6px 0;">✅ <strong>归一化：</strong>明确方差由 EOF 还是 PC 承载</p>
+                        <p style="margin:6px 0;">✅ <strong>截断：</strong>结合 North、Rule N、Scree 图综合判断</p>
+                        <p style="margin:6px 0;">✅ <strong>验证：</strong>交叉验证、分割样本、Monte Carlo</p>
+                        <p style="margin:6px 0;">✅ <strong>缺失值：</strong>用 DINEOF 等专门方法，别简单忽略</p>
+                        <p style="margin:6px 0;">✅ <strong>非线性：</strong>非高斯数据可考虑 kernel PCA、自编码器</p>
+                        <p style="margin:6px 0;">✅ <strong>计算：</strong>大网格直接用 SVD，用 Lanczos 等迭代求解器算前几个模态</p>
+                        <p style="margin:6px 0;">✅ <strong>解释：</strong>正交性是数学约束，不是物理定律，需结合物理知识</p>
+                    </div>
+
+                    <h3 style="margin-top:22px; color:#0969da; font-size:15px;">5.9 局限与未来方向</h3>
+                    <p><strong>核心局限：</strong></p>
+                    <ul style="padding-left:24px; margin:8px 0;">
+                        <li>假设<strong>线性、平稳、正交</strong></li>
+                        <li>结果对域选择、归一化、采样变率敏感</li>
+                        <li>高阶模态常被噪声主导</li>
+                    </ul>
+                    <p><strong>前沿方向：</strong></p>
+                    <ul style="padding-left:24px; margin:8px 0;">
+                        <li>非线性 EOF（kernel PCA、自编码器）</li>
+                        <li>时变 EOF（CSEOF、STEOF）</li>
+                        <li>DMD 与 Koopman 算子</li>
+                        <li>贝叶斯 EOF / 概率 PCA（不确定性量化）</li>
+                        <li>大数据 + GPU + 深度学习</li>
+                    </ul>
+
+                    <h3 style="margin-top:22px; color:#0969da; font-size:15px;">5.10 一句话总结</h3>
+                    <div style="background:#fff8e1; border-left:4px solid #f0ad4e; padding:14px 18px; margin:12px 0; border-radius:0 6px 6px 0;">
+                        <strong>EOF 分析</strong>通过特征值分解或 SVD，把时空数据拆成"空间模态 + 时间序列"，用最少模态捕捉最大方差。它与 PCA、POD、SVD 数学等价，是大气、海洋、气候领域识别主导变率模态、降维、补缺、追踪传播信号的核心工具。使用时需注意线性、平稳、正交等假设，并结合物理知识谨慎解释。
+                    </div>
+
+                </div>
+            </details>
         </section>
+
         <section>
             <h2>📁 Projects</h2>
 
@@ -417,6 +612,10 @@
         <section>
             <h2>📝 Learning Notes</h2>
 
+            <div class="note">
+                <span class="date">2026-10</span>
+                整理了经验正交函数（EOF）分析的学习笔记，涵盖数学框架、SVD 实现、CEOF/REOF/MEOF/DINEOF 等扩展方法，以及在海洋与气候数据分析中的应用。
+            </div>
             <div class="note">
                 <span class="date">2026-09</span>
                 系统学习物理海洋学基础，梳理了科氏力、地转流、Ekman 螺旋等核心概念。
