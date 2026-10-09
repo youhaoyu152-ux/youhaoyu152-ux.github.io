@@ -98,6 +98,7 @@
                 <span class="skill-tag">Xarray</span>
                 <span class="skill-tag">NetCDF</span>
                 <span class="skill-tag">EOF / PCA</span>
+                <span class="skill-tag">Statistics</span>
                 <span class="skill-tag">MATLAB (Basic)</span>
                 <span class="skill-tag">Git &amp; GitHub</span>
                 <span class="skill-tag">HTML / CSS</span>
@@ -363,11 +364,63 @@
 
             <details style="margin-top:12px; border:1px solid #eaeef2; border-radius:8px; padding:0;">
                 <summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:16px; background:#f6f8fa; border-radius:8px; list-style:none;">
-                    第5章：经验正交函数 EOF 分析 (Empirical Orthogonal Functions)
+                    第5章：海洋数据分析基础与 EOF 方法 (Data Analysis Basics &amp; EOF)
                 </summary>
                 <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
 
-                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">5.1 什么是 EOF 分析</h3>
+                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">5.1 基础统计概念 (Basic Concepts)</h3>
+                    <p style="color:#57606a;">用来描述数据的平均状态、波动大小，以及不同变量之间的关系。</p>
+
+                    <h4 style="margin-top:14px; font-size:14px;">误差与均值</h4>
+                    <ul style="padding-left:24px; margin:8px 0;">
+                        <li><strong>随机误差（random error）：</strong>测量结果不规则地偏高或偏低。例如，同一水温反复测量得到略有不同的结果。独立重复测量取平均通常能减小它的影响。</li>
+                        <li><strong>系统误差（systematic error）：</strong>测量存在持续的偏差。例如，温度计总是高出真实值 0.5°C。多测几次取平均也不能消除，需要校准。</li>
+                        <li><strong>均值（mean）：</strong>数据的平均水平，例如某海域的年平均海温。</li>
+                    </ul>
+
+                    <h4 style="margin-top:14px; font-size:14px;">波动与关系</h4>
+                    <ul style="padding-left:24px; margin:8px 0;">
+                        <li><strong>方差（variance）：</strong>数据偏离均值的平方的平均，表示波动大小。总体方差用总体大小作分母；样本方差的常见无偏估计使用 n−1。</li>
+                        <li><strong>标准差（standard deviation）：</strong>方差的平方根，与原数据单位相同，更方便理解波动幅度。</li>
+                        <li><strong>协方差（covariance）：</strong>两个变量是否倾向于一起变化。正值表示通常同增同减，负值表示通常一个增、另一个减。</li>
+                        <li><strong>相关系数（correlation）：</strong>标准化后的协方差，通常指皮尔逊相关系数，范围为 [−1, 1]，衡量线性关系的方向和强弱。<em>相关不代表因果；零相关也不一定意味着没有非线性关系。</em></li>
+                    </ul>
+
+                    <h3 style="margin-top:22px; color:#0969da; font-size:15px;">5.2 时间序列分析 (Time Series Analysis)</h3>
+                    <p>研究一个变量如何随时间变化，例如某海域连续几十年的月平均海温。可以研究趋势、周期、时间上的关联等。</p>
+                    <p style="color:#57606a;"><em>课件重点讲的是其中的频谱分析：把复杂变化分解成不同频率的成分，判断哪些周期最明显。频谱分析是时间序列分析的一种方法，二者不能完全等同。</em></p>
+
+                    <h4 style="margin-top:14px; font-size:14px;">常见周期</h4>
+                    <ul style="padding-left:24px; margin:8px 0;">
+                        <li><strong>一年周期：</strong>季节变化。</li>
+                        <li><strong>一天周期：</strong>昼夜变化。</li>
+                        <li><strong>数年尺度变化：</strong>与 ENSO 等过程有关，不一定具有严格固定的周期。</li>
+                    </ul>
+
+                    <h4 style="margin-top:14px; font-size:14px;">频率、周期与波数</h4>
+                    <ul style="padding-left:24px; margin:8px 0;">
+                        <li>频率 <em>f</em> 表示单位时间内变化多少次，周期 <em>T</em> 表示一次变化需要多久，二者满足 <strong>T = 1/f</strong>。</li>
+                        <li>分析空间变化时，可以用<strong>波数</strong>描述空间上的起伏频繁程度，对应<strong>波长</strong>。</li>
+                    </ul>
+
+                    <h4 style="margin-top:14px; font-size:14px;">谱的形状</h4>
+                    <ul style="padding-left:24px; margin:8px 0;">
+                        <li><strong>红谱：</strong>低频、缓慢变化的功率较大。</li>
+                        <li><strong>白谱：</strong>功率谱密度在各频率上大致相同。</li>
+                        <li>谱的形状可以帮助理解变化背后的物理过程，但<strong>不能单凭谱形确定唯一机制</em>。</li>
+                    </ul>
+
+                    <h3 style="margin-top:22px; color:#0969da; font-size:15px;">5.3 多维数据分析 (Multi-dimensional Data Analysis)</h3>
+                    <p>多维数据可以同时涉及经度、纬度、深度和时间。课件在这里主要介绍<strong>客观分析（objective analysis）</strong>：将分布不规则的观测转换成规则网格上的估计值。</p>
+                    <p>例如，船舶只在部分位置测量了海温，但我们希望得到完整的海温地图，就需要估计没有观测的网格点。估计时会考虑：</p>
+                    <ul style="padding-left:24px; margin:8px 0;">
+                        <li><strong>空间相关尺度：</strong>相隔多远的观测仍能提供有用信息。</li>
+                        <li><strong>观测噪声：</strong>测量有多可靠。</li>
+                        <li><strong>观测之间的关系：</strong>避免把高度重复的信息算得过重。</li>
+                    </ul>
+                    <p>最终估计常表现为<strong>附近观测的加权组合</strong>；有背景场时，通常是对观测与背景之差进行加权修正。因此，它不只是简单取最近几个点的平均。</p>
+
+                    <h3 style="margin-top:28px; color:#0969da; font-size:15px;">5.4 EOF 分析简介 (What is EOF Analysis)</h3>
                     <p>EOF 分析是大气、海洋与气候科学中最常用的多元统计方法之一。它将时空数据分解为：</p>
                     <ul style="padding-left:24px; margin:8px 0;">
                         <li><strong>EOFs（空间模态）</strong>：一组正交的空间基函数，代表数据中主要的空间结构。</li>
@@ -383,23 +436,23 @@
                     </ul>
                     <p style="color:#57606a;"><em>四者在数学上本质等价，只是不同学科的叫法和侧重点不同。</em></p>
 
-                    <h3 style="margin-top:22px; color:#0969da; font-size:15px;">5.2 数学框架与计算流程</h3>
+                    <h3 style="margin-top:22px; color:#0969da; font-size:15px;">5.5 数学框架与计算流程</h3>
 
-                    <h4 style="margin-top:14px; font-size:14px;">5.2.1 数据准备</h4>
+                    <h4 style="margin-top:14px; font-size:14px;">5.5.1 数据准备</h4>
                     <ul style="padding-left:24px; margin:8px 0;">
                         <li>把时空数据整理成二维矩阵 <strong>X</strong>（空间 × 时间，或转置）。</li>
                         <li><strong>关键步骤：去均值</strong>——EOF 分解的是"距平"（异常），不是原始场。</li>
                         <li>多变量分析时，需先标准化（除以标准差），使各变量权重相等。</li>
                     </ul>
 
-                    <h4 style="margin-top:14px; font-size:14px;">5.2.2 协方差矩阵 vs 相关矩阵</h4>
+                    <h4 style="margin-top:14px; font-size:14px;">5.5.2 协方差矩阵 vs 相关矩阵</h4>
                     <ul style="padding-left:24px; margin:8px 0;">
                         <li><strong>协方差矩阵</strong>：变量量纲相同时使用。</li>
                         <li><strong>相关矩阵</strong>：变量量纲不同或方差差异大时使用。</li>
                         <li>矩阵对称、半正定，保证特征值为实数、特征向量正交。</li>
                     </ul>
 
-                    <h4 style="margin-top:14px; font-size:14px;">5.2.3 特征值分解与 SVD</h4>
+                    <h4 style="margin-top:14px; font-size:14px;">5.5.3 特征值分解与 SVD</h4>
                     <p><strong>两种等价途径：</strong></p>
                     <ol style="padding-left:24px; margin:8px 0;">
                         <li><strong>特征值分解：</strong>对协方差矩阵求特征向量（= EOF）和特征值（= 方差）。</li>
@@ -407,14 +460,14 @@
                     </ol>
                     <p><strong>核心关系：</strong>奇异值的平方 = 协方差矩阵的特征值。</p>
 
-                    <h4 style="margin-top:14px; font-size:14px;">5.2.4 主成分与重构</h4>
+                    <h4 style="margin-top:14px; font-size:14px;">5.5.4 主成分与重构</h4>
                     <ul style="padding-left:24px; margin:8px 0;">
                         <li>PCs = 数据在 EOFs 上的投影，彼此不相关。</li>
                         <li>保留前 <em>k</em> 个模态，可近似重构原始数据，实现降维。</li>
                         <li>第 <em>n</em> 个模态的方差贡献率 = 该特征值 / 总方差。</li>
                     </ul>
 
-                    <h3 style="margin-top:22px; color:#0969da; font-size:15px;">5.3 EOF / PCA / POD / SVD 的区别</h3>
+                    <h3 style="margin-top:22px; color:#0969da; font-size:15px;">5.6 EOF / PCA / POD / SVD 的区别</h3>
                     <div style="overflow-x:auto; margin:12px 0;">
                         <table style="width:100%; border-collapse:collapse; font-size:13px;">
                             <thead>
@@ -456,9 +509,9 @@
                         <li><strong>符号不确定性</strong>：特征向量可整体变号，不影响方差贡献率，但不同软件可能符号相反。</li>
                     </ul>
 
-                    <h3 style="margin-top:22px; color:#0969da; font-size:15px;">5.4 主要扩展方法</h3>
+                    <h3 style="margin-top:22px; color:#0969da; font-size:15px;">5.7 主要扩展方法</h3>
 
-                    <h4 style="margin-top:14px; font-size:14px;">5.4.1 复 EOF（CEOF）——用于传播信号</h4>
+                    <h4 style="margin-top:14px; font-size:14px;">5.7.1 复 EOF（CEOF）——用于传播信号</h4>
                     <ul style="padding-left:24px; margin:8px 0;">
                         <li><strong>目的：</strong>捕捉传播型信号（如沿岸陷波、中尺度涡、赤道 Kelvin 波）。</li>
                         <li><strong>方法：</strong>用 Hilbert 变换把实数据转为复解析信号，再进行 EOF 分解。</li>
@@ -466,7 +519,7 @@
                         <li><strong>局限：</strong>信号波数带宽过宽、非均匀采样时，精度下降。</li>
                     </ul>
 
-                    <h4 style="margin-top:14px; font-size:14px;">5.4.2 旋转 EOF（REOF）——提升物理可解释性</h4>
+                    <h4 style="margin-top:14px; font-size:14px;">5.7.2 旋转 EOF（REOF）——提升物理可解释性</h4>
                     <ul style="padding-left:24px; margin:8px 0;">
                         <li><strong>动机：</strong>标准 EOF 的正交约束常导致空间模态"混合"，难以物理解释。</li>
                         <li><strong>方法：</strong>对前几个模态做旋转（Varimax、Promax 等），使高载荷集中在局部区域。</li>
@@ -474,14 +527,14 @@
                         <li><strong>注意：</strong>旋转可能产生"伪模态"，需用分割样本或 Monte Carlo 验证稳健性。</li>
                     </ul>
 
-                    <h4 style="margin-top:14px; font-size:14px;">5.4.3 多变量 EOF（MEOF / MV-EOF）——研究变量耦合</h4>
+                    <h4 style="margin-top:14px; font-size:14px;">5.7.3 多变量 EOF（MEOF / MV-EOF）——研究变量耦合</h4>
                     <ul style="padding-left:24px; margin:8px 0;">
                         <li><strong>方法：</strong>将多个变量（相同网格、相同时间）标准化后拼接成一个大矩阵，再做 EOF。</li>
                         <li><strong>优势：</strong>能同时揭示多变量的<strong>耦合模态</strong>和<strong>联合演变</strong>。</li>
                         <li><strong>典型应用：</strong>ENSO（SST + SLP + 风应力）、NAO、印度洋偶极子等。</li>
                     </ul>
 
-                    <h4 style="margin-top:14px; font-size:14px;">5.4.4 非平稳 EOF——处理时变模态</h4>
+                    <h4 style="margin-top:14px; font-size:14px;">5.7.4 非平稳 EOF——处理时变模态</h4>
                     <ul style="padding-left:24px; margin:8px 0;">
                         <li><strong>问题：</strong>标准 EOF 假设空间模态不随时间变化，长期气候数据中常被违反。</li>
                         <li><strong>CSEOF（循环平稳 EOF）：</strong>允许模态在周期内演变，适合季节循环等周期现象。</li>
@@ -489,7 +542,7 @@
                         <li><strong>滑动窗口 EOF：</strong>在滑动时间窗上做 EOF，追踪模态的演变。</li>
                     </ul>
 
-                    <h4 style="margin-top:14px; font-size:14px;">5.4.5 DINEOF——处理缺失数据</h4>
+                    <h4 style="margin-top:14px; font-size:14px;">5.7.5 DINEOF——处理缺失数据</h4>
                     <ul style="padding-left:24px; margin:8px 0;">
                         <li><strong>目的：</strong>填补卫星观测、稀疏站位数据中的缺失值。</li>
                         <li><strong>流程：</strong>缺失值先填 0 → SVD 分解 → 截断重构 → 把缺失位置的重构值填回 → 迭代至收敛。</li>
@@ -497,7 +550,7 @@
                         <li><strong>局限：</strong>假设缺失随机、模态平稳；数据缺失严重时收敛慢。</li>
                     </ul>
 
-                    <h3 style="margin-top:22px; color:#0969da; font-size:15px;">5.5 显著性检验与模态选择</h3>
+                    <h3 style="margin-top:22px; color:#0969da; font-size:15px;">5.8 显著性检验与模态选择</h3>
                     <div style="overflow-x:auto; margin:12px 0;">
                         <table style="width:100%; border-collapse:collapse; font-size:13px;">
                             <thead>
@@ -528,7 +581,7 @@
                     </div>
                     <p><strong>重要提醒：</strong>当特征值接近（退化）时，对应 EOF 不唯一，任何线性组合也是解。此时需用旋转或其他方法获得物理解释。</p>
 
-                    <h3 style="margin-top:22px; color:#0969da; font-size:15px;">5.6 与 DMD 的比较</h3>
+                    <h3 style="margin-top:22px; color:#0969da; font-size:15px;">5.9 与 DMD 的比较</h3>
                     <ul style="padding-left:24px; margin:8px 0;">
                         <li><strong>排序标准不同：</strong>EOF/POD 按<strong>能量（方差）</strong>排序；DMD 按<strong>频率与增长率</strong>识别模态。</li>
                         <li><strong>时间动态：</strong>EOF 不提供频率/增长率信息；DMD 每个模态带明确的频率和增长/衰减率。</li>
@@ -536,7 +589,7 @@
                         <li><strong>DMD 局限：</strong>要求等时间间隔采样；POD 可处理随机采样。</li>
                     </ul>
 
-                    <h3 style="margin-top:22px; color:#0969da; font-size:15px;">5.7 地学中的典型应用</h3>
+                    <h3 style="margin-top:22px; color:#0969da; font-size:15px;">5.10 地学中的典型应用</h3>
                     <ul style="padding-left:24px; margin:8px 0;">
                         <li><strong>遥相关型识别：</strong>NAO、PNA、ENSO 等大尺度模态。</li>
                         <li><strong>数据降维与预测：</strong>用前几个 PC 作为回归或机器学习预测因子。</li>
@@ -546,7 +599,7 @@
                         <li><strong>区域化：</strong>REOF 识别局地气候模态。</li>
                     </ul>
 
-                    <h3 style="margin-top:22px; color:#0969da; font-size:15px;">5.8 最佳实践清单</h3>
+                    <h3 style="margin-top:22px; color:#0969da; font-size:15px;">5.11 最佳实践清单</h3>
                     <div style="background:#ddf4ff; border-radius:8px; padding:16px 20px; margin-top:10px;">
                         <p style="margin:6px 0;">✅ <strong>预处理：</strong>去均值、必要时标准化、纬度网格需面积加权</p>
                         <p style="margin:6px 0;">✅ <strong>域选择：</strong>域大小显著影响结果，建议做敏感性测试</p>
@@ -560,7 +613,7 @@
                         <p style="margin:6px 0;">✅ <strong>解释：</strong>正交性是数学约束，不是物理定律，需结合物理知识</p>
                     </div>
 
-                    <h3 style="margin-top:22px; color:#0969da; font-size:15px;">5.9 局限与未来方向</h3>
+                    <h3 style="margin-top:22px; color:#0969da; font-size:15px;">5.12 局限与未来方向</h3>
                     <p><strong>核心局限：</strong></p>
                     <ul style="padding-left:24px; margin:8px 0;">
                         <li>假设<strong>线性、平稳、正交</strong></li>
@@ -576,9 +629,9 @@
                         <li>大数据 + GPU + 深度学习</li>
                     </ul>
 
-                    <h3 style="margin-top:22px; color:#0969da; font-size:15px;">5.10 一句话总结</h3>
+                    <h3 style="margin-top:22px; color:#0969da; font-size:15px;">5.13 一句话总结</h3>
                     <div style="background:#fff8e1; border-left:4px solid #f0ad4e; padding:14px 18px; margin:12px 0; border-radius:0 6px 6px 0;">
-                        <strong>EOF 分析</strong>通过特征值分解或 SVD，把时空数据拆成"空间模态 + 时间序列"，用最少模态捕捉最大方差。它与 PCA、POD、SVD 数学等价，是大气、海洋、气候领域识别主导变率模态、降维、补缺、追踪传播信号的核心工具。使用时需注意线性、平稳、正交等假设，并结合物理知识谨慎解释。
+                        <strong>统计基础 → 时间序列 → 多维数据分析 → EOF</strong>，构成海洋数据分析的递进路径。EOF 通过特征值分解或 SVD，把时空数据拆成"空间模态 + 时间序列"，用最少模态捕捉最大方差，是识别主导变率模态、降维、补缺、追踪传播信号的核心工具。
                     </div>
 
                 </div>
@@ -614,7 +667,7 @@
 
             <div class="note">
                 <span class="date">2026-10</span>
-                整理了经验正交函数（EOF）分析的学习笔记，涵盖数学框架、SVD 实现、CEOF/REOF/MEOF/DINEOF 等扩展方法，以及在海洋与气候数据分析中的应用。
+                整理了海洋数据分析基础（统计概念、时间序列、客观分析）与 EOF 方法的学习笔记，涵盖数学框架、SVD 实现、CEOF/REOF/MEOF/DINEOF 等扩展，以及在海洋与气候数据分析中的应用。
             </div>
             <div class="note">
                 <span class="date">2026-09</span>
