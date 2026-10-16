@@ -73,6 +73,40 @@
             font-size: 13px;
             padding: 24px 0;
         }
+        .placeholder {
+            background: #fff8e1;
+            border-left: 3px solid #f0ad4e;
+            padding: 8px 14px;
+            margin: 10px 0;
+            font-size: 13px;
+            color: #7a5a00;
+            border-radius: 0 4px 4px 0;
+        }
+        .myvoice {
+            background: #f0fff4;
+            border-left: 3px solid #28a745;
+            padding: 10px 14px;
+            margin: 10px 0;
+            font-size: 14px;
+            border-radius: 0 4px 4px 0;
+        }
+        .question {
+            background: #fff0f5;
+            border-left: 3px solid #d63384;
+            padding: 10px 14px;
+            margin: 10px 0;
+            font-size: 14px;
+            border-radius: 0 4px 4px 0;
+        }
+        .ticket {
+            background: #f6f8fa;
+            border: 1px dashed #8b949e;
+            padding: 10px 14px;
+            margin: 16px 0 0;
+            font-size: 13px;
+            border-radius: 6px;
+            color: #57606a;
+        }
     </style>
 </head>
 <body>
@@ -123,219 +157,214 @@
             </div>
         </section>
 
+        <!-- ============================================================ -->
+        <!-- 📚 教材笔记 (Textbook Notes) —— 对应评分表 B 项 -->
+        <!-- ============================================================ -->
         <section>
-            <h2>📖 Course Notes</h2>
-            <p>描述性物理海洋学课程笔记与数据分析方法专题，按章节整理核心概念、观测方法、关键结论与习题解析。点击标题可展开阅读。</p>
+            <h2>📚 教材笔记 (Textbook Notes)</h2>
+            <p>这里记录我阅读课程教材时整理的内容，与课堂笔记分开，方便对照教材和课堂的差异。</p>
+
+            <div class="placeholder">
+                【待补充：请填写你使用的教材名称、作者、版本。例如：Talley et al., <em>Descriptive Physical Oceanography: An Introduction</em>, 6th Edition。】
+            </div>
 
             <details style="margin-top:20px; border:1px solid #eaeef2; border-radius:8px; padding:0;">
                 <summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:16px; background:#f6f8fa; border-radius:8px; list-style:none;">
-                    第1章：描述性物理海洋学导论 (Introduction to Descriptive Physical Oceanography)
+                    教材第3章：海水的物理性质 (Physical Properties of Seawater)
                 </summary>
                 <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
 
-                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">1.1 课程目标与学习方法论 (Course Goals &amp; Learning Methodology)</h3>
-                    <p><strong>课程定位：</strong>描述性物理海洋学是物理海洋学的基础，侧重于观测、描述和解释海洋的物理状态及变化过程，而非纯理论推导。</p>
-                    <p><strong>核心逻辑：</strong>强调“What? Why? How?”的探究逻辑——现象是什么？为什么会发生？如何观测和量化？</p>
-                    <p><strong>高效学习原则：</strong></p>
-                    <ul style="padding-left:24px; margin:8px 0;">
-                        <li><strong>多源比较与帕累托原则（80/20法则）：</strong>从8-10个权威平台收集信息，找出出现频率占80%以上的核心知识点，聚焦这20%的核心内容。</li>
-                        <li><strong>结构化规划：</strong>分析概念间的依赖关系，从基础到高级排序，设定阶段性里程碑。</li>
-                        <li><strong>费曼学习法：</strong>用通俗语言解释概念，找出盲点，重新学习，使用类比，最后教给别人。</li>
-                        <li><strong>AI与工具应用：</strong>使用AI工具辅助撰写代码、绘制专业图表（MATLAB绘图、位温分布图），利用AI Agent进行文献总结与数据提取。</li>
-                    </ul>
+                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">📖 教材原文摘录</h3>
+                    <div class="placeholder">
+                        【待补充：挑 1–2 段教材原文，抄下来，注明页码。例如："Talley et al., 第 3.2 节, 第 42 页，关于盐度的定义……"】
+                    </div>
 
-                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">1.2 海洋的时空尺度 (Time and Space Scales)</h3>
-                    <p><strong>核心图表 (Figure 1.2)：</strong>物理海洋学最重要的概念图之一。横轴是水平空间尺度（1毫米到10,000公里），纵轴是时间尺度（1秒到100年）。</p>
-                    <ul style="padding-left:24px; margin:8px 0;">
-                        <li><strong>微观尺度：</strong>分子过程（1秒，1毫米）、湍流斑块（分钟级，米级）、表面波（秒级，米级）。</li>
-                        <li><strong>中观尺度：</strong>内波（小时到天，公里级）、潮汐（小时到天，百公里级）、中尺度涡（月级，百公里级）。</li>
-                        <li><strong>宏观尺度：</strong>季节变化（月到年，千公里级）、厄尔尼诺（1-7年，千公里级）、风生环流和热盐环流（十年到百年，万公里级）。</li>
-                    </ul>
-                    <p><strong>单位注意事项：</strong>MKS单位制为主，距离常用千米（km），深度用米（m），压力用分巴（dbar），盐度官方定义为无量纲。</p>
+                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">✍️ 我自己的解释</h3>
+                    <div class="myvoice">
+                        <strong>我原以为：</strong>盐度就是一个简单的"含盐量"，用千分比表示就行。<br>
+                        <strong>后来发现：</strong>盐度的定义经历了好几次演变——从千分比，到 psu（实用盐度），再到现在的 Absolute Salinity。教材特别强调，现代盐度是基于电导率测量的，和"实际含盐量"并不完全等同。
+                    </div>
+
+                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">🔗 与课堂内容的对照</h3>
+                    <div class="placeholder">
+                        【待补充：这里写教材和课堂的差异 / 补充。例如："课堂上老师强调……，但教材里补充了……"】
+                    </div>
+
+                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">📎 我自己的延伸</h3>
+                    <div class="placeholder">
+                        【待补充：教材之外查到的资料 / 文献 / 数据集。例如："我查了 TEOS-10 官网，发现……"】
+                    </div>
 
                 </div>
             </details>
 
-            <details style="margin-top:12px; border:1px solid #eaeef2; border-radius:8px; padding:0;">
+            <div class="placeholder">
+                【待补充：可以再补 1–2 章教材笔记，比如教材第4章（水团分布）、第5章（热量收支）。】
+            </div>
+
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 📘 课堂笔记 (Course Notes) —— 对应评分表 A 项 -->
+        <!-- ============================================================ -->
+        <section>
+            <h2>📘 课堂笔记 (Course Notes)</h2>
+            <p>按课次（讲）整理，每讲包含我在课堂上听到的内容、我自己的理解、当时没懂的问题、以及出门票记录。</p>
+
+            <!-- 第1讲 -->
+            <details style="margin-top:20px; border:1px solid #eaeef2; border-radius:8px; padding:0;">
                 <summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:16px; background:#f6f8fa; border-radius:8px; list-style:none;">
-                    第2章：海洋的形态与底部物质 (Ocean Dimensions, Shapes, and Bottom Materials)
+                    第1讲：描述性物理海洋学导论 (Introduction to Descriptive Physical Oceanography)
                 </summary>
                 <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
 
-                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">2.1 地球表面的海陆分布与深度 (Land-Sea Distribution and Depth)</h3>
+                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">📝 课堂内容</h3>
+                    <p>课程定位：描述性物理海洋学是物理海洋学的基础，侧重于观测、描述和解释海洋的物理状态及变化过程，而非纯理论推导。</p>
+                    <p>核心逻辑：强调"What? Why? How?"的探究逻辑——现象是什么？为什么会发生？如何观测和量化？</p>
+
+                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">🗣️ 我自己的话</h3>
+                    <div class="myvoice">
+                        【待补充：用你自己的话，说说这节课你印象最深的是什么。例如："我原以为物理海洋学就是讲海流，后来发现它其实是先描述现象，再找动力学解释。"】
+                    </div>
+
+                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">❓ 当时的疑问 + 怎么想通</h3>
+                    <div class="placeholder">
+                        【待补充：如果你这节课有问题，写这里。没有就写"这节课没有疑问"。】
+                    </div>
+
+                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">📌 课堂要点</h3>
+                    <ul style="padding-left:24px; margin:8px 0;">
+                        <li><strong>多源比较与帕累托原则（80/20法则）：</strong>从多个权威平台收集信息，聚焦核心知识点。</li>
+                        <li><strong>结构化规划：</strong>分析概念间的依赖关系，从基础到高级排序。</li>
+                        <li><strong>费曼学习法：</strong>用通俗语言解释概念，找出盲点，重新学习。</li>
+                    </ul>
+
+                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">🌊 海洋的时空尺度 (Time and Space Scales)</h3>
+                    <ul style="padding-left:24px; margin:8px 0;">
+                        <li><strong>微观尺度：</strong>分子过程（1秒，1毫米）、湍流斑块（分钟级，米级）。</li>
+                        <li><strong>中观尺度：</strong>内波（小时到天，公里级）、潮汐（小时到天，百公里级）。</li>
+                        <li><strong>宏观尺度：</strong>季节变化、厄尔尼诺、风生环流和热盐环流。</li>
+                    </ul>
+
+                    <div class="ticket">
+                        <strong>🎫 出门票：</strong>【待补充：这节课你最大的收获 / 最想问老师的问题】
+                    </div>
+
+                </div>
+            </details>
+
+            <!-- 第2讲（带示例） -->
+            <details style="margin-top:12px; border:1px solid #eaeef2; border-radius:8px; padding:0;">
+                <summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:16px; background:#f6f8fa; border-radius:8px; list-style:none;">
+                    第2讲：海洋的形态与底部物质 (Ocean Dimensions, Shapes, and Bottom Materials)
+                </summary>
+                <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
+
+                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">📝 课堂内容</h3>
                     <ul style="padding-left:24px; margin:8px 0;">
                         <li><strong>面积占比：</strong>地球表面约71%被海洋覆盖。</li>
                         <li><strong>平均深度：</strong>海洋平均深度约3734米，陆地平均海拔仅743米。</li>
-                        <li><strong>极值：</strong>最深处马里亚纳海沟约11,000米（仅占地球表面积的0.04%）；最高峰珠穆朗玛峰约8,848米。</li>
-                        <li><strong>海底地貌分布：</strong>大陆架（水深0-200m）、大陆坡、大陆隆、深海平原、洋中脊、海沟等。</li>
+                        <li><strong>极值：</strong>最深处马里亚纳海沟约11,000米；最高峰珠穆朗玛峰约8,848米。</li>
+                        <li><strong>海底地貌分布：</strong>大陆架、大陆坡、大陆隆、深海平原、洋中脊、海沟等。</li>
                     </ul>
 
-                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">2.2 海底扩张与地壳年龄 (Sea Floor Spreading &amp; Crustal Age)</h3>
+                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">🗣️ 我自己的话</h3>
+                    <div class="myvoice">
+                        <strong>我原以为：</strong>海底就是一片平坦的"沙地"，洋中脊和深海平原可能差不多。<br>
+                        <strong>后来发现：</strong>海底地形其实和大洋的形成、扩张速率直接相关。东太平洋海隆（快速扩张）地形相对平滑，而大西洋中脊（慢速扩张）中央有显著的裂谷——这说明地形不是"静止的"，而是板块运动的结果。
+                    </div>
+
+                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">❓ 当时的疑问 + 怎么想通</h3>
+                    <div class="question">
+                        <strong>❓ 我当时没懂：</strong>为什么海底地壳这么"年轻"？最老的也不超过2.8亿年，而大陆地壳可以有几亿甚至几十亿年？<br>
+                        <strong>✅ 后来想通：</strong>因为海底地壳在洋中脊不断新生，又在海沟处俯冲消亡，是一个循环过程——就像传送带一样，所以不会积累太老的地壳。这也让我理解了为什么 Figure 2.3 上地壳年龄从洋中脊向外递增。
+                    </div>
+
+                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">📌 各大洋特征</h3>
                     <ul style="padding-left:24px; margin:8px 0;">
-                        <li><strong>年龄分布 (Figure 2.3)：</strong>海底地壳非常年轻，最老不超过2.8亿年。</li>
-                        <li><strong>洋中脊：</strong>新生地壳产生的地方。距离洋中脊越远，地壳年龄越老。</li>
-                        <li><strong>扩张速率差异 (Figure 2.4)：</strong>东太平洋海隆（EPR）是快速扩张中心，地形相对平滑；大西洋中脊（MAR）是慢速扩张中心，中央有显著的裂谷。</li>
+                        <li><strong>太平洋：</strong>面积最大、最深，四周被深海沟环绕。</li>
+                        <li><strong>大西洋：</strong>呈"S"形，洋中脊位于正中。</li>
+                        <li><strong>北冰洋：</strong>被大陆环绕，拥有世界上最宽阔的大陆架。</li>
+                        <li><strong>南大洋：</strong>关键通道包括德雷克海峡。</li>
                     </ul>
 
-                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">2.3 各大洋及海域特征 (Characteristics of Major Oceans)</h3>
-                    <ul style="padding-left:24px; margin:8px 0;">
-                        <li><strong>太平洋：</strong>面积最大，最深。四周被深海沟环绕（如马里亚纳海沟、日本海沟），洋中脊位于偏东位置。</li>
-                        <li><strong>大西洋：</strong>呈“S”形，洋中脊位于正中，两侧有广阔的深海平原。</li>
-                        <li><strong>北冰洋：</strong>被大陆环绕，拥有世界上最宽阔的大陆架。案例：摩尔曼斯克港终年不冻，是因为受北大西洋暖流的影响。</li>
-                        <li><strong>南大洋：</strong>围绕南极洲，关键通道包括德雷克海峡（Drake Passage），连接太平洋和大西洋。</li>
-                    </ul>
+                    <div class="ticket">
+                        <strong>🎫 出门票：</strong>【待补充：这节课你最大的收获 / 最想问老师的问题。例如："我学到海底地壳是循环的，想问老师：那我们现在测到的最老海底地壳在哪里？"】
+                    </div>
 
                 </div>
             </details>
 
+            <!-- 第3讲 -->
             <details style="margin-top:12px; border:1px solid #eaeef2; border-radius:8px; padding:0;">
                 <summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:16px; background:#f6f8fa; border-radius:8px; list-style:none;">
-                    第3章：海水的物理性质 (Physical Properties of Seawater)
+                    第3讲：海水的物理性质 (Physical Properties of Seawater)
                 </summary>
                 <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
 
-                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">3.1 温度与位温 (Temperature and Potential Temperature)</h3>
+                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">📝 课堂内容</h3>
                     <ul style="padding-left:24px; margin:8px 0;">
-                        <li><strong>现场温度 (In-situ Temperature, T)：</strong>温度计在深海直接测得的温度。由于海水随深度增加受绝热压缩，温度会升高。</li>
-                        <li><strong>位温 (Potential Temperature, θ)：</strong>将水团绝热提升到海面时的温度。</li>
-                        <li><strong>关键结论：</strong>位温通常总是低于实际温度，除非该水团本来就位于海面。马里亚纳海沟的T-S剖面图显示，在4000米以下，T（红色虚线）和θ（蓝色实线）的差异急剧增大。</li>
-                        <li><strong>绝热过程：</strong>水团压缩时温度升高，膨胀时温度降低。</li>
+                        <li><strong>现场温度 (T)：</strong>深海直接测得的温度，随深度增加受绝热压缩升高。</li>
+                        <li><strong>位温 (θ)：</strong>将水团绝热提升到海面时的温度。</li>
+                        <li><strong>关键结论：</strong>位温通常低于实际温度。</li>
+                        <li><strong>盐度演变：</strong>千分比 → psu → Absolute Salinity。</li>
+                        <li><strong>密度影响因素：</strong>温度、盐度、压力。</li>
+                        <li><strong>特殊过程：</strong>混合增密 (Cabbeling)、双扩散 (Double Diffusion)、SOFAR 通道等。</li>
                     </ul>
 
-                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">3.2 盐度 (Salinity)</h3>
-                    <p><strong>定义演变：</strong></p>
-                    <ul style="padding-left:24px; margin:8px 0;">
-                        <li>最初使用千分比（‰）。</li>
-                        <li>后改为实用盐度单位 (psu)，基于电导率测量。</li>
-                        <li>现在定义为绝对盐度 (Absolute Salinity, S_A)，基于电导率且无量纲。</li>
-                    </ul>
-                    <p><strong>测量方法：</strong>蒸发称重（最古老）→ 滴定法测氯度 → 测量电导率（现代标准方法）。</p>
+                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">🗣️ 我自己的话</h3>
+                    <div class="myvoice">
+                        【待补充：用你自己的话，说说这节课你印象最深的是什么。例如："我原以为温度就是温度，没想到还有位温和现场温度的区别。"】
+                    </div>
 
-                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">3.3 密度 (Density)</h3>
-                    <ul style="padding-left:24px; margin:8px 0;">
-                        <li><strong>影响因素：</strong>温度、盐度、压力。冷水、咸水、高压水密度更大。</li>
-                        <li><strong>非线性：</strong>密度与温度、盐度的关系是非线性的，需使用经验公式（状态方程）。</li>
-                        <li><strong>单位：</strong>kg/m³ (MKS) 或 g/cm³ (CGS)。</li>
-                        <li><strong>位势密度 (Potential Density)：</strong>将水团绝热移动到参考压力时的密度。用 σ (Sigma) 表示，如 σ₀（参考海面）、σ₁₀（参考1000 dbar）。</li>
-                        <li><strong>密度剖面：</strong>密度随深度增加，海洋内部存在密度跃层（Pycnocline），阻碍垂直混合。</li>
-                    </ul>
+                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">❓ 当时的疑问 + 怎么想通</h3>
+                    <div class="placeholder">
+                        【待补充：写这节课你的疑问 + 后来怎么想通的。例如："我当时没懂双扩散是什么，后来查了资料 + 画了张示意图，才理解盐指是怎么回事。"】
+                    </div>
 
-                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">3.4 特殊物理过程与混合机制 (Special Processes &amp; Mixing Mechanisms)</h3>
+                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">📌 补充要点</h3>
                     <ul style="padding-left:24px; margin:8px 0;">
-                        <li><strong>混合增密 (Cabbeling)：</strong>两种温度、盐度不同但密度相同的水团混合时，混合后密度会大于原水团，导致下沉。例子：格陵兰盆地的深层水形成。</li>
-                        <li><strong>热压效应 (Thermobaricity)：</strong>由于压力变化导致热膨胀系数改变，引起深层水的特殊混合。</li>
-                        <li><strong>双扩散 (Double Diffusion)：</strong>
-                            <ul style="padding-left:20px; margin:6px 0;">
-                                <li><strong>盐指 (Salt Fingers)：</strong>暖、咸的水覆盖在冷、淡的水之上时，热量扩散比盐分快，形成细长的“盐指”。发生在温带上层海洋、热带深层太平洋。</li>
-                                <li><strong>扩散对流 (Diffusive Convection)：</strong>冷、淡的水覆盖在暖、咸的水之上时，形成阶梯状的“扩散核心”。</li>
-                            </ul>
-                        </li>
-                        <li><strong>声速与SOFAR通道：</strong>声速随温度、盐度、压力变化。约1000米深度存在声速最小值（SOFAR Channel），声波可传播数千公里，用于潜艇通信和海洋监测。</li>
-                        <li><strong>死水 (Dead Water)：</strong>船只航行在“淡-咸”强分层界面时，能量转化为内波，导致船只仿佛被“粘住”。</li>
+                        <li><strong>混合增密 (Cabbeling)：</strong>两种温盐不同但密度相同的水团混合，混合后密度更大，导致下沉。</li>
+                        <li><strong>盐指 (Salt Fingers)：</strong>暖、咸水覆盖冷、淡水时，热量扩散比盐分快，形成细长"盐指"。</li>
+                        <li><strong>SOFAR 通道：</strong>约 1000 m 深度存在声速最小值，声波可传播数千公里。</li>
                     </ul>
 
-                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">3.5 海冰与多孔性 (Sea Ice &amp; Porosity)</h3>
-                    <ul style="padding-left:24px; margin:8px 0;">
-                        <li><strong>热力学：</strong>海冰形成时排出盐分（Brine rejection），形成冷、咸、密度大的深层水（Dense Shelf Water），是全球热盐环流的重要驱动力。</li>
-                        <li><strong>冰间湖 (Polynya)：</strong>
-                            <ul style="padding-left:20px; margin:6px 0;">
-                                <li><strong>潜热冰间湖：</strong>由风将冰吹开，持续暴露水面而结冰，释放潜热。</li>
-                                <li><strong>感热冰间湖：</strong>由潮汐混合将温暖的次表层水带到海面，融化海冰形成。</li>
-                            </ul>
-                        </li>
-                        <li><strong>学科交叉：</strong>地质学（岩浆房和火山口形成与双扩散有关）、天体物理学（太阳内部氦气和热量扩散速率不同，形成类似双扩散的机制）。</li>
-                    </ul>
+                    <div class="ticket">
+                        <strong>🎫 出门票：</strong>【待补充：这节课你最大的收获 / 最想问老师的问题】
+                    </div>
 
                 </div>
             </details>
 
+            <!-- 第4讲（带示例） -->
             <details style="margin-top:12px; border:1px solid #eaeef2; border-radius:8px; padding:0;">
                 <summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:16px; background:#f6f8fa; border-radius:8px; list-style:none;">
-                    第4章：水团特征的典型分布 (Typical Distributions of Water Characteristics)
+                    第4讲：水团特征的典型分布 (Typical Distributions of Water Characteristics)
                 </summary>
                 <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
 
-                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">4.1 温度分布 (Temperature Distribution)</h3>
-                    <p>海温是描述海洋状态最基本的变量之一，其分布受太阳辐射、环流、海气交换和混合过程共同控制。</p>
-
-                    <h4 style="margin-top:14px; font-size:14px;">表层温度分布</h4>
+                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">📝 课堂内容</h3>
+                    <p>本节讲温度、盐度、密度在全球海洋中的分布，以及如何用 T-S 图识别水团。</p>
                     <ul style="padding-left:24px; margin:8px 0;">
-                        <li><strong>随纬度递减：</strong>低纬度太阳辐射强，海温高；高纬度太阳高度角低，海温低。年平均表层海温从赤道约 28°C 递减到极地约 −1.8°C（冰点）。</li>
-                        <li><strong>东西向差异：</strong>同一纬度上，大洋西岸通常比东岸暖（如黑潮、湾流 vs 加利福尼亚寒流、秘鲁寒流）。</li>
-                        <li><strong>季节变化：</strong>北半球中纬度季节温差可达 5–10°C；赤道和极地季节变化小。</li>
-                        <li><strong>极值中心：</strong>北半球最暖区在赤道以北的太平洋和大西洋西部；南半球最暖区在赤道以南。</li>
+                        <li><strong>温度：</strong>随纬度递减，垂向分三层（混合层 / 温跃层 / 深层）。</li>
+                        <li><strong>盐度：</strong>副热带高、赤道和高纬低；垂向有盐度极值层。</li>
+                        <li><strong>密度：</strong>由 T、S、P 决定；密度跃层是层结核心。</li>
+                        <li><strong>T-S 图：</strong>识别水团的核心工具，混合线为直线。</li>
                     </ul>
 
-                    <h4 style="margin-top:14px; font-size:14px;">垂直温度剖面</h4>
-                    <p>典型低纬海洋的温度剖面可分为三层：</p>
-                    <ul style="padding-left:24px; margin:8px 0;">
-                        <li><strong>混合层（Mixed Layer）：</strong>厚度 20–200 m，因风、波浪和热对流而充分混合，温度和密度近似均匀。</li>
-                        <li><strong>温跃层（Thermocline）：</strong>温度随深度迅速下降，是海洋中最重要的层结结构之一。低纬海洋温跃层深约 100–1000 m。</li>
-                        <li><strong>深层（Deep Layer）：</strong>温度缓慢降低，深层水温低于 4°C，底部接近 0–2°C。</li>
-                    </ul>
-                    <p>高纬海洋温跃层弱或不存在，因为上层与深层温差很小。极地海域甚至出现"冷跃层"（上层冷、下层暖）。</p>
+                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">🗣️ 我自己的话</h3>
+                    <div class="myvoice">
+                        <strong>我原以为：</strong>T-S 图就是一张普通的散点图，把温度和盐度画上去看看分布。<br>
+                        <strong>后来发现：</strong>T-S 图其实是一个"指纹系统"。不同水团在 T-S 图上有自己独特的位置，两个水团混合会形成一条直线——这意味着我们可以通过 T-S 图反推某个水样来自哪些水团混合。这比我原来想的深刻得多。
+                    </div>
 
-                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">4.2 盐度分布 (Salinity Distribution)</h3>
-                    <p>盐度受蒸发、降水、径流、海冰形成与融化、水团混合共同控制。</p>
+                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">❓ 当时的疑问 + 怎么想通</h3>
+                    <div class="question">
+                        <strong>❓ 我当时没懂：</strong>为什么副热带海区的表层盐度最高？明明赤道降水多，副热带降水少，我可以理解副热带盐度高——但是为什么不是"蒸发最多的地方盐度最高"？<br>
+                        <strong>✅ 后来想通：</strong>因为盐度取决于"蒸发减降水"的净效应。副热带虽然蒸发不一定是最强，但降水极少，所以净蒸发最大。赤道虽然蒸发强，但降水也强，两者抵消。所以盐度极大值出现在副热带，而不是赤道。
+                    </div>
 
-                    <h4 style="margin-top:14px; font-size:14px;">表层盐度分布</h4>
-                    <ul style="padding-left:24px; margin:8px 0;">
-                        <li><strong>副热带高盐区：</strong>蒸发大于降水，盐度可达 36–37。如北大西洋副热带、南太平洋副热带。</li>
-                        <li><strong>赤道低盐区：</strong>降水充沛，盐度约 34.5–35。</li>
-                        <li><strong>高纬低盐区：</strong>降水、径流和融冰多，盐度约 32–34。北冰洋表层甚至可低至 28–30。</li>
-                        <li><strong>极值：</strong>红海和波斯湾盐度可达 40 以上（强蒸发 + 有限交换）；波罗的海盐度低至 7。</li>
-                    </ul>
-
-                    <h4 style="margin-top:14px; font-size:14px;">垂直盐度剖面</h4>
-                    <ul style="padding-left:24px; margin:8px 0;">
-                        <li><strong>低纬：</strong>表层盐度略低（降水多），次表层出现<strong>盐度极大值</strong>（副热带高盐水下沉），深层盐度约 34.7–34.9。</li>
-                        <li><strong>中纬：</strong>表层盐度高（蒸发强），向下盐度逐渐降低。</li>
-                        <li><strong>高纬：</strong>表层盐度低，向下逐渐升高（深层水来自高盐区下沉）。</li>
-                    </ul>
-                    <p><strong>盐度极值层：</strong>副热带次表层的高盐核是识别水团的重要标志。</p>
-
-                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">4.3 密度分布 (Density Distribution)</h3>
-                    <p>密度由温度、盐度和压力共同决定，是驱动海洋环流的关键变量。</p>
-
-                    <h4 style="margin-top:14px; font-size:14px;">表层密度</h4>
-                    <ul style="padding-left:24px; margin:8px 0;">
-                        <li><strong>低纬：</strong>高温低盐，密度较低（约 1022–1024 kg/m³）。</li>
-                        <li><strong>副热带：</strong>高盐，密度较高（约 1025–1026 kg/m³）。</li>
-                        <li><strong>高纬：</strong>低温，密度最高（约 1027–1028 kg/m³），特别是北大西洋和南极周边。</li>
-                    </ul>
-
-                    <h4 style="margin-top:14px; font-size:14px;">垂直密度剖面</h4>
-                    <ul style="padding-left:24px; margin:8px 0;">
-                        <li><strong>密度跃层（Pycnocline）：</strong>密度随深度迅速增加，阻碍垂直混合，是全球海洋层结的核心。</li>
-                        <li><strong>低纬海洋：</strong>密度跃层明显，主要由温跃层贡献（温度主导）。</li>
-                        <li><strong>高纬海洋：</strong>密度跃层弱，层结不稳定，容易发生深对流。</li>
-                    </ul>
-                    <p><strong>Brunt-Väisälä 频率 N：</strong>衡量层结稳定性的核心指标，N² &gt; 0 表示稳定层结。</p>
-
-                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">4.4 温盐图 (T-S Diagram)</h3>
-                    <p>T-S 图是物理海洋学识别水团最重要的工具。横轴为盐度，纵轴为温度，每个点代表一个水样。</p>
-
-                    <h4 style="margin-top:14px; font-size:14px;">T-S 图的物理意义</h4>
-                    <ul style="padding-left:24px; margin:8px 0;">
-                        <li><strong>水团核心：</strong>T-S 图上密集的点簇对应特定水团的形成区。</li>
-                        <li><strong>混合线：</strong>两个水团混合在 T-S 图上表现为一条直线（温度、盐度线性混合）。</li>
-                        <li><strong>密度等值线：</strong>T-S 图上叠加等密度线（σ 线），可判断混合过程是否跨密度面。</li>
-                        <li><strong>曲线弯曲：</strong>偏离直线的部分表示发生了非保守过程（如生物作用、海气交换）。</li>
-                    </ul>
-
-                    <h4 style="margin-top:14px; font-size:14px;">典型水团的 T-S 位置</h4>
-                    <ul style="padding-left:24px; margin:8px 0;">
-                        <li><strong>南极底层水（AABW）：</strong>温度约 −0.5°C，盐度约 34.7，位于 T-S 图左下角。</li>
-                        <li><strong>北大西洋深层水（NADW）：</strong>温度约 2–4°C，盐度约 34.9–35.0。</li>
-                        <li><strong>南极中层水（AAIW）：</strong>温度约 2–4°C，盐度约 34.5–34.7（盐度最小值）。</li>
-                        <li><strong>地中海溢流水：</strong>温度约 13°C，盐度约 38（高盐高密）。</li>
-                        <li><strong>北太平洋中层水：</strong>温度约 5°C，盐度约 34.0–34.3（低盐）。</li>
-                    </ul>
-
-                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">4.5 主要水团特征 (Major Water Masses)</h3>
-                    <p>水团是指具有相对均匀的温盐特征、在特定海域形成、并能在海洋中长距离传播的水体。</p>
-
-                    <h4 style="margin-top:14px; font-size:14px;">全球主要水团</h4>
+                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">📌 主要水团</h3>
                     <div style="overflow-x:auto; margin:12px 0;">
                         <table style="width:100%; border-collapse:collapse; font-size:13px;">
                             <thead>
@@ -349,7 +378,7 @@
                             <tbody>
                                 <tr>
                                     <td style="padding:10px 12px; border:1px solid #d0d7de;">AABW 南极底层水</td>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">南极陆架（威德尔海、罗斯海）</td>
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">南极陆架</td>
                                     <td style="padding:10px 12px; border:1px solid #d0d7de;">−0.5°C</td>
                                     <td style="padding:10px 12px; border:1px solid #d0d7de;">34.7</td>
                                 </tr>
@@ -365,186 +394,44 @@
                                     <td style="padding:10px 12px; border:1px solid #d0d7de;">2–4°C</td>
                                     <td style="padding:10px 12px; border:1px solid #d0d7de;">34.5–34.7</td>
                                 </tr>
-                                <tr style="background:#fafbfc;">
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">NPIW 北太平洋中层水</td>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">西北太平洋</td>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">约 5°C</td>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">34.0–34.3</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">MW 地中海溢流水</td>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">直布罗陀海峡</td>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">约 13°C</td>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">约 38</td>
-                                </tr>
                             </tbody>
                         </table>
                     </div>
 
-                    <h4 style="margin-top:14px; font-size:14px;">水团的形成与传播</h4>
-                    <ul style="padding-left:24px; margin:8px 0;">
-                        <li><strong>形成条件：</strong>海气交换充分、层结弱、存在深对流或陆架下沉。</li>
-                        <li><strong>传播路径：</strong>深层水沿海盆边界流动，形成全球"大洋传送带"（Great Ocean Conveyor Belt）。</li>
-                        <li><strong>时间尺度：</strong>深层水从形成到回流需数百年到上千年。</li>
-                    </ul>
-
-                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">4.6 三大洋的温盐结构对比 (Comparison of Major Oceans)</h3>
-                    <div style="overflow-x:auto; margin:12px 0;">
-                        <table style="width:100%; border-collapse:collapse; font-size:13px;">
-                            <thead>
-                                <tr style="background:#f6f8fa;">
-                                    <th style="padding:10px 12px; border:1px solid #d0d7de; text-align:left;">特征</th>
-                                    <th style="padding:10px 12px; border:1px solid #d0d7de; text-align:left;">太平洋</th>
-                                    <th style="padding:10px 12px; border:1px solid #d0d7de; text-align:left;">大西洋</th>
-                                    <th style="padding:10px 12px; border:1px solid #d0d7de; text-align:left;">印度洋</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">面积</td>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">最大</td>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">次之</td>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">最小</td>
-                                </tr>
-                                <tr style="background:#fafbfc;">
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">深层水</td>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">以 AABW 为主，NADW 影响小</td>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">NADW 和 AABW 共存</td>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">以 AABW 和红海高盐水为主</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">温跃层</td>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">深厚，东西向倾斜</td>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">中等，南北差异大</td>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">季节变化大，受季风影响</td>
-                                </tr>
-                                <tr style="background:#fafbfc;">
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">ENSO 影响</td>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">强烈</td>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">中等</td>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">通过印度洋偶极子（IOD）</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">4.7 本章重点 (Key Takeaways)</h3>
-                    <div style="background:#ddf4ff; border-radius:8px; padding:16px 20px; margin-top:10px;">
-                        <p style="margin:6px 0;">📌 <strong>温度</strong>：随纬度递减，垂向分三层（混合层 / 温跃层 / 深层）</p>
-                        <p style="margin:6px 0;">📌 <strong>盐度</strong>：副热带高、赤道和高纬低；垂向有盐度极值层</p>
-                        <p style="margin:6px 0;">📌 <strong>密度</strong>：由 T、S、P 决定；密度跃层是层结核心</p>
-                        <p style="margin:6px 0;">📌 <strong>T-S 图</strong>：识别水团的核心工具，混合线为直线</p>
-                        <p style="margin:6px 0;">📌 <strong>主要水团</strong>：AABW、NADW、AAIW、NPIW、MW 各有独特 T-S 特征</p>
-                        <p style="margin:6px 0;">📌 <strong>三大洋对比</strong>：深层水来源、温跃层结构、气候模态各不相同</p>
-                    </div>
-
-                    <div style="background:#fff8e1; border-left:4px solid #f0ad4e; padding:12px 16px; margin:16px 0; border-radius:0 6px 6px 0; font-size:13px;">
-                        <strong>📝 学习提示</strong><br>
-                        本章内容与第3章（海水物理性质）、第5章（质量、盐分与热量收支）紧密相关。建议结合 Argo 浮标数据、WOA 气候态数据，自己动手绘制 T-S 图和温盐剖面图，加深理解。
+                    <div class="ticket">
+                        <strong>🎫 出门票：</strong>【待补充：这节课你最大的收获 / 最想问老师的问题。例如："我理解了 T-S 图能识别水团，想问老师：实际数据处理时，怎么判断一条 T-S 曲线是单一水团还是混合？"】
                     </div>
 
                 </div>
             </details>
 
+            <!-- 第5讲 -->
             <details style="margin-top:12px; border:1px solid #eaeef2; border-radius:8px; padding:0;">
                 <summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:16px; background:#f6f8fa; border-radius:8px; list-style:none;">
-                    第5章：质量、盐分与热量收支及风强迫 (Mass, Salt and Heat Budgets and Wind Forcing)
+                    第5讲：质量、盐分与热量收支及风强迫 (Mass, Salt and Heat Budgets and Wind Forcing)
                 </summary>
                 <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
 
-                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">5.1 第一题：影响四种热通量的因素及其重要性 (Factors Affecting the Four Heat Fluxes)</h3>
-                    <p style="color:#57606a;">分别有哪些因素决定 Qs、Qb、Qe 和 Qh？每个因素对各项热通量的重要程度如何？</p>
-
-                    <h4 style="margin-top:18px; font-size:14px; color:#24292f;">① Qs：太阳短波辐射（Shortwave Radiation）</h4>
+                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">📝 课堂内容</h3>
+                    <p>本节课讨论四种热通量 Qs、Qb、Qe、Qh 的影响因素和数值范围。</p>
                     <ul style="padding-left:24px; margin:8px 0;">
-                        <li><strong>太阳高度角（最重要）：</strong>太阳高度角越大，单位面积接收的太阳辐射通常越多。</li>
-                        <li><strong>云量（非常重要）：</strong>云层反射和吸收太阳辐射，云量越大，海面获得的短波辐射通常越少。</li>
-                        <li><strong>纬度和季节：</strong>影响太阳高度角及日照时长，低纬度地区通常获得较多太阳辐射。</li>
-                        <li><strong>海面反照率（次要）：</strong>海面反射部分入射太阳辐射，反照率越大，海洋吸收的能量越少。</li>
+                        <li><strong>Qs（短波辐射）：</strong>由太阳高度角、云量主导。</li>
+                        <li><strong>Qb（净长波辐射）：</strong>由海表温度、云量、大气逆辐射主导。</li>
+                        <li><strong>Qe（潜热通量）：</strong>由海气湿度差、风速主导。</li>
+                        <li><strong>Qh（感热通量）：</strong>由海气温差、风速主导。</li>
                     </ul>
 
-                    <h4 style="margin-top:18px; font-size:14px; color:#24292f;">② Qb：海面有效长波辐射（Net Longwave Radiation）</h4>
-                    <ul style="padding-left:24px; margin:8px 0;">
-                        <li><strong>海表温度 SST（非常重要）：</strong>根据斯特藩–玻尔兹曼定律，海温越高，海面发射的长波辐射越强。</li>
-                        <li><strong>云量（非常重要）：</strong>云层增强向下长波辐射，通常减少海洋净长波热量损失。</li>
-                        <li><strong>大气温度和湿度（重要）：</strong>温暖、潮湿的大气会向海面发射更多长波辐射，从而减少净长波冷却。</li>
-                    </ul>
-
-                    <h4 style="margin-top:18px; font-size:14px; color:#24292f;">③ Qe：潜热通量（Latent Heat Flux）</h4>
-                    <p style="margin:6px 0;">主要由海水蒸发决定。</p>
-                    <ul style="padding-left:24px; margin:8px 0;">
-                        <li><strong>海气湿度差（最重要的驱动因素之一）：</strong>海面饱和比湿与近海面空气比湿差越大，蒸发越强。</li>
-                        <li><strong>风速（非常重要）：</strong>风速越大，海气水汽交换通常越强。</li>
-                        <li><strong>海表温度（重要）：</strong>海温升高会提高海表饱和水汽压，在其他条件不变时促进蒸发。</li>
-                    </ul>
-                    <p style="margin:6px 0; color:#57606a;"><em>因此，干燥、强风和较高海温通常有利于海洋通过蒸发损失热量。</em></p>
-
-                    <h4 style="margin-top:18px; font-size:14px; color:#24292f;">④ Qh：感热通量（Sensible Heat Flux）</h4>
-                    <p style="margin:6px 0;">主要通过海气温差引起的湍流交换实现。</p>
-                    <ul style="padding-left:24px; margin:8px 0;">
-                        <li><strong>海气温差（最重要的驱动因素之一）：</strong>海温高于气温时，热量通常由海洋传向大气。</li>
-                        <li><strong>风速（非常重要）：</strong>风速越大，湍流交换越强，感热通量的绝对值通常越大。</li>
-                        <li><strong>大气稳定度（重要）：</strong>影响湍流混合效率，进而影响感热交换。</li>
-                    </ul>
-
-                    <h3 style="margin-top:28px; color:#0969da; font-size:15px;">5.2 第二题：四种热通量的数值范围及极值分布 (Ranges &amp; Extreme Centers)</h3>
-                    <p style="color:#57606a;">四种热通量的大小范围分别是多少？最大值中心和最小值中心在哪里？</p>
-
-                    <div style="background:#fff8e1; border-left:4px solid #f0ad4e; padding:12px 16px; margin:14px 0; border-radius:0 6px 6px 0; font-size:13px;">
-                        <strong>⚠️ 统计条件与符号约定</strong><br>
-                        题目没有说明是全球多年年平均、季节平均还是某个月份，也没有提供对应的全球热通量分布图。以下按<strong>全球海洋多年年平均</strong>情况列出便于学习的近似范围：<strong>Qs 向海洋为正；Qb、Qe、Qh 向大气为正</strong>。不同资料集的极值中心会有所差别。
+                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">🗣️ 我自己的话</h3>
+                    <div class="myvoice">
+                        【待补充：用你自己的话，说说这节课你印象最深的是什么。例如："我原以为热通量都是'海洋给大气'，后来发现 Qs 是太阳给海洋，方向和其他三个相反。"】
                     </div>
 
-                    <h4 style="margin-top:18px; font-size:14px; color:#24292f;">四种热通量的示意性数量级（W/m²）</h4>
-                    <div style="overflow-x:auto; margin:12px 0;">
-                        <table style="width:100%; border-collapse:collapse; font-size:13px;">
-                            <thead>
-                                <tr style="background:#f6f8fa;">
-                                    <th style="padding:10px 12px; border:1px solid #d0d7de; text-align:left;">热通量</th>
-                                    <th style="padding:10px 12px; border:1px solid #d0d7de; text-align:left;">典型范围</th>
-                                    <th style="padding:10px 12px; border:1px solid #d0d7de; text-align:left;">较大值区域</th>
-                                    <th style="padding:10px 12px; border:1px solid #d0d7de; text-align:left;">较小值区域</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;"><strong>Qs</strong> 短波辐射</td>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">50–280</td>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">热带及副热带少云海域，约 250–280</td>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">高纬度海域，约 50–100</td>
-                                </tr>
-                                <tr style="background:#fafbfc;">
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;"><strong>Qb</strong> 净长波辐射</td>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">20–100</td>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">干燥、少云的副热带海域，约 80–100</td>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">多云、高湿度海域，约 20–40</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;"><strong>Qe</strong> 潜热通量</td>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">0–250</td>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">黑潮、墨西哥湾流及信风强盛海域，约 150–250</td>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">赤道无风带及部分高纬海域，约 0–50</td>
-                                </tr>
-                                <tr style="background:#fafbfc;">
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;"><strong>Qh</strong> 感热通量</td>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">−30–100</td>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">冬季西边界流及其延伸区；年平均局地可达约 50–100</td>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">热带暖空气覆盖区及部分高纬海域，可接近零或为负</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">❓ 当时的疑问 + 怎么想通</h3>
+                    <div class="placeholder">
+                        【待补充：写这节课你的疑问 + 后来怎么想通的。】
                     </div>
-                    <p style="font-size:13px; color:#8b949e;"><em>注：这些是示意性数量级，不是从指定热通量地图读取的严格极值，不能直接当作全球最大和最小中心的精确答案。</em></p>
 
-                    <h4 style="margin-top:22px; font-size:14px; color:#24292f;">为什么这些地区会出现极值？(Why Do Extremes Occur?)</h4>
-                    <ul style="padding-left:24px; margin:8px 0;">
-                        <li><strong>短波辐射 Qs：</strong>低纬度太阳辐射强，高纬度太阳高度角低，因此整体上从低纬向高纬减少。不过赤道附近云量较大，最高值未必恰好位于赤道。</li>
-                        <li><strong>长波辐射 Qb：</strong>干燥少云地区的大气向下长波辐射相对较弱，海洋净长波损失较大；多云潮湿地区净长波损失较小。</li>
-                        <li><strong>潜热通量 Qe：</strong>黑潮和墨西哥湾流附近，温暖海水遇到较冷、较干燥的空气，尤其在冬季，蒸发强烈，潜热损失较大。</li>
-                        <li><strong>感热通量 Qh：</strong>在冬季西边界流附近，海气温差大、风速较强，因此海洋向大气输送较多感热。</li>
-                    </ul>
-
-                    <h4 style="margin-top:22px; font-size:14px; color:#24292f;">📌 需要记住的重点 (Key Takeaways)</h4>
+                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">📌 记忆要点</h3>
                     <div style="background:#ddf4ff; border-radius:8px; padding:16px 20px; margin-top:10px;">
                         <p style="margin:6px 0;"><strong>Qs：</strong>太阳高度角 + 云量</p>
                         <p style="margin:6px 0;"><strong>Qb：</strong>海表温度 + 大气逆辐射</p>
@@ -552,483 +439,194 @@
                         <p style="margin:6px 0;"><strong>Qh：</strong>海气温差 + 风速</p>
                     </div>
 
-                    <div style="background:#fff8e1; border-left:4px solid #f0ad4e; padding:12px 16px; margin:16px 0; border-radius:0 6px 6px 0; font-size:13px;">
-                        <strong>📝 课堂作答提醒</strong><br>
-                        第二题使用了 <em>maximum and minimum center</em>（最大值和最小值中心）的表述，很可能要求根据老师 PPT 中的四张全球热通量分布图读取具体地理位置和数值。精确极值及对应经纬度区域，仍需结合这些分布图补充。
+                    <div class="ticket">
+                        <strong>🎫 出门票：</strong>【待补充：这节课你最大的收获 / 最想问老师的问题】
                     </div>
 
                 </div>
             </details>
 
+            <!-- 第6讲 -->
             <details style="margin-top:12px; border:1px solid #eaeef2; border-radius:8px; padding:0;">
                 <summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:16px; background:#f6f8fa; border-radius:8px; list-style:none;">
-                    第6章：数据分析概念与观测方法 (Data Analysis Concepts and Observational Methods)
+                    第6讲：数据分析概念与观测方法 (Data Analysis Concepts and Observational Methods)
                 </summary>
                 <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
 
-                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">6.1 基础统计概念 (Basic Statistical Concepts)</h3>
-                    <p style="color:#57606a;">用来描述数据的平均状态、波动大小，以及不同变量之间的关系。</p>
-
-                    <h4 style="margin-top:14px; font-size:14px;">误差与均值 (Errors &amp; Mean)</h4>
+                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">📝 课堂内容</h3>
                     <ul style="padding-left:24px; margin:8px 0;">
-                        <li><strong>随机误差（random error）：</strong>测量结果不规则地偏高或偏低。例如，同一水温反复测量得到略有不同的结果。独立重复测量取平均通常能减小它的影响。</li>
-                        <li><strong>系统误差（systematic error）：</strong>测量存在持续的偏差。例如，温度计总是高出真实值 0.5°C。多测几次取平均也不能消除，需要校准。</li>
-                        <li><strong>均值（mean）：</strong>数据的平均水平，例如某海域的年平均海温。</li>
+                        <li><strong>基础统计：</strong>均值、方差、标准差、协方差、相关系数。</li>
+                        <li><strong>时间序列：</strong>周期、频率、谱的形状（红谱/白谱）。</li>
+                        <li><strong>多维数据：</strong>客观分析 (objective analysis)，将不规则观测转成规则网格。</li>
+                        <li><strong>EOF 分析：</strong>把时空数据分解成空间模态 (EOFs) + 时间序列 (PCs)。</li>
                     </ul>
 
-                    <h4 style="margin-top:14px; font-size:14px;">波动与关系 (Variance &amp; Relationships)</h4>
-                    <ul style="padding-left:24px; margin:8px 0;">
-                        <li><strong>方差（variance）：</strong>数据偏离均值的平方的平均，表示波动大小。总体方差用总体大小作分母；样本方差的常见无偏估计使用 n−1。</li>
-                        <li><strong>标准差（standard deviation）：</strong>方差的平方根，与原数据单位相同，更方便理解波动幅度。</li>
-                        <li><strong>协方差（covariance）：</strong>两个变量是否倾向于一起变化。正值表示通常同增同减，负值表示通常一个增、另一个减。</li>
-                        <li><strong>相关系数（correlation）：</strong>标准化后的协方差，通常指皮尔逊相关系数，范围为 [−1, 1]，衡量线性关系的方向和强弱。<em>相关不代表因果；零相关也不一定意味着没有非线性关系。</em></li>
-                    </ul>
-
-                    <h3 style="margin-top:22px; color:#0969da; font-size:15px;">6.2 时间序列分析 (Time Series Analysis)</h3>
-                    <p>研究一个变量如何随时间变化，例如某海域连续几十年的月平均海温。可以研究趋势、周期、时间上的关联等。</p>
-                    <p style="color:#57606a;"><em>课件重点讲的是其中的频谱分析：把复杂变化分解成不同频率的成分，判断哪些周期最明显。频谱分析是时间序列分析的一种方法，二者不能完全等同。</em></p>
-
-                    <h4 style="margin-top:14px; font-size:14px;">常见周期 (Common Periods)</h4>
-                    <ul style="padding-left:24px; margin:8px 0;">
-                        <li><strong>一年周期：</strong>季节变化。</li>
-                        <li><strong>一天周期：</strong>昼夜变化。</li>
-                        <li><strong>数年尺度变化：</strong>与 ENSO 等过程有关，不一定具有严格固定的周期。</li>
-                    </ul>
-
-                    <h4 style="margin-top:14px; font-size:14px;">频率、周期与波数 (Frequency, Period &amp; Wavenumber)</h4>
-                    <ul style="padding-left:24px; margin:8px 0;">
-                        <li>频率 <em>f</em> 表示单位时间内变化多少次，周期 <em>T</em> 表示一次变化需要多久，二者满足 <strong>T = 1/f</strong>。</li>
-                        <li>分析空间变化时，可以用<strong>波数</strong>描述空间上的起伏频繁程度，对应<strong>波长</strong>。</li>
-                    </ul>
-
-                    <h4 style="margin-top:14px; font-size:14px;">谱的形状 (Spectral Shape)</h4>
-                    <ul style="padding-left:24px; margin:8px 0;">
-                        <li><strong>红谱：</strong>低频、缓慢变化的功率较大。</li>
-                        <li><strong>白谱：</strong>功率谱密度在各频率上大致相同。</li>
-                        <li>谱的形状可以帮助理解变化背后的物理过程，但<strong>不能单凭谱形确定唯一机制</strong>。</li>
-                    </ul>
-
-                    <h3 style="margin-top:22px; color:#0969da; font-size:15px;">6.3 多维数据分析 (Multi-dimensional Data Analysis)</h3>
-                    <p>多维数据可以同时涉及经度、纬度、深度和时间。课件在这里主要介绍<strong>客观分析（objective analysis）</strong>：将分布不规则的观测转换成规则网格上的估计值。</p>
-                    <p>例如，船舶只在部分位置测量了海温，但我们希望得到完整的海温地图，就需要估计没有观测的网格点。估计时会考虑：</p>
-                    <ul style="padding-left:24px; margin:8px 0;">
-                        <li><strong>空间相关尺度：</strong>相隔多远的观测仍能提供有用信息。</li>
-                        <li><strong>观测噪声：</strong>测量有多可靠。</li>
-                        <li><strong>观测之间的关系：</strong>避免把高度重复的信息算得过重。</li>
-                    </ul>
-                    <p>最终估计常表现为<strong>附近观测的加权组合</strong>；有背景场时，通常是对观测与背景之差进行加权修正。因此，它不只是简单取最近几个点的平均。</p>
-
-                    <h3 style="margin-top:28px; color:#0969da; font-size:15px;">6.4 EOF 分析简介 (What is EOF Analysis)</h3>
-                    <p>EOF 分析是大气、海洋与气候科学中最常用的多元统计方法之一。它将时空数据分解为：</p>
-                    <ul style="padding-left:24px; margin:8px 0;">
-                        <li><strong>EOFs（空间模态）</strong>：一组正交的空间基函数，代表数据中主要的空间结构。</li>
-                        <li><strong>PCs（主成分）</strong>：对应的时间序列，描述每个空间模态随时间的变化。</li>
-                    </ul>
-                    <p><strong>核心思想：</strong>用尽可能少的模态，在最小二乘意义下捕捉最大的方差。</p>
-                    <p><strong>术语对照：</strong></p>
-                    <ul style="padding-left:24px; margin:8px 0;">
-                        <li>气象/海洋/气候 → <strong>EOF</strong></li>
-                        <li>统计学/机器学习 → <strong>PCA</strong>（主成分分析）</li>
-                        <li>流体力学/工程 → <strong>POD</strong>（本征正交分解）</li>
-                        <li>数值线性代数 → <strong>SVD</strong>（奇异值分解）</li>
-                    </ul>
-                    <p style="color:#57606a;"><em>四者在数学上本质等价，只是不同学科的叫法和侧重点不同。</em></p>
-
-                    <h3 style="margin-top:22px; color:#0969da; font-size:15px;">6.5 数学框架与计算流程 (Mathematical Framework &amp; Algorithm)</h3>
-
-                    <h4 style="margin-top:14px; font-size:14px;">6.5.1 数据准备 (Data Preparation)</h4>
-                    <ul style="padding-left:24px; margin:8px 0;">
-                        <li>把时空数据整理成二维矩阵 <strong>X</strong>（空间 × 时间，或转置）。</li>
-                        <li><strong>关键步骤：去均值</strong>——EOF 分解的是"距平"（异常），不是原始场。</li>
-                        <li>多变量分析时，需先标准化（除以标准差），使各变量权重相等。</li>
-                    </ul>
-
-                    <h4 style="margin-top:14px; font-size:14px;">6.5.2 协方差矩阵 vs 相关矩阵 (Covariance vs Correlation Matrix)</h4>
-                    <ul style="padding-left:24px; margin:8px 0;">
-                        <li><strong>协方差矩阵</strong>：变量量纲相同时使用。</li>
-                        <li><strong>相关矩阵</strong>：变量量纲不同或方差差异大时使用。</li>
-                        <li>矩阵对称、半正定，保证特征值为实数、特征向量正交。</li>
-                    </ul>
-
-                    <h4 style="margin-top:14px; font-size:14px;">6.5.3 特征值分解与 SVD (Eigenvalue Decomposition &amp; SVD)</h4>
-                    <p><strong>两种等价途径：</strong></p>
-                    <ol style="padding-left:24px; margin:8px 0;">
-                        <li><strong>特征值分解：</strong>对协方差矩阵求特征向量（= EOF）和特征值（= 方差）。</li>
-                        <li><strong>SVD（推荐）：</strong>直接对距平矩阵做奇异值分解，避免显式计算协方差矩阵，数值更稳定，适合大网格数据。</li>
-                    </ol>
-                    <p><strong>核心关系：</strong>奇异值的平方 = 协方差矩阵的特征值。</p>
-
-                    <h4 style="margin-top:14px; font-size:14px;">6.5.4 主成分与重构 (Principal Components &amp; Reconstruction)</h4>
-                    <ul style="padding-left:24px; margin:8px 0;">
-                        <li>PCs = 数据在 EOFs 上的投影，彼此不相关。</li>
-                        <li>保留前 <em>k</em> 个模态，可近似重构原始数据，实现降维。</li>
-                        <li>第 <em>n</em> 个模态的方差贡献率 = 该特征值 / 总方差。</li>
-                    </ul>
-
-                    <h3 style="margin-top:22px; color:#0969da; font-size:15px;">6.6 EOF / PCA / POD / SVD 的区别 (Conceptual &amp; Practical Differences)</h3>
-                    <div style="overflow-x:auto; margin:12px 0;">
-                        <table style="width:100%; border-collapse:collapse; font-size:13px;">
-                            <thead>
-                                <tr style="background:#f6f8fa;">
-                                    <th style="padding:10px 12px; border:1px solid #d0d7de; text-align:left;">名称</th>
-                                    <th style="padding:10px 12px; border:1px solid #d0d7de; text-align:left;">学科领域</th>
-                                    <th style="padding:10px 12px; border:1px solid #d0d7de; text-align:left;">侧重</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">EOF</td>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">气象、海洋、气候</td>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">物理意义的空间模态</td>
-                                </tr>
-                                <tr style="background:#fafbfc;">
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">PCA</td>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">统计、机器学习</td>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">降维与去相关</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">POD</td>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">流体力学、工程</td>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">能量最优模态</td>
-                                </tr>
-                                <tr style="background:#fafbfc;">
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">SVD</td>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">数值线性代数</td>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">底层计算工具</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <p><strong>需要注意的实践差异：</strong></p>
-                    <ul style="padding-left:24px; margin:8px 0;">
-                        <li>协方差 vs 相关矩阵的选择</li>
-                        <li>缺失值处理方式</li>
-                        <li>EOFs 和 PCs 的归一化约定</li>
-                        <li><strong>符号不确定性</strong>：特征向量可整体变号，不影响方差贡献率，但不同软件可能符号相反。</li>
-                    </ul>
-
-                    <h3 style="margin-top:22px; color:#0969da; font-size:15px;">6.7 主要扩展方法 (Main Extensions)</h3>
-
-                    <h4 style="margin-top:14px; font-size:14px;">6.7.1 复 EOF（CEOF）——传播信号 (Complex EOF for Propagating Signals)</h4>
-                    <ul style="padding-left:24px; margin:8px 0;">
-                        <li><strong>目的：</strong>捕捉传播型信号（如沿岸陷波、中尺度涡、赤道 Kelvin 波）。</li>
-                        <li><strong>方法：</strong>用 Hilbert 变换把实数据转为复解析信号，再进行 EOF 分解。</li>
-                        <li><strong>优势：</strong>同时给出<strong>振幅</strong>（强度）和<strong>相位</strong>（传播）。相位随时间的斜率 → 频率；随空间的斜率 → 波数。</li>
-                        <li><strong>局限：</strong>信号波数带宽过宽、非均匀采样时，精度下降。</li>
-                    </ul>
-
-                    <h4 style="margin-top:14px; font-size:14px;">6.7.2 旋转 EOF（REOF）——物理可解释性 (Rotated EOF for Interpretability)</h4>
-                    <ul style="padding-left:24px; margin:8px 0;">
-                        <li><strong>动机：</strong>标准 EOF 的正交约束常导致空间模态"混合"，难以物理解释。</li>
-                        <li><strong>方法：</strong>对前几个模态做旋转（Varimax、Promax 等），使高载荷集中在局部区域。</li>
-                        <li><strong>效果：</strong>牺牲严格正交性，换取<strong>区域化</strong>和<strong>物理清晰度</strong>。</li>
-                        <li><strong>注意：</strong>旋转可能产生"伪模态"，需用分割样本或 Monte Carlo 验证稳健性。</li>
-                    </ul>
-
-                    <h4 style="margin-top:14px; font-size:14px;">6.7.3 多变量 EOF（MEOF / MV-EOF）——变量耦合 (Multivariate EOF for Coupling)</h4>
-                    <ul style="padding-left:24px; margin:8px 0;">
-                        <li><strong>方法：</strong>将多个变量（相同网格、相同时间）标准化后拼接成一个大矩阵，再做 EOF。</li>
-                        <li><strong>优势：</strong>能同时揭示多变量的<strong>耦合模态</strong>和<strong>联合演变</strong>。</li>
-                        <li><strong>典型应用：</strong>ENSO（SST + SLP + 风应力）、NAO、印度洋偶极子等。</li>
-                    </ul>
-
-                    <h4 style="margin-top:14px; font-size:14px;">6.7.4 非平稳 EOF——时变模态 (Non-Stationary EOF)</h4>
-                    <ul style="padding-left:24px; margin:8px 0;">
-                        <li><strong>问题：</strong>标准 EOF 假设空间模态不随时间变化，长期气候数据中常被违反。</li>
-                        <li><strong>CSEOF（循环平稳 EOF）：</strong>允许模态在周期内演变，适合季节循环等周期现象。</li>
-                        <li><strong>STEOF（时空 EOF）：</strong>把时间信息整合进空间模态，让模态本身随时间演化。</li>
-                        <li><strong>滑动窗口 EOF：</strong>在滑动时间窗上做 EOF，追踪模态的演变。</li>
-                    </ul>
-
-                    <h4 style="margin-top:14px; font-size:14px;">6.7.5 DINEOF——缺失数据 (DINEOF for Missing Data)</h4>
-                    <ul style="padding-left:24px; margin:8px 0;">
-                        <li><strong>目的：</strong>填补卫星观测、稀疏站位数据中的缺失值。</li>
-                        <li><strong>流程：</strong>缺失值先填 0 → SVD 分解 → 截断重构 → 把缺失位置的重构值填回 → 迭代至收敛。</li>
-                        <li><strong>优势：</strong>无需先验信息（无参数），自动利用数据内部协变关系。</li>
-                        <li><strong>局限：</strong>假设缺失随机、模态平稳；数据缺失严重时收敛慢。</li>
-                    </ul>
-
-                    <h3 style="margin-top:22px; color:#0969da; font-size:15px;">6.8 显著性检验与模态选择 (Significance Testing &amp; Mode Selection)</h3>
-                    <div style="overflow-x:auto; margin:12px 0;">
-                        <table style="width:100%; border-collapse:collapse; font-size:13px;">
-                            <thead>
-                                <tr style="background:#f6f8fa;">
-                                    <th style="padding:10px 12px; border:1px solid #d0d7de; text-align:left;">方法</th>
-                                    <th style="padding:10px 12px; border:1px solid #d0d7de; text-align:left;">原理</th>
-                                    <th style="padding:10px 12px; border:1px solid #d0d7de; text-align:left;">特点</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;"><strong>North 准则</strong></td>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">基于特征值分离度与采样误差</td>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">需要估计有效自由度</td>
-                                </tr>
-                                <tr style="background:#fafbfc;">
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;"><strong>Rule N</strong></td>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">Monte Carlo：与随机噪声特征值比较</td>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">需数据正态、独立</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;"><strong>Scree 图</strong></td>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">看特征值谱"拐点"</td>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">主观，但直观</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <p><strong>重要提醒：</strong>当特征值接近（退化）时，对应 EOF 不唯一，任何线性组合也是解。此时需用旋转或其他方法获得物理解释。</p>
-
-                    <h3 style="margin-top:22px; color:#0969da; font-size:15px;">6.9 与 DMD 的比较 (Comparison with DMD)</h3>
-                    <ul style="padding-left:24px; margin:8px 0;">
-                        <li><strong>排序标准不同：</strong>EOF/POD 按<strong>能量（方差）</strong>排序；DMD 按<strong>频率与增长率</strong>识别模态。</li>
-                        <li><strong>时间动态：</strong>EOF 不提供频率/增长率信息；DMD 每个模态带明确的频率和增长/衰减率。</li>
-                        <li><strong>选择依据：</strong>要找能量最大的空间结构 → EOF；要找特定频率的振荡模态 → DMD。</li>
-                        <li><strong>DMD 局限：</strong>要求等时间间隔采样；POD 可处理随机采样。</li>
-                    </ul>
-
-                    <h3 style="margin-top:22px; color:#0969da; font-size:15px;">6.10 地学中的典型应用 (Applications in Geosciences)</h3>
-                    <ul style="padding-left:24px; margin:8px 0;">
-                        <li><strong>遥相关型识别：</strong>NAO、PNA、ENSO 等大尺度模态。</li>
-                        <li><strong>数据降维与预测：</strong>用前几个 PC 作为回归或机器学习预测因子。</li>
-                        <li><strong>传播波追踪：</strong>CEOF 分析沿岸陷波、赤道 Kelvin 波、中尺度涡。</li>
-                        <li><strong>耦合模态：</strong>MEOF 研究 ENSO、印度洋偶极子等海气耦合现象。</li>
-                        <li><strong>缺失数据填补：</strong>DINEOF 用于卫星海色、SST 等网格产品。</li>
-                        <li><strong>区域化：</strong>REOF 识别局地气候模态。</li>
-                    </ul>
-
-                    <h3 style="margin-top:22px; color:#0969da; font-size:15px;">6.11 最佳实践清单 (Best Practices Checklist)</h3>
-                    <div style="background:#ddf4ff; border-radius:8px; padding:16px 20px; margin-top:10px;">
-                        <p style="margin:6px 0;">✅ <strong>预处理：</strong>去均值、必要时标准化、纬度网格需面积加权</p>
-                        <p style="margin:6px 0;">✅ <strong>域选择：</strong>域大小显著影响结果，建议做敏感性测试</p>
-                        <p style="margin:6px 0;">✅ <strong>符号约定：</strong>记录并统一 EOF/PC 的正负号约定</p>
-                        <p style="margin:6px 0;">✅ <strong>归一化：</strong>明确方差由 EOF 还是 PC 承载</p>
-                        <p style="margin:6px 0;">✅ <strong>截断：</strong>结合 North、Rule N、Scree 图综合判断</p>
-                        <p style="margin:6px 0;">✅ <strong>验证：</strong>交叉验证、分割样本、Monte Carlo</p>
-                        <p style="margin:6px 0;">✅ <strong>缺失值：</strong>用 DINEOF 等专门方法，别简单忽略</p>
-                        <p style="margin:6px 0;">✅ <strong>非线性：</strong>非高斯数据可考虑 kernel PCA、自编码器</p>
-                        <p style="margin:6px 0;">✅ <strong>计算：</strong>大网格直接用 SVD，用 Lanczos 等迭代求解器算前几个模态</p>
-                        <p style="margin:6px 0;">✅ <strong>解释：</strong>正交性是数学约束，不是物理定律，需结合物理知识</p>
+                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">🗣️ 我自己的话</h3>
+                    <div class="myvoice">
+                        【待补充：用你自己的话，说说这节课你印象最深的是什么。例如："我原以为 EOF 就是 PCA，后来发现它们数学上等价，但不同学科叫法不同。"】
                     </div>
 
-                    <h3 style="margin-top:22px; color:#0969da; font-size:15px;">6.12 局限与未来方向 (Limitations &amp; Future Directions)</h3>
-                    <p><strong>核心局限：</strong></p>
+                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">❓ 当时的疑问 + 怎么想通</h3>
+                    <div class="placeholder">
+                        【待补充：写这节课你的疑问 + 后来怎么想通的。】
+                    </div>
+
+                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">📌 核心要点</h3>
                     <ul style="padding-left:24px; margin:8px 0;">
-                        <li>假设<strong>线性、平稳、正交</strong></li>
-                        <li>结果对域选择、归一化、采样变率敏感</li>
-                        <li>高阶模态常被噪声主导</li>
-                    </ul>
-                    <p><strong>前沿方向：</strong></p>
-                    <ul style="padding-left:24px; margin:8px 0;">
-                        <li>非线性 EOF（kernel PCA、自编码器）</li>
-                        <li>时变 EOF（CSEOF、STEOF）</li>
-                        <li>DMD 与 Koopman 算子</li>
-                        <li>贝叶斯 EOF / 概率 PCA（不确定性量化）</li>
-                        <li>大数据 + GPU + 深度学习</li>
+                        <li>EOF / PCA / POD / SVD 数学等价，只是不同学科叫法不同。</li>
+                        <li>EOF 分解的是"距平"（异常），不是原始场。</li>
+                        <li>保留前 k 个模态，可近似重构原始数据，实现降维。</li>
+                        <li>DINEOF 可处理缺失数据，无需先验信息。</li>
                     </ul>
 
-                    <h3 style="margin-top:22px; color:#0969da; font-size:15px;">6.13 一句话总结 (One-Sentence Summary)</h3>
-                    <div style="background:#fff8e1; border-left:4px solid #f0ad4e; padding:14px 18px; margin:12px 0; border-radius:0 6px 6px 0;">
-                        <strong>统计基础 → 时间序列 → 多维数据分析 → EOF</strong>，构成海洋数据分析的递进路径。EOF 通过特征值分解或 SVD，把时空数据拆成"空间模态 + 时间序列"，用最少模态捕捉最大方差，是识别主导变率模态、降维、补缺、追踪传播信号的核心工具。
+                    <div class="ticket">
+                        <strong>🎫 出门票：</strong>【待补充：这节课你最大的收获 / 最想问老师的问题】
                     </div>
 
                 </div>
             </details>
 
+            <!-- 第7讲（带示例） -->
             <details style="margin-top:12px; border:1px solid #eaeef2; border-radius:8px; padding:0;">
                 <summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:16px; background:#f6f8fa; border-radius:8px; list-style:none;">
-                    第7章：海洋环流的动力学过程 (Dynamical Processes for Descriptive Ocean Circulation)
+                    第7讲：海洋环流的动力学过程 (Dynamical Processes for Descriptive Ocean Circulation)
                 </summary>
                 <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
 
-                    <p style="color:#57606a;"><em>内容综合了英国南极调查局、中国科大《大气-海洋学概论》讲义、哈佛大学 EPS131 课程笔记、MIT 流体力学讲义、WHOI 研究资料等公开学术资料，重点展开科氏力与地转流部分。</em></p>
+                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">📝 课堂内容</h3>
+                    <ul style="padding-left:24px; margin:8px 0;">
+                        <li><strong>罗斯贝数：</strong>Ro = U / (f·L)，大洋环流 Ro ~ 10⁻³，趋于地转平衡。</li>
+                        <li><strong>科氏力：</strong>北半球向右偏、南半球向左，垂直运动方向、不做功。</li>
+                        <li><strong>地转流：</strong>压强梯度力与科氏力平衡，沿等压线流动。</li>
+                        <li><strong>热成风：</strong>地转流垂直切变由水平密度梯度决定。</li>
+                        <li><strong>埃克曼层：</strong>表面摩擦层，螺旋结构，净输送垂直风向。</li>
+                        <li><strong>Sverdrup 平衡：</strong>风应力旋度驱动内部经向输送。</li>
+                        <li><strong>西向强化：</strong>湾流、黑潮的动力学起源。</li>
+                    </ul>
 
-                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">7.1 海洋环流动力学基础 (Foundations of Ocean Circulation Dynamics)</h3>
-
-                    <h4 style="margin-top:14px; font-size:14px;">7.1.1 尺度与罗斯贝数 (Scales &amp; Rossby Number)</h4>
-                    <p>大尺度海洋环流最关键的动力学判据是 <strong>罗斯贝数（Rossby number）</strong>：</p>
-                    <div style="background:#f6f8fa; border-left:4px solid #0969da; padding:12px 18px; margin:10px 0; font-family:monospace; font-size:14px;">
-                        Ro = U / (f · L)
+                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">🗣️ 我自己的话</h3>
+                    <div class="myvoice">
+                        <strong>我原以为：</strong>科氏力是一种真实的"力"，像引力一样把物体往下拉。<br>
+                        <strong>后来发现：</strong>科氏力其实是一个"表观力"——只有在旋转参考系里看才存在。本质上它是惯性在旋转坐标系下的一种表现。最关键的是它<strong>永远垂直于运动方向，不做功</strong>——这意味着它只能改变方向，不能改变速度大小。这个"不做功"的性质我之前完全没意识到，理解这一点后很多推导就顺了。
                     </div>
-                    <p>其中 <em>U</em> 为特征流速，<em>L</em> 为水平尺度，<em>f</em> 为科氏参数。大洋环流的 Ro ~ 10⁻³，远小于 1，这意味着非线性惯性项与科氏力相比可以忽略，运动趋于<strong>地转平衡</strong>。</p>
-                    <p><strong>地转平衡的适用条件：</strong>空间尺度大于 50–100 km、时间尺度超过 2–10 天，且远离表面摩擦层和赤道区域。</p>
 
-                    <h4 style="margin-top:14px; font-size:14px;">7.1.2 运动方程框架 (Equations of Motion)</h4>
-                    <p>局地坐标系下（<em>x</em> 向东、<em>y</em> 向北、<em>z</em> 向上），忽略小量后的水平运动方程为：</p>
-                    <div style="background:#f6f8fa; border-left:4px solid #0969da; padding:12px 18px; margin:10px 0; font-family:monospace; font-size:14px;">
-                        du/dt − f·v = −(1/ρ)·∂p/∂x + F<sub>x</sub><br>
-                        dv/dt + f·u = −(1/ρ)·∂p/∂y + F<sub>y</sub>
+                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">❓ 当时的疑问 + 怎么想通</h3>
+                    <div class="question">
+                        <strong>❓ 我当时没懂：</strong>为什么埃克曼输送的方向（北半球）是"垂直于风向、指向右侧 90°"，而不是像表层流速那样偏 45°？<br>
+                        <strong>✅ 后来想通：</strong>因为我混淆了"表层流速"和"垂直积分后的净输送"。埃克曼螺旋只是表层流速的偏转；但如果把整个埃克曼层（50–100 m）的流速垂直积分，各个深度的偏转方向相互抵消一部分，最终净输送就是垂直于风向的。这也让我理解了为什么表层 45° 和层积分 90° 是两个不同层次的结论。
                     </div>
-                    <p>垂直方向采用静力平衡近似：<code>∂p/∂z = −ρg</code>。摩擦项 <em>F</em> 仅在边界层内重要。</p>
 
-                    <h3 style="margin-top:22px; color:#0969da; font-size:15px;">7.2 科氏力 (The Coriolis Force)</h3>
-
-                    <h4 style="margin-top:14px; font-size:14px;">7.2.1 物理本质：转动参考系中的惯性力 (Physical Nature)</h4>
-                    <p>科氏力是为描述旋转参考系中运动物体而在运动方程中引入的<strong>表观力</strong>。转动坐标系中物体的运动方程可写为：</p>
-                    <div style="background:#f6f8fa; border-left:4px solid #0969da; padding:12px 18px; margin:10px 0; font-family:monospace; font-size:14px;">
-                        m·a = F + m·ω²·R − 2m·(ω × v<sub>m</sub>)
+                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">📌 核心公式</h3>
+                    <div style="overflow-x:auto; margin:12px 0;">
+                        <table style="width:100%; border-collapse:collapse; font-size:13px;">
+                            <thead>
+                                <tr style="background:#f6f8fa;">
+                                    <th style="padding:10px 12px; border:1px solid #d0d7de; text-align:left;">概念</th>
+                                    <th style="padding:10px 12px; border:1px solid #d0d7de; text-align:left;">关键公式</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">科氏参数</td>
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de; font-family:monospace; font-size:12px;">f = 2Ω·sin(φ)</td>
+                                </tr>
+                                <tr style="background:#fafbfc;">
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">地转流</td>
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de; font-family:monospace; font-size:12px;">−f·v = −(1/ρ)·∂p/∂x, f·u = −(1/ρ)·∂p/∂y</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">埃克曼输送</td>
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de; font-family:monospace; font-size:12px;">V<sub>Ek</sub> = (τ × ẑ) / (ρ₀ f)</td>
+                                </tr>
+                                <tr style="background:#fafbfc;">
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">Sverdrup 平衡</td>
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de; font-family:monospace; font-size:12px;">β·V = (1/ρ₀)·ẑ · (∇ × τ)</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                    <p>其中最后一项即为科氏力：<code>f<sub>k</sub> = −2m(ω × v<sub>m</sub>)</code>。</p>
-                    <p><strong>关键点：</strong>科氏力只有在物体相对于转动参考系有相对速度时才出现。其方向总是垂直于运动方向，因此<strong>不改变速度的大小，只改变速度的方向，对物体不做功</strong>。</p>
 
-                    <h4 style="margin-top:14px; font-size:14px;">7.2.2 数学表达与科氏参数 (Mathematical Expression)</h4>
-                    <p>矢量形式：</p>
-                    <div style="background:#f6f8fa; border-left:4px solid #0969da; padding:12px 18px; margin:10px 0; font-family:monospace; font-size:14px;">
-                        F<sub>c</sub> = −2m(Ω × V′)
-                    </div>
-                    <p><strong>Ω</strong> 为地球自转角速度矢量（指向北极方向），<strong>V′</strong> 为旋转系中的相对速度。</p>
-                    <p>在局地坐标中，水平运动下的科氏力分量为：</p>
-                    <div style="background:#f6f8fa; border-left:4px solid #0969da; padding:12px 18px; margin:10px 0; font-family:monospace; font-size:14px;">
-                        F<sub>cx</sub> = f·v, &nbsp;&nbsp; F<sub>cy</sub> = −f·u
-                    </div>
-                    <p>其中<strong>科氏参数</strong>定义为：</p>
-                    <div style="background:#f6f8fa; border-left:4px solid #0969da; padding:12px 18px; margin:10px 0; font-family:monospace; font-size:14px;">
-                        f = 2Ω·sin(φ)
-                    </div>
-                    <p>Ω = 7.29 × 10⁻⁵ s⁻¹，φ 为地理纬度。<em>f</em> 的典型值：赤道为 0，20°N 约 0.5 × 10⁻⁴ s⁻¹，40°N 约 0.93 × 10⁻⁴ s⁻¹。</p>
-
-                    <h4 style="margin-top:14px; font-size:14px;">7.2.3 偏转方向：北右南左 (Deflection Direction)</h4>
-                    <p>科氏力使北半球运动物体<strong>向右偏转</strong>，南半球向左。根源在于地球自转的角速度矢量方向：北半球 Ω 的局地垂直分量向上，(Ω × V) 的水平分量指向运动方向的右侧；南半球则相反。</p>
-                    <p><strong>直观理解：</strong>从赤道向北发射的物体，在惯性空间中保持原有的向东线速度，但地面随纬度增加而向东线速度减小，因此相对于地面，物体"超前"了，表现为向东偏转，即北半球向右。</p>
-
-                    <h4 style="margin-top:14px; font-size:14px;">7.2.4 纬向变化与赤道奇异性 (Latitudinal Variation &amp; Equatorial Singularity)</h4>
-                    <p>科氏参数随纬度变化，其变化率记为：</p>
-                    <div style="background:#f6f8fa; border-left:4px solid #0969da; padding:12px 18px; margin:10px 0; font-family:monospace; font-size:14px;">
-                        β = df/dy = 2Ω·cos(φ) / R
-                    </div>
-                    <p><em>R</em> 为地球半径。<strong>赤道处 f = 0</strong>，地转平衡不成立，运动由非线性项和摩擦力主导。这也是热带气旋不在赤道 5° 以内形成的重要原因。</p>
-
-                    <h3 style="margin-top:22px; color:#0969da; font-size:15px;">7.3 地转流 (Geostrophic Flow)</h3>
-
-                    <h4 style="margin-top:14px; font-size:14px;">7.3.1 定义与平衡条件 (Definition &amp; Balance)</h4>
-                    <p><strong>地转流</strong>是水平压强梯度力与科氏力达到精确平衡时的稳定流动：</p>
-                    <div style="background:#f6f8fa; border-left:4px solid #0969da; padding:12px 18px; margin:10px 0; font-family:monospace; font-size:14px;">
-                        f·ẑ × u + (1/ρ)·∇p = 0
-                    </div>
-                    <p>分量形式：</p>
-                    <div style="background:#f6f8fa; border-left:4px solid #0969da; padding:12px 18px; margin:10px 0; font-family:monospace; font-size:14px;">
-                        −f·v = −(1/ρ)·∂p/∂x<br>
-                        f·u = −(1/ρ)·∂p/∂y
-                    </div>
-                    <p>该平衡在海洋内部（表面摩擦层之下、远离赤道和强边界流区）是极好的近似。</p>
-
-                    <h4 style="margin-top:14px; font-size:14px;">7.3.2 地转流与海面高度 (Geostrophic Flow &amp; Sea Surface Height)</h4>
-                    <p>对于海洋表层，压力由海面高度异常 <em>h</em>（相对于大地水准面）决定，地转流速度可直接由海面坡度求得：</p>
-                    <div style="background:#f6f8fa; border-left:4px solid #0969da; padding:12px 18px; margin:10px 0; font-family:monospace; font-size:14px;">
-                        u = −(g/f)·∂h/∂y, &nbsp;&nbsp; v = (g/f)·∂h/∂x
-                    </div>
-                    <p><strong>规律：</strong>北半球地转流沿等压线（海面高度等值线）流动，<strong>高海面位于流向的右侧</strong>。流速大小与海面坡度成正比、与 <em>f</em> 成反比。</p>
-                    <p><strong>量级估计：</strong><em>f</em> ~ 10⁻⁴ s⁻¹，流速 1 m/s 对应的海面坡度约为 10⁻⁵，即<strong>每 100 km 海面仅升高约 1 m</strong>。</p>
-
-                    <h4 style="margin-top:14px; font-size:14px;">7.3.3 热成风关系 (Thermal Wind Relation)</h4>
-                    <p>由于无法直接测量海洋内部的绝对压力场，实践中由<strong>密度场</strong>反推地转流。将地转方程对 <em>z</em> 求导并代入静力平衡，得到<strong>热成风方程</strong>：</p>
-                    <div style="background:#f6f8fa; border-left:4px solid #0969da; padding:12px 18px; margin:10px 0; font-family:monospace; font-size:14px;">
-                        f·∂u/∂z = (g/ρ)·∂ρ/∂y, &nbsp;&nbsp; −f·∂v/∂z = (g/ρ)·∂ρ/∂x
-                    </div>
-                    <p><strong>物理含义：</strong>地转流的垂直切变由水平密度梯度决定。北半球，轻（暖）水位于流速较大方向的右侧，因此温跃层的倾斜方向可用来推断地转流的垂向结构。</p>
-
-                    <h4 style="margin-top:14px; font-size:14px;">7.3.4 地转流的计算：动力高度法 (Dynamic Height Method)</h4>
-                    <p>沿断面布设 CTD 站测量温盐，用状态方程计算密度场，积分热成风方程可得两深度间的<strong>相对流速</strong>：</p>
-                    <div style="background:#f6f8fa; border-left:4px solid #0969da; padding:12px 18px; margin:10px 0; font-family:monospace; font-size:14px;">
-                        v(z₁) = v(z₀) + (g/(f·ρ))·∫[z₀→z₁] (∂ρ/∂x) dz
-                    </div>
-                    <p>若假设某一参考深度（"无运动面"）流速为零，即可得到绝对地转流剖面。该方法给出的是<strong>断面法向</strong>的相对输送量。</p>
-
-                    <h3 style="margin-top:22px; color:#0969da; font-size:15px;">7.4 埃克曼层：风生海流的边界层动力学 (Ekman Layer: Boundary Layer Dynamics)</h3>
-
-                    <h4 style="margin-top:14px; font-size:14px;">7.4.1 埃克曼平衡 (Ekman Balance)</h4>
-                    <p>在表面摩擦层（约 50–100 m）内，科氏力与湍流摩擦力平衡（北半球）：</p>
-                    <div style="background:#f6f8fa; border-left:4px solid #0969da; padding:12px 18px; margin:10px 0; font-family:monospace; font-size:14px;">
-                        f·v + K<sub>z</sub>·∂²u/∂z² = 0<br>
-                        −f·u + K<sub>z</sub>·∂²v/∂z² = 0
-                    </div>
-                    <p>埃克曼假设：密度均匀、海洋无限深广、风场稳定、<em>K<sub>z</sub></em> 为常数、忽略 <em>f</em> 的纬度变化。</p>
-
-                    <h4 style="margin-top:14px; font-size:14px;">7.4.2 埃克曼螺旋 (Ekman Spiral)</h4>
-                    <p>方程的解表明：表层流速<strong>偏向风向右侧 45°</strong>（北半球），流速随深度按指数衰减，流向随深度持续右偏。各层流速矢量端点连成<strong>埃克曼螺旋</strong>。</p>
-
-                    <h4 style="margin-top:14px; font-size:14px;">7.4.3 埃克曼输送 (Ekman Transport)</h4>
-                    <p>对埃克曼层垂直积分，得到净<strong>埃克曼输送</strong>：</p>
-                    <div style="background:#f6f8fa; border-left:4px solid #0969da; padding:12px 18px; margin:10px 0; font-family:monospace; font-size:14px;">
-                        V<sub>Ek</sub> = (τ × ẑ) / (ρ₀ · f)
-                    </div>
-                    <p>北半球输送方向<strong>垂直于风向、指向风向右侧 90°</strong>。埃克曼输送的辐散/辐合通过改变水柱高度影响行星涡度，驱动其下的 Sverdrup 环流。</p>
-
-                    <h3 style="margin-top:22px; color:#0969da; font-size:15px;">7.5 风生环流与西向强化 (Wind-Driven Circulation &amp; Western Intensification)</h3>
-
-                    <h4 style="margin-top:14px; font-size:14px;">7.5.1 Sverdrup 平衡 (Sverdrup Balance)</h4>
-                    <p>埃克曼泵吸驱动海洋内部的经向输送，满足 <strong>Sverdrup 关系</strong>：</p>
-                    <div style="background:#f6f8fa; border-left:4px solid #0969da; padding:12px 18px; margin:10px 0; font-family:monospace; font-size:14px;">
-                        β·V = (1/ρ₀)·ẑ · (∇ × τ)
-                    </div>
-                    <p>其中 <em>V</em> 为深度积分的经向输送，<em>β = df/dy</em>。这一关系表明：<strong>风应力旋度直接控制大洋内部的经向输送</strong>。</p>
-
-                    <h4 style="margin-top:14px; font-size:14px;">7.5.2 西向强化 (Western Intensification)</h4>
-                    <p>Sverdrup 关系无法同时满足大洋东西两侧的边界条件（无流量穿过边界）。因此必须在<strong>西侧</strong>存在一个窄而强的边界层——这就是<strong>西边界流</strong>（湾流、黑潮等）的动力学起源。西边界流中摩擦力不可忽略，科氏力与压强梯度力的简单平衡被打破，涡度收支由摩擦项平衡。</p>
-
-                    <h3 style="margin-top:26px; color:#0969da; font-size:15px;">🌊 全球地转流场实例 (Global Geostrophic Velocity Field)</h3>
-                    <p>下图展示了 CMEMS SSALTO/DUACS L4 产品（0.125° 分辨率）计算的全球绝对地转流速场，可直观看到西边界流（湾流、黑潮）、南极绕极流、赤道流系等主要环流结构。</p>
+                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">🌊 全球地转流场实例</h3>
+                    <p>下图展示了 CMEMS SSALTO/DUACS L4 产品计算的全球绝对地转流速场，可直观看到西边界流、南极绕极流、赤道流系等结构。</p>
                     <div style="text-align:center; margin:20px 0;">
                         <a href="global-geostrophic-velocity.png" target="_blank">
                             <img src="global-geostrophic-velocity.png" alt="Global Geostrophic Velocity Field" style="max-width:100%; height:auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.12); cursor:zoom-in;">
                         </a>
                     </div>
                     <p style="text-align:center; font-size:13px; color:#8b949e;">点击图片查看大图 · 数据来源：CMEMS SSALTO/DUACS L4 (NRT)，2026-10-10</p>
-                    <p>从图中可以识别出：</p>
-                    <ul style="padding-left:24px; margin:8px 0;">
-                        <li><strong>西边界流：</strong>湾流（Gulf Stream）、黑潮（Kuroshio）——流速大、流幅窄，对应西向强化理论。</li>
-                        <li><strong>南极绕极流（ACC）：</strong>环绕南极的强流，是全球大洋传送带的关键环节。</li>
-                        <li><strong>赤道流系：</strong>北赤道流、南赤道流、赤道逆流——由信风驱动的纬向流动。</li>
-                        <li><strong>中尺度涡旋：</strong>遍布大洋的涡旋结构，对应 Rossby 数小但非零的中尺度过程。</li>
-                    </ul>
 
-                    <h3 style="margin-top:26px; color:#0969da; font-size:15px;">7.6 本章要点 (Key Takeaways)</h3>
-                    <div style="overflow-x:auto; margin:12px 0;">
-                        <table style="width:100%; border-collapse:collapse; font-size:13px;">
-                            <thead>
-                                <tr style="background:#f6f8fa;">
-                                    <th style="padding:10px 12px; border:1px solid #d0d7de; text-align:left;">概念</th>
-                                    <th style="padding:10px 12px; border:1px solid #d0d7de; text-align:left;">核心内容</th>
-                                    <th style="padding:10px 12px; border:1px solid #d0d7de; text-align:left;">关键公式</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">科氏力</td>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">转动参考系中的惯性力，垂直运动方向、不做功</td>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de; font-family:monospace; font-size:12px;">F<sub>c</sub> = −2m(Ω × V′), f = 2Ω sin φ</td>
-                                </tr>
-                                <tr style="background:#fafbfc;">
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">地转流</td>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">压强梯度力与科氏力平衡，沿等压线流动</td>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de; font-family:monospace; font-size:12px;">−fv = −ρ⁻¹ ∂p/∂x, fu = −ρ⁻¹ ∂p/∂y</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">热成风</td>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">流速垂向切变由水平密度梯度决定</td>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de; font-family:monospace; font-size:12px;">f ∂u/∂z = (g/ρ) ∂ρ/∂y</td>
-                                </tr>
-                                <tr style="background:#fafbfc;">
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">埃克曼层</td>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">表层摩擦层，螺旋结构，净输送垂直风向</td>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de; font-family:monospace; font-size:12px;">V<sub>Ek</sub> = (τ × ẑ) / (ρ₀ f)</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">Sverdrup 平衡</td>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">风应力旋度驱动内部经向输送</td>
-                                    <td style="padding:10px 12px; border:1px solid #d0d7de; font-family:monospace; font-size:12px;">β V = ρ₀⁻¹ ẑ · (∇ × τ)</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <div style="background:#fff8e1; border-left:4px solid #f0ad4e; padding:12px 16px; margin:16px 0; border-radius:0 6px 6px 0; font-size:13px;">
-                        <strong>📝 学习提示</strong><br>
-                        本章内容与第4章（水团分布）、第5章（质量与热量收支）紧密相关。科氏力与地转平衡是理解大洋环流的核心，建议结合上面那张全球地转流场图，对照识别各大洋的西边界流、赤道流系与南极绕极流。
+                    <div class="ticket">
+                        <strong>🎫 出门票：</strong>【待补充：这节课你最大的收获 / 最想问老师的问题。例如："我理解了埃克曼螺旋和埃克曼输送的区别，想问老师：在实际观测中怎么验证埃克曼螺旋的存在？"】
                     </div>
 
                 </div>
             </details>
+
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 🎬 故事会 (Story Time) —— 对应评分表 C 项 -->
+        <!-- ============================================================ -->
+        <section>
+            <h2>🎬 故事会 (Story Time)</h2>
+            <p>这里记录我自己动手做过的小项目、小实验、小探索。每个故事都按"开头（现象/疑问）→ 中间（怎么找答案）→ 结尾（结论 + 还想知道什么）"来写。</p>
+
+            <!-- 故事1（带示例） -->
+            <details style="margin-top:20px; border:1px solid #eaeef2; border-radius:8px; padding:0;">
+                <summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:16px; background:#f6f8fa; border-radius:8px; list-style:none;">
+                    故事1：我用 Python 下载了 Argo 浮标数据
+                </summary>
+                <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
+
+                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">🎬 开头（现象/疑问）</h3>
+                    <div class="myvoice">
+                        上完第4讲之后，我对 T-S 图识别水团这件事特别好奇。我想：<strong>能不能自己下载一份真实的海洋观测数据，画一张真实的 T-S 图？</strong>
+                    </div>
+
+                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">🔍 中间（怎么找答案）</h3>
+                    <div class="myvoice">
+                        我先查了 Argo 数据的下载方式，发现有几个渠道：<br>
+                        ① 法国 Ifremer 的 GDAC（<code>https://data-argo.ifremer.fr</code>）<br>
+                        ② 美国 USGODAE<br>
+                        ③ Python 库 <code>argopy</code><br><br>
+                        我选了 <code>argopy</code>，因为它可以直接在 Python 里按区域、时间筛选，不用手动下载一堆文件。跟着官方文档写了几行代码，成功拿到了一批北大西洋的温盐剖面数据。
+                    </div>
+
+                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">🏁 结尾（结论 + 还想知道什么）</h3>
+                    <div class="myvoice">
+                        <strong>我做了什么：</strong>用 <code>argopy</code> 下载了北大西洋一批 Argo 数据，用 Xarray 读入，然后用 Matplotlib 画了 T-S 图。<br>
+                        <strong>结论：</strong>T-S 图上确实能看到不同水团的"簇"，和课堂上讲的一致。北大西洋中层水的盐度极大值非常明显。<br>
+                        <strong>还想知道：</strong>如果加上时间维度，能不能看出水团随季节的变化？
+                    </div>
+
+                    <div class="placeholder">
+                        【待补充：建议把你自己画的 T-S 图截图上传，作为"证据"。文件名例如：<code>argo-ts-diagram.png</code>，然后在这里插入图片。】
+                    </div>
+
+                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">📎 证据</h3>
+                    <div class="placeholder">
+                        【待补充：1 张图 / 1 段代码 / 1 个数据链接，证明你真的做过。】
+                    </div>
+
+                </div>
+            </details>
+
+            <!-- 故事2（占位） -->
+            <details style="margin-top:12px; border:1px solid #eaeef2; border-radius:8px; padding:0;">
+                <summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:16px; background:#f6f8fa; border-radius:8px; list-style:none;">
+                    【待补充：故事2标题】
+                </summary>
+                <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
+                    <div class="placeholder">
+                        【待补充：开头（现象/疑问）→ 中间（怎么找答案）→ 结尾（结论 + 还想知道什么）。记得写"你做了什么"，不是转述教材。】
+                    </div>
+                </div>
+            </details>
+
+            <div class="placeholder">
+                【待补充：故事会至少 2–3 个。可以是：用 Python 画 T-S 图、用 EOF 分析某数据、下载 HYCOM 数据分析某区域、画某个月的海温分布图等。只要是你自己动手做的就行。】
+            </div>
+
         </section>
 
         <section>
@@ -1041,8 +639,8 @@
             </div>
 
             <div class="project">
-                <h3>Personal Portfolio Website</h3>
-                <p>使用纯 HTML 和 CSS 构建的个人网站，采用 Flexbox 与响应式布局，部署在 GitHub Pages 上。用于整理研究方向、笔记与项目。</p>
+                <h3>Personal Knowledge Base Website</h3>
+                <p>使用纯 HTML 和 CSS 构建的个人知识库网站，采用 Flexbox 与响应式布局，部署在 GitHub Pages 上。用于整理研究方向、笔记与项目。</p>
                 <span class="meta">Tech: HTML, CSS, GitHub Pages</span><br>
                 <a href="https://github.com/youhaoyu152-ux/youhaoyu152-ux.github.io">View source on GitHub →</a>
             </div>
@@ -1060,23 +658,19 @@
 
             <div class="note">
                 <span class="date">2026-10</span>
-                整理第7章"海洋环流的动力学过程"，涵盖罗斯贝数、科氏力、地转流、热成风、埃克曼层、Sverdrup 平衡与西向强化，并结合 CMEMS 全球地转流场数据。
+                重整了网站框架：新增「教材笔记」和「故事会」两个板块，把「课程笔记」改成按"讲"排列。
             </div>
             <div class="note">
                 <span class="date">2026-10</span>
-                补全了第4章"水团特征的典型分布"，涵盖温度、盐度、密度的全球分布、T-S 图、主要水团特征和三大洋对比。
+                整理第7讲"海洋环流的动力学过程"，涵盖罗斯贝数、科氏力、地转流、埃克曼层、Sverdrup 平衡与西向强化。
             </div>
             <div class="note">
                 <span class="date">2026-10</span>
-                整理了海洋数据分析基础（统计概念、时间序列、客观分析）与 EOF 方法的学习笔记，涵盖数学框架、SVD 实现、CEOF/REOF/MEOF/DINEOF 等扩展，以及在海洋与气候数据分析中的应用。
+                补全了第4讲"水团特征的典型分布"，涵盖 T-S 图、主要水团特征和三大洋对比。
             </div>
             <div class="note">
-                <span class="date">2026-09</span>
-                系统学习物理海洋学基础，梳理了科氏力、地转流、Ekman 螺旋等核心概念。
-            </div>
-            <div class="note">
-                <span class="date">2026-09</span>
-                开始用 Python 处理海洋数据，掌握了 NetCDF 文件读取和基本绘图流程。
+                <span class="date">2026-10</span>
+                整理了海洋数据分析基础（统计概念、时间序列、客观分析）与 EOF 方法。
             </div>
 
         </section>
