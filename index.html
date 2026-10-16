@@ -834,6 +834,200 @@
 
                 </div>
             </details>
+                        <details style="margin-top:12px; border:1px solid #eaeef2; border-radius:8px; padding:0;">
+                <summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:16px; background:#f6f8fa; border-radius:8px; list-style:none;">
+                    第7章：海洋环流的动力学过程 (Dynamical Processes for Descriptive Ocean Circulation)
+                </summary>
+                <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
+
+                    <p style="color:#57606a;"><em>内容综合了英国南极调查局、中国科大《大气-海洋学概论》讲义、哈佛大学 EPS131 课程笔记、MIT 流体力学讲义、WHOI 研究资料等公开学术资料，重点展开科氏力与地转流部分。</em></p>
+
+                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">7.1 海洋环流动力学基础 (Foundations of Ocean Circulation Dynamics)</h3>
+
+                    <h4 style="margin-top:14px; font-size:14px;">7.1.1 尺度与罗斯贝数 (Scales &amp; Rossby Number)</h4>
+                    <p>大尺度海洋环流最关键的动力学判据是 <strong>罗斯贝数（Rossby number）</strong>：</p>
+                    <div style="background:#f6f8fa; border-left:4px solid #0969da; padding:12px 18px; margin:10px 0; font-family:monospace; font-size:14px;">
+                        Ro = U / (f · L)
+                    </div>
+                    <p>其中 <em>U</em> 为特征流速，<em>L</em> 为水平尺度，<em>f</em> 为科氏参数。大洋环流的 Ro ~ 10⁻³，远小于 1，这意味着非线性惯性项与科氏力相比可以忽略，运动趋于<strong>地转平衡</strong>。</p>
+                    <p><strong>地转平衡的适用条件：</strong>空间尺度大于 50–100 km、时间尺度超过 2–10 天，且远离表面摩擦层和赤道区域。</p>
+
+                    <h4 style="margin-top:14px; font-size:14px;">7.1.2 运动方程框架 (Equations of Motion)</h4>
+                    <p>局地坐标系下（<em>x</em> 向东、<em>y</em> 向北、<em>z</em> 向上），忽略小量后的水平运动方程为：</p>
+                    <div style="background:#f6f8fa; border-left:4px solid #0969da; padding:12px 18px; margin:10px 0; font-family:monospace; font-size:14px;">
+                        du/dt − f·v = −(1/ρ)·∂p/∂x + F<sub>x</sub><br>
+                        dv/dt + f·u = −(1/ρ)·∂p/∂y + F<sub>y</sub>
+                    </div>
+                    <p>垂直方向采用静力平衡近似：<code>∂p/∂z = −ρg</code>。摩擦项 <em>F</em> 仅在边界层内重要。</p>
+
+                    <h3 style="margin-top:22px; color:#0969da; font-size:15px;">7.2 科氏力 (The Coriolis Force)</h3>
+
+                    <h4 style="margin-top:14px; font-size:14px;">7.2.1 物理本质：转动参考系中的惯性力 (Physical Nature)</h4>
+                    <p>科氏力是为描述旋转参考系中运动物体而在运动方程中引入的<strong>表观力</strong>。转动坐标系中物体的运动方程可写为：</p>
+                    <div style="background:#f6f8fa; border-left:4px solid #0969da; padding:12px 18px; margin:10px 0; font-family:monospace; font-size:14px;">
+                        m·a = F + m·ω²·R − 2m·(ω × v<sub>m</sub>)
+                    </div>
+                    <p>其中最后一项即为科氏力：<code>f<sub>k</sub> = −2m(ω × v<sub>m</sub>)</code>。</p>
+                    <p><strong>关键点：</strong>科氏力只有在物体相对于转动参考系有相对速度时才出现。其方向总是垂直于运动方向，因此<strong>不改变速度的大小，只改变速度的方向，对物体不做功</strong>。</p>
+
+                    <h4 style="margin-top:14px; font-size:14px;">7.2.2 数学表达与科氏参数 (Mathematical Expression)</h4>
+                    <p>矢量形式：</p>
+                    <div style="background:#f6f8fa; border-left:4px solid #0969da; padding:12px 18px; margin:10px 0; font-family:monospace; font-size:14px;">
+                        F<sub>c</sub> = −2m(Ω × V′)
+                    </div>
+                    <p><strong>Ω</strong> 为地球自转角速度矢量（指向北极方向），<strong>V′</strong> 为旋转系中的相对速度。</p>
+                    <p>在局地坐标中，水平运动下的科氏力分量为：</p>
+                    <div style="background:#f6f8fa; border-left:4px solid #0969da; padding:12px 18px; margin:10px 0; font-family:monospace; font-size:14px;">
+                        F<sub>cx</sub> = f·v, &nbsp;&nbsp; F<sub>cy</sub> = −f·u
+                    </div>
+                    <p>其中<strong>科氏参数</strong>定义为：</p>
+                    <div style="background:#f6f8fa; border-left:4px solid #0969da; padding:12px 18px; margin:10px 0; font-family:monospace; font-size:14px;">
+                        f = 2Ω·sin(φ)
+                    </div>
+                    <p>Ω = 7.29 × 10⁻⁵ s⁻¹，φ 为地理纬度。<em>f</em> 的典型值：赤道为 0，20°N 约 0.5 × 10⁻⁴ s⁻¹，40°N 约 0.93 × 10⁻⁴ s⁻¹。</p>
+
+                    <h4 style="margin-top:14px; font-size:14px;">7.2.3 偏转方向：北右南左 (Deflection Direction)</h4>
+                    <p>科氏力使北半球运动物体<strong>向右偏转</strong>，南半球向左。根源在于地球自转的角速度矢量方向：北半球 Ω 的局地垂直分量向上，(Ω × V) 的水平分量指向运动方向的右侧；南半球则相反。</p>
+                    <p><strong>直观理解：</strong>从赤道向北发射的物体，在惯性空间中保持原有的向东线速度，但地面随纬度增加而向东线速度减小，因此相对于地面，物体"超前"了，表现为向东偏转，即北半球向右。</p>
+
+                    <h4 style="margin-top:14px; font-size:14px;">7.2.4 纬向变化与赤道奇异性 (Latitudinal Variation &amp; Equatorial Singularity)</h4>
+                    <p>科氏参数随纬度变化，其变化率记为：</p>
+                    <div style="background:#f6f8fa; border-left:4px solid #0969da; padding:12px 18px; margin:10px 0; font-family:monospace; font-size:14px;">
+                        β = df/dy = 2Ω·cos(φ) / R
+                    </div>
+                    <p><em>R</em> 为地球半径。<strong>赤道处 f = 0</strong>，地转平衡不成立，运动由非线性项和摩擦力主导。这也是热带气旋不在赤道 5° 以内形成的重要原因。</p>
+
+                    <h3 style="margin-top:22px; color:#0969da; font-size:15px;">7.3 地转流 (Geostrophic Flow)</h3>
+
+                    <h4 style="margin-top:14px; font-size:14px;">7.3.1 定义与平衡条件 (Definition &amp; Balance)</h4>
+                    <p><strong>地转流</strong>是水平压强梯度力与科氏力达到精确平衡时的稳定流动：</p>
+                    <div style="background:#f6f8fa; border-left:4px solid #0969da; padding:12px 18px; margin:10px 0; font-family:monospace; font-size:14px;">
+                        f·ẑ × u + (1/ρ)·∇p = 0
+                    </div>
+                    <p>分量形式：</p>
+                    <div style="background:#f6f8fa; border-left:4px solid #0969da; padding:12px 18px; margin:10px 0; font-family:monospace; font-size:14px;">
+                        −f·v = −(1/ρ)·∂p/∂x<br>
+                        f·u = −(1/ρ)·∂p/∂y
+                    </div>
+                    <p>该平衡在海洋内部（表面摩擦层之下、远离赤道和强边界流区）是极好的近似。</p>
+
+                    <h4 style="margin-top:14px; font-size:14px;">7.3.2 地转流与海面高度 (Geostrophic Flow &amp; Sea Surface Height)</h4>
+                    <p>对于海洋表层，压力由海面高度异常 <em>h</em>（相对于大地水准面）决定，地转流速度可直接由海面坡度求得：</p>
+                    <div style="background:#f6f8fa; border-left:4px solid #0969da; padding:12px 18px; margin:10px 0; font-family:monospace; font-size:14px;">
+                        u = −(g/f)·∂h/∂y, &nbsp;&nbsp; v = (g/f)·∂h/∂x
+                    </div>
+                    <p><strong>规律：</strong>北半球地转流沿等压线（海面高度等值线）流动，<strong>高海面位于流向的右侧</strong>。流速大小与海面坡度成正比、与 <em>f</em> 成反比。</p>
+                    <p><strong>量级估计：</strong><em>f</em> ~ 10⁻⁴ s⁻¹，流速 1 m/s 对应的海面坡度约为 10⁻⁵，即<strong>每 100 km 海面仅升高约 1 m</strong>。</p>
+
+                    <h4 style="margin-top:14px; font-size:14px;">7.3.3 热成风关系 (Thermal Wind Relation)</h4>
+                    <p>由于无法直接测量海洋内部的绝对压力场，实践中由<strong>密度场</strong>反推地转流。将地转方程对 <em>z</em> 求导并代入静力平衡，得到<strong>热成风方程</strong>：</p>
+                    <div style="background:#f6f8fa; border-left:4px solid #0969da; padding:12px 18px; margin:10px 0; font-family:monospace; font-size:14px;">
+                        f·∂u/∂z = (g/ρ)·∂ρ/∂y, &nbsp;&nbsp; −f·∂v/∂z = (g/ρ)·∂ρ/∂x
+                    </div>
+                    <p><strong>物理含义：</strong>地转流的垂直切变由水平密度梯度决定。北半球，轻（暖）水位于流速较大方向的右侧，因此温跃层的倾斜方向可用来推断地转流的垂向结构。</p>
+
+                    <h4 style="margin-top:14px; font-size:14px;">7.3.4 地转流的计算：动力高度法 (Dynamic Height Method)</h4>
+                    <p>沿断面布设 CTD 站测量温盐，用状态方程计算密度场，积分热成风方程可得两深度间的<strong>相对流速</strong>：</p>
+                    <div style="background:#f6f8fa; border-left:4px solid #0969da; padding:12px 18px; margin:10px 0; font-family:monospace; font-size:14px;">
+                        v(z₁) = v(z₀) + (g/(f·ρ))·∫[z₀→z₁] (∂ρ/∂x) dz
+                    </div>
+                    <p>若假设某一参考深度（"无运动面"）流速为零，即可得到绝对地转流剖面。该方法给出的是<strong>断面法向</strong>的相对输送量。</p>
+
+                    <h3 style="margin-top:22px; color:#0969da; font-size:15px;">7.4 埃克曼层：风生海流的边界层动力学 (Ekman Layer: Boundary Layer Dynamics)</h3>
+
+                    <h4 style="margin-top:14px; font-size:14px;">7.4.1 埃克曼平衡 (Ekman Balance)</h4>
+                    <p>在表面摩擦层（约 50–100 m）内，科氏力与湍流摩擦力平衡（北半球）：</p>
+                    <div style="background:#f6f8fa; border-left:4px solid #0969da; padding:12px 18px; margin:10px 0; font-family:monospace; font-size:14px;">
+                        f·v + K<sub>z</sub>·∂²u/∂z² = 0<br>
+                        −f·u + K<sub>z</sub>·∂²v/∂z² = 0
+                    </div>
+                    <p>埃克曼假设：密度均匀、海洋无限深广、风场稳定、<em>K<sub>z</sub></em> 为常数、忽略 <em>f</em> 的纬度变化。</p>
+
+                    <h4 style="margin-top:14px; font-size:14px;">7.4.2 埃克曼螺旋 (Ekman Spiral)</h4>
+                    <p>方程的解表明：表层流速<strong>偏向风向右侧 45°</strong>（北半球），流速随深度按指数衰减，流向随深度持续右偏。各层流速矢量端点连成<strong>埃克曼螺旋</strong>。</p>
+
+                    <h4 style="margin-top:14px; font-size:14px;">7.4.3 埃克曼输送 (Ekman Transport)</h4>
+                    <p>对埃克曼层垂直积分，得到净<strong>埃克曼输送</strong>：</p>
+                    <div style="background:#f6f8fa; border-left:4px solid #0969da; padding:12px 18px; margin:10px 0; font-family:monospace; font-size:14px;">
+                        V<sub>Ek</sub> = (τ × ẑ) / (ρ₀ · f)
+                    </div>
+                    <p>北半球输送方向<strong>垂直于风向、指向风向右侧 90°</strong>。埃克曼输送的辐散/辐合通过改变水柱高度影响行星涡度，驱动其下的 Sverdrup 环流。</p>
+
+                    <h3 style="margin-top:22px; color:#0969da; font-size:15px;">7.5 风生环流与西向强化 (Wind-Driven Circulation &amp; Western Intensification)</h3>
+
+                    <h4 style="margin-top:14px; font-size:14px;">7.5.1 Sverdrup 平衡 (Sverdrup Balance)</h4>
+                    <p>埃克曼泵吸驱动海洋内部的经向输送，满足 <strong>Sverdrup 关系</strong>：</p>
+                    <div style="background:#f6f8fa; border-left:4px solid #0969da; padding:12px 18px; margin:10px 0; font-family:monospace; font-size:14px;">
+                        β·V = (1/ρ₀)·ẑ · (∇ × τ)
+                    </div>
+                    <p>其中 <em>V</em> 为深度积分的经向输送，<em>β = df/dy</em>。这一关系表明：<strong>风应力旋度直接控制大洋内部的经向输送</strong>。</p>
+
+                    <h4 style="margin-top:14px; font-size:14px;">7.5.2 西向强化 (Western Intensification)</h4>
+                    <p>Sverdrup 关系无法同时满足大洋东西两侧的边界条件（无流量穿过边界）。因此必须在<strong>西侧</strong>存在一个窄而强的边界层——这就是<strong>西边界流</strong>（湾流、黑潮等）的动力学起源。西边界流中摩擦力不可忽略，科氏力与压强梯度力的简单平衡被打破，涡度收支由摩擦项平衡。</p>
+
+                    <h3 style="margin-top:26px; color:#0969da; font-size:15px;">🌊 全球地转流场实例 (Global Geostrophic Velocity Field)</h3>
+                    <p>下图展示了 CMEMS SSALTO/DUACS L4 产品（0.125° 分辨率）计算的全球绝对地转流速场，可直观看到西边界流（湾流、黑潮）、南极绕极流、赤道流系等主要环流结构。</p>
+                    <div style="text-align:center; margin:20px 0;">
+                        <a href="global-geostrophic-velocity.png" target="_blank">
+                            <img src="global-geostrophic-velocity.png" alt="Global Geostrophic Velocity Field" style="max-width:100%; height:auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.12); cursor:zoom-in;">
+                        </a>
+                    </div>
+                    <p style="text-align:center; font-size:13px; color:#8b949e;">点击图片查看大图 · 数据来源：CMEMS SSALTO/DUACS L4 (NRT)，2026-10-10</p>
+                    <p>从图中可以识别出：</p>
+                    <ul style="padding-left:24px; margin:8px 0;">
+                        <li><strong>西边界流：</strong>湾流（Gulf Stream）、黑潮（Kuroshio）——流速大、流幅窄，对应西向强化理论。</li>
+                        <li><strong>南极绕极流（ACC）：</strong>环绕南极的强流，是全球大洋传送带的关键环节。</li>
+                        <li><strong>赤道流系：</strong>北赤道流、南赤道流、赤道逆流——由信风驱动的纬向流动。</li>
+                        <li><strong>中尺度涡旋：</strong>遍布大洋的涡旋结构，对应 Rossby 数小但非零的中尺度过程。</li>
+                    </ul>
+
+                    <h3 style="margin-top:26px; color:#0969da; font-size:15px;">7.6 本章要点 (Key Takeaways)</h3>
+                    <div style="overflow-x:auto; margin:12px 0;">
+                        <table style="width:100%; border-collapse:collapse; font-size:13px;">
+                            <thead>
+                                <tr style="background:#f6f8fa;">
+                                    <th style="padding:10px 12px; border:1px solid #d0d7de; text-align:left;">概念</th>
+                                    <th style="padding:10px 12px; border:1px solid #d0d7de; text-align:left;">核心内容</th>
+                                    <th style="padding:10px 12px; border:1px solid #d0d7de; text-align:left;">关键公式</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">科氏力</td>
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">转动参考系中的惯性力，垂直运动方向、不做功</td>
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de; font-family:monospace; font-size:12px;">F<sub>c</sub> = −2m(Ω × V′), f = 2Ω sin φ</td>
+                                </tr>
+                                <tr style="background:#fafbfc;">
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">地转流</td>
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">压强梯度力与科氏力平衡，沿等压线流动</td>
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de; font-family:monospace; font-size:12px;">−fv = −ρ⁻¹ ∂p/∂x, fu = −ρ⁻¹ ∂p/∂y</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">热成风</td>
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">流速垂向切变由水平密度梯度决定</td>
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de; font-family:monospace; font-size:12px;">f ∂u/∂z = (g/ρ) ∂ρ/∂y</td>
+                                </tr>
+                                <tr style="background:#fafbfc;">
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">埃克曼层</td>
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">表层摩擦层，螺旋结构，净输送垂直风向</td>
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de; font-family:monospace; font-size:12px;">V<sub>Ek</sub> = (τ × ẑ) / (ρ₀ f)</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">Sverdrup 平衡</td>
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de;">风应力旋度驱动内部经向输送</td>
+                                    <td style="padding:10px 12px; border:1px solid #d0d7de; font-family:monospace; font-size:12px;">β V = ρ₀⁻¹ ẑ · (∇ × τ)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div style="background:#fff8e1; border-left:4px solid #f0ad4e; padding:12px 16px; margin:16px 0; border-radius:0 6px 6px 0; font-size:13px;">
+                        <strong>📝 学习提示</strong><br>
+                        本章内容与第4章（水团分布）、第5章（质量与热量收支）紧密相关。科氏力与地转平衡是理解大洋环流的核心，建议结合上面那张全球地转流场图，对照识别各大洋的西边界流、赤道流系与南极绕极流。
+                    </div>
+
+                </div>
+            </details>
         </section>
 
         <section>
