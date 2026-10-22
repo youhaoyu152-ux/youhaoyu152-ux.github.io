@@ -671,21 +671,13 @@
                         <li>保留前 k 个模态，可近似重构原始数据，实现降维。</li>
                         <li>DINEOF 可处理缺失数据，无需先验信息。</li>
                     </ul>
-                    <div class="ticket">
+                        <div class="ticket">
                         <strong>🎫 出门票：</strong>
                         <div style="margin-top:8px;">
                             <strong>7. 温跃层是如何维持的？</strong><br>
                             依赖两种垂直过程的动态平衡：<br>
                             • <strong>向下扩散：</strong>热量从混合层向下传（削弱温跃层）。<br>
                             • <strong>向上平流：</strong>深层冷水上升补偿，抵消热量扩散，维持陡峭梯度。<br>
-                            <br>
-                            <em>我在课后用 Python 画了位温分布图和混合过程，结合代码加深了理解：</em>
-                            <div style="text-align:center; margin-top:12px;">
-                                <a href="ticket-mixing.png" target="_blank">
-                                    <img src="ticket-mixing.png" alt="位温与混合增密" style="max-width:100%; border-radius:6px; box-shadow:0 2px 8px rgba(0,0,0,0.1); cursor:zoom-in;">
-                                </a>
-                                <p style="font-size:12px; color:#8b949e; margin-top:6px;">位温分布与混合增密代码练习</p>
-                            </div>
                             <br>
                             <strong>随堂测验题：EOF 的主要目的是什么？</strong><br>
                             正确答案：<strong>B. 识别数据集中的主导空间模态及其时间演变。</strong>（EOF 通过降维提取主要空间结构，对应的时间序列即为 PC）。
