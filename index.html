@@ -784,88 +784,47 @@
         <!-- ============================================================ -->
         <section>
             <h2>🎬 故事会 (Story Time)</h2>
-            <p>这里记录我自己动手做过的小项目、小实验、小探索。每个故事都按"开头（现象/疑问）→ 中间（怎么找答案）→ 结尾（结论 + 还想知道什么）"来写。</p>
-
-            <!-- 故事1（带示例） -->
+                        <!-- 故事1：实验方案设计 -->
             <details style="margin-top:20px; border:1px solid #eaeef2; border-radius:8px; padding:0;">
                 <summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:16px; background:#f6f8fa; border-radius:8px; list-style:none;">
-                    故事1：我用 Python 下载了 Argo 浮标数据
+                    故事1：设计一个追踪长江口藻华碳汇的实验方案
                 </summary>
                 <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
 
                     <h3 style="margin-top:12px; color:#0969da; font-size:15px;">🎬 开头（现象/疑问）</h3>
                     <div class="myvoice">
-                        上完第4讲之后，我对 T-S 图识别水团这件事特别好奇。我想：<strong>能不能自己下载一份真实的海洋观测数据，画一张真实的 T-S 图？</strong>
+                        我关注的研究主题与 <strong>风暴、河流输出与沉积物再悬浮</strong> 密切相关。在学习这些物理过程时，我产生了一个强烈的疑问：<br><br>
+                        当长江口冲淡水携带大量营养盐入海，引发藻华爆发时，浮游植物通过光合作用固定了大量的碳（产生净群落生产力 NCP）。但这些新增的碳，最终都去了哪里？<strong>是变成了气体被海洋重新吸收（海气 CO₂ 通量），还是变成了颗粒物沉到了海底（POC 输出），从而形成了真正的碳汇？</strong>
                     </div>
 
                     <h3 style="margin-top:20px; color:#0969da; font-size:15px;">🔍 中间（怎么找答案）</h3>
                     <div class="myvoice">
-                        我先查了 Argo 数据的下载方式，发现有几个渠道：<br>
-                        ① 法国 Ifremer 的 GDAC（<code>https://data-argo.ifremer.fr</code>）<br>
-                        ② 美国 USGODAE<br>
-                        ③ Python 库 <code>argopy</code><br><br>
-                        我选了 <code>argopy</code>，因为它可以直接在 Python 里按区域、时间筛选，不用手动下载一堆文件。跟着官方文档写了几行代码，成功拿到了一批北大西洋的温盐剖面数据。
+                        为了回答这个问题，我查阅了大量文献，并尝试设计一个针对“单一核心站”的观测实验方案。在设计过程中，我遇到了几个核心难点，并逐一想通了解决办法：<br><br>
+                        <strong>难点 1：如何定义“事件的影响”？</strong><br>
+                        不能简单地把藻华期的数据减去全年平均。我决定在事件发生前，先获取 5-7 天的连续基线数据。将事件期的数据减去这个“动态基线”，得到的才是真正的“观测异常”。<br><br>
+                        <strong>难点 2：时间尺度怎么匹配？</strong><br>
+                        这是我在方案里最纠结的地方。海气 CO₂ 通量是连续记录的，但沉积物捕获器（采集 POC）只能放几个小时或几天。我原以为直接对比当天的数据就行，后来发现不能这样。我必须在时间窗口上做积分平均（比如捕获器在早上 8 点到下午 2 点采样，我就必须提取这 6 小时内平均的 NCP 和 CO₂ 通量来配对），否则就算错了。<br><br>
+                        <strong>难点 3：如何估算碳输出？</strong><br>
+                        我计划利用混合层的氧库存变化（DO 收支）来推算 NCP，并结合风速、海表温度、海水和大气 pCO₂ 分压来计算海气交换通量。对于颗粒碳，用捕获器收集后除以面积和时间，算出真实的下沉通量。
                     </div>
 
                     <h3 style="margin-top:20px; color:#0969da; font-size:15px;">🏁 结尾（结论 + 还想知道什么）</h3>
                     <div class="myvoice">
-                        <strong>我做了什么：</strong>用 <code>argopy</code> 下载了北大西洋一批 Argo 数据，用 Xarray 读入，然后用 Matplotlib 画了 T-S 图。<br>
-                        <strong>结论：</strong>T-S 图上确实能看到不同水团的"簇"，和课堂上讲的一致。北大西洋中层水的盐度极大值非常明显。<br>
-                        <strong>还想知道：</strong>如果加上时间维度，能不能看出水团随季节的变化？
+                        <strong>我做了什么：</strong> 我撰写了一份完整的《长江口藻华事件新增 NCP 实验方案》，详细规划了从基线确立、连续观测、分层采水到沉积物捕获器布放的全部流程，并设计了数据处理和相关性分析的方法。<br>
+                        <strong>结论：</strong> 我意识到，不能简单说“新增的碳都变成碳汇了”。只有把海气交换、水平平流和垂向颗粒输出放在同一个时间窗口里严谨比较，才能算出“表观响应比”。单层的捕获器只能证明碳输出到了混合层以下，不能直接等同于长期碳封存。<br>
+                        <strong>还想知道：</strong> 如果未来这套方案真正在海上实施，遇到恶劣天气导致船时不够，我该怎样用模型插值来弥补缺失的观测数据？
                     </div>
 
-                    <div class="placeholder">
-                        【待补充：建议把你自己画的 T-S 图截图上传，作为"证据"。文件名例如：<code>argo-ts-diagram.png</code>，然后在这里插入图片。】
-                    </div>
-
-                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">📎 证据</h3>
-                    <div class="placeholder">
-                        【待补充：1 张图 / 1 段代码 / 1 个数据链接，证明你真的做过。】
-                    </div>
-
-                </div>
-            </details>
-
-            <!-- 故事2（占位） -->
-            <details style="margin-top:12px; border:1px solid #eaeef2; border-radius:8px; padding:0;">
-                <summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:16px; background:#f6f8fa; border-radius:8px; list-style:none;">
-                    【待补充：故事2标题】
-                </summary>
-                <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
-                    <div class="placeholder">
-                        【待补充：开头（现象/疑问）→ 中间（怎么找答案）→ 结尾（结论 + 还想知道什么）。记得写"你做了什么"，不是转述教材。】
+                                       <h3 style="margin-top:20px; color:#0969da; font-size:15px;">📎 证据</h3>
+                    <p>下面是我撰写的完整实验方案文档（包含详细的采样时间窗设计、DO 氧收支公式及通量积分算法）：</p>
+                    <div style="text-align:center; margin-top:12px;">
+                        <!-- ⚠️ 注意把下面 href 里的链接换成你真实的 GitHub 文件链接 -->
+                        <a href="https://github.com/youhaoyu152-ux/youhaoyu152-ux.github.io/blob/main/NCP_Experiment_Plan.docx" target="_blank" style="display: inline-block; background: #2ea44f; color: #fff; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-size: 14px; font-weight: 600; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            📄 点击下载《实验方案文档》 (Word格式)
+                        </a>
                     </div>
                 </div>
             </details>
-
-            <div class="placeholder">
-                【待补充：故事会至少 2–3 个。可以是：用 Python 画 T-S 图、用 EOF 分析某数据、下载 HYCOM 数据分析某区域、画某个月的海温分布图等。只要是你自己动手做的就行。】
-            </div>
-
-        </section>
-
-        <section>
-            <h2>📁 Projects</h2>
-
-            <div class="project">
-                <h3>Ocean Data Visualization with Python</h3>
-                <p>使用 Python（NumPy + Matplotlib + Xarray）读取 NetCDF 格式的海洋再分析数据，绘制海表温度分布图和温盐剖面图，练习科学数据可视化流程。</p>
-                <span class="meta">Tech: Python, Xarray, Matplotlib, NetCDF</span>
-            </div>
-
-            <div class="project">
-                <h3>Personal Knowledge Base Website</h3>
-                <p>使用纯 HTML 和 CSS 构建的个人知识库网站，采用 Flexbox 与响应式布局，部署在 GitHub Pages 上。用于整理研究方向、笔记与项目。</p>
-                <span class="meta">Tech: HTML, CSS, GitHub Pages</span><br>
-                <a href="https://github.com/youhaoyu152-ux/youhaoyu152-ux.github.io">View source on GitHub →</a>
-            </div>
-
-            <div class="project">
-                <h3>Markdown Study Notes</h3>
-                <p>整理物理海洋与编程学习笔记，涵盖海洋动力学基础概念、Python 数据分析常用方法、Git 工作流等，使用 Markdown 编写并持续更新。</p>
-                <span class="meta">Tech: Markdown, Git</span>
-            </div>
-
         </section>
 
         <section>
