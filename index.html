@@ -48,16 +48,6 @@
             font-size: 14px;
             font-weight: 500;
         }
-        .project {
-            border-left: 4px solid #0969da;
-            padding: 16px 20px;
-            margin-bottom: 18px;
-            background: #f6f8fa;
-            border-radius: 0 8px 8px 0;
-        }
-        .project h3 { font-size: 17px; margin-bottom: 6px; }
-        .project p { font-size: 14px; color: #57606a; margin-bottom: 8px; }
-        .project .meta { font-size: 13px; color: #8b949e; }
         .note { padding: 14px 0; border-bottom: 1px solid #eaeef2; font-size: 14px; }
         .note:last-child { border-bottom: none; }
         .note .date { color: #8b949e; font-size: 13px; margin-right: 12px; }
@@ -117,7 +107,7 @@
             font-size: 13px; 
             color: #8b949e; 
             margin-top: 10px; 
-            display: block; /* 确保独占一行 */
+            display: block; 
         }
 
         footer { text-align: center; color: #8b949e; font-size: 13px; padding: 24px 0; }
@@ -180,12 +170,8 @@
                 </summary>
                 <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
                     <h3 style="margin-top:12px; color:#0969da; font-size:15px;">📖 核心理论</h3>
-                    <p><strong>研究逻辑：</strong>强调现象是什么（What）？为什么会发生（Why）？如何观测和量化（How）？</p>
-                    <p><strong>尺度特征：</strong>海洋运动跨越极大的时空尺度。微观尺度有分子混合；中观尺度有内波和潮汐；宏观尺度有大洋环流和热盐环流。大尺度运动受地球自转影响巨大，罗斯贝数（Ro）极小。</p>
-                    <div class="img-container">
-                        <a href="fig-1-2.png" target="_blank"><img src="fig-1-2.png" alt="物理海洋学现象的时空尺度" onerror="this.src='https://via.placeholder.com/600x300?text=请上传+fig-1-2.png'"></a>
-                        <span class="img-caption">图 1.2：物理海洋学现象的时空尺度（教材原图）</span>
-                    </div>
+                    <p>物理海洋学是一门基于观测的学科，致力于描述和解释海洋的物理状态及其变化。研究的核心逻辑是探讨“What（现象）—Why（机制）—How（观测与量化）”。</p>
+                    <p>海洋现象具有极宽的时空尺度。微观尺度包括分子混合；中观尺度涵盖内波和潮汐；宏观尺度则涉及大洋环流和热盐环流。大尺度运动深受地球自转（科氏力）影响。</p>
                 </div>
             </details>
 
@@ -195,11 +181,8 @@
                 </summary>
                 <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
                     <h3 style="margin-top:12px; color:#0969da; font-size:15px;">📖 核心理论</h3>
-                    <ul style="padding-left:24px; margin:8px 0;">
-                        <li><strong>海陆分布：</strong>地球 71% 被海洋覆盖。海洋平均深度 3734m，最深处马里亚纳海沟约 11,000m。</li>
-                        <li><strong>海底扩张：</strong>海底地壳非常年轻（<2.8亿年）。洋中脊是新生地壳产生地，海沟是板块俯冲消亡处。</li>
-                        <li><strong>扩张速率与地形：</strong>东太平洋海隆（快速扩张）地形较平滑；大西洋中脊（慢速扩张）中央有显著的裂谷。海底地形直接影响深层水流的混合与路径。</li>
-                    </ul>
+                    <p><strong>海陆分布：</strong>海洋覆盖地球约 71% 的面积，平均深度达 3734m，远超陆地平均海拔（743m）。最深的海沟（马里亚纳海沟）深达 11,000m。</p>
+                    <p><strong>海底扩张：</strong>海底地壳非常年轻（最老不超过 2.8 亿年）。洋中脊是新生地壳的诞生地，而海沟则是板块俯冲消亡的场所。快速扩张的洋中脊（如东太平洋海隆）地形相对平滑，慢速扩张的洋中脊（如大西洋中脊）中央则有显著的裂谷。</p>
                 </div>
             </details>
 
@@ -209,16 +192,9 @@
                 </summary>
                 <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
                     <h3 style="margin-top:12px; color:#0969da; font-size:15px;">📖 核心理论</h3>
-                    <ul style="padding-left:24px; margin:8px 0;">
-                        <li><strong>现场温度 (T) 与 位温 (θ)：</strong>深海海水受压绝热升温。位温是将水团绝热提升到海面时的温度。马里亚纳海沟 4000m 以下 T 与 θ 差异极大（见下图）。</li>
-                        <li><strong>盐度：</strong>现代海洋学使用基于电导率的绝对盐度（Absolute Salinity）。</li>
-                        <li><strong>密度与层结：</strong>海水密度由温度、盐度、压力共同决定。海洋内部由密度跃层（Pycnocline）维持垂直稳定层结。</li>
-                        <li><strong>特殊混合机制：</strong>混合增密（Cabbeling，两水团混合后密度变大下沉）和双扩散（盐指、扩散对流）。</li>
-                    </ul>
-                    <div class="img-container">
-                        <a href="fig-4-10.png" target="_blank"><img src="fig-4-10.png" alt="马里亚纳海沟T与θ对比" onerror="this.src='https://via.placeholder.com/600x300?text=请上传+fig-4-10.png'"></a>
-                        <span class="img-caption">图 4.10：马里亚纳海沟的原位温度(T)与位温(θ)对比</span>
-                    </div>
+                    <p><strong>温度与位温：</strong>深海海水受压会产生绝热压缩。现场温度（T）是在深海测得的实际温度，而位温（θ）是将水团绝热提升至海面时的温度。在深海中，位温通常低于现场温度，必须在对比水团时使用位温。</p>
+                    <p><strong>盐度：</strong>已由早期的千分比演变为现代基于电导率测量的绝对盐度（Absolute Salinity，无量纲）。</p>
+                    <p><strong>密度与特殊过程：</strong>密度主要由温度、盐度和压力决定。海洋内部由密度跃层阻碍垂直混合。存在混合增密（Cabbeling）现象——两水团混合后密度变大而下沉。此外，由于热量和盐分扩散速率差异，会产生双扩散（盐指和扩散对流）。</p>
                 </div>
             </details>
 
@@ -228,16 +204,9 @@
                 </summary>
                 <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
                     <h3 style="margin-top:12px; color:#0969da; font-size:15px;">📖 核心理论</h3>
-                    <ul style="padding-left:24px; margin:8px 0;">
-                        <li><strong>温度剖面：</strong>低纬分三层（混合层、温跃层、深层）；高纬温跃层弱或不存在。</li>
-                        <li><strong>盐度分布：</strong>表层副热带最高（蒸发大），赤道和高纬较低。垂向存在盐度极值层。</li>
-                        <li><strong>温盐图 (T-S Diagram)：</strong>识别水团的“指纹”。两水团混合在 T-S 图上呈直线。</li>
-                        <li><strong>主要水团：</strong>南极底层水（AABW，最冷较咸）、北大西洋深层水（NADW，高盐）。</li>
-                    </ul>
-                    <div class="img-container">
-                        <a href="fig-4-11.png" target="_blank"><img src="fig-4-11.png" alt="大西洋截面图" onerror="this.src='https://via.placeholder.com/300x200?text=请上传+fig-4-11.png'"></a>
-                        <span class="img-caption">图 4.11：大西洋位温/盐度垂直截面（WOCE数据）</span>
-                    </div>
+                    <p><strong>温盐分布：</strong>表层温度随纬度递减。垂向典型分层为混合层、温跃层、深层。表层盐度在副热带最高（蒸发大），在赤道和高纬较低。</p>
+                    <p><strong>温盐图（T-S Diagram）：</strong>是识别水团的核心工具。不同水团在 T-S 图上有特定的温盐组合，水团混合呈现直线规律。</p>
+                    <p><strong>水团特征：</strong>如南极底层水（AABW，最冷、较咸）和北大西洋深层水（NADW，高盐）。温跃层的维持主要依赖于向下热量扩散与深层冷水平流的动态平衡。</p>
                 </div>
             </details>
 
@@ -247,20 +216,9 @@
                 </summary>
                 <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
                     <h3 style="margin-top:12px; color:#0969da; font-size:15px;">📖 核心理论</h3>
-                    <ul style="padding-left:24px; margin:8px 0;">
-                        <li><strong>热收支四分量：</strong>
-                            <br>1. <strong>Qs（短波辐射）：</strong>得热项，受太阳高度角和云量主导。
-                            <br>2. <strong>Qb（长波辐射）：</strong>失热项，由海温和大气逆辐射决定。
-                            <br>3. <strong>Qe（潜热通量）：</strong>最主要失热项，由风速和海气比湿差控制。
-                            <br>4. <strong>Qh（感热通量）：</strong>由海气温差决定，量级最小。
-                        </li>
-                        <li><strong>盐度与水平衡：</strong>E-P（蒸发减降水）决定表层盐度。地中海（强蒸发，高盐水下沉）和黑海（多径流，正平衡）。</li>
-                        <li><strong>埃克曼动力学：</strong>风应力驱动表层水，北半球表层流向偏右 45°（埃克曼螺旋）。垂直积分后得到净输送（垂直于风向偏右 90°）。风应力旋度引起埃克曼抽吸。</li>
-                    </ul>
-                    <div class="img-container">
-                        <a href="fig-5-11.png" target="_blank"><img src="fig-5-11.png" alt="全球热通量" onerror="this.src='https://via.placeholder.com/600x300?text=请上传+fig-5-11.png'"></a>
-                        <span class="img-caption">图 5.11：全球年平均热通量分布</span>
-                    </div>
+                    <p><strong>热收支四分量：</strong>包括太阳短波辐射（Qs，得热项）、长波辐射（Qb，失热项）、潜热通量（Qe，主要失热项）和感热通量（Qh，量级最小）。</p>
+                    <p><strong>盐度平衡：</strong>E-P（蒸发减降水）决定了表层盐度的分布格局。</p>
+                    <p><strong>埃克曼动力学：</strong>风应力驱动表层水，受科氏力作用产生偏转（北半球向右），形成埃克曼螺旋。垂直积分后形成的埃克曼净输送方向与风向垂直（北半球向右 90°）。风应力旋度会导致水体的辐合辐散，引发埃克曼抽吸。</p>
                 </div>
             </details>
 
@@ -270,11 +228,9 @@
                 </summary>
                 <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
                     <h3 style="margin-top:12px; color:#0969da; font-size:15px;">📖 核心理论</h3>
-                    <ul style="padding-left:24px; margin:8px 0;">
-                        <li><strong>时间序列分析（频谱分析）：</strong>识别周期。注意采样频率与奈奎斯特频率。</li>
-                        <li><strong>客观分析：</strong>将不规则观测映射到规则网格（最小二乘法）。</li>
-                        <li><strong>EOF（经验正交函数）：</strong>分解时空数据，提取主导空间模态（EOFs）和时间序列（PCs）。</li>
-                    </ul>
+                    <p><strong>基础统计与时间序列：</strong>包含均值、方差等，并利用频谱分析（傅里叶变换）识别海洋信号中的周期分量。</p>
+                    <p><strong>空间映射：</strong>利用客观分析将不规则观测映射到规则网格。</p>
+                    <p><strong>EOF（经验正交函数）：</strong>用于分解时空数据，提取主导数据方差的空间模态（EOFs）和时间演变序列（PCs）。</p>
                 </div>
             </details>
 
@@ -284,16 +240,9 @@
                 </summary>
                 <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
                     <h3 style="margin-top:12px; color:#0969da; font-size:15px;">📖 核心理论</h3>
-                    <ul style="padding-left:24px; margin:8px 0;">
-                        <li><strong>地转平衡：</strong>科氏力与压强梯度力平衡。北半球高压在流向右侧。</li>
-                        <li><strong>热成风关系：</strong>地转流的垂直切变由水平密度梯度决定。</li>
-                        <li><strong>Sverdrup 平衡：</strong>风应力旋度驱动大洋内部南北向输送。</li>
-                        <li><strong>西向强化：</strong>大洋西侧形成窄而强的边界流（黑潮、湾流）。</li>
-                    </ul>
-                    <div class="img-container">
-                        <a href="fig-7-8.png" target="_blank"><img src="fig-7-8.png" alt="埃克曼响应" onerror="this.src='https://via.placeholder.com/600x300?text=请上传+fig-7-8.png'"></a>
-                        <span class="img-caption">图 7.8：埃克曼响应（风应力与表层非地转海流）</span>
-                    </div>
+                    <p><strong>地转平衡：</strong>大尺度下（Ro << 1），科氏力与水平压强梯度力平衡。地转流沿等压线流动，北半球高压位于流向右侧。</p>
+                    <p><strong>热成风关系：</strong>地转流的垂直切变由密度的水平梯度决定。</p>
+                    <p><strong>Sverdrup 平衡与西向强化：</strong>风应力旋度驱动大洋内部经向输送。为满足质量守恒，必须在洋盆西侧形成狭窄且强劲的西边界流（如黑潮、湾流）。</p>
                 </div>
             </details>
 
@@ -303,11 +252,8 @@
                 </summary>
                 <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
                     <h3 style="margin-top:12px; color:#0969da; font-size:15px;">📖 核心理论</h3>
-                    <ul style="padding-left:24px; margin:8px 0;">
-                        <li><strong>表面波与内波：</strong>内波发生在密度跃层，振幅大、波速慢，是海洋内部混合的主要来源。</li>
-                        <li><strong>潮汐：</strong>受地形和科氏力影响，形成复杂的动力潮。</li>
-                        <li><strong>海岸过程：</strong>风引起的离岸埃克曼输送导致沿岸上升流。</li>
-                    </ul>
+                    <p><strong>波浪分类：</strong>按恢复力区分，表面有张力波（毛细波）和重力波；海洋内部存在内波（发生于密度跃层，振幅大）。</p>
+                    <p><strong>潮汐与海岸过程：</strong>潮汐受地形和科氏力影响形成复杂的动力潮波系统。海岸带存在风驱动的沿岸上升流，对生态影响巨大。</p>
                 </div>
             </details>
         </section>
@@ -323,10 +269,7 @@
                     第1讲：导论与核心逻辑
                 </summary>
                 <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
-                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">📝 课堂内容精讲</h3>
-                    <p>老师强调了物理海洋学是“观测驱动”的学科。探讨了从微小湍流到全球热盐环流的巨大尺度跨越。核心在于理解海洋物理状态是如何随时间和空间变化的。</p>
-                    
-                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">🎫 出门票</h3>
+                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">🎫 出门票</h3>
                     <div class="ticket">
                         这节课我最大的收获是理清了物理海洋学的“What - Why - How”研究框架。为了总览全貌，我课后使用 XMind 整理了一张知识地图。
                         <div class="img-container">
@@ -342,10 +285,7 @@
                     第2讲：海洋维度与底质
                 </summary>
                 <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
-                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">📝 课堂内容精讲</h3>
-                    <p>详细讲解了地球表面海陆分布的特征。重点分析了洋中脊（新生）和海沟（俯冲）的形成机制。强调了深海地形对深层环流通道的物理限制作用。</p>
-                    
-                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">🎫 出门票</h3>
+                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">🎫 出门票</h3>
                     <div class="ticket">
                         我理解了海底地壳“年轻”的原因（洋中脊新生，海沟消亡）。我有一个疑问：既然地壳在俯冲带消亡，那物质最终去了哪里？查阅资料后得知，它们重新回到了地幔中，参与了漫长的地质循环。
                     </div>
@@ -358,10 +298,7 @@
                     第3讲：海水的物理性质与混合
                 </summary>
                 <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
-                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">📝 课堂内容精讲</h3>
-                    <p>重点对比了现场温度（T）和位温（θ），解释了深海绝热压缩的影响。详细讲解了两种极其重要的特殊混合机制：混合增密（Cabbeling）和双扩散（盐指、扩散对流）。</p>
-                    
-                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">🎫 出门票</h3>
+                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">🎫 出门票</h3>
                     <div class="ticket">
                         这节课我搞懂了“位温”和“混合增密”。课上老师展示了如何用代码处理位温分布并计算混合增密，我把当时的 PPT 截图保存了下来。
                         <div class="img-container">
@@ -377,10 +314,7 @@
                     第4讲：水团特征的典型分布
                 </summary>
                 <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
-                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">📝 课堂内容精讲</h3>
-                    <p>系统学习了温度、盐度、密度的全球分布规律。详细拆解了低纬度的三层温度结构。重点讲解了如何使用 T-S 图来识别水团（AABW, NADW 等）以及温跃层的维持机制。</p>
-                    
-                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">🎫 出门票</h3>
+                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">🎫 出门票</h3>
                     <div class="ticket">
                         <strong>1. 混合层与深层：</strong>混合层通常在 50-200m，深水区特征有所不同。<br>
                         <strong>2. 副热带 vs 副极地：</strong>副热带存在永久性温跃层（200-1000m）和盐度最大值；副极地存在温度最小值。<br>
@@ -395,10 +329,7 @@
                     第5讲：热量收支与风的作用
                 </summary>
                 <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
-                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">📝 课堂内容精讲</h3>
-                    <p>详细解析了海洋热收支的四大分量（Qs, Qb, Qe, Qh）及其主导因素。对比了地中海（强蒸发负平衡）和黑海（正平衡）的盐度特征。重点讲解了风应力如何通过埃克曼螺旋和抽吸驱动深层环流。</p>
-                    
-                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">🎫 出门票</h3>
+                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">🎫 出门票</h3>
                     <div class="ticket">
                         <strong>4. 四类热通量：</strong>Qs是主要得热项；Qe是主要失热项。<br>
                         <strong>5. 北大西洋比北太平洋咸：</strong>北大西洋副热带蒸发远大于降水，且受地中海高盐溢流水影响。<br>
@@ -413,10 +344,7 @@
                     第6讲：数据分析与 EOF
                 </summary>
                 <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
-                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">📝 课堂内容精讲</h3>
-                    <p>学习了处理海洋大数据的统计学方法。讲解了频谱分析（识别周期）、客观分析（网格化）。重点剖析了 EOF（经验正交函数）的数学原理及其在提取空间模态中的应用。</p>
-                    
-                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">🎫 出门票</h3>
+                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">🎫 出门票</h3>
                     <div class="ticket">
                         <strong>7. 温跃层是如何维持的？</strong> 依赖向下热量扩散与深层冷水平流的动态平衡。<br>
                         <strong>随堂测验题（EOF的目的）：</strong>正确答案是 B. 识别数据集中的主导空间模态及其时间演变。
@@ -433,10 +361,7 @@
                     第7讲：海洋环流动力学
                 </summary>
                 <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
-                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">📝 课堂内容精讲</h3>
-                    <p>本课程的核心重点。从科氏力推导出地转平衡和热成风关系。接着讲解了风应力旋度如何驱动 Sverdrup 环流，以及为什么大洋西侧必须存在强边界流。</p>
-                    
-                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">🎫 出门票</h3>
+                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">🎫 出门票</h3>
                     <div class="ticket">
                         <strong>Sverdrup 平衡与全球环流：</strong><br>
                         风产生埃克曼输送与辐合，导致水柱被压缩或拉伸。Squashing 向赤道移动，Stretching 向极地移动。
@@ -457,10 +382,7 @@
                     第8讲：重力波、潮汐与波动现象
                 </summary>
                 <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
-                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">📝 课堂内容精讲</h3>
-                    <p>详细梳理了海洋与大气中的波动类型。从恢复力的角度出发，区分了表面张力波（毛细波）、表面重力波、内波（密度跃层处）以及大尺度的罗斯贝波（β效应）和开尔文波（边界波导）。</p>
-                    
-                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">🎫 出门票</h3>
+                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">🎫 出门票</h3>
                     <div class="ticket">
                         这节课彻底理清了不同波动的生成机制。我原以为波浪就是风吹的，后来发现不同尺度的波动恢复力完全不同：毛细波靠表面张力，普通的表面重力波靠重力，而大洋里的罗斯贝波则是靠科氏参数随纬度的变化（β效应）！
                         <br><br>
@@ -478,12 +400,9 @@
                     总结：物理海洋学的前沿与展望
                 </summary>
                 <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
-                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">📝 总结与展望</h3>
-                    <p>回顾整个课程，从经典的温盐分布，到复杂的动力学方程，最终走向了全球气候系统与数字孪生。目前物理海洋学有十大前沿热点。</p>
-                    
-                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">🎫 出门票</h3>
+                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">🎫 出门票</h3>
                     <div class="ticket">
-                        我对 <strong>“海洋动力过程对碳-氮-氧生物地球化学循环的调控”</strong> 最感兴趣，这正好与我设计的“长江口藻华实验方案”不谋而合！这不仅是一张出门票，更是我未来的科研志愿书。
+                        回顾整个课程，从经典的温盐分布，到复杂的动力学方程，最终走向了全球气候系统与数字孪生。我对 <strong>“海洋动力过程对碳-氮-氧生物地球化学循环的调控”</strong> 最感兴趣，这正好与我设计的“长江口藻华实验方案”不谋而合！
                         <div class="img-container">
                             <a href="frontiers.png" target="_blank"><img src="frontiers.png" alt="物理海洋学前沿十大方向"></a>
                         </div>
