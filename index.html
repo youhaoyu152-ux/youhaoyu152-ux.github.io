@@ -66,26 +66,9 @@
         .contact-list a { color: #0969da; text-decoration: none; }
         
         /* 提示框与重点样式 */
-        .placeholder {
-            background: #fff8e1;
-            border-left: 4px solid #f0ad4e;
-            padding: 12px 16px;
-            margin: 14px 0;
-            font-size: 14px;
-            color: #7a5a00;
-            border-radius: 0 6px 6px 0;
-        }
         .myvoice {
             background: #f0fff4;
             border-left: 4px solid #28a745;
-            padding: 12px 16px;
-            margin: 14px 0;
-            font-size: 14px;
-            border-radius: 0 6px 6px 0;
-        }
-        .question {
-            background: #fff0f5;
-            border-left: 4px solid #d63384;
             padding: 12px 16px;
             margin: 14px 0;
             font-size: 14px;
@@ -114,12 +97,28 @@
         th, td { border: 1px solid #d0d7de; padding: 10px 12px; text-align: left; }
         th { background: #f6f8fa; font-weight: 600; }
         
-        /* 图片自适应与并排 */
-        .img-container { text-align: center; margin-top: 16px; }
-        .img-container img { max-width: 100%; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); cursor: zoom-in; }
-        .img-caption { font-size: 12px; color: #8b949e; margin-top: 6px; }
-        .flex-gallery { display: flex; gap: 16px; justify-content: center; margin-top: 16px; flex-wrap: wrap; }
-        .flex-gallery > div { text-align: center; width: 46%; min-width: 250px; }
+        /* 严格闭合的图片样式 */
+        .img-container { 
+            text-align: center; 
+            margin: 20px 0; 
+            padding: 10px;
+            background: #fff;
+            border: 1px solid #eaeef2;
+            border-radius: 8px;
+        }
+        .img-container img { 
+            max-width: 100%; 
+            height: auto;
+            border-radius: 6px; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
+            cursor: zoom-in; 
+        }
+        .img-caption { 
+            font-size: 13px; 
+            color: #8b949e; 
+            margin-top: 10px; 
+            display: block; /* 确保独占一行 */
+        }
 
         footer { text-align: center; color: #8b949e; font-size: 13px; padding: 24px 0; }
     </style>
@@ -157,7 +156,7 @@
             </div>
         </section>
 
-        <!-- ================= 📚 教材笔记 ================= -->
+        <!-- ================= 📚 教材精读笔记 ================= -->
         <section>
             <h2>📚 教材精读笔记 (Textbook Notes)</h2>
             <p>基于《物理海洋学（第六版）》（Talley 等编著）的详细研读，涵盖 1-8 章的所有核心理论、公式推导与重点图表。</p>
@@ -175,23 +174,21 @@
                 </div>
             </div>
 
-            <!-- 第1章 -->
             <details style="margin-top:12px; border:1px solid #eaeef2; border-radius:8px; padding:0;">
                 <summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:16px; background:#f6f8fa; border-radius:8px; list-style:none;">
                     第1章：物理海洋学概论 (Introduction)
                 </summary>
                 <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
                     <h3 style="margin-top:12px; color:#0969da; font-size:15px;">📖 核心理论</h3>
-                    <p>描述性物理海洋学侧重于观测、描述和解释海洋的物理状态。核心研究逻辑为：现象是什么（What）？为什么会发生（Why）？如何观测和量化（How）？</p>
-                    <p>海洋现象跨越极大的时空尺度（图 1.2）。大尺度运动受地球自转（科氏力）控制，罗斯贝数（Ro）极小。</p>
+                    <p><strong>研究逻辑：</strong>强调现象是什么（What）？为什么会发生（Why）？如何观测和量化（How）？</p>
+                    <p><strong>尺度特征：</strong>海洋运动跨越极大的时空尺度。微观尺度有分子混合；中观尺度有内波和潮汐；宏观尺度有大洋环流和热盐环流。大尺度运动受地球自转影响巨大，罗斯贝数（Ro）极小。</p>
                     <div class="img-container">
                         <a href="fig-1-2.png" target="_blank"><img src="fig-1-2.png" alt="物理海洋学现象的时空尺度" onerror="this.src='https://via.placeholder.com/600x300?text=请上传+fig-1-2.png'"></a>
-                        <p class="img-caption">图 1.2：物理海洋学现象的时空尺度（教材原图）</p>
+                        <span class="img-caption">图 1.2：物理海洋学现象的时空尺度（教材原图）</span>
                     </div>
                 </div>
             </details>
 
-            <!-- 第2章 -->
             <details style="margin-top:12px; border:1px solid #eaeef2; border-radius:8px; padding:0;">
                 <summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:16px; background:#f6f8fa; border-radius:8px; list-style:none;">
                     第2章：海洋维度、形状和底质 (Ocean Dimensions)
@@ -199,14 +196,13 @@
                 <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
                     <h3 style="margin-top:12px; color:#0969da; font-size:15px;">📖 核心理论</h3>
                     <ul style="padding-left:24px; margin:8px 0;">
-                        <li><strong>地球表面的海陆分布：</strong>71% 海洋，平均深度 3734m（陆地仅 743m）。最深处马里亚纳海沟约 11,000m。</li>
-                        <li><strong>海底扩张与地壳年龄：</strong>海底地壳年轻（<2.8亿年）。洋中脊（如东太平洋海隆）是新生地壳，海沟是板块俯冲消亡处。</li>
-                        <li><strong>地形控制：</strong>海底山脊和海峡（如德雷克海峡）决定了深层水流的路径和通道。</li>
+                        <li><strong>海陆分布：</strong>地球 71% 被海洋覆盖。海洋平均深度 3734m，最深处马里亚纳海沟约 11,000m。</li>
+                        <li><strong>海底扩张：</strong>海底地壳非常年轻（<2.8亿年）。洋中脊是新生地壳产生地，海沟是板块俯冲消亡处。</li>
+                        <li><strong>扩张速率与地形：</strong>东太平洋海隆（快速扩张）地形较平滑；大西洋中脊（慢速扩张）中央有显著的裂谷。海底地形直接影响深层水流的混合与路径。</li>
                     </ul>
                 </div>
             </details>
 
-            <!-- 第3章 -->
             <details style="margin-top:12px; border:1px solid #eaeef2; border-radius:8px; padding:0;">
                 <summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:16px; background:#f6f8fa; border-radius:8px; list-style:none;">
                     第3章：海水的物理性质 (Physical Properties of Seawater)
@@ -214,19 +210,18 @@
                 <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
                     <h3 style="margin-top:12px; color:#0969da; font-size:15px;">📖 核心理论</h3>
                     <ul style="padding-left:24px; margin:8px 0;">
-                        <li><strong>现场温度 (T) 与 位温 (θ)：</strong>深海海水受压绝热升温。位温是将水团绝热提升到海面时的温度。马里亚纳海沟 4000m 以下 T 与 θ 差异极大（图 4.10）。</li>
+                        <li><strong>现场温度 (T) 与 位温 (θ)：</strong>深海海水受压绝热升温。位温是将水团绝热提升到海面时的温度。马里亚纳海沟 4000m 以下 T 与 θ 差异极大（见下图）。</li>
                         <li><strong>盐度：</strong>现代海洋学使用基于电导率的绝对盐度（Absolute Salinity）。</li>
-                        <li><strong>密度与层结：</strong>海洋内部由密度跃层维持层结稳定性（Brunt-Väisälä 频率 N）。</li>
-                        <li><strong>特殊物理过程：</strong>混合增密（Cabbeling，混合后密度变大下沉）、双扩散（盐指和扩散对流）。</li>
+                        <li><strong>密度与层结：</strong>海水密度由温度、盐度、压力共同决定。海洋内部由密度跃层（Pycnocline）维持垂直稳定层结。</li>
+                        <li><strong>特殊混合机制：</strong>混合增密（Cabbeling，两水团混合后密度变大下沉）和双扩散（盐指、扩散对流）。</li>
                     </ul>
                     <div class="img-container">
                         <a href="fig-4-10.png" target="_blank"><img src="fig-4-10.png" alt="马里亚纳海沟T与θ对比" onerror="this.src='https://via.placeholder.com/600x300?text=请上传+fig-4-10.png'"></a>
-                        <p class="img-caption">图 4.10：马里亚纳海沟的原位温度(T)与位温(θ)对比</p>
+                        <span class="img-caption">图 4.10：马里亚纳海沟的原位温度(T)与位温(θ)对比</span>
                     </div>
                 </div>
             </details>
 
-            <!-- 第4章 -->
             <details style="margin-top:12px; border:1px solid #eaeef2; border-radius:8px; padding:0;">
                 <summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:16px; background:#f6f8fa; border-radius:8px; list-style:none;">
                     第4章：水体特征的典型分布 (Typical Distributions)
@@ -237,22 +232,15 @@
                         <li><strong>温度剖面：</strong>低纬分三层（混合层、温跃层、深层）；高纬温跃层弱或不存在。</li>
                         <li><strong>盐度分布：</strong>表层副热带最高（蒸发大），赤道和高纬较低。垂向存在盐度极值层。</li>
                         <li><strong>温盐图 (T-S Diagram)：</strong>识别水团的“指纹”。两水团混合在 T-S 图上呈直线。</li>
-                        <li><strong>主要水团：</strong>AABW（南极底层水）、NADW（北大西洋深层水，高盐）。</li>
+                        <li><strong>主要水团：</strong>南极底层水（AABW，最冷较咸）、北大西洋深层水（NADW，高盐）。</li>
                     </ul>
-                    <div class="flex-gallery">
-                        <div>
-                            <a href="fig-4-1.png" target="_blank"><img src="fig-4-1.png" alt="冬季海表温度" onerror="this.src='https://via.placeholder.com/300x200?text=请上传+fig-4-1.png'"></a>
-                            <p class="img-caption">图 4.1：冬季海表温度分布</p>
-                        </div>
-                        <div>
-                            <a href="fig-4-11.png" target="_blank"><img src="fig-4-11.png" alt="大西洋截面图" onerror="this.src='https://via.placeholder.com/300x200?text=请上传+fig-4-11.png'"></a>
-                            <p class="img-caption">图 4.11：大西洋位温/盐度垂直截面</p>
-                        </div>
+                    <div class="img-container">
+                        <a href="fig-4-11.png" target="_blank"><img src="fig-4-11.png" alt="大西洋截面图" onerror="this.src='https://via.placeholder.com/300x200?text=请上传+fig-4-11.png'"></a>
+                        <span class="img-caption">图 4.11：大西洋位温/盐度垂直截面（WOCE数据）</span>
                     </div>
                 </div>
             </details>
 
-            <!-- 第5章 -->
             <details style="margin-top:12px; border:1px solid #eaeef2; border-radius:8px; padding:0;">
                 <summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:16px; background:#f6f8fa; border-radius:8px; list-style:none;">
                     第5章：质量、盐、热量收支和风的作用 (Heat Budgets)
@@ -260,18 +248,22 @@
                 <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
                     <h3 style="margin-top:12px; color:#0969da; font-size:15px;">📖 核心理论</h3>
                     <ul style="padding-left:24px; margin:8px 0;">
-                        <li><strong>热收支四分量：</strong>Qs（短波辐射，得热）；Qb（长波辐射，失热）；Qe（潜热通量，主要失热）；Qh（感热通量，量级最小）。</li>
+                        <li><strong>热收支四分量：</strong>
+                            <br>1. <strong>Qs（短波辐射）：</strong>得热项，受太阳高度角和云量主导。
+                            <br>2. <strong>Qb（长波辐射）：</strong>失热项，由海温和大气逆辐射决定。
+                            <br>3. <strong>Qe（潜热通量）：</strong>最主要失热项，由风速和海气比湿差控制。
+                            <br>4. <strong>Qh（感热通量）：</strong>由海气温差决定，量级最小。
+                        </li>
                         <li><strong>盐度与水平衡：</strong>E-P（蒸发减降水）决定表层盐度。地中海（强蒸发，高盐水下沉）和黑海（多径流，正平衡）。</li>
-                        <li><strong>埃克曼动力学：</strong>风应力驱动表层水，北半球表层流向偏右 45°。净输送（埃克曼输送）垂直于风向偏右 90°。</li>
+                        <li><strong>埃克曼动力学：</strong>风应力驱动表层水，北半球表层流向偏右 45°（埃克曼螺旋）。垂直积分后得到净输送（垂直于风向偏右 90°）。风应力旋度引起埃克曼抽吸。</li>
                     </ul>
                     <div class="img-container">
                         <a href="fig-5-11.png" target="_blank"><img src="fig-5-11.png" alt="全球热通量" onerror="this.src='https://via.placeholder.com/600x300?text=请上传+fig-5-11.png'"></a>
-                        <p class="img-caption">图 5.11：全球年平均热通量分布</p>
+                        <span class="img-caption">图 5.11：全球年平均热通量分布</span>
                     </div>
                 </div>
             </details>
 
-            <!-- 第6章 -->
             <details style="margin-top:12px; border:1px solid #eaeef2; border-radius:8px; padding:0;">
                 <summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:16px; background:#f6f8fa; border-radius:8px; list-style:none;">
                     第6章：数据分析概念和观测方法 (Data Analysis)
@@ -286,7 +278,6 @@
                 </div>
             </details>
 
-            <!-- 第7章 -->
             <details style="margin-top:12px; border:1px solid #eaeef2; border-radius:8px; padding:0;">
                 <summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:16px; background:#f6f8fa; border-radius:8px; list-style:none;">
                     第7章：海洋环流的动力过程 (Dynamical Processes)
@@ -296,17 +287,16 @@
                     <ul style="padding-left:24px; margin:8px 0;">
                         <li><strong>地转平衡：</strong>科氏力与压强梯度力平衡。北半球高压在流向右侧。</li>
                         <li><strong>热成风关系：</strong>地转流的垂直切变由水平密度梯度决定。</li>
-                        <li><strong>Sverdrup 平衡：</strong>埃克曼抽吸驱动大洋内部南北向输送。</li>
-                        <li><strong>西向强化：</strong>大洋西侧形成窄而强的西边界流（黑潮、湾流）。</li>
+                        <li><strong>Sverdrup 平衡：</strong>风应力旋度驱动大洋内部南北向输送。</li>
+                        <li><strong>西向强化：</strong>大洋西侧形成窄而强的边界流（黑潮、湾流）。</li>
                     </ul>
                     <div class="img-container">
                         <a href="fig-7-8.png" target="_blank"><img src="fig-7-8.png" alt="埃克曼响应" onerror="this.src='https://via.placeholder.com/600x300?text=请上传+fig-7-8.png'"></a>
-                        <p class="img-caption">图 7.8：埃克曼响应（风应力与表层非地转海流）</p>
+                        <span class="img-caption">图 7.8：埃克曼响应（风应力与表层非地转海流）</span>
                     </div>
                 </div>
             </details>
 
-            <!-- 第8章 -->
             <details style="margin-top:12px; border:1px solid #eaeef2; border-radius:8px; padding:0;">
                 <summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:16px; background:#f6f8fa; border-radius:8px; list-style:none;">
                     第8章：重力波、潮汐与海岸海洋学 (Waves &amp; Tides)
@@ -334,7 +324,7 @@
                 </summary>
                 <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
                     <h3 style="margin-top:12px; color:#0969da; font-size:15px;">📝 课堂内容精讲</h3>
-                    <p>老师强调了物理海洋学是“观测驱动”的学科。我们探讨了从微小湍流到全球热盐环流的巨大尺度跨越。核心在于理解海洋物理状态是如何随时间和空间变化的。</p>
+                    <p>老师强调了物理海洋学是“观测驱动”的学科。探讨了从微小湍流到全球热盐环流的巨大尺度跨越。核心在于理解海洋物理状态是如何随时间和空间变化的。</p>
                     
                     <h3 style="margin-top:20px; color:#0969da; font-size:15px;">🎫 出门票</h3>
                     <div class="ticket">
@@ -353,7 +343,7 @@
                 </summary>
                 <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
                     <h3 style="margin-top:12px; color:#0969da; font-size:15px;">📝 课堂内容精讲</h3>
-                    <p>详细讲解了地球表面海陆分布的特征。重点分析了洋中脊（新生）和海沟（俯冲）的形成机制，以及海底扩张学说。强调了深海地形（如海脊、海峡）对深层环流通道的物理限制作用。</p>
+                    <p>详细讲解了地球表面海陆分布的特征。重点分析了洋中脊（新生）和海沟（俯冲）的形成机制。强调了深海地形对深层环流通道的物理限制作用。</p>
                     
                     <h3 style="margin-top:20px; color:#0969da; font-size:15px;">🎫 出门票</h3>
                     <div class="ticket">
@@ -369,11 +359,11 @@
                 </summary>
                 <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
                     <h3 style="margin-top:12px; color:#0969da; font-size:15px;">📝 课堂内容精讲</h3>
-                    <p>重点对比了现场温度（T）和位温（θ），解释了深海绝热压缩的影响。详细讲解了密度的非线性特征，以及两种极其重要的特殊混合机制：混合增密（Cabbeling）和双扩散（盐指、扩散对流）。</p>
+                    <p>重点对比了现场温度（T）和位温（θ），解释了深海绝热压缩的影响。详细讲解了两种极其重要的特殊混合机制：混合增密（Cabbeling）和双扩散（盐指、扩散对流）。</p>
                     
                     <h3 style="margin-top:20px; color:#0969da; font-size:15px;">🎫 出门票</h3>
                     <div class="ticket">
-                        这节课我搞懂了“位温”和“混合增密”。课上老师展示了如何用代码处理位温分布并计算混合增密，我把当时的 PPT 截图保存了下来。明白了当两股温盐不同但密度相同的水团混合时，混合后密度反而变大并下沉。
+                        这节课我搞懂了“位温”和“混合增密”。课上老师展示了如何用代码处理位温分布并计算混合增密，我把当时的 PPT 截图保存了下来。
                         <div class="img-container">
                             <a href="ticket-mixing.png" target="_blank"><img src="ticket-mixing.png" alt="位温与混合增密"></a>
                         </div>
@@ -388,7 +378,7 @@
                 </summary>
                 <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
                     <h3 style="margin-top:12px; color:#0969da; font-size:15px;">📝 课堂内容精讲</h3>
-                    <p>系统学习了温度、盐度、密度的全球分布规律。详细拆解了低纬度的三层温度结构（混合层、温跃层、深层）。重点讲解了如何使用 T-S 图来识别水团（AABW, NADW 等）以及温跃层的维持机制（向下扩散与向上平流平衡）。</p>
+                    <p>系统学习了温度、盐度、密度的全球分布规律。详细拆解了低纬度的三层温度结构。重点讲解了如何使用 T-S 图来识别水团（AABW, NADW 等）以及温跃层的维持机制。</p>
                     
                     <h3 style="margin-top:20px; color:#0969da; font-size:15px;">🎫 出门票</h3>
                     <div class="ticket">
@@ -406,7 +396,7 @@
                 </summary>
                 <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
                     <h3 style="margin-top:12px; color:#0969da; font-size:15px;">📝 课堂内容精讲</h3>
-                    <p>详细解析了海洋热收支的四大分量（Qs, Qb, Qe, Qh）及其主导因素。对比了地中海（强蒸发负平衡）和黑海（正平衡）的盐度特征。重点讲解了风应力如何通过埃克曼螺旋和埃克曼抽吸驱动深层环流。</p>
+                    <p>详细解析了海洋热收支的四大分量（Qs, Qb, Qe, Qh）及其主导因素。对比了地中海（强蒸发负平衡）和黑海（正平衡）的盐度特征。重点讲解了风应力如何通过埃克曼螺旋和抽吸驱动深层环流。</p>
                     
                     <h3 style="margin-top:20px; color:#0969da; font-size:15px;">🎫 出门票</h3>
                     <div class="ticket">
@@ -424,7 +414,7 @@
                 </summary>
                 <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
                     <h3 style="margin-top:12px; color:#0969da; font-size:15px;">📝 课堂内容精讲</h3>
-                    <p>学习了处理海洋大数据的统计学方法。讲解了频谱分析（识别周期）、客观分析（网格化）。重点剖析了 EOF（经验正交函数）的数学原理及其在提取空间模态（如 ENSO）中的应用。</p>
+                    <p>学习了处理海洋大数据的统计学方法。讲解了频谱分析（识别周期）、客观分析（网格化）。重点剖析了 EOF（经验正交函数）的数学原理及其在提取空间模态中的应用。</p>
                     
                     <h3 style="margin-top:20px; color:#0969da; font-size:15px;">🎫 出门票</h3>
                     <div class="ticket">
@@ -444,7 +434,7 @@
                 </summary>
                 <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
                     <h3 style="margin-top:12px; color:#0969da; font-size:15px;">📝 课堂内容精讲</h3>
-                    <p>本课程的核心重点。从科氏力推导出地转平衡和热成风关系。接着讲解了风应力旋度如何驱动 Sverdrup 环流，以及为什么大洋西侧必须存在强边界流（西向强化）。</p>
+                    <p>本课程的核心重点。从科氏力推导出地转平衡和热成风关系。接着讲解了风应力旋度如何驱动 Sverdrup 环流，以及为什么大洋西侧必须存在强边界流。</p>
                     
                     <h3 style="margin-top:20px; color:#0969da; font-size:15px;">🎫 出门票</h3>
                     <div class="ticket">
