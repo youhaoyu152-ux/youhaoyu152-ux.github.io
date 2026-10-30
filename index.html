@@ -95,6 +95,8 @@
             background: #fff;
             border: 1px solid #eaeef2;
             border-radius: 8px;
+            /* 确保图片容器不会超出父元素 */
+            overflow: hidden; 
         }
         .img-container img { 
             max-width: 100%; 
@@ -102,12 +104,15 @@
             border-radius: 6px; 
             box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
             cursor: zoom-in; 
+            display: block;
+            margin: 0 auto;
         }
         .img-caption { 
             font-size: 13px; 
             color: #8b949e; 
             margin-top: 10px; 
             display: block; 
+            text-align: center;
         }
 
         footer { text-align: center; color: #8b949e; font-size: 13px; padding: 24px 0; }
@@ -172,6 +177,10 @@
                     <h3 style="margin-top:12px; color:#0969da; font-size:15px;">📖 核心理论</h3>
                     <p>物理海洋学是一门基于观测的学科，致力于描述和解释海洋的物理状态及其变化。研究的核心逻辑是探讨“What（现象）—Why（机制）—How（观测与量化）”。</p>
                     <p>海洋现象具有极宽的时空尺度。微观尺度包括分子混合；中观尺度涵盖内波和潮汐；宏观尺度则涉及大洋环流和热盐环流。大尺度运动深受地球自转（科氏力）影响。</p>
+                    <div class="img-container">
+                        <a href="fig-1-2.png" target="_blank"><img src="fig-1-2.png" alt="物理海洋学的时空尺度" onerror="this.src='https://via.placeholder.com/600x300?text=请上传+fig-1-2.png'"></a>
+                        <span class="img-caption">图 1.2：物理海洋学现象的时空尺度</span>
+                    </div>
                 </div>
             </details>
 
@@ -195,6 +204,10 @@
                     <p><strong>温度与位温：</strong>深海海水受压会产生绝热压缩。现场温度（T）是在深海测得的实际温度，而位温（θ）是将水团绝热提升至海面时的温度。在深海中，位温通常低于现场温度，必须在对比水团时使用位温。</p>
                     <p><strong>盐度：</strong>已由早期的千分比演变为现代基于电导率测量的绝对盐度（Absolute Salinity，无量纲）。</p>
                     <p><strong>密度与特殊过程：</strong>密度主要由温度、盐度和压力决定。海洋内部由密度跃层阻碍垂直混合。存在混合增密（Cabbeling）现象——两水团混合后密度变大而下沉。此外，由于热量和盐分扩散速率差异，会产生双扩散（盐指和扩散对流）。</p>
+                    <div class="img-container">
+                        <a href="fig-4-10.png" target="_blank"><img src="fig-4-10.png" alt="马里亚纳海沟T与θ对比" onerror="this.src='https://via.placeholder.com/600x300?text=请上传+fig-4-10.png'"></a>
+                        <span class="img-caption">图 4.10：马里亚纳海沟的原位温度(T)与位温(θ)对比</span>
+                    </div>
                 </div>
             </details>
 
@@ -207,6 +220,10 @@
                     <p><strong>温盐分布：</strong>表层温度随纬度递减。垂向典型分层为混合层、温跃层、深层。表层盐度在副热带最高（蒸发大），在赤道和高纬较低。</p>
                     <p><strong>温盐图（T-S Diagram）：</strong>是识别水团的核心工具。不同水团在 T-S 图上有特定的温盐组合，水团混合呈现直线规律。</p>
                     <p><strong>水团特征：</strong>如南极底层水（AABW，最冷、较咸）和北大西洋深层水（NADW，高盐）。温跃层的维持主要依赖于向下热量扩散与深层冷水平流的动态平衡。</p>
+                    <div class="img-container">
+                        <a href="fig-4-11.png" target="_blank"><img src="fig-4-11.png" alt="大西洋截面图" onerror="this.src='https://via.placeholder.com/600x300?text=请上传+fig-4-11.png'"></a>
+                        <span class="img-caption">图 4.11：大西洋位温/盐度垂直截面</span>
+                    </div>
                 </div>
             </details>
 
@@ -219,6 +236,10 @@
                     <p><strong>热收支四分量：</strong>包括太阳短波辐射（Qs，得热项）、长波辐射（Qb，失热项）、潜热通量（Qe，主要失热项）和感热通量（Qh，量级最小）。</p>
                     <p><strong>盐度平衡：</strong>E-P（蒸发减降水）决定了表层盐度的分布格局。</p>
                     <p><strong>埃克曼动力学：</strong>风应力驱动表层水，受科氏力作用产生偏转（北半球向右），形成埃克曼螺旋。垂直积分后形成的埃克曼净输送方向与风向垂直（北半球向右 90°）。风应力旋度会导致水体的辐合辐散，引发埃克曼抽吸。</p>
+                    <div class="img-container">
+                        <a href="fig-5-11.png" target="_blank"><img src="fig-5-11.png" alt="全球热通量" onerror="this.src='https://via.placeholder.com/600x300?text=请上传+fig-5-11.png'"></a>
+                        <span class="img-caption">图 5.11：全球年平均热通量分布</span>
+                    </div>
                 </div>
             </details>
 
@@ -243,6 +264,10 @@
                     <p><strong>地转平衡：</strong>大尺度下（Ro << 1），科氏力与水平压强梯度力平衡。地转流沿等压线流动，北半球高压位于流向右侧。</p>
                     <p><strong>热成风关系：</strong>地转流的垂直切变由密度的水平梯度决定。</p>
                     <p><strong>Sverdrup 平衡与西向强化：</strong>风应力旋度驱动大洋内部经向输送。为满足质量守恒，必须在洋盆西侧形成狭窄且强劲的西边界流（如黑潮、湾流）。</p>
+                    <div class="img-container">
+                        <a href="fig-7-8.png" target="_blank"><img src="fig-7-8.png" alt="埃克曼响应" onerror="this.src='https://via.placeholder.com/600x300?text=请上传+fig-7-8.png'"></a>
+                        <span class="img-caption">图 7.8：埃克曼响应</span>
+                    </div>
                 </div>
             </details>
 
@@ -429,6 +454,11 @@
                         每年春夏，长江口冲淡水带来丰富的营养盐，引发壮观的藻华。浮游植物疯狂光合作用，吸收了大量的碳（净群落生产力 NCP）。<strong>我原以为</strong>，这些碳死后会像雪花一样沉入海底，形成长期碳汇。<br><br>
                         <strong>但事实真的如此吗？</strong>这些新增的碳，究竟是变成了二氧化碳重新逃逸回大气（海气通量），还是真的沉到了混合层以下（POC输出）？在风暴频发、水流湍急的河口，这些“幽灵碳”的去向成了一个谜。
                     </div>
+                    <!-- 插入图 1：案发现场 -->
+                    <div class="img-container">
+                        <a href="story-fig-1.png" target="_blank"><img src="story-fig-1.png" alt="长江口藻华分布" onerror="this.src='https://via.placeholder.com/600x300?text=请上传长江口藻华卫星图(story-fig-1.png)'"></a>
+                        <span class="img-caption">案发现场：长江口及东海表层叶绿素浓度分布（示意）</span>
+                    </div>
 
                     <h3 style="margin-top:20px; color:#0969da; font-size:15px;">🔍 中间：抽丝剥茧的探案过程</h3>
                     <div class="myvoice">
@@ -443,12 +473,28 @@
                         <strong>陷阱三：氧气的骗局（DO 收支的干扰）</strong><br>
                         我原以为利用混合层的溶解氧（DO）变化就能直接算出 NCP。后来发现，风一吹，水体一混合，甚至温度一变，氧气就会进出海水。我必须剥离掉物理交换的干扰，才能得到真实的生物产氧量。
                     </div>
+                    <!-- 插入图 2 & 3：核心概念与作案工具 -->
+                    <div style="display: flex; gap: 16px; justify-content: center; margin-top: 16px; flex-wrap: wrap;">
+                        <div class="img-container" style="width: 46%; min-width: 250px; margin: 0;">
+                            <a href="story-fig-2.png" target="_blank"><img src="story-fig-2.png" alt="海气交换与混合层" style="width: 100%;" onerror="this.src='https://via.placeholder.com/300x200?text=请上传海气交换图(story-fig-2.png)'"></a>
+                            <span class="img-caption">物理陷阱：海气界面的 CO₂ 交换与混合层</span>
+                        </div>
+                        <div class="img-container" style="width: 46%; min-width: 250px; margin: 0;">
+                            <a href="story-fig-3.png" target="_blank"><img src="story-fig-3.png" alt="采样与捕获器" style="width: 100%;" onerror="this.src='https://via.placeholder.com/300x200?text=请上传采样图(story-fig-3.png)'"></a>
+                            <span class="img-caption">作案工具：用于提取 POC 的沉积物捕获器/采水器</span>
+                        </div>
+                    </div>
 
                     <h3 style="margin-top:20px; color:#0969da; font-size:15px;">🏁 结尾：结论与未尽的好奇</h3>
                     <div class="myvoice">
                         <strong>我做了什么：</strong> 经过反复推敲，我撰写了一份完整的《长江口藻华事件新增 NCP 实验方案》，详细规定了基线确立、连续观测和 POC 捕获的流程。<br><br>
                         <strong>结论：</strong> 这场探案让我明白，海气交换、水平平流和颗粒物输出，必须放在同一个时空尺度下严谨比较。单层的捕获器只能证明“碳掉下去了”，但绝不等同于“长期封存”。真实的物理海洋学，是对细节的极致苛求。<br><br>
                         <strong>还想知道：</strong> 如果真到了海上，遇到台风船开不过去，我该怎么用数学模型来“脑补”缺失的数据？
+                    </div>
+                    <!-- 插入图 4：结案陈词 (三维模型图) -->
+                    <div class="img-container">
+                        <a href="story-fig-4.png" target="_blank"><img src="story-fig-4.png" alt="碳循环三维模型" onerror="this.src='https://via.placeholder.com/600x300?text=请上传NCP-POC-CO2概念模型图(story-fig-4.png)'"></a>
+                        <span class="img-caption">结案陈词：必须将 NCP、海气 CO₂ 通量与 POC 输出放在同一时间窗内对比</span>
                     </div>
 
                     <h3 style="margin-top:20px; color:#0969da; font-size:15px;">📎 证据：完整的探案卷宗</h3>
