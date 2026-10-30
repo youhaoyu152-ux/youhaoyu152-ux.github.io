@@ -502,63 +502,83 @@
         <!-- ================= 🎬 故事会 ================= -->
         <section>
             <h2>🎬 故事会 (Story Time)</h2>
-            <p>这里记录我自己动手做过的小项目、小实验、小探索。</p>
+            <p>这里记录了我从现象出发，动手探索海洋物理机制的“探案过程”。</p>
 
-            <!-- 故事1：实验方案 -->
-            <details style="margin-top:20px; border:1px solid #eaeef2; border-radius:8px; padding:0;">
+            <!-- 故事1：追踪长江口幽灵碳 -->
+            <details style="margin-top:20px; border:1px solid #eaeef2; border-radius:8px; padding:0;" open>
                 <summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:16px; background:#f6f8fa; border-radius:8px; list-style:none;">
-                    故事1：追踪长江口藻华碳汇的实验方案设计
+                    故事1：追踪长江口的“幽灵碳”——一场关于藻华与碳汇的探案
                 </summary>
                 <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
-                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">🎬 开头（现象/疑问）</h3>
+                    
+                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">🎬 开头：现象与悬疑</h3>
                     <div class="myvoice">
-                        长江口冲淡水带来的营养盐常常引发藻华。我产生了一个疑问：这些浮游植物固定的碳（NCP），最终是变成了气体被海洋重新吸收（海气 CO₂ 通量），还是变成了颗粒物沉到了海底（POC 输出），形成了真正的碳汇？
+                        在学习完“海气相互作用”和“水团分布”后，我盯着长江口的卫星图陷入了沉思。<br><br>
+                        每年春夏，长江口冲淡水带来丰富的营养盐，引发壮观的藻华。浮游植物疯狂光合作用，吸收了大量的碳（净群落生产力 NCP）。<strong>我原以为</strong>，这些碳死后会像雪花一样沉入海底，形成长期碳汇。<br><br>
+                        <strong>但事实真的如此吗？</strong>这些新增的碳，究竟是变成了二氧化碳重新逃逸回大气（海气通量），还是真的沉到了混合层以下（POC输出）？在风暴频发、水流湍急的河口，这些“幽灵碳”的去向成了一个谜。
                     </div>
-                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">🔍 中间（怎么找答案）</h3>
+
+                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">🔍 中间：抽丝剥茧的探案过程</h3>
                     <div class="myvoice">
-                        为了回答这个问题，我设计了一个针对“单一核心站”的观测实验方案。期间解决了三大难点：<br><br>
-                        <strong>难点 1（基线确立）：</strong>不能简单减去全年平均。必须在事件发生前获取 5-7 天的连续基线数据。<br>
-                        <strong>难点 2（时间匹配）：</strong>海气 CO₂ 通量是连续记录的，但沉积物捕获器只能放几个小时。必须在时间窗口上做积分平均（如捕获器 08:00-14:00 采样，就提取这 6 小时的 NCP 和 CO₂ 通量来配对）。<br>
-                        <strong>难点 3（通量估算）：</strong>利用混合层的氧库存变化（DO 收支）来推算 NCP，结合风速和海表温度计算海气交换通量。
+                        为了给这些碳“结案”，我查阅了大量文献，试图设计一个针对“单一核心站”的观测实验方案。在这个过程中，我遭遇了三个极其棘手的“物理陷阱”：<br><br>
+                        
+                        <strong>陷阱一：消失的基线（时间轴的错乱）</strong><br>
+                        不能简单地把藻华期的数据减去全年的平均。风暴和径流会带来剧烈的短期波动。因此，我必须要在事件发生前，死死盯住 5-7 天的连续基线数据，才敢说什么是“异常”。<br><br>
+                        
+                        <strong>陷阱二：错位的监控（捕获器与传感器的时差）</strong><br>
+                        海气 CO₂ 传感器是每分每秒都在记录的，但沉积物捕获器（抓取下沉碳）只能在海底放几个小时。这就好比监控录像和静态照片，时间完全对不上！最终我通过设计“时间窗积分模型”，强行让它们在同一时段（如 08:00-14:00）进行数据配对。<br><br>
+                        
+                        <strong>陷阱三：氧气的骗局（DO 收支的干扰）</strong><br>
+                        我原以为利用混合层的溶解氧（DO）变化就能直接算出 NCP。后来发现，风一吹，水体一混合，甚至温度一变，氧气就会进出海水。我必须剥离掉物理交换的干扰，才能得到真实的生物产氧量。
                     </div>
-                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">🏁 结尾（结论 + 还想知道什么）</h3>
+
+                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">🏁 结尾：结论与未尽的好奇</h3>
                     <div class="myvoice">
-                        <strong>结论：</strong> 只有把海气交换、水平平流和垂向颗粒输出放在同一个时间窗口里严谨比较，才能算出“表观响应比”。单层的捕获器只能证明碳输出到了混合层以下，不能直接等同于长期碳封存。<br>
-                        <strong>还想知道：</strong> 如果未来这套方案真正在海上实施，遇到恶劣天气导致船时不够，我该怎样用模型插值来弥补缺失的数据？
+                        <strong>我做了什么：</strong> 经过反复推敲，我撰写了一份完整的《长江口藻华事件新增 NCP 实验方案》，详细规定了基线确立、连续观测和 POC 捕获的流程。<br><br>
+                        <strong>结论：</strong> 这场探案让我明白，海气交换、水平平流和颗粒物输出，必须放在同一个时空尺度下严谨比较。单层的捕获器只能证明“碳掉下去了”，但绝不等同于“长期封存”。真实的物理海洋学，是对细节的极致苛求。<br><br>
+                        <strong>还想知道：</strong> 如果真到了海上，遇到台风船开不过去，我该怎么用数学模型来“脑补”缺失的数据？
                     </div>
-                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">📎 证据</h3>
+
+                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">📎 证据：完整的探案卷宗</h3>
+                    <p style="font-size:13px; color:#57606a;">点击下方按钮，下载我撰写的《长江口藻华事件新增NCP实验方案》。</p>
                     <div style="text-align:center; margin-top:12px;">
                         <!-- 使用 raw 直链强制下载 -->
-                        <a href="https://raw.githubusercontent.com/youhaoyu152-ux/youhaoyu152-ux.github.io/main/NCP_Experiment_Plan.docx" target="_blank" style="display: inline-block; background: #2ea44f; color: #fff; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-size: 14px; font-weight: 600;">
+                        <a href="https://raw.githubusercontent.com/youhaoyu152-ux/youhaoyu152-ux.github.io/main/NCP_Experiment_Plan.docx" target="_blank" style="display: inline-block; background: #2ea44f; color: #fff; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-size: 14px; font-weight: 600; box-shadow: 0 4px 6px rgba(46,164,79,0.2);">
                             📄 点击下载《实验方案文档》 (Word格式)
                         </a>
                     </div>
                 </div>
             </details>
 
-            <!-- 故事2：思维导图 -->
+            <!-- 故事2：知识地图 -->
             <details style="margin-top:12px; border:1px solid #eaeef2; border-radius:8px; padding:0;">
                 <summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:16px; background:#f6f8fa; border-radius:8px; list-style:none;">
-                    故事2：用 XMind 搭建知识网络
+                    故事2：把散落的珍珠串成项链——我的物理海洋学知识地图
                 </summary>
                 <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
-                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">🎬 开头（现象/疑问）</h3>
+                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">🎬 开头：满脑子的碎片</h3>
                     <div class="myvoice">
-                        物理海洋学概念庞杂，从分子湍流到热盐环流。我想：有没有一种方法能把所有概念串联起来，形成一张知识地图？
+                        期中复习时，我发现自己陷入了死记硬背的泥潭。科氏力、双扩散、埃克曼抽吸、罗斯贝波……这些概念就像散落一地的珍珠，单独拿出来我都懂，但连在一起就成了一团乱麻。我迫切需要一个工具，把它们串起来。
                     </div>
-                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">🔍 中间（怎么找答案）</h3>
+                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">🔍 中间：构建逻辑链条</h3>
                     <div class="myvoice">
-                        我使用 XMind 展开了主干，对照教材和 PPT 填入子节点。我特别注意寻找知识点之间的联系，比如“热量收支”是如何驱动“温跃层”变化，进而影响“海洋环流”的。
+                        我打开了 XMind，决定不按章节抄书，而是按“物理逻辑”重构。<br>
+                        我发现，一切的起点是“太阳辐射不均”，它导致了海面热通量的差异。而热通量又驱动了温跃层的变化，温跃层一旦倾斜，就产生了压强梯度力，进而催生了地转流。地转流被地形阻挡，又演变成了西边界流……<br>
+                        当我把这些箭头画出来时，我惊呼：原来大洋环流是一台如此精密的齿轮系统！
                     </div>
-                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">🏁 结尾（结论 + 还想知道什么）</h3>
+                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">🏁 结尾：豁然开朗</h3>
                     <div class="myvoice">
-                        <strong>结论：</strong> 整理完后，我脑海中的散落公式变成了一个立体的系统。<br>
-                        <strong>还想知道：</strong> 如果以后能用 Python 把节点和真实的 Argo 浮标数据连接起来，做成动态可视化的交互网站就更好了。
+                        <strong>结论：</strong> 这张思维导图成了我复习的“导航仪”。它不再是一堆考点的堆砌，而是一张生动的物理过程演化图。<br>
+                        <strong>证据：</strong> 以下是我引以为傲的知识地图。
+                        <div style="text-align:center; margin-top:12px;">
+                            <a href="physical-oceanography.png" target="_blank">
+                                <img src="physical-oceanography.png" alt="物理海洋学知识体系思维导图" style="max-width:100%; border-radius:6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                            </a>
+                        </div>
                     </div>
                 </div>
             </details>
         </section>
-
         <!-- ================= 📝 学习日志 ================= -->
         <section>
             <h2>📝 Learning Notes</h2>
