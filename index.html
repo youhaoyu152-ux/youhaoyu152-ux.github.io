@@ -113,6 +113,14 @@
         table { border-collapse: collapse; width: 100%; margin: 16px 0; font-size: 13.5px; }
         th, td { border: 1px solid #d0d7de; padding: 10px 12px; text-align: left; }
         th { background: #f6f8fa; font-weight: 600; }
+        
+        /* 图片自适应与并排 */
+        .img-container { text-align: center; margin-top: 16px; }
+        .img-container img { max-width: 100%; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); cursor: zoom-in; }
+        .img-caption { font-size: 12px; color: #8b949e; margin-top: 6px; }
+        .flex-gallery { display: flex; gap: 16px; justify-content: center; margin-top: 16px; flex-wrap: wrap; }
+        .flex-gallery > div { text-align: center; width: 46%; min-width: 250px; }
+
         footer { text-align: center; color: #8b949e; font-size: 13px; padding: 24px 0; }
     </style>
 </head>
@@ -177,6 +185,10 @@
                         <li><strong>探究逻辑：</strong>现象是什么（What）？为什么会发生（Why）？如何观测和量化（How）？</li>
                         <li><strong>时空尺度：</strong>从毫米级的湍流斑块，到千公里级的中尺度涡，再到万公里级的热盐环流。大洋环流受到地球自转的巨大影响。</li>
                     </ul>
+                    <div class="img-container">
+                        <a href="fig-1-2.png" target="_blank"><img src="fig-1-2.png" alt="物理海洋学现象的时空尺度" onerror="this.src='https://via.placeholder.com/600x300?text=请上传+fig-1-2.png'"></a>
+                        <p class="img-caption">图 1.2：物理海洋学现象的时空尺度（PPT/教材原图）</p>
+                    </div>
                     <h3 style="margin-top:20px; color:#0969da; font-size:15px;">✍️ 我的理解</h3>
                     <div class="myvoice">
                         <strong>我原以为：</strong>物理海洋学就是纯研究海流方向。<br>
@@ -213,15 +225,17 @@
                     <ul style="padding-left:24px; margin:8px 0;">
                         <li><strong>现场温度 (T) 与 位温 (θ)：</strong>深海海水受压绝热升温。位温是将水团绝热提升到海面时的温度。比较不同深度的水团必须用位温。</li>
                         <li><strong>盐度：</strong>从千分比演变到实用盐度（psu），现代海洋学使用绝对盐度（Absolute Salinity），基于电导率测量，无量纲。</li>
-                        <li><strong>密度与层结：</strong>冷水、咸水、高压水密度更大。海洋内部由**密度跃层 (Pycnocline)** 维持垂直稳定层结（Brunt-Väisälä 频率 N）。</li>
+                        <li><strong>密度与层结：</strong>冷水、咸水、高压水密度更大。海洋内部由密度跃层维持垂直稳定层结。</li>
                         <li><strong>混合增密 (Cabbeling)：</strong>两股温盐不同但密度相同的水团混合后，由于状态方程的非线性，混合水密度变大而下沉。</li>
-                        <li><strong>双扩散 (Double Diffusion)：</strong>由于热量扩散比盐分快，形成**盐指 (Salt Fingers)** 或**扩散对流**。这是海洋内部混合的重要机制。</li>
-                        <li><strong>SOFAR 通道：</strong>约 1000m 深处存在声速极小值，声波在此通道可传播数千公里。</li>
                     </ul>
+                    <div class="img-container">
+                        <a href="fig-4-10.png" target="_blank"><img src="fig-4-10.png" alt="马里亚纳海沟T与θ对比" onerror="this.src='https://via.placeholder.com/600x300?text=请上传+fig-4-10.png'"></a>
+                        <p class="img-caption">图 4.10：马里亚纳海沟的原位温度(T)与位温(θ)对比，4000m以下差异明显</p>
+                    </div>
                     <h3 style="margin-top:20px; color:#0969da; font-size:15px;">✍️ 我的理解</h3>
                     <div class="myvoice">
                         <strong>我原以为：</strong>温度计测出来的就是绝对真实的温度。<br>
-                        <strong>后来发现：</strong>深海巨大的压力会导致绝热压缩。如果不换算成位温，不同深度的水团根本无法对比。双扩散和混合增密也让我看到了物理海洋学中非线性的奇妙之处。
+                        <strong>后来发现：</strong>深海巨大的压力会导致绝热压缩。如果不换算成位温，不同深度的水团根本无法对比。
                     </div>
                 </div>
             </details>
@@ -233,16 +247,25 @@
                 <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
                     <h3 style="margin-top:12px; color:#0969da; font-size:15px;">📖 核心概念</h3>
                     <ul style="padding-left:24px; margin:8px 0;">
-                        <li><strong>温度分布：</strong>表层随纬度递减。垂向典型分三层：混合层（几十米）、温跃层（急剧降温）、深层（缓慢降温）。</li>
-                        <li><strong>盐度分布：</strong>表层副热带最高（蒸发大），赤道和高纬较低（降水/融冰多）。垂向存在盐度极值层。</li>
-                        <li><strong>T-S 图（核心工具）：</strong>识别水团的“指纹”。不同水团形成于特定海区，具有特定的温盐特征。两水团混合在 T-S 图上呈直线。</li>
-                        <li><strong>主要水团：</strong>AABW（南极底层水）、NADW（北大西洋深层水）、AAIW（南极中层水）。</li>
-                        <li><strong>温跃层维持机制：</strong>向下热量扩散与深层冷水平流上升的动态平衡（通风温跃层理论）。</li>
+                        <li><strong>温度分布：</strong>表层随纬度递减。垂向典型分三层：混合层、温跃层、深层。</li>
+                        <li><strong>盐度分布：</strong>表层副热带最高（蒸发大），赤道和高纬较低。垂向存在盐度极值层。</li>
+                        <li><strong>T-S 图：</strong>识别水团的“指纹”。不同水团形成于特定海区。两水团混合在 T-S 图上呈直线。</li>
+                        <li><strong>主要水团：</strong>AABW（南极底层水）、NADW（北大西洋深层水）。</li>
                     </ul>
+                    <div class="flex-gallery">
+                        <div>
+                            <a href="fig-4-1.png" target="_blank"><img src="fig-4-1.png" alt="冬季海表温度" onerror="this.src='https://via.placeholder.com/300x200?text=请上传+fig-4-1.png'"></a>
+                            <p class="img-caption">图 4.1：冬季海表温度分布</p>
+                        </div>
+                        <div>
+                            <a href="fig-4-11.png" target="_blank"><img src="fig-4-11.png" alt="大西洋截面图" onerror="this.src='https://via.placeholder.com/300x200?text=请上传+fig-4-11.png'"></a>
+                            <p class="img-caption">图 4.11：大西洋位温/盐度垂直截面</p>
+                        </div>
+                    </div>
                     <h3 style="margin-top:20px; color:#0969da; font-size:15px;">✍️ 我的理解</h3>
                     <div class="myvoice">
                         <strong>我原以为：</strong>T-S 图就是一张普通的散点图。<br>
-                        <strong>后来发现：</strong>它是物理海洋学里的“DNA鉴定”。通过 T-S 图，我们可以反推水团来自哪里，经过了多少混合。利用 T-S 图甚至可以追踪大洋深处的“大洋传送带”。
+                        <strong>后来发现：</strong>它是物理海洋学里的“DNA鉴定”。通过 T-S 图，我们可以反推水团来自哪里，经过了多少混合。
                     </div>
                 </div>
             </details>
@@ -255,19 +278,22 @@
                     <h3 style="margin-top:12px; color:#0969da; font-size:15px;">📖 核心概念</h3>
                     <ul style="padding-left:24px; margin:8px 0;">
                         <li><strong>四种热通量：</strong>
-                            <br>1. <strong>Qs（短波辐射）</strong>：海洋主要得热项，受太阳高度角和云量主导。
-                            <br>2. <strong>Qb（长波辐射）</strong>：海洋失热项，由海温和大气逆辐射（云量、水汽）决定。
-                            <br>3. <strong>Qe（潜热通量）</strong>：最主要失热项，由蒸发引起，受风速和海气比湿差控制。
+                            <br>1. <strong>Qs（短波辐射）</strong>：得热，受太阳高度角和云量主导。
+                            <br>2. <strong>Qb（长波辐射）</strong>：失热，由海温和大气逆辐射决定。
+                            <br>3. <strong>Qe（潜热通量）</strong>：最主要失热项，受风速和海气比湿差控制。
                             <br>4. <strong>Qh（感热通量）</strong>：由海气温差引起的传导，量级最小。
                         </li>
-                        <li><strong>盐度与水平衡：</strong>E-P（蒸发减降水）决定表层盐度。地中海（强蒸发，高盐水下沉）和黑海（多径流，低盐）是两种极端。</li>
-                        <li><strong>埃克曼动力学：</strong>风应力驱动表层水，受科氏力影响，北半球表层流向偏右 45°（埃克曼螺旋）。垂直积分后得到**埃克曼输送**（垂直于风向偏右 90°）。</li>
-                        <li><strong>埃克曼抽吸 (Upwelling/Downwelling)：</strong>风应力旋度引起水体辐合辐散，导致深层水上升或表层水下沉。</li>
+                        <li><strong>盐度与水平衡：</strong>E-P（蒸发减降水）决定表层盐度。</li>
+                        <li><strong>埃克曼动力学：</strong>风应力驱动表层水，受科氏力影响，北半球表层流向偏右 45°。</li>
                     </ul>
+                    <div class="img-container">
+                        <a href="fig-5-11.png" target="_blank"><img src="fig-5-11.png" alt="全球热通量" onerror="this.src='https://via.placeholder.com/600x300?text=请上传+fig-5-11.png'"></a>
+                        <p class="img-caption">图 5.11：全球年平均热通量分布 (短波、长波、潜热、感热)</p>
+                    </div>
                     <h3 style="margin-top:20px; color:#0969da; font-size:15px;">✍️ 我的理解</h3>
                     <div class="myvoice">
                         <strong>我原以为：</strong>热通量都是海洋向大气散热。<br>
-                        <strong>后来发现：</strong>Qs 是太阳给海洋加热，其他三个是海洋失热。赤道获得的净热量必须通过大洋环流向高纬度输送，否则赤道早就沸腾了。风不仅是吹动表层，还能通过埃克曼抽吸驱动整个大洋的深层环流。
+                        <strong>后来发现：</strong>Qs 是太阳给海洋加热。赤道获得的净热量必须通过大洋环流向高纬度输送，否则赤道早就沸腾了。
                     </div>
                 </div>
             </details>
@@ -279,11 +305,9 @@
                 <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
                     <h3 style="margin-top:12px; color:#0969da; font-size:15px;">📖 核心概念</h3>
                     <ul style="padding-left:24px; margin:8px 0;">
-                        <li><strong>基础统计：</strong>均值、方差（波动大小）、协方差（同向变化）、相关系数（[-1,1]衡量线性关系）。</li>
-                        <li><strong>时间序列分析（频谱分析）：</strong>将复杂信号分解为不同频率的正弦波，用于识别周期（如ENSO）。注意采样频率与奈奎斯特频率（避免信号走样）。</li>
-                        <li><strong>客观分析 (Objective Analysis)：</strong>将分布不规则的观测数据（如船舶、浮标）映射到规则网格上的数学方法（常基于最小二乘法）。</li>
-                        <li><strong>EOF（经验正交函数）：</strong>将时空数据分解为空间模态（EOFs）和时间序列（PCs），提取数据方差最大的方向，常用于识别气候变率（如ENSO、NAO）。</li>
-                        <li><strong>水团识别 (OMP)：</strong>最佳多参数分析，结合温、盐、氧、营养盐等多个参数，用最小二乘法推算各个源水团的混合比例。</li>
+                        <li><strong>时间序列分析：</strong>将复杂信号分解为不同频率的正弦波，识别周期。</li>
+                        <li><strong>客观分析：</strong>将不规则观测映射到规则网格上的数学方法。</li>
+                        <li><strong>EOF：</strong>将时空数据分解为空间模态（EOFs）和时间序列（PCs），提取方差最大的方向。</li>
                     </ul>
                 </div>
             </details>
@@ -295,15 +319,14 @@
                 <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
                     <h3 style="margin-top:12px; color:#0969da; font-size:15px;">📖 核心概念</h3>
                     <ul style="padding-left:24px; margin:8px 0;">
-                        <li><strong>地转平衡：</strong>大尺度运动（罗斯贝数 Ro << 1），科氏力与压强梯度力平衡。北半球，地转流沿等压线流动，高压在流向右侧。</li>
-                        <li><strong>热成风关系：</strong>地转流的垂直切变（随深度的变化）由密度的水平梯度决定。</li>
-                        <li><strong>Sverdrup 平衡：</strong>埃克曼抽吸驱动了大洋内部的南北向输送，由风应力旋度决定（\(\beta V = \text{curl}(\tau)\)）。</li>
-                        <li><strong>西向强化：</strong>Sverdrup 平衡无法满足大洋东西两侧的边界条件，因此必须在西侧形成窄而强的**西边界流**（如黑潮、湾流），这里的摩擦力不可忽略。</li>
+                        <li><strong>地转平衡：</strong>科氏力与压强梯度力平衡。北半球，地转流沿等压线流动，高压在流向右侧。</li>
+                        <li><strong>热成风关系：</strong>地转流的垂直切变由密度的水平梯度决定。</li>
+                        <li><strong>Sverdrup 平衡：</strong>埃克曼抽吸驱动了大洋内部的南北向输送。</li>
+                        <li><strong>西向强化：</strong>必须在西侧形成窄而强的西边界流（如黑潮、湾流）。</li>
                     </ul>
-                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">✍️ 我的理解</h3>
-                    <div class="myvoice">
-                        <strong>我原以为：</strong>科氏力是一种真实存在的“推力”。<br>
-                        <strong>后来发现：</strong>它其实是地球自转带来的表观惯性力，永远垂直于运动方向，只改变方向，**不做功**。理解地转平衡和热成风关系，是揭开大洋环流谜团的钥匙。
+                    <div class="img-container">
+                        <a href="fig-7-8.png" target="_blank"><img src="fig-7-8.png" alt="埃克曼响应" onerror="this.src='https://via.placeholder.com/600x300?text=请上传+fig-7-8.png'"></a>
+                        <p class="img-caption">图 7.8：埃克曼响应（风应力与表层非地转海流）</p>
                     </div>
                 </div>
             </details>
@@ -315,10 +338,9 @@
                 <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
                     <h3 style="margin-top:12px; color:#0969da; font-size:15px;">📖 核心概念</h3>
                     <ul style="padding-left:24px; margin:8px 0;">
-                        <li><strong>表面重力波：</strong>风驱动生成，深水中波速与波长相关。近岸变浅破碎。</li>
-                        <li><strong>内波 (Internal Waves)：</strong>发生在密度跃层处。由于内部密度差小，内波可以产生巨大的振幅（几十米），传播速度较慢，是海洋内部混合（能量耗散）的主要来源。</li>
-                        <li><strong>潮汐 (Tides)：</strong>天体引潮力驱动。受地形、科氏力影响形成旋转潮波系统（动力潮）。</li>
-                        <li><strong>沿岸过程：</strong>风引起的离岸埃克曼输送导致**沿岸上升流**（如秘鲁沿岸），带来丰富营养盐。海岸地形还能捕获沿岸陷波（Coastal Trapped Waves）。</li>
+                        <li><strong>表面重力波与内波：</strong>内波发生在密度跃层，振幅大、波速慢，是海洋内部混合的主要来源。</li>
+                        <li><strong>潮汐：</strong>受地形和科氏力影响，形成复杂的动力潮。</li>
+                        <li><strong>沿岸过程：</strong>风引起的离岸埃克曼输送导致沿岸上升流。</li>
                     </ul>
                 </div>
             </details>
@@ -338,10 +360,8 @@
                     <h3 style="margin-top:12px; color:#0969da; font-size:15px;">🎫 出门票</h3>
                     <div class="ticket">
                         这节课我最大的收获是理清了物理海洋学的“What - Why - How”研究框架。为了总览全貌，我课后使用 XMind 整理了一张知识地图。
-                        <div style="text-align:center; margin-top:12px;">
-                            <a href="physical-oceanography.png" target="_blank">
-                                <img src="physical-oceanography.png" alt="物理海洋学知识体系思维导图" style="max-width:100%; border-radius:6px; cursor:zoom-in;">
-                            </a>
+                        <div class="img-container">
+                            <a href="physical-oceanography.png" target="_blank"><img src="physical-oceanography.png" alt="物理海洋学知识体系思维导图"></a>
                         </div>
                     </div>
                 </div>
@@ -369,10 +389,8 @@
                     <h3 style="margin-top:12px; color:#0969da; font-size:15px;">🎫 出门票</h3>
                     <div class="ticket">
                         这节课我搞懂了“位温”和“混合增密”。课上老师展示了如何用代码处理位温分布并计算混合增密，我把当时的 PPT 截图保存了下来。明白了当两股温盐不同但密度相同的水团混合时，混合后密度反而变大并下沉。
-                        <div style="text-align:center; margin-top:12px;">
-                            <a href="ticket-mixing.png" target="_blank">
-                                <img src="ticket-mixing.png" alt="位温与混合增密" style="max-width:100%; border-radius:6px; cursor:zoom-in;">
-                            </a>
+                        <div class="img-container">
+                            <a href="ticket-mixing.png" target="_blank"><img src="ticket-mixing.png" alt="位温与混合增密"></a>
                         </div>
                     </div>
                 </div>
@@ -418,10 +436,8 @@
                     <div class="ticket">
                         <strong>7. 温跃层是如何维持的？</strong> 依赖向下热量扩散与深层冷水平流的动态平衡。<br>
                         <strong>随堂测验题（EOF的目的）：</strong>正确答案是 B. 识别数据集中的主导空间模态及其时间演变。
-                        <div style="text-align:center; margin-top:12px;">
-                            <a href="ticket-eof.png" target="_blank">
-                                <img src="ticket-eof.png" alt="EOF 测验题" style="max-width:100%; border-radius:6px; cursor:zoom-in;">
-                            </a>
+                        <div class="img-container">
+                            <a href="ticket-eof.png" target="_blank"><img src="ticket-eof.png" alt="EOF 测验题"></a>
                         </div>
                     </div>
                 </div>
@@ -437,16 +453,12 @@
                     <div class="ticket">
                         <strong>Sverdrup 平衡与全球环流：</strong><br>
                         风产生埃克曼输送与辐合，导致水柱被压缩或拉伸。Squashing 向赤道移动，Stretching 向极地移动。
-                        <div style="text-align:center; margin-top:12px;">
-                            <a href="ticket-sverdrup.png" target="_blank">
-                                <img src="ticket-sverdrup.png" alt="Sverdrup Balance" style="max-width:100%; border-radius:6px; cursor:zoom-in;">
-                            </a>
+                        <div class="img-container" style="margin-bottom:12px;">
+                            <a href="ticket-sverdrup.png" target="_blank"><img src="ticket-sverdrup.png" alt="Sverdrup Balance"></a>
                         </div>
-                        <br>结合全球地转流场图，能直观看到西边界流（湾流、黑潮）和南极绕极流（ACC）的位置。
-                        <div style="text-align:center; margin-top:12px;">
-                            <a href="global-geostrophic-velocity.png" target="_blank">
-                                <img src="global-geostrophic-velocity.png" alt="全球地转流场" style="max-width:100%; border-radius:6px; cursor:zoom-in;">
-                            </a>
+                        结合全球地转流场图，能直观看到西边界流（湾流、黑潮）和南极绕极流（ACC）的位置。
+                        <div class="img-container">
+                            <a href="global-geostrophic-velocity.png" target="_blank"><img src="global-geostrophic-velocity.png" alt="全球地转流场"></a>
                         </div>
                     </div>
                 </div>
@@ -463,10 +475,8 @@
                         这节课彻底理清了不同波动的生成机制。不同尺度的波动恢复力完全不同：毛细波靠表面张力，普通的表面重力波靠重力，而大洋里的罗斯贝波则是靠科氏参数随纬度的变化（β效应）！
                         <br><br>
                         我把课堂上讲到的 23 种海洋与大气波动整理成了一张详细的对照表。
-                        <div style="text-align:center; margin-top:12px;">
-                            <a href="wave-types.png" target="_blank">
-                                <img src="wave-types.png" alt="海洋与大气波动类型汇总" style="max-width:100%; border-radius:6px; cursor:zoom-in; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                            </a>
+                        <div class="img-container">
+                            <a href="wave-types.png" target="_blank"><img src="wave-types.png" alt="海洋与大气波动类型汇总"></a>
                         </div>
                     </div>
                 </div>
@@ -481,10 +491,8 @@
                     <h3 style="margin-top:12px; color:#0969da; font-size:15px;">🎫 出门票</h3>
                     <div class="ticket">
                         回顾整个课程，从经典的温盐分布，到复杂的动力学方程，最终走向了全球气候系统与数字孪生。我对 <strong>“海洋动力过程对碳-氮-氧生物地球化学循环的调控”</strong> 最感兴趣，这正好与我设计的“长江口藻华实验方案”不谋而合！
-                        <div style="text-align:center; margin-top:12px;">
-                            <a href="frontiers.png" target="_blank">
-                                <img src="frontiers.png" alt="物理海洋学前沿十大方向" style="max-width:100%; border-radius:6px; cursor:zoom-in; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                            </a>
+                        <div class="img-container">
+                            <a href="frontiers.png" target="_blank"><img src="frontiers.png" alt="物理海洋学前沿十大方向"></a>
                         </div>
                     </div>
                 </div>
@@ -520,6 +528,7 @@
                     </div>
                     <h3 style="margin-top:20px; color:#0969da; font-size:15px;">📎 证据</h3>
                     <div style="text-align:center; margin-top:12px;">
+                        <!-- 使用 raw 直链强制下载 -->
                         <a href="https://raw.githubusercontent.com/youhaoyu152-ux/youhaoyu152-ux.github.io/main/NCP_Experiment_Plan.docx" target="_blank" style="display: inline-block; background: #2ea44f; color: #fff; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-size: 14px; font-weight: 600;">
                             📄 点击下载《实验方案文档》 (Word格式)
                         </a>
