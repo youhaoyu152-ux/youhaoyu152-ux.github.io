@@ -1,589 +1,746 @@
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YHY - Physical Oceanography &amp; Programming</title>
-    <meta name="description" content="Personal site of YHY, focused on physical oceanography, ocean data analysis and scientific programming.">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
-            line-height: 1.8;
-            color: #24292f;
-            background: #f0f6fc;
-        }
-        .container { max-width: 900px; margin: 0 auto; padding: 40px 24px; }
-        header {
-            background: linear-gradient(135deg, #0969da 0%, #218bff 100%);
-            color: #fff;
-            border-radius: 12px;
-            padding: 44px 40px;
-            margin-bottom: 24px;
-            box-shadow: 0 2px 8px rgba(9,105,218,0.25);
-        }
-        header h1 { font-size: 32px; margin-bottom: 8px; }
-        header .subtitle { font-size: 16px; opacity: 0.92; margin-bottom: 18px; }
-        header .intro { font-size: 15px; opacity: 0.96; }
-        section {
-            background: #fff;
-            border-radius: 12px;
-            padding: 32px 40px;
-            margin-bottom: 24px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
-        }
-        section h2 {
-            font-size: 22px;
-            color: #24292f;
-            border-bottom: 2px solid #0969da;
-            padding-bottom: 8px;
-            margin-bottom: 20px;
-        }
-        .skills { display: flex; flex-wrap: wrap; gap: 10px; }
-        .skill-tag {
-            background: #ddf4ff;
-            color: #0969da;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 500;
-        }
-        .note { padding: 14px 0; border-bottom: 1px solid #eaeef2; font-size: 14px; }
-        .note:last-child { border-bottom: none; }
-        .note .date { color: #8b949e; font-size: 13px; margin-right: 12px; }
-        .contact-list { list-style: none; font-size: 15px; }
-        .contact-list li { padding: 8px 0; }
-        .contact-list a { color: #0969da; text-decoration: none; }
-        
-        /* 提示框与重点样式 */
-        .myvoice {
-            background: #f0fff4;
-            border-left: 4px solid #28a745;
-            padding: 12px 16px;
-            margin: 14px 0;
-            font-size: 14px;
-            border-radius: 0 6px 6px 0;
-        }
-        .ticket {
-            background: #f6f8fa;
-            border: 1px dashed #8b949e;
-            padding: 16px;
-            margin: 20px 0 0;
-            font-size: 14px;
-            border-radius: 8px;
-            color: #57606a;
-        }
-        .formula {
-            background: #eef2f5;
-            font-family: Consolas, monospace;
-            padding: 10px;
-            border-radius: 4px;
-            margin: 10px 0;
-            font-size: 14px;
-            text-align: center;
-            color: #0550ae;
-        }
-        table { border-collapse: collapse; width: 100%; margin: 16px 0; font-size: 13.5px; }
-        th, td { border: 1px solid #d0d7de; padding: 10px 12px; text-align: left; }
-        th { background: #f6f8fa; font-weight: 600; }
-        
-        /* 严格闭合的图片样式 */
-        .img-container { 
-            text-align: center; 
-            margin: 20px 0; 
-            padding: 10px;
-            background: #fff;
-            border: 1px solid #eaeef2;
-            border-radius: 8px;
-            /* 确保图片容器不会超出父元素 */
-            overflow: hidden; 
-        }
-        .img-container img { 
-            max-width: 100%; 
-            height: auto;
-            border-radius: 6px; 
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
-            cursor: zoom-in; 
-            display: block;
-            margin: 0 auto;
-        }
-        .img-caption { 
-            font-size: 13px; 
-            color: #8b949e; 
-            margin-top: 10px; 
-            display: block; 
-            text-align: center;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="YHY 的个人知识库：物理海洋学、海洋数据分析与科学编程。YHY's bilingual knowledge hub for physical oceanography, ocean data analysis and scientific programming.">
+  <title>YHY | 物理海洋学与科学编程 / Physical Oceanography &amp; Scientific Programming</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.8; color: #24292f; background: #f0f6fc; }
+    .container { max-width: 900px; margin: 0 auto; padding: 40px 24px; }
+    header { background: linear-gradient(135deg,#0969da,#218bff); color: #fff; border-radius: 12px; padding: 44px 40px; margin-bottom: 24px; box-shadow: 0 2px 8px rgba(9,105,218,.25); }
+    header h1 { font-size: 32px; margin-bottom: 8px; }
+    .subtitle { font-size: 16px; opacity: .92; margin-bottom: 18px; }
+    section { background: #fff; border-radius: 12px; padding: 32px 40px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+    section h2 { font-size: 22px; border-bottom: 2px solid #0969da; padding-bottom: 8px; margin-bottom: 20px; }
+    h2 small, h3 small { font-size: .77em; font-weight: 500; color: #57606a; }
+    .bi { margin: 12px 0; }
+    .bi .zh { display: block; }
+    .bi .en { display: block; color: #57606a; margin-top: 5px; font-size: .96em; }
+    header .bi .en { color: rgba(255,255,255,.88); }
+    .skills { display: flex; flex-wrap: wrap; gap: 10px; }
+    .skill-tag { background: #ddf4ff; color: #0969da; padding: 6px 14px; border-radius: 20px; font-size: 14px; font-weight: 500; }
+    .book { display: flex; gap: 20px; background: #f6f8fa; padding: 20px; border: 1px solid #eaeef2; border-radius: 8px; margin: 24px 0; align-items: center; flex-wrap: wrap; }
+    .book img { width: 120px; max-width: 100%; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,.15); }
+    .book-content { flex: 1; min-width: 220px; }
+    .book h3 { font-size: 18px; }
+    .book-title-en { color: #0969da; font-weight: 600; font-size: 14px; }
+    details { margin-top: 12px; border: 1px solid #eaeef2; border-radius: 8px; overflow: hidden; }
+    details:first-of-type { margin-top: 20px; }
+    summary { cursor: pointer; padding: 16px 20px; font-weight: 600; font-size: 16px; background: #f6f8fa; }
+    summary::marker { color: #0969da; }
+    .details-body { padding: 16px 24px 24px; font-size: 14px; }
+    .details-body h3 { margin-top: 16px; color: #0969da; font-size: 15px; }
+    .details-body h3 small { color: #57606a; }
+    .myvoice { background: #f0fff4; border-left: 4px solid #28a745; padding: 12px 16px; margin: 14px 0; border-radius: 0 6px 6px 0; }
+    .ticket { background: #f6f8fa; border: 1px dashed #8b949e; padding: 16px; margin: 16px 0; border-radius: 8px; color: #57606a; }
+    .img-container { text-align: center; margin: 20px 0; padding: 10px; background: #fff; border: 1px solid #eaeef2; border-radius: 8px; overflow: hidden; }
+    .img-container img { max-width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,.1); cursor: zoom-in; }
+    .img-caption { display: block; margin-top: 10px; font-size: 13px; color: #57606a; }
+    .image-pair { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; }
+    .image-pair .img-container { margin: 0; }
+    .action { display: inline-block; background: #0969da; color: #fff; padding: 9px 16px; border-radius: 6px; text-decoration: none; font-size: 14px; font-weight: 600; }
+    .action.green { background: #2ea44f; }
+    .action:hover { opacity: .9; }
+    .center { text-align: center; margin: 16px 0; }
+    .note { padding: 14px 0; border-bottom: 1px solid #eaeef2; font-size: 14px; }
+    .note:last-child { border-bottom: 0; }
+    .date { color: #8b949e; margin-right: 12px; }
+    .contact-list { list-style: none; font-size: 15px; }
+    .contact-list li { padding: 8px 0; }
+    a { color: #0969da; }
+    video { display: block; width: 100%; max-width: 680px; margin: 0 auto; border-radius: 8px; }
+    footer { text-align: center; color: #57606a; font-size: 13px; padding: 24px 0; }
+    @media (max-width: 600px) {
+      .container { padding: 18px 12px; }
+      header, section { padding: 24px 18px; }
+      header h1 { font-size: 25px; }
+      section h2 { font-size: 20px; }
+      .details-body { padding: 14px 16px 20px; }
+      .image-pair { grid-template-columns: 1fr; }
+      .book-content { min-width: 0; }
+    }
 
-        footer { text-align: center; color: #8b949e; font-size: 13px; padding: 24px 0; }
-    </style>
+    /* Supplementary textbook notes only; existing styles and content remain unchanged */
+    .deep-dive { margin-top: 26px; padding: 18px 20px; border: 1px solid #c9dcf7; border-left: 4px solid #0969da; border-radius: 8px; background: #f8fbff; }
+    .deep-dive > h3 { margin: 0 0 6px; color: #0969da; font-size: 17px; }
+    .deep-ref { margin-bottom: 16px; font-size: 12px; color: #57606a; }
+    .deep-topic { margin: 14px 0 18px; padding-bottom: 10px; border-bottom: 1px solid #dbe8f6; }
+    .deep-topic:last-of-type { border-bottom: none; }
+    .deep-topic h4 { font-size: 14.5px; color: #1f2328; line-height: 1.6; }
+    .deep-topic h4 span { color: #57606a; font-size: 13px; font-weight: 500; }
+    .deep-topic .bi { margin: 7px 0; }
+    .deep-equation { padding: 14px; margin: 16px 0; border-radius: 8px; background: #edf4fd; }
+    .deep-equation strong, .deep-check strong { display: block; margin-bottom: 8px; }
+    .deep-equation code { display: block; white-space: normal; overflow-wrap: anywhere; font-family: Consolas, Menlo, monospace; color: #0550ae; line-height: 1.7; }
+    .deep-equation p { margin-top: 8px; font-size: 12px; color: #57606a; }
+    .deep-check { padding: 14px; margin-top: 16px; border-radius: 8px; border-left: 3px solid #2ea44f; background: #f0fff4; }
+    @media (max-width: 600px) { .deep-dive { padding: 16px 13px; } }
+  </style>
 </head>
 <body>
-    <div class="container">
-
-        <!-- ================= 头部 ================= -->
-        <header>
-            <h1>Hi, I'm YHY 🌊</h1>
-            <p class="subtitle">Physical Oceanography · Ocean Data Analysis · Scientific Programming</p>
-            <p class="intro">
-                欢迎来到我的个人知识库。我关注物理海洋学方向，兴趣集中在海洋环流、温盐结构、
-                海气相互作用以及河口动力学。这里记录了我对《物理海洋学》课程的深度研读、课堂反思以及独立设计的科研项目。
-            </p>
-        </header>
-
-        <!-- ================= 🛠 技能 ================= -->
-        <section>
-            <h2>🛠 Skills &amp; Tools</h2>
-            <div class="skills">
-                <span class="skill-tag">Python</span>
-                <span class="skill-tag">NumPy</span>
-                <span class="skill-tag">Pandas</span>
-                <span class="skill-tag">Matplotlib</span>
-                <span class="skill-tag">Xarray</span>
-                <span class="skill-tag">NetCDF</span>
-                <span class="skill-tag">Argopy</span>
-                <span class="skill-tag">EOF / PCA</span>
-                <span class="skill-tag">Statistics</span>
-                <span class="skill-tag">MATLAB (Basic)</span>
-                <span class="skill-tag">Git &amp; GitHub</span>
-                <span class="skill-tag">HTML / CSS</span>
-                <span class="skill-tag">Markdown</span>
-            </div>
-        </section>
-
-        <!-- ================= 📚 教材精读笔记 ================= -->
-        <section>
-            <h2>📚 教材精读笔记 (Textbook Notes)</h2>
-            <p>基于《物理海洋学（第六版）》（Talley 等编著）的详细研读，涵盖 1-8 章的所有核心理论、公式推导与重点图表。</p>
-            
-            <!-- 教材信息卡片 -->
-            <div style="display: flex; gap: 20px; background: #f6f8fa; padding: 20px; border-radius: 8px; border: 1px solid #eaeef2; margin: 24px 0; align-items: center; flex-wrap: wrap;">
-                <div style="flex-shrink: 0;">
-                    <img src="oceanography-cover.png" alt="物理海洋学教材封面" style="width: 120px; height: auto; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" onerror="this.style.display='none'">
-                </div>
-                <div style="flex: 1; min-width: 250px;">
-                    <h3 style="margin: 0 0 8px 0; font-size: 18px; color: #24292f;">《物理海洋学》（第六版）</h3>
-                    <p style="margin: 0 0 12px 0; font-size: 14px; color: #0969da; font-weight: 600;">Descriptive Physical Oceanography: An Introduction (Sixth Edition)</p>
-                    <p style="margin: 0 0 16px 0; font-size: 13px; color: #57606a; line-height: 1.6;">物理海洋学专业的经典基础教材，全面涵盖海洋的物理属性、动力学过程以及海气相互作用。</p>
-                    <a href="https://pan.zju.edu.cn/share/6984d8c68b4eac504045f029c4" target="_blank" style="display: inline-block; background: #0969da; color: #fff; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 13px; font-weight: 500;">📥 获取原版 PDF</a>
-                </div>
-            </div>
-
-            <details style="margin-top:12px; border:1px solid #eaeef2; border-radius:8px; padding:0;">
-                <summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:16px; background:#f6f8fa; border-radius:8px; list-style:none;">
-                    第1章：物理海洋学概论 (Introduction)
-                </summary>
-                <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
-                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">📖 核心理论</h3>
-                    <p>物理海洋学是一门基于观测的学科，致力于描述和解释海洋的物理状态及其变化。研究的核心逻辑是探讨“What（现象）—Why（机制）—How（观测与量化）”。</p>
-                    <p>海洋现象具有极宽的时空尺度。微观尺度包括分子混合；中观尺度涵盖内波和潮汐；宏观尺度则涉及大洋环流和热盐环流。大尺度运动深受地球自转（科氏力）影响。</p>
-                    <div class="img-container">
-                        <a href="fig-1-2.png" target="_blank"><img src="fig-1-2.png" alt="物理海洋学的时空尺度" onerror="this.src='https://via.placeholder.com/600x300?text=请上传+fig-1-2.png'"></a>
-                        <span class="img-caption">图 1.2：物理海洋学现象的时空尺度</span>
-                    </div>
-                </div>
-            </details>
-
-            <details style="margin-top:12px; border:1px solid #eaeef2; border-radius:8px; padding:0;">
-                <summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:16px; background:#f6f8fa; border-radius:8px; list-style:none;">
-                    第2章：海洋维度、形状和底质 (Ocean Dimensions)
-                </summary>
-                <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
-                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">📖 核心理论</h3>
-                    <p><strong>海陆分布：</strong>海洋覆盖地球约 71% 的面积，平均深度达 3734m，远超陆地平均海拔（743m）。最深的海沟（马里亚纳海沟）深达 11,000m。</p>
-                    <p><strong>海底扩张：</strong>海底地壳非常年轻（最老不超过 2.8 亿年）。洋中脊是新生地壳的诞生地，而海沟则是板块俯冲消亡的场所。快速扩张的洋中脊（如东太平洋海隆）地形相对平滑，慢速扩张的洋中脊（如大西洋中脊）中央则有显著的裂谷。</p>
-                </div>
-            </details>
-
-            <details style="margin-top:12px; border:1px solid #eaeef2; border-radius:8px; padding:0;">
-                <summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:16px; background:#f6f8fa; border-radius:8px; list-style:none;">
-                    第3章：海水的物理性质 (Physical Properties of Seawater)
-                </summary>
-                <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
-                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">📖 核心理论</h3>
-                    <p><strong>温度与位温：</strong>深海海水受压会产生绝热压缩。现场温度（T）是在深海测得的实际温度，而位温（θ）是将水团绝热提升至海面时的温度。在深海中，位温通常低于现场温度，必须在对比水团时使用位温。</p>
-                    <p><strong>盐度：</strong>已由早期的千分比演变为现代基于电导率测量的绝对盐度（Absolute Salinity，无量纲）。</p>
-                    <p><strong>密度与特殊过程：</strong>密度主要由温度、盐度和压力决定。海洋内部由密度跃层阻碍垂直混合。存在混合增密（Cabbeling）现象——两水团混合后密度变大而下沉。此外，由于热量和盐分扩散速率差异，会产生双扩散（盐指和扩散对流）。</p>
-                    <div class="img-container">
-                        <a href="fig-4-10.png" target="_blank"><img src="fig-4-10.png" alt="马里亚纳海沟T与θ对比" onerror="this.src='https://via.placeholder.com/600x300?text=请上传+fig-4-10.png'"></a>
-                        <span class="img-caption">图 4.10：马里亚纳海沟的原位温度(T)与位温(θ)对比</span>
-                    </div>
-                </div>
-            </details>
-
-            <details style="margin-top:12px; border:1px solid #eaeef2; border-radius:8px; padding:0;">
-                <summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:16px; background:#f6f8fa; border-radius:8px; list-style:none;">
-                    第4章：水体特征的典型分布 (Typical Distributions)
-                </summary>
-                <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
-                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">📖 核心理论</h3>
-                    <p><strong>温盐分布：</strong>表层温度随纬度递减。垂向典型分层为混合层、温跃层、深层。表层盐度在副热带最高（蒸发大），在赤道和高纬较低。</p>
-                    <p><strong>温盐图（T-S Diagram）：</strong>是识别水团的核心工具。不同水团在 T-S 图上有特定的温盐组合，水团混合呈现直线规律。</p>
-                    <p><strong>水团特征：</strong>如南极底层水（AABW，最冷、较咸）和北大西洋深层水（NADW，高盐）。温跃层的维持主要依赖于向下热量扩散与深层冷水平流的动态平衡。</p>
-                    <div class="img-container">
-                        <a href="fig-4-11.png" target="_blank"><img src="fig-4-11.png" alt="大西洋截面图" onerror="this.src='https://via.placeholder.com/600x300?text=请上传+fig-4-11.png'"></a>
-                        <span class="img-caption">图 4.11：大西洋位温/盐度垂直截面</span>
-                    </div>
-                </div>
-            </details>
-
-            <details style="margin-top:12px; border:1px solid #eaeef2; border-radius:8px; padding:0;">
-                <summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:16px; background:#f6f8fa; border-radius:8px; list-style:none;">
-                    第5章：质量、盐、热量收支和风的作用 (Heat Budgets)
-                </summary>
-                <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
-                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">📖 核心理论</h3>
-                    <p><strong>热收支四分量：</strong>包括太阳短波辐射（Qs，得热项）、长波辐射（Qb，失热项）、潜热通量（Qe，主要失热项）和感热通量（Qh，量级最小）。</p>
-                    <p><strong>盐度平衡：</strong>E-P（蒸发减降水）决定了表层盐度的分布格局。</p>
-                    <p><strong>埃克曼动力学：</strong>风应力驱动表层水，受科氏力作用产生偏转（北半球向右），形成埃克曼螺旋。垂直积分后形成的埃克曼净输送方向与风向垂直（北半球向右 90°）。风应力旋度会导致水体的辐合辐散，引发埃克曼抽吸。</p>
-                    <div class="img-container">
-                        <a href="fig-5-11.png" target="_blank"><img src="fig-5-11.png" alt="全球热通量" onerror="this.src='https://via.placeholder.com/600x300?text=请上传+fig-5-11.png'"></a>
-                        <span class="img-caption">图 5.11：全球年平均热通量分布</span>
-                    </div>
-                </div>
-            </details>
-
-            <details style="margin-top:12px; border:1px solid #eaeef2; border-radius:8px; padding:0;">
-                <summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:16px; background:#f6f8fa; border-radius:8px; list-style:none;">
-                    第6章：数据分析概念和观测方法 (Data Analysis)
-                </summary>
-                <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
-                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">📖 核心理论</h3>
-                    <p><strong>基础统计与时间序列：</strong>包含均值、方差等，并利用频谱分析（傅里叶变换）识别海洋信号中的周期分量。</p>
-                    <p><strong>空间映射：</strong>利用客观分析将不规则观测映射到规则网格。</p>
-                    <p><strong>EOF（经验正交函数）：</strong>用于分解时空数据，提取主导数据方差的空间模态（EOFs）和时间演变序列（PCs）。</p>
-                </div>
-            </details>
-
-            <details style="margin-top:12px; border:1px solid #eaeef2; border-radius:8px; padding:0;">
-                <summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:16px; background:#f6f8fa; border-radius:8px; list-style:none;">
-                    第7章：海洋环流的动力过程 (Dynamical Processes)
-                </summary>
-                <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
-                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">📖 核心理论</h3>
-                    <p><strong>地转平衡：</strong>大尺度下（Ro << 1），科氏力与水平压强梯度力平衡。地转流沿等压线流动，北半球高压位于流向右侧。</p>
-                    <p><strong>热成风关系：</strong>地转流的垂直切变由密度的水平梯度决定。</p>
-                    <p><strong>Sverdrup 平衡与西向强化：</strong>风应力旋度驱动大洋内部经向输送。为满足质量守恒，必须在洋盆西侧形成狭窄且强劲的西边界流（如黑潮、湾流）。</p>
-                    <div class="img-container">
-                        <a href="fig-7-8.png" target="_blank"><img src="fig-7-8.png" alt="埃克曼响应" onerror="this.src='https://via.placeholder.com/600x300?text=请上传+fig-7-8.png'"></a>
-                        <span class="img-caption">图 7.8：埃克曼响应</span>
-                    </div>
-                </div>
-            </details>
-
-            <details style="margin-top:12px; border:1px solid #eaeef2; border-radius:8px; padding:0;">
-                <summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:16px; background:#f6f8fa; border-radius:8px; list-style:none;">
-                    第8章：重力波、潮汐与海岸海洋学 (Waves &amp; Tides)
-                </summary>
-                <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
-                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">📖 核心理论</h3>
-                    <p><strong>波浪分类：</strong>按恢复力区分，表面有张力波（毛细波）和重力波；海洋内部存在内波（发生于密度跃层，振幅大）。</p>
-                    <p><strong>潮汐与海岸过程：</strong>潮汐受地形和科氏力影响形成复杂的动力潮波系统。海岸带存在风驱动的沿岸上升流，对生态影响巨大。</p>
-                </div>
-            </details>
-        </section>
-
-        <!-- ================= 📘 课堂笔记 ================= -->
-        <section>
-            <h2>📘 课堂笔记 (Course Notes)</h2>
-            <p>按课次整理的课堂重点、详细解析与出门票记录。</p>
-
-            <!-- 第1讲 -->
-            <details style="margin-top:20px; border:1px solid #eaeef2; border-radius:8px; padding:0;">
-                <summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:16px; background:#f6f8fa; border-radius:8px; list-style:none;">
-                    第1讲：导论与核心逻辑
-                </summary>
-                <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
-                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">🎫 出门票</h3>
-                    <div class="ticket">
-                        这节课我最大的收获是理清了物理海洋学的“What - Why - How”研究框架。为了总览全貌，我课后使用 XMind 整理了一张知识地图。
-                        <div class="img-container">
-                            <a href="physical-oceanography.png" target="_blank"><img src="physical-oceanography.png" alt="物理海洋学知识体系思维导图"></a>
-                        </div>
-                    </div>
-                </div>
-            </details>
-
-            <!-- 第2讲 -->
-            <details style="margin-top:12px; border:1px solid #eaeef2; border-radius:8px; padding:0;">
-                <summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:16px; background:#f6f8fa; border-radius:8px; list-style:none;">
-                    第2讲：海洋维度与底质
-                </summary>
-                <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
-                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">🎫 出门票</h3>
-                    <div class="ticket">
-                        我理解了海底地壳“年轻”的原因（洋中脊新生，海沟消亡）。我有一个疑问：既然地壳在俯冲带消亡，那物质最终去了哪里？查阅资料后得知，它们重新回到了地幔中，参与了漫长的地质循环。
-                    </div>
-                </div>
-            </details>
-
-            <!-- 第3讲 -->
-            <details style="margin-top:12px; border:1px solid #eaeef2; border-radius:8px; padding:0;">
-                <summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:16px; background:#f6f8fa; border-radius:8px; list-style:none;">
-                    第3讲：海水的物理性质与混合
-                </summary>
-                <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
-                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">🎫 出门票</h3>
-                    <div class="ticket">
-                        这节课我搞懂了“位温”和“混合增密”。课上老师展示了如何用代码处理位温分布并计算混合增密，我把当时的 PPT 截图保存了下来。
-                        <div class="img-container">
-                            <a href="ticket-mixing.png" target="_blank"><img src="ticket-mixing.png" alt="位温与混合增密"></a>
-                        </div>
-                    </div>
-                </div>
-            </details>
-
-            <!-- 第4讲 -->
-            <details style="margin-top:12px; border:1px solid #eaeef2; border-radius:8px; padding:0;">
-                <summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:16px; background:#f6f8fa; border-radius:8px; list-style:none;">
-                    第4讲：水团特征的典型分布
-                </summary>
-                <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
-                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">🎫 出门票</h3>
-                    <div class="ticket">
-                        <strong>1. 混合层与深层：</strong>混合层通常在 50-200m，深水区特征有所不同。<br>
-                        <strong>2. 副热带 vs 副极地：</strong>副热带存在永久性温跃层（200-1000m）和盐度最大值；副极地存在温度最小值。<br>
-                        <strong>3. 表层盐度最大区域：</strong>副热带海域（蒸发大于降水）。
-                    </div>
-                </div>
-            </details>
-
-            <!-- 第5讲 -->
-            <details style="margin-top:12px; border:1px solid #eaeef2; border-radius:8px; padding:0;">
-                <summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:16px; background:#f6f8fa; border-radius:8px; list-style:none;">
-                    第5讲：热量收支与风的作用
-                </summary>
-                <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
-                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">🎫 出门票</h3>
-                    <div class="ticket">
-                        <strong>4. 四类热通量：</strong>Qs是主要得热项；Qe是主要失热项。<br>
-                        <strong>5. 北大西洋比北太平洋咸：</strong>北大西洋副热带蒸发远大于降水，且受地中海高盐溢流水影响。<br>
-                        <strong>6. 季节差异：</strong>温带海域最大，热带和极地最小。
-                    </div>
-                </div>
-            </details>
-
-            <!-- 第6讲 -->
-            <details style="margin-top:12px; border:1px solid #eaeef2; border-radius:8px; padding:0;">
-                <summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:16px; background:#f6f8fa; border-radius:8px; list-style:none;">
-                    第6讲：数据分析与 EOF
-                </summary>
-                <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
-                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">🎫 出门票</h3>
-                    <div class="ticket">
-                        <strong>7. 温跃层是如何维持的？</strong> 依赖向下热量扩散与深层冷水平流的动态平衡。<br>
-                        <strong>随堂测验题（EOF的目的）：</strong>正确答案是 B. 识别数据集中的主导空间模态及其时间演变。
-                        <div class="img-container">
-                            <a href="ticket-eof.png" target="_blank"><img src="ticket-eof.png" alt="EOF 测验题"></a>
-                        </div>
-                    </div>
-                </div>
-            </details>
-
-            <!-- 第7讲 -->
-            <details style="margin-top:12px; border:1px solid #eaeef2; border-radius:8px; padding:0;">
-                <summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:16px; background:#f6f8fa; border-radius:8px; list-style:none;">
-                    第7讲：海洋环流动力学
-                </summary>
-                <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
-                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">🎫 出门票</h3>
-                    <div class="ticket">
-                        <strong>Sverdrup 平衡与全球环流：</strong><br>
-                        风产生埃克曼输送与辐合，导致水柱被压缩或拉伸。Squashing 向赤道移动，Stretching 向极地移动。
-                        <div class="img-container" style="margin-bottom:12px;">
-                            <a href="ticket-sverdrup.png" target="_blank"><img src="ticket-sverdrup.png" alt="Sverdrup Balance"></a>
-                        </div>
-                        结合全球地转流场图，能直观看到西边界流（湾流、黑潮）和南极绕极流（ACC）的位置。
-                        <div class="img-container">
-                            <a href="global-geostrophic-velocity.png" target="_blank"><img src="global-geostrophic-velocity.png" alt="全球地转流场"></a>
-                        </div>
-                    </div>
-                </div>
-            </details>
-
-            <!-- 第8讲 -->
-            <details style="margin-top:12px; border:1px solid #eaeef2; border-radius:8px; padding:0;">
-                <summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:16px; background:#f6f8fa; border-radius:8px; list-style:none;">
-                    第8讲：重力波、潮汐与波动现象
-                </summary>
-                <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
-                                        <h3 style="margin-top:20px; color:#0969da; font-size:15px;">🎫 出门票</h3>
-                    <div class="ticket">
-                        这节课彻底理清了不同波动的生成机制。我原以为波浪就是风吹的，后来发现不同尺度的波动恢复力完全不同：毛细波靠表面张力，普通的表面重力波靠重力，而大洋里的罗斯贝波则是靠科氏参数随纬度的变化（β效应）！
-                        <br><br>
-                        我把课堂上讲到的 23 种海洋与大气波动整理成了一张详细的对照表。
-                        <div class="img-container">
-                            <a href="wave-types.png" target="_blank"><img src="wave-types.png" alt="海洋与大气波动类型汇总"></a>
-                        </div>
-                        
-                        <!-- 新增的 pptx_guide 链接按钮 -->
-                        <div style="margin-top: 20px; text-align: center; border-top: 1px dashed #d0d7de; padding-top: 15px;">
-                            <p style="font-size: 14px; margin-bottom: 10px; color: #24292f;"><strong>📎 延伸阅读：</strong>课后我阅读了 PPTX SKILL.md 文件，为了方便理解，我做了一个逐行对照解读的网页：</p>
-                            
-                            <!-- ⚠️ 请将下面 href 里的链接替换为你刚才在 GitHub 上复制的真实网址 -->
-                            <a href="https://youhaoyu152-ux.github.io/pptx_guide.html" target="_blank" style="display: inline-block; background: #0969da; color: #fff; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-size: 14px; font-weight: 600; box-shadow: 0 4px 6px rgba(9,105,218,0.2);">
-                                📖 点击查看：PPTX SKILL.md 逐行解读
-                            </a>
-                        </div>
-                    </div>
-            </details>
-
-            <!-- 前沿展望 -->
-            <details style="margin-top:12px; border:1px solid #eaeef2; border-radius:8px; padding:0;">
-                <summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:16px; background:#f6f8fa; border-radius:8px; list-style:none;">
-                    总结：物理海洋学的前沿与展望
-                </summary>
-                <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
-                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">🎫 出门票</h3>
-                    <div class="ticket">
-                        回顾整个课程，从经典的温盐分布，到复杂的动力学方程，最终走向了全球气候系统与数字孪生。我对 <strong>“海洋动力过程对碳-氮-氧生物地球化学循环的调控”</strong> 最感兴趣，这正好与我设计的“长江口藻华实验方案”不谋而合！
-                        <div class="img-container">
-                            <a href="frontiers.png" target="_blank"><img src="frontiers.png" alt="物理海洋学前沿十大方向"></a>
-                        </div>
-                    </div>
-                </div>
-            </details>
-        </section>
-
-        <!-- ================= 🎬 故事会 ================= -->
-        <section>
-            <h2>🎬 故事会 (Story Time)</h2>
-            <p>这里记录了我从现象出发，动手探索海洋物理机制的“探案过程”。</p>
-
-            <!-- 故事1：追踪长江口幽灵碳 -->
-            <details style="margin-top:20px; border:1px solid #eaeef2; border-radius:8px; padding:0;" open>
-                <summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:16px; background:#f6f8fa; border-radius:8px; list-style:none;">
-                    故事1：追踪长江口的“幽灵碳”——一场关于藻华与碳汇的探案
-                </summary>
-                <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
-                    
-                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">🎬 开头：现象与悬疑</h3>
-                    <div class="myvoice">
-                        在学习完“海气相互作用”和“水团分布”后，我盯着长江口的卫星图陷入了沉思。<br><br>
-                        每年春夏，长江口冲淡水带来丰富的营养盐，引发壮观的藻华。浮游植物疯狂光合作用，吸收了大量的碳（净群落生产力 NCP）。<strong>我原以为</strong>，这些碳死后会像雪花一样沉入海底，形成长期碳汇。<br><br>
-                        <strong>但事实真的如此吗？</strong>这些新增的碳，究竟是变成了二氧化碳重新逃逸回大气（海气通量），还是真的沉到了混合层以下（POC输出）？在风暴频发、水流湍急的河口，这些“幽灵碳”的去向成了一个谜。
-                    </div>
-                    <!-- 插入图 1：案发现场 -->
-                    <div class="img-container">
-                        <a href="story-fig-1.png" target="_blank"><img src="story-fig-1.png" alt="长江口藻华分布" onerror="this.src='https://via.placeholder.com/600x300?text=请上传长江口藻华卫星图(story-fig-1.png)'"></a>
-                        <span class="img-caption">案发现场：长江口及东海表层叶绿素浓度分布（示意）</span>
-                    </div>
-
-                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">🔍 中间：抽丝剥茧的探案过程</h3>
-                    <div class="myvoice">
-                        为了给这些碳“结案”，我查阅了大量文献，试图设计一个针对“单一核心站”的观测实验方案。在这个过程中，我遭遇了三个极其棘手的“物理陷阱”：<br><br>
-                        
-                        <strong>陷阱一：消失的基线（时间轴的错乱）</strong><br>
-                        不能简单地把藻华期的数据减去全年的平均。风暴和径流会带来剧烈的短期波动。因此，我必须要在事件发生前，死死盯住 5-7 天的连续基线数据，才敢说什么是“异常”。<br><br>
-                        
-                        <strong>陷阱二：错位的监控（捕获器与传感器的时差）</strong><br>
-                        海气 CO₂ 传感器是每分每秒都在记录的，但沉积物捕获器（抓取下沉碳）只能在海底放几个小时。这就好比监控录像和静态照片，时间完全对不上！最终我通过设计“时间窗积分模型”，强行让它们在同一时段（如 08:00-14:00）进行数据配对。<br><br>
-                        
-                        <strong>陷阱三：氧气的骗局（DO 收支的干扰）</strong><br>
-                        我原以为利用混合层的溶解氧（DO）变化就能直接算出 NCP。后来发现，风一吹，水体一混合，甚至温度一变，氧气就会进出海水。我必须剥离掉物理交换的干扰，才能得到真实的生物产氧量。
-                    </div>
-                    <!-- 插入图 2 & 3：核心概念与作案工具 -->
-                    <div style="display: flex; gap: 16px; justify-content: center; margin-top: 16px; flex-wrap: wrap;">
-                        <div class="img-container" style="width: 46%; min-width: 250px; margin: 0;">
-                            <a href="story-fig-2.png" target="_blank"><img src="story-fig-2.png" alt="海气交换与混合层" style="width: 100%;" onerror="this.src='https://via.placeholder.com/300x200?text=请上传海气交换图(story-fig-2.png)'"></a>
-                            <span class="img-caption">物理陷阱：海气界面的 CO₂ 交换与混合层</span>
-                        </div>
-                        <div class="img-container" style="width: 46%; min-width: 250px; margin: 0;">
-                            <a href="story-fig-3.png" target="_blank"><img src="story-fig-3.png" alt="采样与捕获器" style="width: 100%;" onerror="this.src='https://via.placeholder.com/300x200?text=请上传采样图(story-fig-3.png)'"></a>
-                            <span class="img-caption">作案工具：用于提取 POC 的沉积物捕获器/采水器</span>
-                        </div>
-                    </div>
-
-                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">🏁 结尾：结论与未尽的好奇</h3>
-                    <div class="myvoice">
-                        <strong>我做了什么：</strong> 经过反复推敲，我撰写了一份完整的《长江口藻华事件新增 NCP 实验方案》，详细规定了基线确立、连续观测和 POC 捕获的流程。<br><br>
-                        <strong>结论：</strong> 这场探案让我明白，海气交换、水平平流和颗粒物输出，必须放在同一个时空尺度下严谨比较。单层的捕获器只能证明“碳掉下去了”，但绝不等同于“长期封存”。真实的物理海洋学，是对细节的极致苛求。<br><br>
-                        <strong>还想知道：</strong> 如果真到了海上，遇到台风船开不过去，我该怎么用数学模型来“脑补”缺失的数据？
-                    </div>
-                    <!-- 插入图 4：结案陈词 (三维模型图) -->
-                    <div class="img-container">
-                        <a href="story-fig-4.png" target="_blank"><img src="story-fig-4.png" alt="碳循环三维模型" onerror="this.src='https://via.placeholder.com/600x300?text=请上传NCP-POC-CO2概念模型图(story-fig-4.png)'"></a>
-                        <span class="img-caption">结案陈词：必须将 NCP、海气 CO₂ 通量与 POC 输出放在同一时间窗内对比</span>
-                    </div>
-
-                        <h3 style="margin-top:20px; color:#0969da; font-size:15px;">📎 证据：完整的探案卷宗与视频讲解</h3>
-                    
-                    <!-- 视频播放器 -->
-                    <div style="text-align: center; margin: 20px 0;">
-                        <video controls preload="metadata" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
-                            <source src="Yangtze_Carbon_Mystery_English.mp4" type="video/mp4">
-                            您的浏览器不支持 HTML5 视频播放。
-                        </video>
-                        <p style="font-size: 13px; color: #8b949e; margin-top: 8px;">🎬 视频讲解：The Yangtze Carbon Mystery（英文字幕）</p>
-                    </div>
-
-                    <p style="font-size:13px; color:#57606a; margin-top: 20px;">点击下方按钮，下载我撰写的《长江口藻华事件新增NCP实验方案》。</p>
-                    <div style="text-align:center; margin-top:12px;">
-                        <!-- 使用 raw 直链强制下载 -->
-                        <a href="https://raw.githubusercontent.com/youhaoyu152-ux/youhaoyu152-ux.github.io/main/NCP_Experiment_Plan.docx" target="_blank" style="display: inline-block; background: #2ea44f; color: #fff; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-size: 14px; font-weight: 600; box-shadow: 0 4px 6px rgba(46,164,79,0.2);">
-                            📄 点击下载《实验方案文档》 (Word格式)
-                        </a>
-                    </div>
-                </div>
-            </details>
-
-            <!-- 故事2：知识地图 -->
-            <details style="margin-top:12px; border:1px solid #eaeef2; border-radius:8px; padding:0;">
-                <summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:16px; background:#f6f8fa; border-radius:8px; list-style:none;">
-                    故事2：把散落的珍珠串成项链——我的物理海洋学知识地图
-                </summary>
-                <div style="padding:16px 24px 24px; font-size:14px; color:#24292f;">
-                    <h3 style="margin-top:12px; color:#0969da; font-size:15px;">🎬 开头：满脑子的碎片</h3>
-                    <div class="myvoice">
-                        期中复习时，我发现自己陷入了死记硬背的泥潭。科氏力、双扩散、埃克曼抽吸、罗斯贝波……这些概念就像散落一地的珍珠，单独拿出来我都懂，但连在一起就成了一团乱麻。我迫切需要一个工具，把它们串起来。
-                    </div>
-                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">🔍 中间：构建逻辑链条</h3>
-                    <div class="myvoice">
-                        我打开了 XMind，决定不按章节抄书，而是按“物理逻辑”重构。<br>
-                        我发现，一切的起点是“太阳辐射不均”，它导致了海面热通量的差异。而热通量又驱动了温跃层的变化，温跃层一旦倾斜，就产生了压强梯度力，进而催生了地转流。地转流被地形阻挡，又演变成了西边界流……<br>
-                        当我把这些箭头画出来时，我惊呼：原来大洋环流是一台如此精密的齿轮系统！
-                    </div>
-                    <h3 style="margin-top:20px; color:#0969da; font-size:15px;">🏁 结尾：豁然开朗</h3>
-                    <div class="myvoice">
-                        <strong>结论：</strong> 这张思维导图成了我复习的“导航仪”。它不再是一堆考点的堆砌，而是一张生动的物理过程演化图。<br>
-                        <strong>证据：</strong> 以下是我引以为傲的知识地图。
-                        <div class="img-container">
-                            <a href="physical-oceanography.png" target="_blank">
-                                <img src="physical-oceanography.png" alt="物理海洋学知识体系思维导图">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </details>
-        </section>
-
-        <!-- ================= 📝 学习日志 ================= -->
-        <section>
-            <h2>📝 Learning Notes</h2>
-            <div class="note">
-                <span class="date">2026-10</span>
-                深入研读了教材 1-8 章，整理了大量图文笔记，并补充了第8讲的 23 种波动类型大表。
-            </div>
-            <div class="note">
-                <span class="date">2026-10</span>
-                完成了《长江口藻华事件新增NCP实验方案》的设计，并将其开源至本站。
-            </div>
-        </section>
-
-        <!-- ================= 📬 联系方式 ================= -->
-        <section>
-            <h2>📬 Contact</h2>
-            <ul class="contact-list">
-                <li>Email: <a href="mailto:909381824@qq.com">909381824@qq.com</a></li>
-                <li>GitHub: <a href="https://github.com/youhaoyu152-ux">github.com/youhaoyu152-ux</a></li>
-                <li>Website: <a href="https://youhaoyu152-ux.github.io">youhaoyu152-ux.github.io</a></li>
-            </ul>
-        </section>
-
-        <footer>
-            © 2026 YHY · Physical Oceanography &amp; Programming · Hosted on GitHub Pages
-        </footer>
-
+<div class="container">
+  <!-- Header / 网站介绍 -->
+  <header>
+    <h1>你好，我是 YHY 🌊 / Hi, I'm YHY</h1>
+    <p class="subtitle">物理海洋学 · 海洋数据分析 · 科学编程<br><span lang="en">Physical Oceanography · Ocean Data Analysis · Scientific Programming</span></p>
+    <div class="bi">
+      <p class="zh" lang="zh-CN">欢迎来到我的个人知识库。我关注物理海洋学，兴趣集中在海洋环流、温盐结构、海气相互作用以及河口动力学。这里记录了我对《物理海洋学》课程的深度研读、课堂反思以及独立设计的科研项目。</p>
+      <p class="en" lang="en">Welcome to my personal knowledge hub. I focus on physical oceanography, with particular interests in ocean circulation, temperature–salinity structure, air–sea interactions, and estuarine dynamics. Here I document my in-depth study of physical oceanography, classroom reflections, and independently designed research projects.</p>
     </div>
+  </header>
+
+  <!-- Skills / 技能 -->
+  <section>
+    <h2>🛠 技能与工具 <small lang="en">/ Skills &amp; Tools</small></h2>
+    <div class="skills">
+      <span class="skill-tag">Python</span><span class="skill-tag">NumPy</span>
+      <span class="skill-tag">Pandas</span><span class="skill-tag">Matplotlib</span>
+      <span class="skill-tag">Xarray</span><span class="skill-tag">NetCDF</span>
+      <span class="skill-tag">Argopy</span><span class="skill-tag">EOF / PCA</span>
+      <span class="skill-tag">统计学 / Statistics</span><span class="skill-tag">MATLAB（基础）/ MATLAB (Basic)</span>
+      <span class="skill-tag">Git &amp; GitHub</span><span class="skill-tag">HTML / CSS</span>
+      <span class="skill-tag">Markdown</span>
+    </div>
+  </section>
+
+  <!-- Textbook notes / 教材精读笔记 -->
+  <section>
+    <h2>📚 教材精读笔记 <small lang="en">/ Textbook Notes</small></h2>
+    <div class="bi">
+      <p class="zh" lang="zh-CN">基于 Talley 等编著的《物理海洋学》（第六版）的详细研读，涵盖第 1–8 章的核心理论、公式推导与重点图表。</p>
+      <p class="en" lang="en">Detailed notes based on Talley et al., <em>Descriptive Physical Oceanography: An Introduction</em> (Sixth Edition), covering key theories, equation derivations, and important figures from Chapters 1–8.</p>
+    </div>
+    <div class="book">
+      <img src="oceanography-cover.png" alt="《物理海洋学》教材封面 / Cover of Descriptive Physical Oceanography" loading="lazy">
+      <div class="book-content">
+        <h3>《物理海洋学》（第六版）</h3>
+        <p class="book-title-en" lang="en">Descriptive Physical Oceanography: An Introduction (Sixth Edition)</p>
+        <div class="bi">
+          <p class="zh" lang="zh-CN">物理海洋学的经典基础教材，全面介绍海洋的物理性质、动力学过程及海气相互作用。</p>
+          <p class="en" lang="en">A foundational textbook in physical oceanography, covering the ocean's physical properties, dynamical processes, and air–sea interactions.</p>
+        </div>
+        <a class="action" href="https://pan.zju.edu.cn/share/6984d8c68b4eac504045f029c4" target="_blank" rel="noopener noreferrer">📥 获取原版 PDF / Access the Original PDF</a>
+      </div>
+    </div>
+
+    <details>
+      <summary>第 1 章：物理海洋学概论 / Chapter 1: Introduction</summary>
+      <div class="details-body">
+        <h3>📖 核心理论 <small lang="en">/ Key Concepts</small></h3>
+        <div class="bi"><p class="zh">物理海洋学是一门基于观测的学科，致力于描述和解释海洋的物理状态及其变化。研究的核心逻辑是“What（现象）— Why（机制）— How（观测与量化）”。</p><p class="en" lang="en">Physical oceanography is an observation-based discipline that describes and explains the ocean's physical state and its variability. Its central framework asks: “What (phenomena) – Why (mechanisms) – How (observation and quantification).”</p></div>
+        <div class="bi"><p class="zh">海洋现象跨越很广的时空尺度：微观尺度涉及分子混合，中尺度包括内波和潮汐，大尺度涵盖大洋环流和热盐环流。大尺度运动受到地球自转（科氏力）的显著影响。</p><p class="en" lang="en">Ocean phenomena span a wide range of spatial and temporal scales: molecular mixing at small scales, internal waves and tides at intermediate scales, and basin-scale circulation and thermohaline overturning at large scales. Earth's rotation (the Coriolis force) strongly affects large-scale motion.</p></div>
+        <figure class="img-container"><a href="fig-1-2.png" target="_blank" rel="noopener noreferrer"><img src="fig-1-2.png" alt="物理海洋学现象的时空尺度 / Space and time scales of ocean phenomena" loading="lazy"></a><figcaption class="img-caption">图 1.2：物理海洋学现象的时空尺度<br><span lang="en">Figure 1.2: Spatial and temporal scales of physical oceanographic phenomena</span></figcaption></figure>
+
+        <!-- BEGIN ADDITIONAL TEXTBOOK NOTES — CHAPTER 1; original content retained -->
+        <div class="deep-dive">
+          <h3>🔎 补充精读 <small lang="en">/ Supplementary Deep-Dive</small></h3>
+          <p class="deep-ref">📖 教材依据：第 1 章，原书第 1–5 页 / Source: Chapter 1, textbook pp. 1–5.</p>
+          <div class="deep-topic">
+            <h4>1. 从描述到解释：观测驱动的研究链条 <span lang="en">/ From description to explanation</span></h4>
+            <div class="bi"><p class="zh" lang="zh-CN">完整的研究过程通常从识别现象开始：提出可检验的机制假设，选择温度、盐度、海面高度与流速等观测量，最后通过守恒方程或数值模拟验证。单次观测只能描述某一时刻，而时间序列与重复断面才能揭示季节性和长期变化。</p><p class="en" lang="en">A complete investigation begins by identifying a phenomenon, proposing testable physical mechanisms, selecting observations such as temperature, salinity, sea-surface height and velocity, and testing explanations with conservation laws or numerical models. A single survey describes a snapshot; time series and repeated sections reveal seasonal and long-term variability.</p></div>
+          </div>
+          <div class="deep-topic">
+            <h4>2. 海洋动力过程的尺度意识 <span lang="en">/ Thinking across spatial and temporal scales</span></h4>
+            <div class="bi"><p class="zh" lang="zh-CN">研究现象时应同时问：水平尺度 L、垂向尺度 H、典型流速 U 和变化时间 T 分别是多少？局地湍流、潮汐、涡旋与全球翻转环流的主控过程不同，因此观测频率、空间分辨率和适用近似也不同。</p><p class="en" lang="en">For each process, ask about its horizontal scale L, vertical scale H, characteristic speed U, and timescale T. Local turbulence, tides, mesoscale eddies and global overturning circulation involve different dominant physics, so they require different sampling rates, spatial resolutions and approximations.</p></div>
+          </div>
+          <div class="deep-topic">
+            <h4>3. 旋转效应与罗斯贝数 <span lang="en">/ Rotation and the Rossby number</span></h4>
+            <div class="bi"><p class="zh" lang="zh-CN">衡量地球自转重要性的常用无量纲参数为 Ro = U/(|f|L)，其中 f = 2Ωsinφ。Ro ≪ 1 表示旋转效应通常重要；Ro 较大时局地惯性或加速度不可忽视。接近赤道时 f → 0，不能机械套用中高纬地转近似。</p><p class="en" lang="en">The nondimensional Rossby number is Ro = U/(|f|L), where f = 2Ωsinφ. When Ro ≪ 1, planetary rotation is often important; larger Ro indicates that local inertia and acceleration cannot be neglected. Near the equator, f approaches zero, so midlatitude geostrophic approximations must be used with caution.</p></div>
+          </div>
+          <div class="deep-topic">
+            <h4>4. 读图方法：时间、空间与单位 <span lang="en">/ How to read an oceanographic figure</span></h4>
+            <div class="bi"><p class="zh" lang="zh-CN">阅读任意温盐、断面或流场图时，先辨识坐标、单位、等值线间隔、时间平均窗口与观测深度，再判断图中的结构是空间差异还是时间变化。对比两幅图前，还应确认它们采用相同的色标和参考基准。</p><p class="en" lang="en">Before interpreting temperature–salinity maps, sections, or current fields, check axes, units, contour intervals, averaging periods and measurement depths. Distinguish spatial contrasts from temporal change, and verify that comparative figures use consistent color scales and reference levels.</p></div>
+          </div>
+          <div class="deep-equation">
+            <strong>🧮 核心关系式 / Key Relations</strong>
+            <code>f = 2Ω sinφ；Ro = U/(|f|L)</code>
+            <p>Ω：地球自转角速度；φ：纬度。 / Ω: Earth’s angular rotation rate; φ: latitude.</p>
+          </div>
+          <div class="deep-check">
+            <strong>💡 思考与自测 / Think &amp; Check</strong>
+            <div class="bi"><p class="zh" lang="zh-CN">比较潮汐、海洋中尺度涡和大洋环流时，为何不能使用同一套时空采样分辨率？</p><p class="en" lang="en">Why should tides, mesoscale eddies and basin-scale circulation not be sampled at the same temporal and spatial resolution?</p></div>
+          </div>
+        </div>
+        <!-- END ADDITIONAL TEXTBOOK NOTES — CHAPTER 1 -->
+      </div>
+    </details>
+
+    <details>
+      <summary>第 2 章：海洋维度、形状和底质 / Chapter 2: Ocean Dimensions, Shape &amp; Seafloor</summary>
+      <div class="details-body">
+        <h3>📖 核心理论 <small lang="en">/ Key Concepts</small></h3>
+        <div class="bi"><p class="zh"><strong>海陆分布：</strong>海洋覆盖地球约 71% 的面积，平均深度约 3,734 m，远超陆地平均海拔（743 m）。最深的马里亚纳海沟深达约 11,000 m。</p><p class="en" lang="en"><strong>Ocean–land distribution:</strong> The ocean covers about 71% of Earth's surface and has an average depth of approximately 3,734 m, much greater than the average land elevation of 743 m. The Mariana Trench reaches depths of around 11,000 m.</p></div>
+        <div class="bi"><p class="zh"><strong>海底扩张：</strong>海洋地壳相对年轻（最老不超过约 2.8 亿年）。洋中脊形成新地壳，海沟则是板块俯冲的场所。快速扩张的洋中脊（如东太平洋海隆）地形较平滑；慢速扩张的洋中脊（如大西洋中脊）常有明显的中央裂谷。</p><p class="en" lang="en"><strong>Seafloor spreading:</strong> Oceanic crust is relatively young (no older than roughly 280 million years). New crust forms at mid-ocean ridges, while tectonic plates subduct at trenches. Fast-spreading ridges, such as the East Pacific Rise, tend to have smoother topography; slow-spreading ridges, such as the Mid-Atlantic Ridge, often feature a prominent axial rift valley.</p></div>
+
+        <!-- BEGIN ADDITIONAL TEXTBOOK NOTES — CHAPTER 2; original content retained -->
+        <div class="deep-dive">
+          <h3>🔎 补充精读 <small lang="en">/ Supplementary Deep-Dive</small></h3>
+          <p class="deep-ref">📖 教材依据：第 2 章，原书第 6–26 页 / Source: Chapter 2, textbook pp. 6–26.</p>
+          <div class="deep-topic">
+            <h4>1. 海底地形分区：陆架到深海 <span lang="en">/ From continental shelves to the deep ocean</span></h4>
+            <div class="bi"><p class="zh" lang="zh-CN">典型大陆边缘依次包括大陆架、大陆坡与大陆隆；深海海盆中常见深海平原、海山与海沟。大陆架通常较浅且坡度较缓，而陆坡是向深海过渡的陡峭区域。地形不仅决定水深，也决定海流受到的边界约束。</p><p class="en" lang="en">A typical continental margin includes the shelf, slope and rise, while the deep-ocean basin contains abyssal plains, seamounts and trenches. Continental shelves are relatively shallow and gently sloping; continental slopes provide a steeper transition to the deep sea. Bathymetry also constrains ocean circulation.</p></div>
+          </div>
+          <div class="deep-topic">
+            <h4>2. 板块边界与洋中脊 <span lang="en">/ Plate boundaries and mid-ocean ridges</span></h4>
+            <div class="bi"><p class="zh" lang="zh-CN">洋中脊属于板块张裂与新洋壳形成区域；俯冲带和深海沟标志着旧洋壳向地幔的回收。转换断层错开洋中脊轴段。可通过洋底年龄分布、地磁条带与海底地形联系板块运动和海盆演化。</p><p class="en" lang="en">New oceanic crust forms at spreading centers along mid-ocean ridges, whereas old oceanic crust is recycled at subduction zones and trenches. Transform faults offset segments of ridge axes. Seafloor age, magnetic stripes and bathymetry jointly reveal plate motion and basin evolution.</p></div>
+          </div>
+          <div class="deep-topic">
+            <h4>3. 海洋测深与等深线 <span lang="en">/ Bathymetry and depth contours</span></h4>
+            <div class="bi"><p class="zh" lang="zh-CN">回声测深可通过声波往返时间估算水深；海面高度异常和卫星重力场可辅助推断海底大尺度结构。阅读等深线图时，等深线越密通常表示局地坡度越陡；测量方法与网格分辨率会影响地形细节。</p><p class="en" lang="en">Echo sounding estimates depth from the two-way acoustic travel time; sea-surface height and satellite gravity observations can help infer broad seafloor features. Closely spaced isobaths generally indicate steeper slopes. The measurement method and grid resolution affect how much detail a bathymetric chart resolves.</p></div>
+          </div>
+          <div class="deep-topic">
+            <h4>4. 海底地形对流动的控制 <span lang="en">/ How topography steers ocean flow</span></h4>
+            <div class="bi"><p class="zh" lang="zh-CN">海岭、海台、海峡和海山可限制深层水交换，并使流场转向、加速或形成局地涡旋。深层海流受到地形与地转约束；浅海大陆架则更容易受到潮汐、风与海底摩擦的共同影响。</p><p class="en" lang="en">Ridges, plateaus, sills and seamounts constrain deep-water exchange and may steer or accelerate currents or generate local eddies. Deep currents respond to bathymetric and geostrophic constraints, whereas shelf currents are strongly influenced by tides, wind and bottom friction.</p></div>
+          </div>
+          <div class="deep-topic">
+            <h4>5. 海底高程分布曲线 <span lang="en">/ Hypsometry of Earth’s surface</span></h4>
+            <div class="bi"><p class="zh" lang="zh-CN">海陆高程分布呈现陆地与海底两个主要高度带，说明大陆地壳与大洋地壳在厚度、组成和密度等方面具有系统差异。研究时应区分平均海洋深度、最大水深和局地海盆深度。</p><p class="en" lang="en">The distribution of surface elevation has distinct continental and ocean-basin modes, reflecting systematic differences between continental and oceanic crust. Average ocean depth, maximum depth and local basin depth represent different quantities and should not be confused.</p></div>
+          </div>
+          <div class="deep-equation">
+            <strong>🧮 核心关系式 / Key Relations</strong>
+            <code>h ≈ cₛ × Δt / 2</code>
+            <p>h：水深；cₛ：水中声速；Δt：声波往返时间。 / h: depth; cₛ: sound speed; Δt: two-way travel time.</p>
+          </div>
+          <div class="deep-check">
+            <strong>💡 思考与自测 / Think &amp; Check</strong>
+            <div class="bi"><p class="zh" lang="zh-CN">为什么海底山脊或海峡的门槛水深会改变深层水团之间的交换？</p><p class="en" lang="en">Why can a ridge or sill depth change exchanges between deep-water masses?</p></div>
+          </div>
+        </div>
+        <!-- END ADDITIONAL TEXTBOOK NOTES — CHAPTER 2 -->
+      </div>
+    </details>
+
+    <details>
+      <summary>第 3 章：海水的物理性质 / Chapter 3: Physical Properties of Seawater</summary>
+      <div class="details-body">
+        <h3>📖 核心理论 <small lang="en">/ Key Concepts</small></h3>
+        <div class="bi"><p class="zh"><strong>温度与位温：</strong>深海海水受到绝热压缩。现场温度（T）是实际测得的温度，位温（θ）是水团被绝热提升至海面时的温度。深海中的位温通常低于现场温度；比较不同深度的水团时，位温尤其重要。</p><p class="en" lang="en"><strong>In-situ and potential temperature:</strong> Deep seawater experiences adiabatic compression. In-situ temperature (T) is the temperature measured at depth; potential temperature (θ) is the temperature a parcel would have if brought adiabatically to the sea surface. At depth, θ is generally lower than T and is especially useful when comparing water masses.</p></div>
+        <div class="bi"><p class="zh"><strong>盐度：</strong>盐度表述已从早期的千分比发展到现代基于电导率等测量的盐度体系，包括实用盐度与绝对盐度。</p><p class="en" lang="en"><strong>Salinity:</strong> Salinity measurements have evolved from the historical parts-per-thousand convention to modern frameworks, including Practical Salinity and Absolute Salinity, informed by conductivity and other measurements.</p></div>
+        <div class="bi"><p class="zh"><strong>密度与特殊过程：</strong>海水密度主要由温度、盐度和压力决定。密度跃层阻碍垂直混合。混合增密（Cabbeling）是指两种水团混合后密度可能增大；由于热和盐的分子扩散速率不同，还会出现双扩散过程（盐指和扩散对流）。</p><p class="en" lang="en"><strong>Density and special processes:</strong> Seawater density depends primarily on temperature, salinity, and pressure. The pycnocline inhibits vertical mixing. Cabbeling occurs when mixing two water masses produces a denser mixture. Unequal molecular diffusion rates of heat and salt can also cause double-diffusive processes, including salt fingering and diffusive convection.</p></div>
+        <figure class="img-container"><a href="fig-4-10.png" target="_blank" rel="noopener noreferrer"><img src="fig-4-10.png" alt="马里亚纳海沟现场温度与位温对比 / In-situ versus potential temperature in the Mariana Trench" loading="lazy"></a><figcaption class="img-caption">图 4.10：马里亚纳海沟的现场温度（T）与位温（θ）对比<br><span lang="en">Figure 4.10: In-situ temperature (T) versus potential temperature (θ) in the Mariana Trench</span></figcaption></figure>
+
+        <!-- BEGIN ADDITIONAL TEXTBOOK NOTES — CHAPTER 3; original content retained -->
+        <div class="deep-dive">
+          <h3>🔎 补充精读 <small lang="en">/ Supplementary Deep-Dive</small></h3>
+          <p class="deep-ref">📖 教材依据：第 3 章，原书第 27–63 页 / Source: Chapter 3, textbook pp. 27–63.</p>
+          <div class="deep-topic">
+            <h4>1. 静水压与深度 <span lang="en">/ Hydrostatic pressure and depth</span></h4>
+            <div class="bi"><p class="zh" lang="zh-CN">静止或近似静水的海洋满足 dp/dz = −ρg（z 向上为正）。因此压力随深度增加。海洋学中常用 dbar 表示压力；近海面处约 1 dbar 对应 1 m 水深，但精确换算取决于密度与重力加速度。</p><p class="en" lang="en">In a resting or nearly hydrostatic ocean, dp/dz = −ρg when z is positive upward; pressure therefore increases with depth. Oceanographers often use dbar for pressure. Near the surface, 1 dbar is approximately 1 m of depth, but accurate conversion depends on density and gravity.</p></div>
+          </div>
+          <div class="deep-topic">
+            <h4>2. 实用盐度、绝对盐度和单位 <span lang="en">/ Practical Salinity versus Absolute Salinity</span></h4>
+            <div class="bi"><p class="zh" lang="zh-CN">实用盐度 SP 根据电导率比值定义，在 PSS-78 中属于无量纲量；绝对盐度 SA 表示单位质量海水所含溶解物质量，通常用 g/kg 表示。在解释密度与热力学性质时，必须分清所用盐度体系。</p><p class="en" lang="en">Practical Salinity (SP) is defined from conductivity ratios under PSS-78 and is dimensionless. Absolute Salinity (SA) is expressed as the mass of dissolved material per mass of seawater, commonly in g/kg. It is important to identify which salinity scale is used in density and thermodynamic calculations.</p></div>
+          </div>
+          <div class="deep-topic">
+            <h4>3. 状态方程与密度稳定性 <span lang="en">/ Equation of state and density stratification</span></h4>
+            <div class="bi"><p class="zh" lang="zh-CN">海水状态方程可写成 ρ = ρ(S,T,p)。在通常海洋条件下，增加盐度或压力通常使密度增大；温度的影响依赖于温盐压条件。判断垂向稳定性时必须比较处于相同参考压力下的密度，而不能直接以不同深度的原位密度大小判断。</p><p class="en" lang="en">The seawater equation of state is written ρ = ρ(S,T,p). Increasing salinity or pressure usually increases density under typical oceanic conditions, while the temperature dependence varies with conditions. Vertical stability should be assessed using densities referenced to a common pressure, not by simply comparing in-situ densities at different depths.</p></div>
+          </div>
+          <div class="deep-topic">
+            <h4>4. 位温、保守温度和密度异常 <span lang="en">/ Potential temperature, Conservative Temperature and density anomaly</span></h4>
+            <div class="bi"><p class="zh" lang="zh-CN">位温用于去除绝热压缩导致的温度变化；现代 TEOS-10 体系还常用保守温度 CT。密度异常常写作 σθ = ρθ − 1000 kg/m³，适合展示水团密度差异，但使用时应注明参考压力或所用密度定义。</p><p class="en" lang="en">Potential temperature removes the warming associated with adiabatic compression, while modern TEOS-10 practice often uses Conservative Temperature (CT). Density anomaly is commonly written σθ = ρθ − 1000 kg/m³; when using it, identify the reference pressure and density definition.</p></div>
+          </div>
+          <div class="deep-topic">
+            <h4>5. 浮力频率与层结 <span lang="en">/ Buoyancy frequency and stratification</span></h4>
+            <div class="bi"><p class="zh" lang="zh-CN">布伦特–魏萨拉频率（Brunt–Väisälä frequency）N 衡量稳定层结中水团发生垂向位移后恢复振荡的快慢。若 z 向上，简化表达为 N² ≈ −(g/ρ₀)∂ρ/∂z。稳定层结一般 N² &gt; 0；它也是理解内波的重要参数。</p><p class="en" lang="en">The Brunt–Väisälä frequency N characterizes the oscillation of a vertically displaced parcel in a stably stratified fluid. With z positive upward, a simplified expression is N² ≈ −(g/ρ₀)∂ρ/∂z. Stable stratification generally has N² &gt; 0, and N is central to internal-wave dynamics.</p></div>
+          </div>
+          <div class="deep-topic">
+            <h4>6. 海水中的光与声 <span lang="en">/ Light and sound in seawater</span></h4>
+            <div class="bi"><p class="zh" lang="zh-CN">光在海水中因吸收与散射而迅速衰减，且不同波长的穿透能力不同；声音能传播得更远，其速度随温度、盐度和压力变化。这解释了为何海洋颜色和初级生产力常用光学观测，而深度、地形与水下探测常用声学方法。</p><p class="en" lang="en">Light attenuates rapidly through absorption and scattering, and penetration varies by wavelength. Sound travels much farther; its speed depends on temperature, salinity and pressure. Optical methods are therefore useful for ocean color and productivity, while acoustics are widely used for depth, bathymetry and underwater sensing.</p></div>
+          </div>
+          <div class="deep-topic">
+            <h4>7. 海冰、冻结与海水密度 <span lang="en">/ Sea ice, freezing and seawater density</span></h4>
+            <div class="bi"><p class="zh" lang="zh-CN">海水凝固点随盐度增加而降低。海冰形成时盐分通常被排斥至周围海水，引起增盐与局地密度增加；融冰则可淡化表层并增强层结。相关过程会影响高纬混合与深层水形成。</p><p class="en" lang="en">The freezing point of seawater decreases as salinity increases. Forming sea ice typically rejects salt into surrounding water, increasing local salinity and density; melting ice freshens the surface and may strengthen stratification. These processes influence high-latitude mixing and deep-water formation.</p></div>
+          </div>
+          <div class="deep-equation">
+            <strong>🧮 核心关系式 / Key Relations</strong>
+            <code>dp/dz = −ρg；ρ = ρ(S,T,p)；N² ≈ −(g/ρ₀)(∂ρ/∂z)</code>
+            <p>z 向上为正；N² 公式为简化近似，具体计算需考虑可压缩性。 / z is positive upward; the N² expression is a simplified approximation.</p>
+          </div>
+          <div class="deep-check">
+            <strong>💡 思考与自测 / Think &amp; Check</strong>
+            <div class="bi"><p class="zh" lang="zh-CN">为什么比较深海不同深度水团时不能只看原位温度与原位密度？</p><p class="en" lang="en">Why are in-situ temperature and density alone insufficient when comparing water masses at very different depths?</p></div>
+          </div>
+        </div>
+        <!-- END ADDITIONAL TEXTBOOK NOTES — CHAPTER 3 -->
+      </div>
+    </details>
+
+    <details>
+      <summary>第 4 章：水体特征的典型分布 / Chapter 4: Typical Oceanic Distributions</summary>
+      <div class="details-body">
+        <h3>📖 核心理论 <small lang="en">/ Key Concepts</small></h3>
+        <div class="bi"><p class="zh"><strong>温盐分布：</strong>表层温度一般随纬度升高而降低。垂向上通常区分混合层、温跃层与深层。表层盐度在蒸发较强的副热带海域较高，在赤道及高纬海域较低。</p><p class="en" lang="en"><strong>Temperature and salinity distributions:</strong> Sea-surface temperature generally decreases toward higher latitudes. The vertical structure commonly includes a mixed layer, thermocline, and deep layer. Surface salinity is relatively high in evaporative subtropical regions and lower near the equator and at high latitudes.</p></div>
+        <div class="bi"><p class="zh"><strong>温盐图（T–S 图）：</strong>这是识别水团的重要工具。不同水团具有特定的温盐特征；在理想的保守混合条件下，两个端元水团的混合点沿 T–S 图上的连线分布。</p><p class="en" lang="en"><strong>Temperature–salinity (T–S) diagram:</strong> A key tool for identifying water masses. Distinct water masses have characteristic temperature–salinity signatures. Under ideal conservative mixing, mixtures of two endmembers lie along the line connecting them on a T–S plot.</p></div>
+        <div class="bi"><p class="zh"><strong>水团特征：</strong>南极底层水（AABW）通常很冷，北大西洋深层水（NADW）具有相对较高的盐度。温跃层的维持涉及表面热通量、混合、平流等过程之间的动态平衡。</p><p class="en" lang="en"><strong>Water-mass characteristics:</strong> Antarctic Bottom Water (AABW) is very cold, while North Atlantic Deep Water (NADW) has relatively high salinity. Thermocline maintenance involves a dynamic balance among surface heat fluxes, mixing, advection, and other processes.</p></div>
+        <figure class="img-container"><a href="fig-4-11.png" target="_blank" rel="noopener noreferrer"><img src="fig-4-11.png" alt="大西洋位温与盐度垂直截面 / Atlantic potential temperature and salinity sections" loading="lazy"></a><figcaption class="img-caption">图 4.11：大西洋位温与盐度垂直截面<br><span lang="en">Figure 4.11: Vertical sections of potential temperature and salinity in the Atlantic</span></figcaption></figure>
+
+        <!-- BEGIN ADDITIONAL TEXTBOOK NOTES — CHAPTER 4; original content retained -->
+        <div class="deep-dive">
+          <h3>🔎 补充精读 <small lang="en">/ Supplementary Deep-Dive</small></h3>
+          <p class="deep-ref">📖 教材依据：第 4 章，原书第 64–103 页 / Source: Chapter 4, textbook pp. 64–103.</p>
+          <div class="deep-topic">
+            <h4>1. 混合层、季节温跃层与永久温跃层 <span lang="en">/ Mixed layer, seasonal and permanent thermoclines</span></h4>
+            <div class="bi"><p class="zh" lang="zh-CN">混合层内温度和密度通常相对均匀，受风、浮力通量及季节影响。夏季太阳加热常形成浅而强的季节温跃层；冬季表面冷却和风浪可加深混合层。永久温跃层则反映更持久的大尺度温度结构。</p><p class="en" lang="en">The surface mixed layer is relatively uniform in temperature and density because of wind and buoyancy forcing. Summer heating often creates a shallow seasonal thermocline; winter cooling and storms deepen the mixed layer. The permanent thermocline reflects more persistent large-scale thermal structure.</p></div>
+          </div>
+          <div class="deep-topic">
+            <h4>2. 海面盐度与淡水强迫 <span lang="en">/ Sea-surface salinity and freshwater forcing</span></h4>
+            <div class="bi"><p class="zh" lang="zh-CN">副热带高盐值与净蒸发有关，赤道附近和高纬低盐值常与强降水、河流输入或融冰有关。观测到的盐度分布还受到洋流输送和混合影响，因此不能只从 E−P 推断所有区域的盐度变化。</p><p class="en" lang="en">Subtropical salinity maxima are linked to net evaporation, while lower values near the equator and at high latitudes are often associated with precipitation, river runoff or melting ice. Advection and mixing also shape salinity patterns, so E−P alone cannot explain every regional change.</p></div>
+          </div>
+          <div class="deep-topic">
+            <h4>3. 纬向、垂向与海盆差异 <span lang="en">/ Latitude, depth and basin contrasts</span></h4>
+            <div class="bi"><p class="zh" lang="zh-CN">热带海洋通常具有较暖的表层和强温跃层，高纬海洋温度较低、季节混合更深。大西洋与太平洋的深层温盐结构不同，记录了水团形成区域、传播路径和混合历史。</p><p class="en" lang="en">Tropical oceans usually have warm surface waters and a strong thermocline, while high-latitude oceans tend to be colder and seasonally more deeply mixed. Differences between Atlantic and Pacific deep temperature–salinity structures preserve information about water-mass origins, pathways and mixing histories.</p></div>
+          </div>
+          <div class="deep-topic">
+            <h4>4. 温盐图的读法与局限 <span lang="en">/ Reading and interpreting T–S diagrams</span></h4>
+            <div class="bi"><p class="zh" lang="zh-CN">T–S 图横轴通常为盐度、纵轴为温度；加入等密度线可帮助识别不同水团。两个端元在保守混合条件下形成近似线性混合轨迹，但实际海洋中的热量交换、非线性状态方程与多端元混合会使轨迹复杂化。</p><p class="en" lang="en">A T–S plot usually places salinity on the horizontal axis and temperature on the vertical axis; isopycnals help identify water masses. Conservative mixing of two endmembers follows an approximately straight line, but surface heat exchange, a nonlinear equation of state and multiple endmembers complicate real oceanic mixing curves.</p></div>
+          </div>
+          <div class="deep-topic">
+            <h4>5. 水团形成、通风和示踪 <span lang="en">/ Water-mass formation, ventilation and tracing</span></h4>
+            <div class="bi"><p class="zh" lang="zh-CN">水团通常在海表与大气交换热量和淡水后获得特定温盐性质，并通过俯冲、下沉或侧向传播进入海洋内部。温盐、溶解氧和其他示踪量能够共同帮助识别水团来源和相对年龄。</p><p class="en" lang="en">Water masses acquire characteristic properties through surface heat and freshwater exchange, and then enter the ocean interior by subduction, sinking or lateral transport. Temperature, salinity, dissolved oxygen and other tracers together help identify their origins and relative ages.</p></div>
+          </div>
+          <div class="deep-topic">
+            <h4>6. 稳定层结与跨密度面混合 <span lang="en">/ Stable stratification and diapycnal mixing</span></h4>
+            <div class="bi"><p class="zh" lang="zh-CN">密度跃层倾向于抑制垂向位移，因此沿密度面输送与跨密度面混合应分别讨论。湍流、双扩散及局地强迫可以使热量、盐分与其他示踪物跨越密度层交换。</p><p class="en" lang="en">A pycnocline resists vertical displacement, so along-isopycnal transport and diapycnal mixing should be distinguished. Turbulence, double diffusion and local forcing can exchange heat, salt and other tracers across density surfaces.</p></div>
+          </div>
+          <div class="deep-equation">
+            <strong>🧮 核心关系式 / Key Relations</strong>
+            <code>T–S 图 + 等密度线 + 垂直剖面 / T–S diagram + isopycnals + vertical sections</code>
+            <p>联合多种图示通常比单独解释一条温度曲线更可靠。 / Multiple complementary views are more reliable than a single temperature profile.</p>
+          </div>
+          <div class="deep-check">
+            <strong>💡 思考与自测 / Think &amp; Check</strong>
+            <div class="bi"><p class="zh" lang="zh-CN">同一个 T–S 点能否唯一确定海水来源？还需要什么证据？</p><p class="en" lang="en">Does a single T–S point uniquely identify a water mass’s origin? What additional evidence is needed?</p></div>
+          </div>
+        </div>
+        <!-- END ADDITIONAL TEXTBOOK NOTES — CHAPTER 4 -->
+      </div>
+    </details>
+
+    <details>
+      <summary>第 5 章：质量、盐和热量收支与风的作用 / Chapter 5: Mass, Salt &amp; Heat Budgets and Wind Forcing</summary>
+      <div class="details-body">
+        <h3>📖 核心理论 <small lang="en">/ Key Concepts</small></h3>
+        <div class="bi"><p class="zh"><strong>热收支四分量：</strong>主要包括太阳短波辐射（Qs，得热项）、长波辐射（Qb，通常为失热项）、潜热通量（Qe，常为主要失热项）和感热通量（Qh）。</p><p class="en" lang="en"><strong>Four major air–sea heat flux components:</strong> Incoming solar shortwave radiation (Qs, a heat gain), longwave radiation (Qb, generally a heat loss), latent heat flux (Qe, often a major heat loss), and sensible heat flux (Qh).</p></div>
+        <div class="bi"><p class="zh"><strong>盐度平衡：</strong>蒸发减降水（E−P）是影响表层盐度分布的重要因素。</p><p class="en" lang="en"><strong>Salinity balance:</strong> Evaporation minus precipitation (E−P) is a major control on sea-surface salinity patterns.</p></div>
+        <div class="bi"><p class="zh"><strong>埃克曼动力学：</strong>风应力驱动表层海水，在科氏力作用下产生偏转，并形成埃克曼螺旋。垂直积分后的埃克曼净输送与风向垂直（北半球向右约 90°）。风应力旋度还会驱动辐合、辐散和埃克曼抽吸。</p><p class="en" lang="en"><strong>Ekman dynamics:</strong> Wind stress drives upper-ocean currents, which are deflected by the Coriolis force and may form an Ekman spiral. Vertically integrated Ekman transport is perpendicular to the wind (approximately 90° to the right in the Northern Hemisphere). Wind-stress curl can also drive convergence, divergence, and Ekman pumping.</p></div>
+        <figure class="img-container"><a href="fig-5-11.png" target="_blank" rel="noopener noreferrer"><img src="fig-5-11.png" alt="全球年平均热通量分布 / Global annual-mean heat flux distribution" loading="lazy"></a><figcaption class="img-caption">图 5.11：全球年平均热通量分布<br><span lang="en">Figure 5.11: Global distribution of annual-mean heat fluxes</span></figcaption></figure>
+
+        <!-- BEGIN ADDITIONAL TEXTBOOK NOTES — CHAPTER 5; original content retained -->
+        <div class="deep-dive">
+          <h3>🔎 补充精读 <small lang="en">/ Supplementary Deep-Dive</small></h3>
+          <p class="deep-ref">📖 教材依据：第 5 章，原书第 104–136 页 / Source: Chapter 5, textbook pp. 104–136.</p>
+          <div class="deep-topic">
+            <h4>1. 海洋质量与淡水收支 <span lang="en">/ Ocean mass and freshwater budgets</span></h4>
+            <div class="bi"><p class="zh" lang="zh-CN">海洋通过蒸发、降水、河流入海、海冰形成与融化以及洋流交换水量。区域盐度变化既可能由本地净淡水通量引起，也可能来自水平平流、垂向混合与海水体积变化。</p><p class="en" lang="en">The ocean exchanges water through evaporation, precipitation, river discharge, sea-ice formation and melt, and ocean currents. Regional salinity changes reflect both local freshwater fluxes and transport, vertical mixing and volume changes.</p></div>
+          </div>
+          <div class="deep-topic">
+            <h4>2. 净热通量符号约定 <span lang="en">/ Sign convention for net surface heat flux</span></h4>
+            <div class="bi"><p class="zh" lang="zh-CN">若约定进入海洋的热量为正，则可将净热通量表示为 Qnet = Qsw − Qlw − Qlatent − Qsensible，其中各失热项按正的损失量书写。不同文献可能采用相反的符号定义，因此阅读公式和热通量图时要先检查正负号。</p><p class="en" lang="en">Taking flux into the ocean as positive, one can write Qnet = Qsw − Qlw − Qlatent − Qsensible, where the loss terms are positive magnitudes. Other publications use different sign conventions, so always check signs before comparing budgets or heat-flux maps.</p></div>
+          </div>
+          <div class="deep-topic">
+            <h4>3. 短波、长波、潜热与感热的过程 <span lang="en">/ Physical meaning of the four heat-flux terms</span></h4>
+            <div class="bi"><p class="zh" lang="zh-CN">短波辐射可以穿透一定深度，长波辐射主要在近表层交换；蒸发通过潜热使海水失热，感热通过海气温差驱动。潜热通量还受海面风速、湿度与海气水汽差影响。</p><p class="en" lang="en">Shortwave radiation can penetrate below the surface, whereas longwave exchange occurs mainly near the surface. Evaporation removes latent heat, and sensible heat exchange responds to the air–sea temperature difference. Latent heat flux also depends on wind speed, humidity and the air–sea vapor contrast.</p></div>
+          </div>
+          <div class="deep-topic">
+            <h4>4. 混合层热量储存与季节变化 <span lang="en">/ Mixed-layer heat storage and seasonality</span></h4>
+            <div class="bi"><p class="zh" lang="zh-CN">表层热通量不一定直接等于局地海温变化，因为混合层深度会变化，且有平流、湍流混合和短波穿透等过程。在固定混合层深度的简化模型中，可写 ρ₀cp h dT/dt ≈ Qnet；这是诊断量级的起点，不是完整热收支。</p><p class="en" lang="en">Surface heat flux does not translate directly into local sea-surface temperature changes, because mixed-layer depth, advection, turbulence and penetrating shortwave radiation also matter. For fixed mixed-layer depth, a simple scale estimate is ρ₀cp h dT/dt ≈ Qnet; this is not a complete heat budget.</p></div>
+          </div>
+          <div class="deep-topic">
+            <h4>5. 风应力的含义与风速关系 <span lang="en">/ Wind stress and surface forcing</span></h4>
+            <div class="bi"><p class="zh" lang="zh-CN">风不仅驱动表层流，也通过湍流和波浪增强垂向混合。一个常用的体积平均参数化是 τ ≈ ρair CD |U10| U10，其中 CD 为阻力系数，U10 为十米高度风矢量；应区分风速与风应力。</p><p class="en" lang="en">Wind drives surface currents and enhances mixing through turbulence and waves. A common bulk formula is τ ≈ ρair CD |U10| U10, where CD is a drag coefficient and U10 is the wind vector at 10 m height. Wind speed and wind stress are related but distinct quantities.</p></div>
+          </div>
+          <div class="deep-topic">
+            <h4>6. 海盆尺度热量输送 <span lang="en">/ Basin-scale heat transport</span></h4>
+            <div class="bi"><p class="zh" lang="zh-CN">热带与高纬海域的净热量收支不同；大气和海洋输送共同缓解纬向能量不平衡。诊断某个海域升温还是降温时，需要同时考虑海气热通量与海流携带的热量。</p><p class="en" lang="en">Net heating differs between tropical and high-latitude regions, and atmospheric plus oceanic transport help redistribute energy. To explain warming or cooling of a region, consider both air–sea heat flux and heat carried by currents.</p></div>
+          </div>
+          <div class="deep-equation">
+            <strong>🧮 核心关系式 / Key Relations</strong>
+            <code>Qnet = Qsw − Qlw − Qlatent − Qsensible；ρ₀cp h dT/dt ≈ Qnet</code>
+            <p>仅示意“入海为正”的约定及固定混合层的简化估算。 / Illustrative signs and a simplified fixed-mixed-layer estimate only.</p>
+          </div>
+          <div class="deep-check">
+            <strong>💡 思考与自测 / Think &amp; Check</strong>
+            <div class="bi"><p class="zh" lang="zh-CN">若某海区 Qnet 为正但海温下降，可能有哪些非局地因素？</p><p class="en" lang="en">If Qnet is positive but local sea-surface temperature falls, what nonlocal mechanisms might explain it?</p></div>
+          </div>
+        </div>
+        <!-- END ADDITIONAL TEXTBOOK NOTES — CHAPTER 5 -->
+      </div>
+    </details>
+
+    <details>
+      <summary>第 6 章：数据分析概念与观测方法 / Chapter 6: Data Analysis &amp; Observational Methods</summary>
+      <div class="details-body">
+        <h3>📖 核心理论 <small lang="en">/ Key Concepts</small></h3>
+        <div class="bi"><p class="zh"><strong>基础统计与时间序列：</strong>包括均值、方差等统计量，并用频谱分析（傅里叶变换）识别海洋信号中的周期成分。</p><p class="en" lang="en"><strong>Basic statistics and time series:</strong> Mean, variance, and other statistics are used alongside spectral analysis (Fourier transforms) to identify periodic components in oceanographic signals.</p></div>
+        <div class="bi"><p class="zh"><strong>空间映射：</strong>通过客观分析等方法，将不规则分布的观测数据映射到规则网格。</p><p class="en" lang="en"><strong>Spatial mapping:</strong> Methods such as objective analysis map irregularly distributed observations onto regular grids.</p></div>
+        <div class="bi"><p class="zh"><strong>EOF（经验正交函数）：</strong>用于分解时空数据，提取解释主要方差的空间模态（EOFs）及其时间变化序列（PCs）。</p><p class="en" lang="en"><strong>Empirical Orthogonal Functions (EOFs):</strong> EOF analysis decomposes space–time data into spatial patterns (EOFs) that explain dominant variance and corresponding time series (principal components, PCs).</p></div>
+
+        <!-- BEGIN ADDITIONAL TEXTBOOK NOTES — CHAPTER 6; original content retained -->
+        <div class="deep-dive">
+          <h3>🔎 补充精读 <small lang="en">/ Supplementary Deep-Dive</small></h3>
+          <p class="deep-ref">📖 教材依据：第 6 章，原书第 137–170 页 / Source: Chapter 6, textbook pp. 137–170.</p>
+          <div class="deep-topic">
+            <h4>1. 观测平台与数据类型 <span lang="en">/ Observational platforms and data types</span></h4>
+            <div class="bi"><p class="zh" lang="zh-CN">CTD 剖面仪测量电导率、温度与压力，可推导盐度和密度；Argo 浮标提供重复的温盐垂向剖面；卫星遥感可观测海表温度、海面高度、海色或风场。不同传感器的观测深度、覆盖范围与误差来源不同。</p><p class="en" lang="en">CTD profilers measure conductivity, temperature and pressure, allowing salinity and density to be derived. Argo floats provide repeated vertical temperature–salinity profiles, while satellites observe surface temperature, sea level, ocean color or winds. Sensors differ in depth coverage, spatial sampling and uncertainty.</p></div>
+          </div>
+          <div class="deep-topic">
+            <h4>2. 采样、混叠与奈奎斯特频率 <span lang="en">/ Sampling, aliasing and the Nyquist limit</span></h4>
+            <div class="bi"><p class="zh" lang="zh-CN">离散观测无法解析任意高频变化。若采样时间间隔为 Δt，奈奎斯特频率为 fN = 1/(2Δt)；频率高于 fN 的信号可能在离散序列中表现为虚假的低频变化。潮汐与内波研究尤需注意采样间隔。</p><p class="en" lang="en">Discrete samples cannot resolve arbitrarily rapid variability. For a sampling interval Δt, the Nyquist frequency is fN = 1/(2Δt). Signals above this frequency may appear at artificially lower frequencies in sampled data. Sampling design is particularly important for tides and internal waves.</p></div>
+          </div>
+          <div class="deep-topic">
+            <h4>3. 均值、方差、异常和相关性 <span lang="en">/ Means, variance, anomalies and correlation</span></h4>
+            <div class="bi"><p class="zh" lang="zh-CN">分析海温或流速前，宜先区分长期平均、季节循环与距平（anomaly）。方差描述波动强度；相关系数衡量变量共同变化，却不能单独证明因果关系。趋势分析还需检查数据缺测、仪器漂移和自相关。</p><p class="en" lang="en">Separate the long-term mean, seasonal cycle and anomalies before analyzing temperature or velocity. Variance quantifies variability; correlation measures co-variation but does not establish causality. Trend estimates should also account for missing observations, sensor drift and serial correlation.</p></div>
+          </div>
+          <div class="deep-topic">
+            <h4>4. 频谱分析与滤波 <span lang="en">/ Spectral analysis and filtering</span></h4>
+            <div class="bi"><p class="zh" lang="zh-CN">傅里叶分析将时间序列表示为不同频率的分量，可识别潮汐周期、惯性振荡与季节信号。滤波有助于区分高频扰动和低频变化，但结果依赖窗口长度、边界处理和滤波器选择。</p><p class="en" lang="en">Fourier analysis represents a time series as frequency components and can identify tidal, inertial and seasonal variability. Filtering helps separate high- and low-frequency signals, but its output depends on record length, boundary treatment and filter design.</p></div>
+          </div>
+          <div class="deep-topic">
+            <h4>5. 空间映射、客观分析与误差 <span lang="en">/ Spatial mapping, objective analysis and uncertainty</span></h4>
+            <div class="bi"><p class="zh" lang="zh-CN">把不规则站位插值到规则网格时，不能把插值结果视为新增观测。客观分析常利用空间相关结构为观测赋权；观测空白区域的不确定性通常更大。绘图时应说明网格分辨率及可能的外推范围。</p><p class="en" lang="en">Interpolating irregular stations onto a grid does not create new observations. Objective mapping often weights data using assumed spatial covariance structures; uncertainties usually increase where observations are sparse. State the grid resolution and any extrapolation limits.</p></div>
+          </div>
+          <div class="deep-topic">
+            <h4>6. EOF / PCA 的数学与解释 <span lang="en">/ EOF / PCA: mathematics and interpretation</span></h4>
+            <div class="bi"><p class="zh" lang="zh-CN">对时空距平矩阵 X 可进行协方差矩阵特征分解或奇异值分解（SVD）。EOF 表示彼此正交的空间型，PC 表示对应的时间系数，解释方差占比描述每个模态的贡献。EOF 是统计结构，并不能自动等同于唯一的物理机制。</p><p class="en" lang="en">EOF analysis of an anomaly matrix X uses an eigendecomposition of its covariance matrix or singular-value decomposition (SVD). EOFs are orthogonal spatial modes, PCs are corresponding temporal coefficients, and explained variance measures each mode’s contribution. An EOF mode is a statistical pattern, not automatically a unique physical mechanism.</p></div>
+          </div>
+          <div class="deep-topic">
+            <h4>7. 水团与示踪数据的综合分析 <span lang="en">/ Combining water-mass and tracer observations</span></h4>
+            <div class="bi"><p class="zh" lang="zh-CN">温盐图、溶解氧和其他海洋化学示踪量可共同约束水团来源与混合。理想的双端元守恒混合可用 Cmix = αC1 + (1−α)C2 表示，但若存在生物消耗、海气交换或其他源汇，则需要额外收支项。</p><p class="en" lang="en">T–S diagrams, dissolved oxygen and other tracers can jointly constrain water-mass origins and mixing. For ideal two-endmember conservative mixing, Cmix = αC1 + (1−α)C2; biological consumption, air–sea exchange and other sources or sinks require additional budget terms.</p></div>
+          </div>
+          <div class="deep-equation">
+            <strong>🧮 核心关系式 / Key Relations</strong>
+            <code>fN = 1/(2Δt)；X = UΣVᵀ（SVD）</code>
+            <p>Δt：采样间隔；SVD 是 EOF / PCA 的一种计算方式。 / Δt: sampling interval; SVD is one method for EOF/PCA.</p>
+          </div>
+          <div class="deep-check">
+            <strong>💡 思考与自测 / Think &amp; Check</strong>
+            <div class="bi"><p class="zh" lang="zh-CN">为什么某个 EOF 模态解释了最多方差，也不能直接说它就是主要物理驱动机制？</p><p class="en" lang="en">Why does an EOF mode explaining the largest variance not necessarily identify the dominant physical forcing?</p></div>
+          </div>
+        </div>
+        <!-- END ADDITIONAL TEXTBOOK NOTES — CHAPTER 6 -->
+      </div>
+    </details>
+
+    <details>
+      <summary>第 7 章：海洋环流动力过程 / Chapter 7: Dynamics of Ocean Circulation</summary>
+      <div class="details-body">
+        <h3>📖 核心理论 <small lang="en">/ Key Concepts</small></h3>
+        <div class="bi"><p class="zh"><strong>地转平衡：</strong>在罗斯贝数较小（Ro ≪ 1）的大尺度运动中，科氏力和水平压强梯度力近似平衡。地转流沿等压线方向流动；在北半球，高压位于流向右侧。</p><p class="en" lang="en"><strong>Geostrophic balance:</strong> For large-scale flows with small Rossby number (Ro ≪ 1), the Coriolis force approximately balances the horizontal pressure-gradient force. Geostrophic currents flow along isobars, with higher pressure on the right in the Northern Hemisphere.</p></div>
+        <div class="bi"><p class="zh"><strong>热成风关系：</strong>地转流的垂向切变由水平方向的密度梯度决定。</p><p class="en" lang="en"><strong>Thermal-wind relationship:</strong> The vertical shear of geostrophic velocity is related to horizontal density gradients.</p></div>
+        <div class="bi"><p class="zh"><strong>Sverdrup 平衡与西向强化：</strong>风应力旋度驱动大洋内部的经向输送。结合洋盆边界条件和动力学过程，可形成狭窄、强劲的西边界流，例如黑潮和湾流。</p><p class="en" lang="en"><strong>Sverdrup balance and western intensification:</strong> Wind-stress curl drives meridional transport in the ocean interior. Together with basin boundaries and dynamical constraints, this leads to narrow, intense western boundary currents such as the Kuroshio and Gulf Stream.</p></div>
+        <figure class="img-container"><a href="fig-7-8.png" target="_blank" rel="noopener noreferrer"><img src="fig-7-8.png" alt="埃克曼响应示意 / Ekman response" loading="lazy"></a><figcaption class="img-caption">图 7.8：埃克曼响应<br><span lang="en">Figure 7.8: Ekman response</span></figcaption></figure>
+
+        <!-- BEGIN ADDITIONAL TEXTBOOK NOTES — CHAPTER 7; original content retained -->
+        <div class="deep-dive">
+          <h3>🔎 补充精读 <small lang="en">/ Supplementary Deep-Dive</small></h3>
+          <p class="deep-ref">📖 教材依据：第 7 章，原书第 171–204 页 / Source: Chapter 7, textbook pp. 171–204.</p>
+          <div class="deep-topic">
+            <h4>1. 动量方程中的主要作用力 <span lang="en">/ Forces in the momentum equations</span></h4>
+            <div class="bi"><p class="zh" lang="zh-CN">解释海流时通常考察局地加速度、平流加速度、压强梯度力、科氏力、重力和摩擦。不同尺度下可采用不同近似；例如大尺度缓慢流动常满足静力与地转近似，但近岸急流和强涡旋中非线性项可能不能忽略。</p><p class="en" lang="en">Ocean momentum budgets include local and advective acceleration, pressure-gradient force, Coriolis force, gravity and friction. Different regimes justify different approximations. Slowly evolving large-scale flow often approaches hydrostatic and geostrophic balance, while strong currents and coastal jets may retain important nonlinear terms.</p></div>
+          </div>
+          <div class="deep-topic">
+            <h4>2. 连续性与静水近似 <span lang="en">/ Continuity and hydrostatic balance</span></h4>
+            <div class="bi"><p class="zh" lang="zh-CN">在近似不可压缩条件下，速度场满足 ∂u/∂x + ∂v/∂y + ∂w/∂z = 0；这并不意味着垂向速度恒为零。大尺度海洋的垂向动量近似常由静水压平衡给出，即 ∂p/∂z = −ρg。</p><p class="en" lang="en">For approximately incompressible flow, ∂u/∂x + ∂v/∂y + ∂w/∂z = 0; this does not imply zero vertical velocity. For large-scale ocean flows, the vertical momentum equation is commonly approximated by hydrostatic balance: ∂p/∂z = −ρg.</p></div>
+          </div>
+          <div class="deep-topic">
+            <h4>3. 地转流的两个分量 <span lang="en">/ Components of geostrophic velocity</span></h4>
+            <div class="bi"><p class="zh" lang="zh-CN">在北半球并取 z 向上、x 向东、y 向北时，可写 ug = −(1/ρ₀f)∂p/∂y、vg = (1/ρ₀f)∂p/∂x。地转流与水平压强梯度垂直；在赤道附近或摩擦显著时不能直接使用这一形式。</p><p class="en" lang="en">Using eastward x, northward y and upward z, geostrophic velocity is ug = −(1/ρ₀f)∂p/∂y and vg = (1/ρ₀f)∂p/∂x. Geostrophic flow is perpendicular to the horizontal pressure gradient; these expressions break down near the equator or where friction is dominant.</p></div>
+          </div>
+          <div class="deep-topic">
+            <h4>4. 热成风是流速切变而不是另一种风 <span lang="en">/ Thermal wind is velocity shear, not an atmospheric wind</span></h4>
+            <div class="bi"><p class="zh" lang="zh-CN">热成风关系把水平密度梯度与地转流的垂向切变联系起来：∂ug/∂z = (g/ρ₀f)∂ρ/∂y，∂vg/∂z = −(g/ρ₀f)∂ρ/∂x。由温盐剖面推算的往往是相对地转流，需要参考流速或参考层条件才能得到绝对流速。</p><p class="en" lang="en">The thermal-wind equations relate horizontal density gradients to the vertical shear of geostrophic flow: ∂ug/∂z = (g/ρ₀f)∂ρ/∂y and ∂vg/∂z = −(g/ρ₀f)∂ρ/∂x. Hydrographic sections generally yield relative geostrophic velocity; an external reference is needed for absolute velocity.</p></div>
+          </div>
+          <div class="deep-topic">
+            <h4>5. 埃克曼输送与抽吸 <span lang="en">/ Ekman transport and pumping</span></h4>
+            <div class="bi"><p class="zh" lang="zh-CN">北半球埃克曼净输送位于风应力右侧，南半球位于左侧。令单位宽度的垂向积分输送为 (Mx,My)，可写 Mx = τy/(ρ₀f)，My = −τx/(ρ₀f)。风应力旋度导致辐散或辐合，从而产生向上或向下的埃克曼抽吸。</p><p class="en" lang="en">Vertically integrated Ekman transport lies to the right of wind stress in the Northern Hemisphere and to the left in the Southern Hemisphere. With (Mx,My) denoting volume transport per unit width, Mx = τy/(ρ₀f) and My = −τx/(ρ₀f). Wind-stress curl drives horizontal convergence/divergence and associated Ekman pumping.</p></div>
+          </div>
+          <div class="deep-topic">
+            <h4>6. 位涡、β 效应与 Sverdrup 平衡 <span lang="en">/ Vorticity, the beta effect and Sverdrup balance</span></h4>
+            <div class="bi"><p class="zh" lang="zh-CN">科氏参数随纬度变化，β = ∂f/∂y。位涡守恒的思想帮助解释水柱伸长或压缩引起的旋转调整。大洋内部在特定近似下满足 Sverdrup 平衡：βV = (∇×τ)z/ρ₀，其中 V 是深度积分经向输送。</p><p class="en" lang="en">The Coriolis parameter changes with latitude, β = ∂f/∂y. Potential-vorticity conservation helps explain rotational adjustment as water columns stretch or compress. Under idealized conditions, ocean-interior Sverdrup balance is βV = (∇×τ)z/ρ₀, where V is depth-integrated meridional transport.</p></div>
+          </div>
+          <div class="deep-topic">
+            <h4>7. 西边界流与罗斯贝调整 <span lang="en">/ Western boundary currents and Rossby adjustment</span></h4>
+            <div class="bi"><p class="zh" lang="zh-CN">大洋内部的风驱动输送需要在边界闭合。β 效应、摩擦和洋盆边界条件共同导致西侧出现相对狭窄且强的边界流。罗斯贝波和其他调整过程则有助于将风应力与密度场变化的信息传播到更广阔的海域。</p><p class="en" lang="en">Wind-driven interior transport must close within an ocean basin. The beta effect, friction and basin boundaries together favor narrow, strong western boundary currents. Rossby waves and related adjustment processes transmit the influence of wind forcing and density changes across broad ocean areas.</p></div>
+          </div>
+          <div class="deep-topic">
+            <h4>8. 流场稳定性与涡旋 <span lang="en">/ Current instability and eddies</span></h4>
+            <div class="bi"><p class="zh" lang="zh-CN">流速水平或垂向切变可以为不稳定过程提供能量，使平均流向涡旋动能转换。解释图上的涡旋时，既要关注流速分布，也要关注密度锋面、边界流路径及地形。</p><p class="en" lang="en">Horizontal or vertical velocity shear can energize instabilities that convert mean-flow energy into eddy kinetic energy. Interpreting eddies requires considering current structure, density fronts, boundary-current pathways and bathymetry.</p></div>
+          </div>
+          <div class="deep-equation">
+            <strong>🧮 核心关系式 / Key Relations</strong>
+            <code>f = 2Ωsinφ；ug = −py/(ρ₀f)；vg = px/(ρ₀f)；βV = curl(τ)/ρ₀</code>
+            <p>px、py 分别表示水平压强梯度；这些关系具有适用条件。 / px and py denote pressure gradients; each balance has assumptions.</p>
+          </div>
+          <div class="deep-check">
+            <strong>💡 思考与自测 / Think &amp; Check</strong>
+            <div class="bi"><p class="zh" lang="zh-CN">为何仅有温盐剖面通常只能算出“相对地转流”，而不是绝对流速？</p><p class="en" lang="en">Why do hydrographic sections generally determine relative rather than absolute geostrophic velocity?</p></div>
+          </div>
+        </div>
+        <!-- END ADDITIONAL TEXTBOOK NOTES — CHAPTER 7 -->
+      </div>
+    </details>
+
+    <details>
+      <summary>第 8 章：重力波、潮汐与海岸海洋学 / Chapter 8: Gravity Waves, Tides &amp; Coastal Oceanography</summary>
+      <div class="details-body">
+        <h3>📖 核心理论 <small lang="en">/ Key Concepts</small></h3>
+        <div class="bi"><p class="zh"><strong>波浪分类：</strong>根据主要恢复力，可以区分受表面张力控制的毛细波、受重力控制的表面重力波，以及在分层海洋内部传播的内波。</p><p class="en" lang="en"><strong>Wave classification:</strong> Waves can be classified by their dominant restoring forces: surface tension for capillary waves, gravity for surface gravity waves, and buoyancy in a stratified fluid for internal waves.</p></div>
+        <div class="bi"><p class="zh"><strong>潮汐与海岸过程：</strong>地形和科氏力共同影响潮汐传播，形成复杂的动力潮汐系统。海岸区域还会出现风驱动的沿岸上升流，对海洋生态系统具有重要意义。</p><p class="en" lang="en"><strong>Tides and coastal processes:</strong> Bathymetry and the Coriolis force shape tidal propagation and produce complex dynamical tides. Wind-driven coastal upwelling also plays a major role in marine ecosystems.</p></div>
+
+        <!-- BEGIN ADDITIONAL TEXTBOOK NOTES — CHAPTER 8; original content retained -->
+        <div class="deep-dive">
+          <h3>🔎 补充精读 <small lang="en">/ Supplementary Deep-Dive</small></h3>
+          <p class="deep-ref">📖 教材依据：第 8 章，原书第 205–223 页 / Source: Chapter 8, textbook pp. 205–223.</p>
+          <div class="deep-topic">
+            <h4>1. 波的基本量：波长、周期与速度 <span lang="en">/ Wave fundamentals: wavelength, period and speed</span></h4>
+            <div class="bi"><p class="zh" lang="zh-CN">描述波动至少需要振幅 a、波长 λ、周期 T、波数 k = 2π/λ 和角频率 ω = 2π/T。相速 c = ω/k 表示同相位传播速度；群速 cg = dω/dk 描述波包和能量传播的特征速度，二者未必相等。</p><p class="en" lang="en">A wave is described by amplitude a, wavelength λ, period T, wavenumber k = 2π/λ and angular frequency ω = 2π/T. Phase speed c = ω/k tracks a constant phase, while group speed cg = dω/dk describes wave-packet and energy propagation; they need not be equal.</p></div>
+          </div>
+          <div class="deep-topic">
+            <h4>2. 表面重力波的色散关系 <span lang="en">/ Dispersion of surface gravity waves</span></h4>
+            <div class="bi"><p class="zh" lang="zh-CN">在线性小振幅理论下，表面重力波满足 ω² = gk tanh(kh)，h 为水深。深水极限 kh ≫ 1 时有 ω² ≈ gk，较长波传播较快；浅水极限 kh ≪ 1 时 c ≈ √(gh)，波速主要取决于水深。</p><p class="en" lang="en">For small-amplitude linear surface gravity waves, ω² = gk tanh(kh), where h is water depth. In deep water (kh ≫ 1), ω² ≈ gk and longer waves travel faster. In shallow water (kh ≪ 1), c ≈ √(gh), so speed depends primarily on depth.</p></div>
+          </div>
+          <div class="deep-topic">
+            <h4>3. 深水波和浅水波的群速 <span lang="en">/ Group velocity in deep and shallow water</span></h4>
+            <div class="bi"><p class="zh" lang="zh-CN">理想深水重力波满足 cg ≈ c/2，而理想浅水长波满足 cg ≈ c。这个差异说明深水中一个波峰的移动速度可以不同于波群所携带能量的传播速度。</p><p class="en" lang="en">For ideal deep-water gravity waves, cg ≈ c/2, while for long shallow-water waves cg ≈ c. Therefore a wave crest in deep water can travel at a different speed from the wave group that transports energy.</p></div>
+          </div>
+          <div class="deep-topic">
+            <h4>4. 内波与稳定层结 <span lang="en">/ Internal waves and stable stratification</span></h4>
+            <div class="bi"><p class="zh" lang="zh-CN">内波存在于稳定层结的海洋内部，以浮力（并常受地球自转影响）为恢复机制。其垂向位移可很大但海面表现不明显。浮力频率 N 和科氏参数 f 对内波允许的频率范围与传播方向有关键影响。</p><p class="en" lang="en">Internal waves occur inside the stably stratified ocean, with buoyancy—and often planetary rotation—providing the restoring mechanisms. Their vertical displacements may be large despite a weak surface signature. The buoyancy frequency N and Coriolis parameter f strongly influence their frequency range and propagation.</p></div>
+          </div>
+          <div class="deep-topic">
+            <h4>5. 天文潮汐与主要分潮 <span lang="en">/ Astronomical tides and leading constituents</span></h4>
+            <div class="bi"><p class="zh" lang="zh-CN">潮汐由月球与太阳的引潮力驱动。常见分潮包括半日潮 M2（约 12.42 h）、S2（12 h）和日潮 K1（约 23.93 h）、O1（约 25.82 h）。不同分潮叠加造成不同海区的潮型和大小潮变化。</p><p class="en" lang="en">Tides are driven by the gravitational tide-generating forces of the Moon and Sun. Important constituents include semidiurnal M2 (about 12.42 h) and S2 (12 h), and diurnal K1 (about 23.93 h) and O1 (about 25.82 h). Their superposition produces regional tidal patterns and spring–neap modulation.</p></div>
+          </div>
+          <div class="deep-topic">
+            <h4>6. 平衡潮与动力潮理论 <span lang="en">/ Equilibrium tides versus dynamical tides</span></h4>
+            <div class="bi"><p class="zh" lang="zh-CN">平衡潮提供对引潮力的理想化静力响应图像；真实海洋中的动力潮还受到大陆边界、海底地形、摩擦与科氏力影响。因此潮差与高潮时间在不同海湾、陆架和大洋盆地之间可能差异很大。</p><p class="en" lang="en">Equilibrium-tide theory describes an idealized static response to astronomical forcing. Real, dynamical tides are shaped by coastlines, bathymetry, friction and the Coriolis force. As a result, tidal range and high-water timing vary considerably among bays, shelves and ocean basins.</p></div>
+          </div>
+          <div class="deep-topic">
+            <h4>7. 无潮点与海岸共振 <span lang="en">/ Amphidromic systems and coastal resonance</span></h4>
+            <div class="bi"><p class="zh" lang="zh-CN">潮汐图中的无潮点（amphidromic point）附近潮振幅很小，相位常围绕其旋转。海湾与陆架的几何形状可能使某些潮频接近系统固有频率，从而放大潮差。海岸观测必须同时考虑水深、边界和摩擦。</p><p class="en" lang="en">In an amphidromic system, tidal amplitude is small near an amphidromic point and phase rotates around it. Shelf and bay geometry may bring natural oscillation periods close to tidal forcing periods and amplify the tidal range. Coastal interpretation therefore requires depth, boundaries and friction.</p></div>
+          </div>
+          <div class="deep-equation">
+            <strong>🧮 核心关系式 / Key Relations</strong>
+            <code>k = 2π/λ；ω = 2π/T；ω² = gk tanh(kh)；c = ω/k；cg = dω/dk</code>
+            <p>表面重力波色散式适用于理想线性波。 / The surface-gravity-wave dispersion relation assumes ideal linear waves.</p>
+          </div>
+          <div class="deep-check">
+            <strong>💡 思考与自测 / Think &amp; Check</strong>
+            <div class="bi"><p class="zh" lang="zh-CN">为什么相同周期的重力波进入浅海后会减速并改变波长？</p><p class="en" lang="en">Why does a gravity wave of unchanged period slow down and change wavelength as it enters shallow water?</p></div>
+          </div>
+        </div>
+        <!-- END ADDITIONAL TEXTBOOK NOTES — CHAPTER 8 -->
+      </div>
+    </details>
+  </section>
+
+  <!-- Course notes / 课堂笔记 -->
+  <section>
+    <h2>📘 课堂笔记 <small lang="en">/ Course Notes</small></h2>
+    <div class="bi"><p class="zh">按课次整理的课堂重点、详细解析与出门票记录。</p><p class="en" lang="en">Lecture-by-lecture summaries of key ideas, detailed explanations, and exit-ticket reflections.</p></div>
+
+    <details>
+      <summary>第 1 讲：导论与核心逻辑 / Lecture 1: Introduction &amp; Core Framework</summary>
+      <div class="details-body">
+        <h3>🎫 出门票 <small lang="en">/ Exit Ticket</small></h3>
+        <div class="ticket"><div class="bi"><p class="zh">这节课我最大的收获是理清了物理海洋学的“What – Why – How”研究框架。为了总览全貌，我课后使用 XMind 整理了一张知识地图。</p><p class="en" lang="en">My biggest takeaway was understanding the “What – Why – How” research framework of physical oceanography. To see the bigger picture, I created a knowledge map in XMind after class.</p></div>
+          <figure class="img-container"><a href="physical-oceanography.png" target="_blank" rel="noopener noreferrer"><img src="physical-oceanography.png" alt="物理海洋学知识体系思维导图 / Physical oceanography mind map" loading="lazy"></a><figcaption class="img-caption">物理海洋学知识地图 / Physical Oceanography Knowledge Map</figcaption></figure>
+        </div>
+      </div>
+    </details>
+
+    <details>
+      <summary>第 2 讲：海洋维度与底质 / Lecture 2: Ocean Dimensions &amp; Seafloor</summary>
+      <div class="details-body">
+        <h3>🎫 出门票 <small lang="en">/ Exit Ticket</small></h3>
+        <div class="ticket"><div class="bi"><p class="zh">我理解了海底地壳“年轻”的原因：洋中脊不断形成新地壳，海沟附近的俯冲作用使旧地壳消亡。我由此产生一个问题：俯冲的地壳物质最终去了哪里？查阅资料后我了解到，它们返回地幔，参与长期地质循环。</p><p class="en" lang="en">I learned why oceanic crust is “young”: new crust forms at mid-ocean ridges, while old crust is recycled through subduction near trenches. This led me to ask: Where does the subducted material ultimately go? Further reading showed me that it returns to the mantle and participates in long-term geological cycling.</p></div></div>
+      </div>
+    </details>
+
+    <details>
+      <summary>第 3 讲：海水的物理性质与混合 / Lecture 3: Seawater Properties &amp; Mixing</summary>
+      <div class="details-body">
+        <h3>🎫 出门票 <small lang="en">/ Exit Ticket</small></h3>
+        <div class="ticket"><div class="bi"><p class="zh">这节课我理解了“位温”和“混合增密”。老师展示了如何使用代码处理位温分布并计算混合增密，我保存了当时的 PPT 截图。</p><p class="en" lang="en">In this lecture I developed a clearer understanding of potential temperature and cabbeling. The instructor demonstrated how to process potential-temperature distributions and calculate cabbeling using code; I saved a screenshot of the relevant slides.</p></div>
+          <figure class="img-container"><a href="ticket-mixing.png" target="_blank" rel="noopener noreferrer"><img src="ticket-mixing.png" alt="位温与混合增密课堂截图 / Class slide on potential temperature and cabbeling" loading="lazy"></a><figcaption class="img-caption">位温与混合增密 / Potential Temperature &amp; Cabbeling</figcaption></figure>
+        </div>
+      </div>
+    </details>
+
+    <details>
+      <summary>第 4 讲：水团特征的典型分布 / Lecture 4: Typical Water-Mass Distributions</summary>
+      <div class="details-body">
+        <h3>🎫 出门票 <small lang="en">/ Exit Ticket</small></h3>
+        <div class="ticket">
+          <div class="bi"><p class="zh"><strong>1. 混合层与深层：</strong>混合层深度通常约为 50–200 m，但随地区和季节而变化；深层水体具有不同的特征。</p><p class="en" lang="en"><strong>1. Mixed and deep layers:</strong> The mixed layer is often about 50–200 m deep, although it varies by region and season; deeper waters have distinct properties.</p></div>
+          <div class="bi"><p class="zh"><strong>2. 副热带与副极地：</strong>副热带地区存在永久性温跃层（约 200–1,000 m）与盐度最大值；副极地地区可出现温度最小值。</p><p class="en" lang="en"><strong>2. Subtropical versus subpolar regions:</strong> Subtropical waters feature a permanent thermocline (roughly 200–1,000 m) and salinity maxima; subpolar regions may exhibit temperature minima.</p></div>
+          <div class="bi"><p class="zh"><strong>3. 表层盐度最大区域：</strong>通常位于蒸发大于降水的副热带海域。</p><p class="en" lang="en"><strong>3. Highest surface salinity:</strong> Typically found in subtropical regions where evaporation exceeds precipitation.</p></div>
+        </div>
+      </div>
+    </details>
+
+    <details>
+      <summary>第 5 讲：热量收支与风的作用 / Lecture 5: Heat Budget &amp; Wind Forcing</summary>
+      <div class="details-body">
+        <h3>🎫 出门票 <small lang="en">/ Exit Ticket</small></h3>
+        <div class="ticket">
+          <div class="bi"><p class="zh"><strong>4. 四类热通量：</strong>短波辐射 Qs 是主要得热项，潜热通量 Qe 常是主要失热项。</p><p class="en" lang="en"><strong>4. Four heat-flux components:</strong> Shortwave radiation (Qs) is the major heat-gain term, while latent heat flux (Qe) is often a major heat-loss term.</p></div>
+          <div class="bi"><p class="zh"><strong>5. 北大西洋为何比北太平洋更咸：</strong>北大西洋副热带海域的蒸发–降水平衡，以及地中海高盐水的影响，都是值得关注的因素。</p><p class="en" lang="en"><strong>5. Why the North Atlantic is saltier than the North Pacific:</strong> The subtropical Atlantic's evaporation–precipitation balance and the influence of saline Mediterranean outflow are among the relevant factors.</p></div>
+          <div class="bi"><p class="zh"><strong>6. 季节差异：</strong>海表温度季节变化通常在温带较明显，在热带及某些极地海区相对较弱。</p><p class="en" lang="en"><strong>6. Seasonal variability:</strong> Seasonal sea-surface temperature variations are typically pronounced in temperate regions and relatively weaker in the tropics and some polar regions.</p></div>
+        </div>
+      </div>
+    </details>
+
+    <details>
+      <summary>第 6 讲：数据分析与 EOF / Lecture 6: Data Analysis &amp; EOFs</summary>
+      <div class="details-body">
+        <h3>🎫 出门票 <small lang="en">/ Exit Ticket</small></h3>
+        <div class="ticket">
+          <div class="bi"><p class="zh"><strong>7. 温跃层如何维持？</strong>涉及向下热量输送、冷水的平流及其他混合过程之间的动态平衡。</p><p class="en" lang="en"><strong>7. How is the thermocline maintained?</strong> Through a dynamic balance involving downward heat transport, cold-water advection, and other mixing processes.</p></div>
+          <div class="bi"><p class="zh"><strong>随堂测验：EOF 的目的。</strong>正确答案是 B：识别数据集中的主导空间模态及其时间变化。</p><p class="en" lang="en"><strong>In-class quiz: What is the purpose of EOF analysis?</strong> Correct answer: B — to identify dominant spatial patterns in a dataset and their temporal evolution.</p></div>
+          <figure class="img-container"><a href="ticket-eof.png" target="_blank" rel="noopener noreferrer"><img src="ticket-eof.png" alt="EOF 课堂测验截图 / EOF quiz slide" loading="lazy"></a><figcaption class="img-caption">EOF 随堂测验 / EOF In-Class Quiz</figcaption></figure>
+        </div>
+      </div>
+    </details>
+
+    <details>
+      <summary>第 7 讲：海洋环流动力学 / Lecture 7: Ocean Circulation Dynamics</summary>
+      <div class="details-body">
+        <h3>🎫 出门票 <small lang="en">/ Exit Ticket</small></h3>
+        <div class="ticket">
+          <div class="bi"><p class="zh"><strong>Sverdrup 平衡与全球环流：</strong>风应力驱动埃克曼输送及辐合、辐散，使水柱受到压缩或拉伸。在行星涡度守恒的简化图像中，压缩水柱与向赤道的运动相关，拉伸与向极地的运动相关。</p><p class="en" lang="en"><strong>Sverdrup balance and global circulation:</strong> Wind stress drives Ekman transport and convergence or divergence, compressing or stretching water columns. In a simplified potential-vorticity framework, compression is associated with equatorward motion and stretching with poleward motion.</p></div>
+          <figure class="img-container"><a href="ticket-sverdrup.png" target="_blank" rel="noopener noreferrer"><img src="ticket-sverdrup.png" alt="Sverdrup 平衡课堂示意 / Sverdrup balance slide" loading="lazy"></a><figcaption class="img-caption">Sverdrup 平衡与水柱伸缩 / Sverdrup Balance and Water-Column Stretching</figcaption></figure>
+          <div class="bi"><p class="zh">结合全球地转流场图，我能更直观地识别西边界流（湾流、黑潮）和南极绕极流（ACC）的位置。</p><p class="en" lang="en">A global map of geostrophic currents helps me visualize the locations of western boundary currents (the Gulf Stream and Kuroshio) and the Antarctic Circumpolar Current (ACC).</p></div>
+          <figure class="img-container"><a href="global-geostrophic-velocity.png" target="_blank" rel="noopener noreferrer"><img src="global-geostrophic-velocity.png" alt="全球地转流场 / Global geostrophic velocity field" loading="lazy"></a><figcaption class="img-caption">全球地转流场 / Global Geostrophic Velocity Field</figcaption></figure>
+        </div>
+      </div>
+    </details>
+
+    <details>
+      <summary>第 8 讲：重力波、潮汐与波动现象 / Lecture 8: Gravity Waves, Tides &amp; Oscillations</summary>
+      <div class="details-body">
+        <h3>🎫 出门票 <small lang="en">/ Exit Ticket</small></h3>
+        <div class="ticket">
+          <div class="bi"><p class="zh">这节课让我理清了不同波动的生成机制。以前我以为波浪主要由风造成，后来意识到各类波动的恢复力不同：毛细波由表面张力恢复，表面重力波由重力恢复，而罗斯贝波与科氏参数随纬度的变化（β 效应）密切相关。</p><p class="en" lang="en">This lecture helped me distinguish the mechanisms behind different waves. I once assumed that waves were mainly generated by wind, but I learned that their restoring mechanisms differ: surface tension for capillary waves, gravity for surface gravity waves, and the latitudinal variation of the Coriolis parameter (the β effect) for Rossby waves.</p></div>
+          <div class="bi"><p class="zh">我还整理了课堂提到的 23 种海洋与大气波动，制作成一张详细的对照表。</p><p class="en" lang="en">I also organized the 23 oceanic and atmospheric wave types discussed in class into a comprehensive comparison chart.</p></div>
+          <figure class="img-container"><a href="wave-types.png" target="_blank" rel="noopener noreferrer"><img src="wave-types.png" alt="23 种海洋与大气波动类型汇总 / Comparison of 23 oceanic and atmospheric wave types" loading="lazy"></a><figcaption class="img-caption">23 种波动类型对照表 / Comparison of 23 Wave Types</figcaption></figure>
+          <div class="center">
+            <div class="bi"><p class="zh"><strong>📎 延伸阅读：</strong>课后我阅读了 PPTX SKILL.md 文件，并制作了一个逐行对照解读网页。</p><p class="en" lang="en"><strong>📎 Further reading:</strong> After class, I studied the PPTX SKILL.md file and created a webpage with a line-by-line explanation.</p></div>
+            <a class="action" href="https://youhaoyu152-ux.github.io/pptx_guide.html" target="_blank" rel="noopener noreferrer">📖 查看 PPTX SKILL.md 逐行解读 / Read the Line-by-Line Guide</a>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <details>
+      <summary>课程总结：物理海洋学的前沿与展望 / Course Reflection: Frontiers &amp; Future Directions</summary>
+      <div class="details-body">
+        <h3>🎫 出门票 <small lang="en">/ Exit Ticket</small></h3>
+        <div class="ticket">
+          <div class="bi"><p class="zh">回顾整个课程，从经典的温盐分布到复杂的动力学方程，再到全球气候系统与数字孪生，我最感兴趣的方向是<strong>“海洋动力过程对碳–氮–氧生物地球化学循环的调控”</strong>。这也与我设计的“长江口藻华实验方案”直接相关。</p><p class="en" lang="en">Looking back on the course—from classical temperature–salinity distributions and complex dynamical equations to the global climate system and digital twins—the topic that interests me most is <strong>how ocean dynamics regulate carbon, nitrogen, and oxygen biogeochemical cycles</strong>. This connects directly to my proposed experiment on algal blooms in the Yangtze River Estuary.</p></div>
+          <figure class="img-container"><a href="frontiers.png" target="_blank" rel="noopener noreferrer"><img src="frontiers.png" alt="物理海洋学十大前沿方向 / Ten frontier topics in physical oceanography" loading="lazy"></a><figcaption class="img-caption">物理海洋学前沿方向 / Frontiers in Physical Oceanography</figcaption></figure>
+        </div>
+      </div>
+    </details>
+  </section>
+
+  <!-- Story time / 故事会 -->
+  <section>
+    <h2>🎬 故事会 <small lang="en">/ Story Time</small></h2>
+    <div class="bi"><p class="zh">这里记录了我从现象出发，动手探索海洋物理机制的“探案过程”。</p><p class="en" lang="en">Here I document my scientific “detective stories”: starting from observations and investigating the underlying physical mechanisms of the ocean.</p></div>
+
+    <!-- Story 1 -->
+    <details open>
+      <summary>故事 1：追踪长江口的“幽灵碳”——藻华与碳汇之谜 / Story 1: Tracking “Ghost Carbon” in the Yangtze Estuary — The Bloom &amp; Carbon-Sink Mystery</summary>
+      <div class="details-body">
+        <h3>🎬 开头：现象与悬疑 <small lang="en">/ Opening: The Observation &amp; the Mystery</small></h3>
+        <div class="myvoice">
+          <div class="bi"><p class="zh">学习“海气相互作用”和“水团分布”后，我盯着长江口的卫星图陷入了沉思。</p><p class="en" lang="en">After studying air–sea interactions and water-mass distributions, I found myself staring at satellite images of the Yangtze River Estuary.</p></div>
+          <div class="bi"><p class="zh">每年春夏，长江冲淡水携带的丰富营养盐会促进大规模藻华。浮游植物通过光合作用吸收大量无机碳，产生净群落生产力（NCP）。<strong>我原以为</strong>这些碳会在生物死亡后沉到海底，成为长期碳汇。</p><p class="en" lang="en">Every spring and summer, nutrient-rich river water can fuel extensive algal blooms. Phytoplankton take up inorganic carbon through photosynthesis, contributing to net community production (NCP). <strong>I initially assumed</strong> that this carbon would sink to the seafloor after organisms died and become a long-term carbon sink.</p></div>
+          <div class="bi"><p class="zh"><strong>但事实真的如此吗？</strong>新增的碳究竟会以 CO₂ 形式通过海气交换回到大气，还是作为颗粒有机碳（POC）输出至混合层以下？在风暴频发、水流复杂的河口，这些“幽灵碳”的去向成了一个谜。</p><p class="en" lang="en"><strong>But is that really what happens?</strong> Does the newly fixed carbon return to the atmosphere as CO₂ through air–sea exchange, or is it exported below the mixed layer as particulate organic carbon (POC)? In this storm-affected, highly dynamic estuary, the fate of that “ghost carbon” became a mystery to me.</p></div>
+        </div>
+        <figure class="img-container"><a href="story-fig-1.png" target="_blank" rel="noopener noreferrer"><img src="story-fig-1.png" alt="长江口与东海叶绿素分布示意 / Chlorophyll distribution in the Yangtze Estuary and East China Sea" loading="lazy"></a><figcaption class="img-caption">案发现场：长江口与东海表层叶绿素分布（示意）<br><span lang="en">The scene: Schematic surface chlorophyll distribution in the Yangtze Estuary and East China Sea</span></figcaption></figure>
+
+        <h3>🔍 中间：抽丝剥茧的探案过程 <small lang="en">/ Investigation: Following the Evidence</small></h3>
+        <div class="myvoice">
+          <div class="bi"><p class="zh">为了弄清碳的去向，我查阅文献，并尝试设计针对<strong>单一核心站位</strong>的观测实验。设计过程中，我发现了三个棘手的“物理陷阱”。</p><p class="en" lang="en">To determine where the carbon goes, I reviewed the literature and designed an observational experiment centered on <strong>one core station</strong>. Along the way, I encountered three difficult “physical traps.”</p></div>
+          <div class="bi"><p class="zh"><strong>陷阱一：消失的基线（时间轴的错乱）</strong><br>不能直接用藻华期数据减去全年平均值，因为风暴和河流径流会带来显著的短期波动。我需要藻华发生前连续 5–7 天的基线观测，才能较可靠地识别事件异常。</p><p class="en" lang="en"><strong>Trap 1: The missing baseline (a mismatch in time)</strong><br>Simply subtracting the annual mean from bloom-period observations would be misleading because storms and river discharge produce strong short-term fluctuations. I therefore planned to collect 5–7 continuous days of pre-event baseline data before identifying bloom-related anomalies.</p></div>
+          <div class="bi"><p class="zh"><strong>陷阱二：错位的监控（捕获器与传感器的时间差）</strong><br>海气 CO₂ 传感器可以连续记录数据，但沉积物捕获器往往只在特定时间段收集下沉颗粒。这就像把连续监控录像与一张快照比较。因此，我设计了“时间窗积分”的方法，让它们在相同时间段（例如 08:00–14:00）内进行配对。</p><p class="en" lang="en"><strong>Trap 2: Misaligned monitoring (sensor versus trap sampling windows)</strong><br>Air–sea CO₂ sensors can record continuously, whereas sediment traps collect sinking particles over discrete deployment intervals. Comparing them is like comparing continuous surveillance footage with a snapshot. My solution was a time-window integration approach that pairs measurements over the same interval, such as 08:00–14:00.</p></div>
+          <div class="bi"><p class="zh"><strong>陷阱三：氧气的骗局（溶解氧收支的干扰）</strong><br>我原以为混合层溶解氧（DO）的变化就能直接反推出 NCP，但风驱动混合、海气交换和温度变化都会影响 DO。只有剔除或估算这些物理过程的贡献，才能更可靠地推断生物产氧量。</p><p class="en" lang="en"><strong>Trap 3: The oxygen illusion (interference in the DO budget)</strong><br>I first thought that changes in mixed-layer dissolved oxygen (DO) could directly reveal NCP. But wind-driven mixing, air–sea gas exchange, and temperature changes also affect DO. These physical contributions must be estimated or accounted for before biological oxygen production can be inferred reliably.</p></div>
+        </div>
+        <div class="image-pair">
+          <figure class="img-container"><a href="story-fig-2.png" target="_blank" rel="noopener noreferrer"><img src="story-fig-2.png" alt="海气二氧化碳交换与混合层 / Air-sea carbon dioxide exchange and the mixed layer" loading="lazy"></a><figcaption class="img-caption">物理陷阱：CO₂ 海气交换与混合层<br><span lang="en">Physical trap: Air–sea CO₂ exchange and the mixed layer</span></figcaption></figure>
+          <figure class="img-container"><a href="story-fig-3.png" target="_blank" rel="noopener noreferrer"><img src="story-fig-3.png" alt="沉积物捕获器与采水器 / Sediment trap and water sampler" loading="lazy"></a><figcaption class="img-caption">观测工具：POC 捕获器与采水器<br><span lang="en">Sampling tools: POC sediment trap and water sampler</span></figcaption></figure>
+        </div>
+
+        <h3>🏁 结尾：结论与未尽的好奇 <small lang="en">/ Closing: Findings &amp; Open Questions</small></h3>
+        <div class="myvoice">
+          <div class="bi"><p class="zh"><strong>我做了什么：</strong>经过反复推敲，我撰写了《长江口藻华事件新增 NCP 实验方案》，其中规定了基线建立、连续观测和 POC 捕获等步骤。</p><p class="en" lang="en"><strong>What I did:</strong> After refining the design, I wrote an experimental plan for investigating bloom-related NCP in the Yangtze River Estuary. It describes baseline establishment, continuous monitoring, and POC trapping procedures.</p></div>
+          <div class="bi"><p class="zh"><strong>结论：</strong>海气交换、水平平流和颗粒物输出必须在一致的时空尺度下比较。单层捕获器观测到 POC 下沉，并不等于证明其已被长期封存。物理海洋学的研究需要对观测细节保持严格要求。</p><p class="en" lang="en"><strong>Takeaway:</strong> Air–sea exchange, horizontal advection, and particulate export must be evaluated on consistent spatial and temporal scales. Detecting sinking POC with a single-depth trap does not prove long-term carbon sequestration. Sound physical oceanography requires careful attention to measurement details.</p></div>
+          <div class="bi"><p class="zh"><strong>还想知道：</strong>如果真正出海观测时遭遇台风、船只无法到站，我该如何利用模型估计缺失数据及其不确定性？</p><p class="en" lang="en"><strong>What I still want to know:</strong> If a typhoon prevents the research vessel from reaching the station, how could a mathematical model estimate missing measurements—and their uncertainties?</p></div>
+        </div>
+        <figure class="img-container"><a href="story-fig-4.png" target="_blank" rel="noopener noreferrer"><img src="story-fig-4.png" alt="NCP、POC 与 CO2 之间的联系 / Conceptual relationship among NCP, POC and CO2" loading="lazy"></a><figcaption class="img-caption">结案陈词：在相同时间窗内比较 NCP、海气 CO₂ 通量与 POC 输出<br><span lang="en">Case summary: Compare NCP, air–sea CO₂ flux, and POC export over the same time window</span></figcaption></figure>
+
+        <h3>📎 证据：完整实验方案与视频讲解 <small lang="en">/ Evidence: Research Plan &amp; Video</small></h3>
+        <div class="center">
+          <video controls preload="metadata">
+            <source src="Yangtze_Carbon_Mystery_English.mp4" type="video/mp4">
+            您的浏览器不支持 HTML5 视频播放。 / Your browser does not support HTML5 video.
+          </video>
+          <p class="img-caption">🎬 视频讲解：《长江口碳之谜》（英文字幕）<br><span lang="en">Video: The Yangtze Carbon Mystery (English subtitles)</span></p>
+        </div>
+        <div class="center">
+          <div class="bi"><p class="zh">点击下方链接下载我撰写的《长江口藻华事件新增 NCP 实验方案》。</p><p class="en" lang="en">Use the link below to access my experimental plan for bloom-related NCP in the Yangtze River Estuary.</p></div>
+          <a class="action green" href="https://raw.githubusercontent.com/youhaoyu152-ux/youhaoyu152-ux.github.io/main/NCP_Experiment_Plan.docx" target="_blank" rel="noopener noreferrer">📄 下载实验方案（Word）/ Download the Experimental Plan (Word)</a>
+        </div>
+      </div>
+    </details>
+
+    <!-- Story 2 -->
+    <details>
+      <summary>故事 2：把散落的珍珠串成项链——我的物理海洋学知识地图 / Story 2: Connecting the Dots — My Physical Oceanography Knowledge Map</summary>
+      <div class="details-body">
+        <h3>🎬 开头：满脑子的碎片 <small lang="en">/ Opening: A Head Full of Fragments</small></h3>
+        <div class="myvoice"><div class="bi"><p class="zh">期中复习时，我发现自己陷入了死记硬背的困境。科氏力、双扩散、埃克曼抽吸、罗斯贝波……这些概念就像散落一地的珍珠，单独看都能理解，放在一起却很难建立联系。我需要一种工具把它们串起来。</p><p class="en" lang="en">During midterm review, I realized that I was memorizing facts without seeing the connections. The Coriolis force, double diffusion, Ekman pumping, Rossby waves—each concept made sense on its own, but together they felt like scattered pearls. I needed a tool to connect them.</p></div></div>
+
+        <h3>🔍 中间：构建逻辑链条 <small lang="en">/ Investigation: Building the Connections</small></h3>
+        <div class="myvoice">
+          <div class="bi"><p class="zh">我打开 XMind，决定不再按照章节抄书，而是根据“物理逻辑”重新整理。</p><p class="en" lang="en">I opened XMind and decided to reorganize the material by physical relationships rather than simply copying the textbook's chapter structure.</p></div>
+          <div class="bi"><p class="zh">我发现可以从太阳辐射的空间不均匀性出发：它影响海表热通量与温度结构；这些差异与风场共同作用，改变海水密度和海面高度分布，进而产生压强梯度，并在地球自转影响下形成大尺度环流。洋盆形状和边界则进一步塑造环流结构，包括西边界流。</p><p class="en" lang="en">I found a useful starting point in the uneven spatial distribution of solar radiation. It influences surface heat fluxes and ocean temperature structure. Together with wind forcing, these differences shape density and sea-surface height distributions, produce pressure gradients, and help drive large-scale circulation under Earth's rotation. Basin geometry and boundaries further organize the circulation, including western boundary currents.</p></div>
+          <div class="bi"><p class="zh">当我把这些联系画成箭头时，我终于感受到大洋环流像一个互相咬合的精密齿轮系统。</p><p class="en" lang="en">When I drew arrows linking these mechanisms, I finally began to see ocean circulation as an intricate system of interconnected gears.</p></div>
+        </div>
+
+        <h3>🏁 结尾：豁然开朗 <small lang="en">/ Closing: The Big Picture</small></h3>
+        <div class="myvoice">
+          <div class="bi"><p class="zh"><strong>结论：</strong>这张思维导图成了我复习的“导航仪”。它不再只是知识点的罗列，而是对物理过程之间联系的可视化。</p><p class="en" lang="en"><strong>Takeaway:</strong> This mind map became my study compass. Rather than merely listing facts, it visualizes how ocean processes connect and influence one another.</p></div>
+          <div class="bi"><p class="zh"><strong>证据：</strong>下面是我制作的物理海洋学知识地图。</p><p class="en" lang="en"><strong>Evidence:</strong> Here is the physical oceanography knowledge map I created.</p></div>
+          <figure class="img-container"><a href="physical-oceanography.png" target="_blank" rel="noopener noreferrer"><img src="physical-oceanography.png" alt="物理海洋学知识地图 / Physical oceanography knowledge map" loading="lazy"></a><figcaption class="img-caption">我的物理海洋学知识地图 / My Physical Oceanography Knowledge Map</figcaption></figure>
+        </div>
+      </div>
+    </details>
+  </section>
+
+  <!-- Learning log / 学习日志 -->
+  <section>
+    <h2>📝 学习日志 <small lang="en">/ Learning Notes</small></h2>
+    <div class="note"><span class="date">2026-10</span><div class="bi"><p class="zh">深入研读了教材第 1–8 章，整理了图文笔记，并补充了第 8 讲的 23 种波动类型对照表。</p><p class="en" lang="en">Studied Chapters 1–8 in depth, compiled illustrated notes, and added a comparison chart of 23 wave types for Lecture 8.</p></div></div>
+    <div class="note"><span class="date">2026-10</span><div class="bi"><p class="zh">完成了《长江口藻华事件新增 NCP 实验方案》的设计，并将其发布在本网站。</p><p class="en" lang="en">Completed my experimental design for bloom-related NCP in the Yangtze River Estuary and published it on this website.</p></div></div>
+  </section>
+
+  <!-- Contact / 联系方式 -->
+  <section>
+    <h2>📬 联系方式 <small lang="en">/ Contact</small></h2>
+    <ul class="contact-list">
+      <li>邮箱 / Email: <a href="mailto:909381824@qq.com">909381824@qq.com</a></li>
+      <li>GitHub: <a href="https://github.com/youhaoyu152-ux" target="_blank" rel="noopener noreferrer">github.com/youhaoyu152-ux</a></li>
+      <li>个人网站 / Website: <a href="https://youhaoyu152-ux.github.io" target="_blank" rel="noopener noreferrer">youhaoyu152-ux.github.io</a></li>
+    </ul>
+  </section>
+
+  <footer>© 2026 YHY · 物理海洋学与科学编程 / Physical Oceanography &amp; Scientific Programming<br>由 GitHub Pages 托管 / Hosted on GitHub Pages</footer>
+</div>
 </body>
 </html>
