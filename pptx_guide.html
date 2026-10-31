@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>PPTX SKILL.md 逐行对照解读</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f4f6f8;
+            color: #333;
+            margin: 0;
+            padding: 40px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+            color: #24292e;
+            border-bottom: 2px solid #e1e4e8;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #0366d6;
+            margin-top: 40px;
+            border-left: 5px solid #0366d6;
+            padding-left: 15px;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+        .comparison-table th {
+            background-color: #f1f8ff;
+            color: #0366d6;
+            text-align: left;
+            padding: 15px;
+            border-bottom: 2px solid #0366d6;
+            width: 50%;
+        }
+        .comparison-table td {
+            padding: 20px;
+            vertical-align: top;
+            border-bottom: 1px solid #e1e4e8;
+        }
+        /* 左侧英文代码样式 */
+        .left-code {
+            background-color: #f6f8fa;
+            padding: 15px;
+            border-radius: 6px;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 14px;
+            color: #24292e;
+            white-space: pre-wrap;
+        }
+        /* 右侧中文解释样式 */
+        .right-commentary {
+            font-size: 15px;
+            color: #444;
+        }
+        .right-commentary strong {
+            color: #d73a49; /* 红色高亮 */
+        }
+        .tag {
+            display: inline-block;
+            background: #e1e4e8;
+            color: #444;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            margin-right: 8px;
+            font-weight: bold;
+        }
+        .note {
+            background: #fff5b1;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+            border-left: 3px solid #f1c40f;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>PPTX SKILL.md 逐行对照解读</h1>
+    <p style="text-align:center; color:#666;">解析 Anthropic 官方 PPT 生成与编辑技能文件</p>
+
+    <h2>01. 核心逻辑与工具选择 (Overview)</h2>
+    <table class="comparison-table">
+        <tr>
+            <th>SKILL.md 原文 (English)</th>
+            <th>中文解读与实操注释 (Chinese Commentary)</th>
+        </tr>
+        <tr>
+            <td>
+                <div class="left-code">
+A `.pptx` is a ZIP archive of XML files. Choose your approach by task:
+
+| Task | Approach |
+|---|---|
+| **Create** a new deck | Write a `pptxgenjs` script — see gotchas below |
+| **Edit** an existing deck, or build from a template | unzip → edit `ppt/slides/slideN.xml` → zip |
+| **Read** content | `markitdown deck.pptx`; visual grid: `python scripts/thumbnail.py deck.pptx` |
+                </div>
+            </td>
+            <td class="right-commentary">
+                <p><strong>核心理念：</strong> PPTX 文件本质上就是一个装了 XML 文件的压缩包（ZIP）。</p>
+                <p><strong>三种工作流：</strong></p>
+                <ul>
+                    <li><span class="tag">新建</span> 必须写 JavaScript 脚本（使用 <code>pptxgenjs</code> 库）来生成。</li>
+                    <li><span class="tag">修改</span> 解压 PPTX，直接改里面的底层 XML 代码，再压回去。</li>
+                    <li><span class="tag">读取</span> 用 <code>markitdown</code> 把 PPT 转成纯文本供 AI 阅读。</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+
+    <h2>02. 新建 PPT 的“天坑”避坑指南 (Creating with pptxgenjs)</h2>
+    <table class="comparison-table">
+        <tr>
+            <th>SKILL.md 原文 (English)</th>
+            <th>中文解读与实操注释 (Chinese Commentary)</th>
+        </tr>
+        <tr>
+            <td>
+                <div class="left-code">
+- **Set `pres.layout` before adding slides.** The default canvas is `LAYOUT_16x9` = **10" × 5.625"**, not 13.3" wide. Coordinates past the edge are written, not clamped — the shape just isn't on the slide.
+                </div>
+            </td>
+            <td class="right-commentary">
+                <p><strong>先定尺寸，再画图。</strong> 默认的画布其实很窄（16:9的比例下只有 10 英寸宽）。如果你把元素画到了边缘外，代码不会报错，但在 PPT 里你就是看不见它。</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="left-code">
+- **Hex colors: never `#`, never 8 digits.** `color: "FF0000"`. Both `"#FF0000"` and alpha baked into the hex (`"00000020"`) **corrupt the file**.
+                </div>
+            </td>
+            <td class="right-commentary">
+                <p><strong>颜色代码会搞坏文件。</strong> 永远不要在颜色值前面加 <code>#</code>（比如写成 <code>#FF0000</code>）。也不要写 8 位带透明度的十六进制。这两种写法都会直接<strong>损坏 PPT 文件</strong>。</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="left-code">
+- **pptxgenjs mutates option objects in place** (converts values to EMU on first use). Never share one `shadow`/options object across two `add*` calls — build a fresh object each time.
+                </div>
+            </td>
+            <td class="right-commentary">
+                <p><strong>对象复用陷阱。</strong> 这个库会偷偷修改你传入的配置对象（把数值转成内部单位）。所以，每次添加新元素（比如加阴影）时，都必须<strong>重新创建一个新对象</strong>，不能把同一个配置对象用在两个地方。</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="left-code">
+- **Shadow `offset` must be ≥ 0** — a negative offset corrupts the file. To cast a shadow upward, use `angle: 270` with a positive offset.
+- **`letterSpacing` is silently ignored** — the real option is `charSpacing`.
+                </div>
+            </td>
+            <td class="right-commentary">
+                <p><strong>属性名写错不报错，但会出 bug。</strong></p>
+                <ul>
+                    <li>阴影的偏移量（offset）绝对不能是负数，否则文件损坏。想往上打阴影，用角度 <code>angle: 270</code>。</li>
+                    <li>调整字间距必须用 <code>charSpacing</code>，如果你写 <code>letterSpacing</code>，系统会直接无视。</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="left-code">
+- **Keep charts native.** Use `addChart()` for everything PowerPoint can chart... For PowerPoint-native features the library doesn't expose (trendlines, error bars), compute the extra series yourself or post-process the generated OOXML — do not fall back to a rendered image.
+                </div>
+            </td>
+            <td class="right-commentary">
+                <p><strong>图表必须是“真”图表。</strong> 尽量用原生代码生成图表。对于库不支持的高级功能（如趋势线、误差棒），自己去改底层代码生成。千万别直接贴一张图表的截图上去。</p>
+            </td>
+        </tr>
+    </table>
+
+    <h2>03. 编辑现有模板与文件 (Editing existing decks)</h2>
+    <table class="comparison-table">
+        <tr>
+            <th>SKILL.md 原文 (English)</th>
+            <th>中文解读与实操注释 (Chinese Commentary)</th>
+        </tr>
+        <tr>
+            <td>
+                <div class="left-code">
+- **Do all structural work — add, delete, reorder — before editing any slide's content.** `add_slide.py` copies a slide file verbatim, so duplicating after you edit clones the edited content...
+                </div>
+            </td>
+            <td class="right-commentary">
+                <p><strong>先搭骨架，再填血肉。</strong> 必须先完成所有“增加页、删除页、移动页”的操作，然后再去改具体页面的文字。因为如果你改了文字再去复制这一页，复制出来的也会带上刚改过的文字。</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="left-code">
+- **If you use `python-pptx`**, three things it won't do: duplicate a slide... preserve formatting through `text_frame.text = "..."`... or read the SVG/EMF most template art uses.
+                </div>
+            </td>
+            <td class="right-commentary">
+                <p><strong>不要用 <code>python-pptx</code> 做高级编辑。</strong> 这个老库有三个致命缺陷：不能复制页面；直接赋值文字会丢失所有格式；读不了模板里的矢量图（SVG/EMF）。</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="left-code">
+- **Template slots ≠ source items.** If the template shows 4 team members and you have 3, delete the 4th member's entire group (image + text boxes), not just its text — then check for orphaned visuals in QA.
+                </div>
+            </td>
+            <td class="right-commentary">
+                <p><strong>清理占位符要彻底。</strong> 如果模板上有 4 个团队头像，但你只有 3 个人。要删掉整个第 4 个模块（包括图片和文本框），不能只删文字，否则会留下一个幽灵图片。</p>
+            </td>
+        </tr>
+    </table>
+
+    <h2>04. 设计与排版规范 (Design Ideas)</h2>
+    <table class="comparison-table">
+        <tr>
+            <th>SKILL.md 原文 (English)</th>
+            <th>中文解读与实操注释 (Chinese Commentary)</th>
+        </tr>
+        <tr>
+            <td>
+                <div class="left-code">
+- **NEVER use accent lines under titles** — these are a hallmark of AI-generated slides; use whitespace or background color instead.
+- **NEVER add decorative color bars or accent stripes**...
+                </div>
+            </td>
+            <td class="right-commentary">
+                <p><strong>极其重要的审美警告：</strong> 绝对不要在标题下面画一条装饰性的横线，也不要在页面边缘加彩色的竖条。这是 AI 生成 PPT 的典型特征（看起来很土）。请用留白或背景色来区分区块。</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="left-code">
+- **Safe fonts** (render true-to-width in QA *and* ship with Office): **Arial, Calibri, Cambria, Times New Roman...**
+- **Never default to Aptos** — Office's post-2023 default has no metric-compatible substitute here...
+                </div>
+            </td>
+            <td class="right-commentary">
+                <p><strong>字体安全区。</strong> 尽量只用 Arial, Calibri 等自带安全字体。千万别用 Aptos（Office 2023 之后的默认字体），因为它在预览环境里渲染不稳定，会导致排版错位。</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="left-code">
+- **Don't default to blue** — pick colors that reflect the specific topic.
+- **Don't default to cream/beige backgrounds**...
+                </div>
+            </td>
+            <td class="right-commentary">
+                <p><strong>拒绝默认审美。</strong> 不要动不动就用蓝色系，要根据你的主题选配色（文件里提供了一套调色板参考）。背景不要默认用米色或奶油色，老老实实用白色或品牌色。</p>
+            </td>
+        </tr>
+    </table>
+
+    <h2>05. 质量检测 (QA - Required)</h2>
+    <table class="comparison-table">
+        <tr>
+            <th>SKILL.md 原文 (English)</th>
+            <th>中文解读与实操注释 (Chinese Commentary)</th>
+        </tr>
+        <tr>
+            <td>
+                <div class="left-code">
+- **Text overflow or text cut off at a box or slide boundary — check this first.** It is the most common defect and always user-visible.
+                </div>
+            </td>
+            <td class="right-commentary">
+                <p><strong>头号检查项：文字溢出。</strong> 生成完 PPT 转成图片后，第一眼必须看文字有没有超出边框或被切掉。这是 AI 生成 PPT 最常见的毛病。</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="left-code">
+pptxgenjs emits chart XML PowerPoint refuses to open, and every other tool accepts: python-pptx opens those decks, LibreOffice renders them, the XSD passes them. Every failure names its fix.
+                </div>
+            </td>
+            <td class="right-commentary">
+                <p><strong>必须跑验证脚本。</strong> <code>pptxgenjs</code> 生成的图表有时会有底层语法错误，导致别的软件能打开，但 PowerPoint 自己打不开。所以必须运行 <code>validate.py</code> 脚本进行全面体检。</p>
+            </td>
+        </tr>
+    </table>
+
+</div>
+
+</body>
+</html>
