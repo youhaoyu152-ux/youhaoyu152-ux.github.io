@@ -647,78 +647,179 @@
     </details>
   </section>
 
-  <!-- Story time / 故事会 -->
-  <section>
+
+  <!-- ================= 故事会（改编自长江口藻华实验方案）/ Story Time ================= -->
+  <section id="story-time">
     <h2>🎬 故事会 <small lang="en">/ Story Time</small></h2>
-    <div class="bi"><p class="zh">这里记录了我从现象出发，动手探索海洋物理机制的“探案过程”。</p><p class="en" lang="en">Here I document my scientific “detective stories”: starting from observations and investigating the underlying physical mechanisms of the ocean.</p></div>
+    <div class="bi">
+      <p class="zh">我更喜欢把科学问题当成一桩桩待破解的案件：从一个奇怪的现象出发，寻找证据，排除干扰，再追问证据究竟能证明什么。</p>
+      <p class="en" lang="en">I like to approach scientific questions as unsolved cases: spot something curious, collect clues, rule out confounding factors, and ask what the evidence can actually prove.</p>
+    </div>
 
-    <!-- Story 1 -->
+    <!-- ================= 故事一 / Story 1 ================= -->
     <details open>
-      <summary>故事 1：追踪长江口的“幽灵碳”——藻华与碳汇之谜 / Story 1: Tracking “Ghost Carbon” in the Yangtze Estuary — The Bloom &amp; Carbon-Sink Mystery</summary>
+      <summary>故事 1：长江口“幽灵碳”追踪案 / Story 1: The Yangtze Ghost Carbon Mystery</summary>
       <div class="details-body">
-        <h3>🎬 开头：现象与悬疑 <small lang="en">/ Opening: The Observation &amp; the Mystery</small></h3>
-        <div class="myvoice">
-          <div class="bi"><p class="zh">学习“海气相互作用”和“水团分布”后，我盯着长江口的卫星图陷入了沉思。</p><p class="en" lang="en">After studying air–sea interactions and water-mass distributions, I found myself staring at satellite images of the Yangtze River Estuary.</p></div>
-          <div class="bi"><p class="zh">每年春夏，长江冲淡水携带的丰富营养盐会促进大规模藻华。浮游植物通过光合作用吸收大量无机碳，产生净群落生产力（NCP）。<strong>我原以为</strong>这些碳会在生物死亡后沉到海底，成为长期碳汇。</p><p class="en" lang="en">Every spring and summer, nutrient-rich river water can fuel extensive algal blooms. Phytoplankton take up inorganic carbon through photosynthesis, contributing to net community production (NCP). <strong>I initially assumed</strong> that this carbon would sink to the seafloor after organisms died and become a long-term carbon sink.</p></div>
-          <div class="bi"><p class="zh"><strong>但事实真的如此吗？</strong>新增的碳究竟会以 CO₂ 形式通过海气交换回到大气，还是作为颗粒有机碳（POC）输出至混合层以下？在风暴频发、水流复杂的河口，这些“幽灵碳”的去向成了一个谜。</p><p class="en" lang="en"><strong>But is that really what happens?</strong> Does the newly fixed carbon return to the atmosphere as CO₂ through air–sea exchange, or is it exported below the mixed layer as particulate organic carbon (POC)? In this storm-affected, highly dynamic estuary, the fate of that “ghost carbon” became a mystery to me.</p></div>
+        <div class="story-opener">
+          <div class="story-kicker">🌊 SCIENCE DETECTIVE FILE 01 · 科学探案卷宗 01</div>
+          <h3>海面突然变绿，碳就真的被“锁住”了吗？</h3>
+          <div class="bi story-lead">
+            <p class="zh">一次藻华，可能让浮游植物吸收更多碳。但这批碳最后去了哪里——回到大气、沉入水下，还是混进了从河口带来的泥沙里？</p>
+            <p class="en" lang="en">An algal bloom may help phytoplankton take up more carbon. But where does that carbon actually go—back to the atmosphere, down through the water column, or into a mixture of particles arriving from the river?</p>
+          </div>
+          <p class="story-status">📌 研究状态：独立设计的观测方案，尚非实测结果。 / Research status: an independently designed observational study, not a report of completed field results.</p>
         </div>
-        <figure class="img-container"><a href="story-fig-1.png" target="_blank" rel="noopener noreferrer"><img src="story-fig-1.png" alt="长江口与东海叶绿素分布示意 / Chlorophyll distribution in the Yangtze Estuary and East China Sea" loading="lazy"></a><figcaption class="img-caption">案发现场：长江口与东海表层叶绿素分布（示意）<br><span lang="en">The scene: Schematic surface chlorophyll distribution in the Yangtze Estuary and East China Sea</span></figcaption></figure>
 
-        <h3>🔍 中间：抽丝剥茧的探案过程 <small lang="en">/ Investigation: Following the Evidence</small></h3>
-        <div class="myvoice">
-          <div class="bi"><p class="zh">为了弄清碳的去向，我查阅文献，并尝试设计针对<strong>单一核心站位</strong>的观测实验。设计过程中，我发现了三个棘手的“物理陷阱”。</p><p class="en" lang="en">To determine where the carbon goes, I reviewed the literature and designed an observational experiment centered on <strong>one core station</strong>. Along the way, I encountered three difficult “physical traps.”</p></div>
-          <div class="bi"><p class="zh"><strong>陷阱一：消失的基线（时间轴的错乱）</strong><br>不能直接用藻华期数据减去全年平均值，因为风暴和河流径流会带来显著的短期波动。我需要藻华发生前连续 5–7 天的基线观测，才能较可靠地识别事件异常。</p><p class="en" lang="en"><strong>Trap 1: The missing baseline (a mismatch in time)</strong><br>Simply subtracting the annual mean from bloom-period observations would be misleading because storms and river discharge produce strong short-term fluctuations. I therefore planned to collect 5–7 continuous days of pre-event baseline data before identifying bloom-related anomalies.</p></div>
-          <div class="bi"><p class="zh"><strong>陷阱二：错位的监控（捕获器与传感器的时间差）</strong><br>海气 CO₂ 传感器可以连续记录数据，但沉积物捕获器往往只在特定时间段收集下沉颗粒。这就像把连续监控录像与一张快照比较。因此，我设计了“时间窗积分”的方法，让它们在相同时间段（例如 08:00–14:00）内进行配对。</p><p class="en" lang="en"><strong>Trap 2: Misaligned monitoring (sensor versus trap sampling windows)</strong><br>Air–sea CO₂ sensors can record continuously, whereas sediment traps collect sinking particles over discrete deployment intervals. Comparing them is like comparing continuous surveillance footage with a snapshot. My solution was a time-window integration approach that pairs measurements over the same interval, such as 08:00–14:00.</p></div>
-          <div class="bi"><p class="zh"><strong>陷阱三：氧气的骗局（溶解氧收支的干扰）</strong><br>我原以为混合层溶解氧（DO）的变化就能直接反推出 NCP，但风驱动混合、海气交换和温度变化都会影响 DO。只有剔除或估算这些物理过程的贡献，才能更可靠地推断生物产氧量。</p><p class="en" lang="en"><strong>Trap 3: The oxygen illusion (interference in the DO budget)</strong><br>I first thought that changes in mixed-layer dissolved oxygen (DO) could directly reveal NCP. But wind-driven mixing, air–sea gas exchange, and temperature changes also affect DO. These physical contributions must be estimated or accounted for before biological oxygen production can be inferred reliably.</p></div>
+        <div class="story-facts">
+          <div class="story-fact"><h4>① 碳吸进来了吗？</h4><p>新增净群落生产 NCP 究竟有多少？</p><p class="en" lang="en">How much additional net community production (NCP) occurs?</p></div>
+          <div class="story-fact"><h4>② 碳去了哪里？</h4><p>海气 CO₂ 交换与下沉 POC 各如何变化？</p><p class="en" lang="en">How do air–sea CO₂ exchange and sinking POC respond?</p></div>
+          <div class="story-fact"><h4>③ 碳能留多久？</h4><p>下沉是否就意味着长期封存？</p><p class="en" lang="en">Does sinking mean long-term sequestration?</p></div>
+        </div>
+
+        <h3 class="story-chapter">第一幕 · 看起来完美的“碳汇” <small lang="en">/ Act I · The Carbon Sink That Looked Too Good</small></h3>
+        <div class="story-text bi">
+          <p class="zh">学完海气相互作用和水团分布后，我看着长江口及东海的叶绿素分布图，脑海里突然浮现了一个看似简单的推理：<strong>长江把营养盐带进海里 → 浮游植物大量生长 → 吸收 CO₂ → 颗粒下沉 → 碳被封存。</strong></p>
+          <p class="en" lang="en">After studying air–sea exchange and water masses, I looked at chlorophyll maps of the Yangtze Estuary and the East China Sea and imagined an apparently simple chain: <strong>river nutrients → phytoplankton bloom → CO₂ uptake → sinking particles → stored carbon.</strong></p>
+        </div>
+        <div class="story-dialogue">
+          <p><strong>🕵️ 我最初的判断：</strong>“海水变绿，说明这里正在帮地球存碳。”</p>
+          <p class="en" lang="en"><strong>My first guess:</strong> “Green water means the ocean is storing carbon.”</p>
+          <p><strong>🔎 后来发现：</strong>这条推理里的每一个箭头，都需要独立的证据。</p>
+          <p class="en" lang="en"><strong>The catch:</strong> Every arrow in that chain needs its own evidence.</p>
+        </div>
+        <figure class="img-container">
+          <a href="story-fig-1.png" target="_blank" rel="noopener noreferrer"><img src="story-fig-1.png" alt="长江口藻华叶绿素分布示意 / Chlorophyll patterns in the Yangtze Estuary" loading="lazy"></a>
+          <figcaption class="img-caption">案发现场：长江口及东海表层叶绿素分布（示意）<br><span lang="en">The scene: schematic surface chlorophyll distribution near the Yangtze Estuary</span></figcaption>
+        </figure>
+        <div class="story-text bi">
+          <p class="zh">海洋并不是一个密封的玻璃瓶。海水会流动，风会改变气体交换，河流本身也会搬运有机颗粒。即便海表 DIC（溶解无机碳）下降，也不能立即判定那全是藻华的功劳。<strong>真正的谜题不是“有没有藻华”，而是“哪一部分碳变化真的由藻华造成”。</strong></p>
+          <p class="en" lang="en">The ocean is not a sealed glass bottle. Water masses move, wind changes gas exchange, and the river carries organic particles of its own. Even a drop in dissolved inorganic carbon (DIC) does not prove that the bloom caused all of it. <strong>The real mystery is not whether a bloom occurred, but which carbon changes it actually caused.</strong></p>
+        </div>
+
+        <h3 class="story-chapter">第二幕 · 三位“嫌疑人” <small lang="en">/ Act II · Three Suspects in the Sediment Trap</small></h3>
+        <div class="story-text bi">
+          <p class="zh">我本来想把沉积物捕获器里收集的颗粒都算成“藻华的贡献”。但实验方案推敲到这里，突然出现了三位嫌疑人：它们都可能出现在捕获器里，却有完全不同的来历。</p>
+          <p class="en" lang="en">At first I wanted to count every particle in a sediment trap as bloom-derived carbon. Then three suspects emerged: all could end up in the trap, but they have very different origins.</p>
+        </div>
+        <div class="story-facts">
+          <div class="story-fact"><h4>🟢 藻源 POC</h4><p>浮游植物生产后形成、向下沉降的颗粒有机碳。</p><p class="en" lang="en"><strong>Algal POC:</strong> Particles linked to phytoplankton production.</p></div>
+          <div class="story-fact"><h4>🟤 陆源 POC</h4><p>长江冲淡水直接携带来的有机颗粒，不一定是本地新生产的。</p><p class="en" lang="en"><strong>Terrestrial POC:</strong> Organic particles transported directly by river water.</p></div>
+          <div class="story-fact"><h4>⚪ 再悬浮 POC</h4><p>原本在海底的沉积物被水流或扰动重新卷起。</p><p class="en" lang="en"><strong>Resuspended POC:</strong> Older seabed particles lifted back into the water.</p></div>
+        </div>
+        <div class="story-evidence">
+          <h4>线索一：捕到的碳 ≠ 藻华新增的碳</h4>
+          <p>我计划先用<strong>稀土元素（REEs）</strong>识别并校正再悬浮颗粒，再结合<strong>δ¹³C 与 C/N</strong>区分藻源和陆源有机碳。只有来源端元足够可区分时，才能尝试定量拆分。</p>
+          <p class="en" lang="en"><strong>Clue 1: trapped carbon is not necessarily new bloom carbon.</strong> I plan to use rare earth elements (REEs) to assess resuspension, then δ¹³C and C/N to investigate algal versus terrestrial organic carbon—quantifying source fractions only when the endmembers are distinguishable.</p>
         </div>
         <div class="image-pair">
-          <figure class="img-container"><a href="story-fig-2.png" target="_blank" rel="noopener noreferrer"><img src="story-fig-2.png" alt="海气二氧化碳交换与混合层 / Air-sea carbon dioxide exchange and the mixed layer" loading="lazy"></a><figcaption class="img-caption">物理陷阱：CO₂ 海气交换与混合层<br><span lang="en">Physical trap: Air–sea CO₂ exchange and the mixed layer</span></figcaption></figure>
-          <figure class="img-container"><a href="story-fig-3.png" target="_blank" rel="noopener noreferrer"><img src="story-fig-3.png" alt="沉积物捕获器与采水器 / Sediment trap and water sampler" loading="lazy"></a><figcaption class="img-caption">观测工具：POC 捕获器与采水器<br><span lang="en">Sampling tools: POC sediment trap and water sampler</span></figcaption></figure>
+          <figure class="img-container"><a href="story-fig-2.png" target="_blank" rel="noopener noreferrer"><img src="story-fig-2.png" alt="海气二氧化碳交换与混合层 / Air-sea CO2 exchange and the mixed layer" loading="lazy"></a><figcaption class="img-caption">海气 CO₂ 交换与混合层<br><span lang="en">Air–sea CO₂ exchange and the mixed layer</span></figcaption></figure>
+          <figure class="img-container"><a href="story-fig-3.png" target="_blank" rel="noopener noreferrer"><img src="story-fig-3.png" alt="采水器与沉积物捕获器 / Water samplers and sediment traps" loading="lazy"></a><figcaption class="img-caption">“取证工具”：采水器与颗粒捕获器<br><span lang="en">Evidence collection: water samplers and sediment traps</span></figcaption></figure>
         </div>
 
-        <h3>🏁 结尾：结论与未尽的好奇 <small lang="en">/ Closing: Findings &amp; Open Questions</small></h3>
-        <div class="myvoice">
-          <div class="bi"><p class="zh"><strong>我做了什么：</strong>经过反复推敲，我撰写了《长江口藻华事件新增 NCP 实验方案》，其中规定了基线建立、连续观测和 POC 捕获等步骤。</p><p class="en" lang="en"><strong>What I did:</strong> After refining the design, I wrote an experimental plan for investigating bloom-related NCP in the Yangtze River Estuary. It describes baseline establishment, continuous monitoring, and POC trapping procedures.</p></div>
-          <div class="bi"><p class="zh"><strong>结论：</strong>海气交换、水平平流和颗粒物输出必须在一致的时空尺度下比较。单层捕获器观测到 POC 下沉，并不等于证明其已被长期封存。物理海洋学的研究需要对观测细节保持严格要求。</p><p class="en" lang="en"><strong>Takeaway:</strong> Air–sea exchange, horizontal advection, and particulate export must be evaluated on consistent spatial and temporal scales. Detecting sinking POC with a single-depth trap does not prove long-term carbon sequestration. Sound physical oceanography requires careful attention to measurement details.</p></div>
-          <div class="bi"><p class="zh"><strong>还想知道：</strong>如果真正出海观测时遭遇台风、船只无法到站，我该如何利用模型估计缺失数据及其不确定性？</p><p class="en" lang="en"><strong>What I still want to know:</strong> If a typhoon prevents the research vessel from reaching the station, how could a mathematical model estimate missing measurements—and their uncertainties?</p></div>
+        <h3 class="story-chapter">第三幕 · 给海洋布下一张“证据网” <small lang="en">/ Act III · Setting Up the Investigation</small></h3>
+        <div class="story-text bi">
+          <p class="zh">既然不能只看一张卫星图，我就设计了<strong>一个核心连续观测站 C0，加上两个辅助站 A1、A2</strong>。三个站位不追求铺满地图，而是各司其职，把水团、生产和颗粒来源联系起来。</p>
+          <p class="en" lang="en">A satellite image alone is not enough. So I designed <strong>one continuously monitored core station (C0) and two supporting stations (A1 and A2)</strong>. Each station has a specific job, linking water masses, biological production and particle origins.</p>
         </div>
-        <figure class="img-container"><a href="story-fig-4.png" target="_blank" rel="noopener noreferrer"><img src="story-fig-4.png" alt="NCP、POC 与 CO2 之间的联系 / Conceptual relationship among NCP, POC and CO2" loading="lazy"></a><figcaption class="img-caption">结案陈词：在相同时间窗内比较 NCP、海气 CO₂ 通量与 POC 输出<br><span lang="en">Case summary: Compare NCP, air–sea CO₂ flux, and POC export over the same time window</span></figcaption></figure>
+        <div class="story-methods">
+          <div class="story-method"><h4>📍 C0 · 主案发现场</h4><p>布设在长江冲淡水外缘的候选藻华海域；持续追踪 pCO₂、盐度、温度、叶绿素 a、风与营养盐，并布放混合层以下颗粒捕获器。</p><p class="en" lang="en">Core site near the plume edge: track pCO₂, salinity, temperature, chlorophyll a, wind and nutrients, with a trap below the mixed layer.</p></div>
+          <div class="story-method"><h4>📍 A1 · 河流来客</h4><p>在近岸低盐水中采样，识别长江冲淡水（CDW）及其携带的陆源颗粒特征。</p><p class="en" lang="en">Nearshore low-salinity station: characterize Changjiang Diluted Water (CDW) and river-borne particles.</p></div>
+          <div class="story-method"><h4>📍 A2 · 外海对照</h4><p>在外海陆架采集表层与底层水，提供 SSW、SBW 水团端元。</p><p class="en" lang="en">Offshore shelf station: sample shelf surface water (SSW) and shelf bottom water (SBW) endmembers.</p></div>
+        </div>
+        <div class="story-evidence">
+          <h4>线索二：让连续记录与离散采样互相印证</h4>
+          <p>方案中，C0 每 <strong>30 分钟</strong>记录一次海表 pCO₂、温盐、叶绿素 a 荧光和风速；每 <strong>3 小时</strong>测一次营养盐。CTD 分层采水测 DIC 与总碱度（TA）：背景期约每两天一次，事件快速变化期每日一次。捕获器则按阶段布放与回收，记录真实起止时间。</p>
+          <p class="en" lang="en"><strong>Clue 2: make continuous and discrete observations speak to each other.</strong> The plan records surface pCO₂, temperature, salinity, chlorophyll fluorescence and wind every <strong>30 minutes</strong>, and nutrients every <strong>3 hours</strong>. CTD sampling measures DIC and total alkalinity (TA), roughly every two days during background conditions and daily during rapid events. Each trap deployment retains its actual start and end times.</p>
+        </div>
+        <div class="story-timeline" aria-label="观测时间线 / Study timeline">
+          <div class="story-phase"><b>01 · 事件前</b><span>Background baseline</span></div>
+          <div class="story-phase"><b>02 · 营养盐脉冲</b><span>Nutrient pulse</span></div>
+          <div class="story-phase"><b>03 · 藻华发展与峰值</b><span>Bloom &amp; peak</span></div>
+          <div class="story-phase"><b>04 · 衰退阶段</b><span>Decline</span></div>
+          <div class="story-phase"><b>05 · 事件后输出</b><span>Post-bloom export</span></div>
+        </div>
 
-        <h3>📎 证据：完整实验方案与视频讲解 <small lang="en">/ Evidence: Research Plan &amp; Video</small></h3>
-        <div class="center">
-          <video controls preload="metadata">
+        <h3 class="story-chapter">第四幕 · 三次科学反转 <small lang="en">/ Act IV · Three Plot Twists</small></h3>
+        <div class="story-evidence">
+          <h4>反转 ① DIC 减少，不代表全是光合作用</h4>
+          <p>海气交换和水团更替也会改变 DIC。我计划用 TA–盐度关系及 <strong>CO2SYS</strong>重建海表 DIC，结合 CDW、SSW、SBW 的三端元混合约束，扣除能估算的物理贡献，才推算<strong>新增 NCP</strong>。至于 NCP 使 pCO₂ 下降多少，还要与真实观测的海气 CO₂ 通量分开报告。</p>
+          <p class="en" lang="en"><strong>Twist 1: falling DIC does not automatically prove photosynthesis.</strong> Gas exchange and changing water masses also alter DIC. I would reconstruct DIC using a TA–salinity relationship and <strong>CO2SYS</strong>, constrain mixing among CDW, SSW and SBW, and estimate the residual biological contribution to <strong>additional NCP</strong>. The modeled biological effect on CO₂ uptake must be reported separately from measured air–sea flux.</p>
+        </div>
+        <div class="story-evidence">
+          <h4>反转 ② 颗粒下沉，不代表都由本次藻华生成</h4>
+          <p>即使捕获器读数突然升高，也可能只是河流搬来了更多陆源颗粒，或底泥被重新搅起。因此我需要先做 REEs 再悬浮校正，再检查 δ¹³C 与 C/N 的来源指纹，最后与可比的事件前背景比较。</p>
+          <p class="en" lang="en"><strong>Twist 2: more sinking particles are not necessarily new bloom production.</strong> A trap spike may reflect river-borne particles or resuspended sediment. I therefore need resuspension correction, particle-source fingerprints and a comparable pre-event baseline before attributing extra export to the bloom.</p>
+        </div>
+        <div class="story-evidence">
+          <h4>反转 ③ 同一天观测的数字，也可能“对不上”</h4>
+          <p>传感器连续记录，捕获器只收集某个时间窗口的颗粒；更重要的是，颗粒形成后还需要时间才能沉到捕获深度。于是我决定按<strong>捕获器的真实采样时段</strong>汇总数据，并测试合理的沉降滞后。每次捕获器样品只算一个独立窗口，不能拆成许多个“独立数据点”。</p>
+          <p class="en" lang="en"><strong>Twist 3: measurements taken on the same date may still be mismatched.</strong> Sensors record continuously, traps integrate over deployment windows, and particles take time to sink. I would align observations to <strong>actual trap intervals</strong> and test plausible sinking lags. Each trap sample remains one independent sampling window, not multiple artificial data points.</p>
+        </div>
+
+        <h3 class="story-chapter">终章 · “沉下去”和“存得住”之间，还有多远？ <small lang="en">/ Finale · Sinking Is Not the Same as Staying</small></h3>
+        <div class="story-text bi">
+          <p class="zh">当三条证据链终于接上，我想比较的是：<strong>藻华新增了多少 NCP？这部分生产对应的海气 CO₂ 吸收效应有多大？又有多少事件相关藻源 POC 越过了混合层底部？</strong> 然后把新增藻源输出累计量与新增 NCP 累计量相除，得到一个<strong>“表观颗粒输出比例”</strong>。</p>
+          <p class="en" lang="en">If the evidence chains hold together, I want to compare <strong>additional NCP, its modeled effect on air–sea CO₂ uptake, and event-related algal POC exported below the mixed layer</strong>. Dividing cumulative additional algal export by cumulative additional NCP gives an <strong>apparent particle-export ratio</strong>.</p>
+        </div>
+        <div class="story-dialogue">
+          <p><strong>但这仍不是最终判决：</strong>藻源颗粒过了混合层底部，不等于它们已经在深海保存多年。碳可能被再矿化、侧向输送，也可能继续下沉；单一捕获深度无法证明长期封存。</p>
+          <p class="en" lang="en"><strong>But that is not the final verdict:</strong> Crossing the mixed-layer base does not mean carbon is stored for years in the deep ocean. It may be remineralized, transported laterally or sink farther. One trapping depth cannot establish long-term sequestration.</p>
+        </div>
+        <figure class="img-container"><a href="story-fig-4.png" target="_blank" rel="noopener noreferrer"><img src="story-fig-4.png" alt="NCP、海气CO₂通量与POC输出概念模型 / NCP air-sea CO2 and POC export conceptual model" loading="lazy"></a><figcaption class="img-caption">真正要对上的三条线索：新增 NCP、海气 CO₂ 效应、藻源 POC 输出<br><span lang="en">Three evidence chains: additional NCP, air–sea CO₂ effects, and algal POC export</span></figcaption></figure>
+        <div class="story-text bi">
+          <p class="zh">这份方案至今仍是一张“调查地图”，不是已宣布结果的结案报告。我最期待的，不是得到一个漂亮的碳汇数字，而是让每一个数字都经得起追问。<strong>如果将来真的出海，我想找到的不是“海水有多绿”，而是“这些碳究竟留下了多少”。</strong></p>
+          <p class="en" lang="en">This proposal is still an investigation map, not a solved case with measured findings. What excites me most is not a striking carbon-sink number but a number that survives scrutiny. <strong>If I eventually take this study to sea, I want to learn not simply how green the water becomes, but how much carbon actually remains—and where.</strong></p>
+        </div>
+
+        <details class="story-appendix">
+          <summary>🧪 科学家附录：关键公式与证据边界 / Scientist's Notes: Equations &amp; Limits</summary>
+          <div class="details-body">
+            <p><strong>1. DIC 收支 / DIC budget</strong></p>
+            <code class="story-code">ΔDIC/Δt ≈ (air–sea exchange) + (water-mass mixing) + (biology)</code>
+            <p>方案在温度、钙化影响可合理忽略时采用简化分解；其余物理输运不一定都被完整观测。<br><span lang="en">The simplified budget assumes temperature and calcification effects are small; not all physical transports are directly observed.</span></p>
+            <p><strong>2. 海气通量符号 / Air–sea flux convention</strong></p>
+            <code class="story-code">FCO₂ = k × K₀ × (pCO₂,sea − pCO₂,air)</code>
+            <p>这里规定海向气释放为正；“生物效应通量等效差”是诊断值，不能与实际通量重复计数。<br><span lang="en">Positive means sea-to-air release; the biologically attributed flux-equivalent difference is diagnostic and must not be double-counted with the actual flux.</span></p>
+            <p><strong>3. 颗粒输出 / Particle export</strong></p>
+            <code class="story-code">FPOC = collected POC / (trap area × deployment time)</code>
+            <p>需校正再悬浮，若端元可区分，再用 δ¹³C 和 C/N 估算藻源比例。<br><span lang="en">Correct for resuspension, then estimate algal source fractions from δ¹³C and C/N only if endmembers are distinguishable.</span></p>
+            <p><strong>4. 表观输出比例 / Apparent export ratio</strong></p>
+            <code class="story-code">Rapp = cumulative additional algal POC export / cumulative additional NCP</code>
+            <p>仅在累计新增 NCP 为正、来源估计可靠且时间窗口匹配时使用；它既非真实颗粒输出效率，也非长期封存率。<br><span lang="en">Use only with positive cumulative additional NCP, reliable source attribution and matched windows. It is neither a definitive export efficiency nor a long-term sequestration fraction.</span></p>
+          </div>
+        </details>
+
+        <div class="story-links">
+          <h3>📎 看“案卷”，也看讲解 <small lang="en">/ Explore the Case Files</small></h3>
+          <div class="bi"><p class="zh">想看看这些问题如何真正落实到仪器、站位和计算流程？完整实验方案就在这里。</p><p class="en" lang="en">Want to see how the questions become stations, instruments and calculations? Explore the full research proposal below.</p></div>
+          <video controls preload="metadata" aria-label="长江口碳之谜视频讲解 / The Yangtze Carbon Mystery video">
             <source src="Yangtze_Carbon_Mystery_English.mp4" type="video/mp4">
             您的浏览器不支持 HTML5 视频播放。 / Your browser does not support HTML5 video.
           </video>
-          <p class="img-caption">🎬 视频讲解：《长江口碳之谜》（英文字幕）<br><span lang="en">Video: The Yangtze Carbon Mystery (English subtitles)</span></p>
-        </div>
-        <div class="center">
-          <div class="bi"><p class="zh">点击下方链接下载我撰写的《长江口藻华事件新增 NCP 实验方案》。</p><p class="en" lang="en">Use the link below to access my experimental plan for bloom-related NCP in the Yangtze River Estuary.</p></div>
-          <a class="action green" href="https://raw.githubusercontent.com/youhaoyu152-ux/youhaoyu152-ux.github.io/main/NCP_Experiment_Plan.docx" target="_blank" rel="noopener noreferrer">📄 下载实验方案（Word）/ Download the Experimental Plan (Word)</a>
+          <p class="img-caption">🎬 《长江口碳之谜》（英文字幕） / The Yangtze Carbon Mystery (English subtitles)</p>
+          <a class="action green" href="https://raw.githubusercontent.com/youhaoyu152-ux/youhaoyu152-ux.github.io/main/NCP_Experiment_Plan.docx" target="_blank" rel="noopener noreferrer">📄 下载完整实验方案（Word） / Download the Full Research Proposal</a>
         </div>
       </div>
     </details>
 
-    <!-- Story 2 -->
+    <!-- ================= 故事二 / Story 2 ================= -->
     <details>
-      <summary>故事 2：把散落的珍珠串成项链——我的物理海洋学知识地图 / Story 2: Connecting the Dots — My Physical Oceanography Knowledge Map</summary>
+      <summary>故事 2：把散落的珍珠串成项链 / Story 2: Turning Scattered Ideas into a Knowledge Map</summary>
       <div class="details-body">
-        <h3>🎬 开头：满脑子的碎片 <small lang="en">/ Opening: A Head Full of Fragments</small></h3>
-        <div class="myvoice"><div class="bi"><p class="zh">期中复习时，我发现自己陷入了死记硬背的困境。科氏力、双扩散、埃克曼抽吸、罗斯贝波……这些概念就像散落一地的珍珠，单独看都能理解，放在一起却很难建立联系。我需要一种工具把它们串起来。</p><p class="en" lang="en">During midterm review, I realized that I was memorizing facts without seeing the connections. The Coriolis force, double diffusion, Ekman pumping, Rossby waves—each concept made sense on its own, but together they felt like scattered pearls. I needed a tool to connect them.</p></div></div>
-
-        <h3>🔍 中间：构建逻辑链条 <small lang="en">/ Investigation: Building the Connections</small></h3>
-        <div class="myvoice">
-          <div class="bi"><p class="zh">我打开 XMind，决定不再按照章节抄书，而是根据“物理逻辑”重新整理。</p><p class="en" lang="en">I opened XMind and decided to reorganize the material by physical relationships rather than simply copying the textbook's chapter structure.</p></div>
-          <div class="bi"><p class="zh">我发现可以从太阳辐射的空间不均匀性出发：它影响海表热通量与温度结构；这些差异与风场共同作用，改变海水密度和海面高度分布，进而产生压强梯度，并在地球自转影响下形成大尺度环流。洋盆形状和边界则进一步塑造环流结构，包括西边界流。</p><p class="en" lang="en">I found a useful starting point in the uneven spatial distribution of solar radiation. It influences surface heat fluxes and ocean temperature structure. Together with wind forcing, these differences shape density and sea-surface height distributions, produce pressure gradients, and help drive large-scale circulation under Earth's rotation. Basin geometry and boundaries further organize the circulation, including western boundary currents.</p></div>
-          <div class="bi"><p class="zh">当我把这些联系画成箭头时，我终于感受到大洋环流像一个互相咬合的精密齿轮系统。</p><p class="en" lang="en">When I drew arrows linking these mechanisms, I finally began to see ocean circulation as an intricate system of interconnected gears.</p></div>
+        <div class="story-opener">
+          <div class="story-kicker">🧭 SCIENCE NOTEBOOK 02 · 学习探案记录 02</div>
+          <h3>每个概念我都认识，为什么连起来就看不懂？</h3>
+          <div class="bi"><p class="zh">科氏力、温跃层、双扩散、埃克曼抽吸、罗斯贝波……期中复习时，我像坐在一间堆满零件的屋子里，却不知道该怎样把它们组装成一台机器。</p><p class="en" lang="en">Coriolis force, thermocline, double diffusion, Ekman pumping, Rossby waves… While studying for midterms, I knew the individual pieces, but could not see the machine they built together.</p></div>
         </div>
-
-        <h3>🏁 结尾：豁然开朗 <small lang="en">/ Closing: The Big Picture</small></h3>
-        <div class="myvoice">
-          <div class="bi"><p class="zh"><strong>结论：</strong>这张思维导图成了我复习的“导航仪”。它不再只是知识点的罗列，而是对物理过程之间联系的可视化。</p><p class="en" lang="en"><strong>Takeaway:</strong> This mind map became my study compass. Rather than merely listing facts, it visualizes how ocean processes connect and influence one another.</p></div>
-          <div class="bi"><p class="zh"><strong>证据：</strong>下面是我制作的物理海洋学知识地图。</p><p class="en" lang="en"><strong>Evidence:</strong> Here is the physical oceanography knowledge map I created.</p></div>
-          <figure class="img-container"><a href="physical-oceanography.png" target="_blank" rel="noopener noreferrer"><img src="physical-oceanography.png" alt="物理海洋学知识地图 / Physical oceanography knowledge map" loading="lazy"></a><figcaption class="img-caption">我的物理海洋学知识地图 / My Physical Oceanography Knowledge Map</figcaption></figure>
-        </div>
+        <h3 class="story-chapter">第一步 · 停止“照章节抄书” <small lang="en">/ Step 1 · Stop Copying Chapter by Chapter</small></h3>
+        <div class="story-text bi"><p class="zh">我打开 XMind，给自己定了一个规则：<strong>每画出一条箭头，就必须能解释一个因果关系。</strong> 于是笔记从“知识点清单”变成了一串可以追问的“为什么”。</p><p class="en" lang="en">I opened XMind and set myself one rule: <strong>every arrow must represent a relationship I can explain.</strong> My notes gradually stopped being a list of definitions and became a chain of “why” questions.</p></div>
+        <h3 class="story-chapter">第二步 · 找到物理过程之间的线 <small lang="en">/ Step 2 · Trace the Physical Connections</small></h3>
+        <div class="story-text bi"><p class="zh">比如，太阳辐射分布影响海表加热；热量与淡水交换改变温盐和密度；密度结构与风共同影响压强场和海流；地球自转与洋盆边界进一步塑造大洋环流。它并不是一条能解释全部现象的单向链，而是一张彼此作用的网络。</p><p class="en" lang="en">Uneven solar heating influences surface heat fluxes; heat and freshwater exchange reshape temperature, salinity and density; density structure and winds influence pressure gradients and currents; rotation and basin boundaries shape circulation. It is not one universal one-way chain, but an interconnected network.</p></div>
+        <div class="story-dialogue"><p><strong>💡 意外收获：</strong>我不必一次记住所有公式，只要先弄清“谁驱动谁、谁限制谁、什么条件下成立”。</p><p class="en" lang="en"><strong>The breakthrough:</strong> I did not need to memorize every formula at once. I first needed to understand what drives what, what constrains what, and under which assumptions.</p></div>
+        <h3 class="story-chapter">第三步 · 把知识地图变成科研导航仪 <small lang="en">/ Step 3 · Turn the Map into a Research Compass</small></h3>
+        <div class="story-text bi"><p class="zh">这张地图后来还帮我串起了“幽灵碳”实验：营养盐脉冲属于河口过程，NCP 属于生物碳收支，海气 CO₂ 交换受风与碳酸盐体系影响，而 POC 的下沉又与混合和水团运动有关。原本分散的课程内容，终于能共同解释一个研究问题。</p><p class="en" lang="en">The map later helped me connect the ghost-carbon proposal: nutrient pulses belong to estuarine dynamics, NCP to biological carbon cycling, air–sea CO₂ exchange to wind and carbonate chemistry, and POC sinking to particle transport and water-mass motion. Suddenly, separate lectures became tools for one research question.</p></div>
+        <figure class="img-container"><a href="physical-oceanography.png" target="_blank" rel="noopener noreferrer"><img src="physical-oceanography.png" alt="物理海洋学知识体系思维导图 / Physical oceanography knowledge map" loading="lazy"></a><figcaption class="img-caption">我的物理海洋学知识地图 / My Physical Oceanography Knowledge Map</figcaption></figure>
+        <p class="story-final">科学学习最有趣的瞬间，往往不是记住一个答案，而是发现两个看似无关的问题竟然彼此相连。<br><span lang="en">The most exciting part of learning science is often not memorizing an answer, but discovering that two seemingly unrelated questions are connected.</span></p>
       </div>
     </details>
   </section>
