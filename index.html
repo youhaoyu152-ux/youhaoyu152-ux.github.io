@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -78,6 +77,73 @@
     .deep-equation p { margin-top: 8px; font-size: 12px; color: #57606a; }
     .deep-check { padding: 14px; margin-top: 16px; border-radius: 8px; border-left: 3px solid #2ea44f; background: #f0fff4; }
     @media (max-width: 600px) { .deep-dive { padding: 16px 13px; } }
+
+    /* 故事会专属排版 / Storytelling enhancements */
+    .story-opener { padding: 24px; margin: 16px 0 20px; border-radius: 12px; background: linear-gradient(125deg, #eaf3ff 0%, #f5faff 100%); border: 1px solid #d6e6fa; }
+    .story-kicker { font-size: 12px; font-weight: 700; color: #0969da; letter-spacing: .04em; }
+    .story-opener h3 { margin: 8px 0 10px; color: #173861; font-size: 22px; line-height: 1.45; }
+    .story-opener .en { color: #455975; }
+    .story-status { font-size: 13px; color: #57606a; margin-top: 10px; }
+    .story-lead { font-size: 15px; line-height: 1.95; }
+    .story-lead .en { font-size: 14px; }
+    .story-facts { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; margin: 18px 0 20px; }
+    .story-fact { padding: 16px 13px; border: 1px solid #dee8f3; border-radius: 10px; background: #fbfdff; }
+    .story-fact h4 { font-size: 15px; color: #0969da; margin-bottom: 8px; }
+    .story-fact p { font-size: 13px; line-height: 1.65; }
+    .story-fact p.en { color: #57606a; margin-top: 5px; }
+    .story-chapter { margin-top: 28px !important; padding-top: 6px; font-size: 18px !important; }
+    .story-chapter small { display: block; margin-top: 3px; font-size: 13px; }
+    .story-text { margin: 14px 0; padding: 0 2px; }
+    .story-text p { margin: 6px 0; }
+    .story-text .en { margin-top: 4px; font-size: 13px; color: #57606a; }
+    .story-evidence { border-left: 4px solid #0969da; background: #f5f9ff; margin: 17px 0; padding: 14px 18px; border-radius: 0 8px 8px 0; }
+    .story-evidence h4 { font-size: 15px; margin-bottom: 7px; }
+    .story-evidence .en { color: #57606a; font-size: 13px; }
+    .story-timeline { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); gap: 8px; margin: 18px 0; }
+    .story-phase { border-top: 3px solid #0969da; background: #f6f8fa; padding: 11px 9px; border-radius: 0 0 6px 6px; font-size: 12px; }
+    .story-phase b, .story-phase span { display: block; }
+    .story-phase span { color: #57606a; margin-top: 4px; }
+    .story-dialogue { margin: 18px 0; border-radius: 10px; background: #f0fff4; padding: 16px 18px; border-left: 4px solid #2ea44f; }
+    .story-dialogue p { margin: 7px 0; }
+    .story-dialogue .en { color: #42624a; font-size: 13px; }
+    .story-methods { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; margin: 16px 0; }
+    .story-method { padding: 15px; background: #fafbfc; border: 1px solid #d0d7de; border-radius: 9px; }
+    .story-method h4 { color: #0969da; font-size: 15px; margin-bottom: 6px; }
+    .story-method p { font-size: 13px; }
+    .story-method .en { color: #57606a; margin-top: 5px; }
+    .story-appendix { margin: 22px 0 !important; border: 1px solid #d0d7de; background: #fff; }
+    .story-appendix summary { font-size: 14px; }
+    .story-appendix .story-code { display: block; padding: 10px 12px; margin: 7px 0; font-family: Consolas,Menlo,monospace; font-size: 12.5px; background: #eef2f5; color: #0550ae; overflow-wrap: anywhere; border-radius: 5px; }
+    .story-appendix p { margin: 8px 0; }
+    .story-links { background: #f6f8fa; padding: 20px; border-radius: 10px; margin-top: 22px; text-align: center; }
+    .story-links .action { margin: 6px; }
+    .story-final { font-size: 16px; font-weight: 600; color: #173861; margin-top: 12px; }
+    @media (max-width: 700px) { .story-facts, .story-methods { grid-template-columns: 1fr; } .story-timeline { grid-template-columns: repeat(2,minmax(0,1fr)); } .story-opener { padding: 19px 15px; } .story-opener h3 { font-size: 19px; } }
+
+    /* ===== 评分要求补充：课堂自己的话 + 故事读者友好性 / Rubric additions ===== */
+    .lecture-reflection { margin: 22px 0 0; padding: 18px 20px; background: #fffaf0; border: 1px solid #f1dfb8; border-left: 4px solid #d49b3c; border-radius: 8px; }
+    .lecture-reflection h3 { margin: 0 0 12px; color: #825600; font-size: 16px; }
+    .lecture-reflection .reflection-item { margin: 12px 0 15px; padding-bottom: 12px; border-bottom: 1px dashed #e7d6b4; }
+    .lecture-reflection .reflection-item:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: 0; }
+    .lecture-reflection h4 { color: #674300; font-size: 14px; margin-bottom: 5px; }
+    .lecture-reflection .en { color: #675e50; }
+    .lecture-reflection .bi { margin: 5px 0; }
+    .learning-note { margin: 16px 0 8px; font-size: 13px; color: #57606a; }
+    .reader-guide { margin: 24px 0; padding: 20px; background: #f3fbf7; border: 1px solid #cfe7d9; border-left: 4px solid #2da76c; border-radius: 10px; }
+    .reader-guide h3 { margin: 0 0 10px; color: #226044; font-size: 17px; }
+    .reader-guide h4 { margin: 14px 0 7px; font-size: 14px; color: #226044; }
+    .reader-guide .en { color: #4f675b; }
+    .reader-glossary { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; margin-top: 12px; }
+    .reader-term { background: #fff; padding: 12px; border: 1px solid #d7e8dc; border-radius: 8px; }
+    .reader-term strong { display: block; color: #226044; }
+    .reader-term p { font-size: 13px; line-height: 1.65; margin-top: 4px; }
+    .peer-check { margin: 18px 0; border: 1px solid #d6e3f5; border-radius: 8px; }
+    .peer-check summary { background: #f5f9ff; color: #175ca8; font-size: 14px; }
+    .peer-check ol { padding-left: 22px; }
+    .peer-check li { margin: 10px 0; }
+    .peer-check .en { display: block; color: #57606a; font-size: 13px; }
+    .peer-check .peer-honesty { background: #f6f8fa; padding: 10px 12px; border-radius: 6px; font-size: 13px; color: #57606a; }
+    @media (max-width: 600px) { .lecture-reflection, .reader-guide { padding: 16px 14px; } .reader-glossary { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -542,6 +608,14 @@
     <h2>📘 课堂笔记 <small lang="en">/ Course Notes</small></h2>
     <div class="bi"><p class="zh">按课次整理的课堂重点、详细解析与出门票记录。</p><p class="en" lang="en">Lecture-by-lecture summaries of key ideas, detailed explanations, and exit-ticket reflections.</p></div>
 
+    <!-- BEGIN RUBRIC ADDITION: 课堂笔记写作说明 -->
+    <div class="learning-note bi">
+      <p class="zh" lang="zh-CN">以下每讲在原有出门票之外，补充了“我用自己的话解释—疑问与理解—教材和课堂对照”。这些是依据现有笔记整理的反思初稿，请结合本人真实听课经历核对、修改后再提交。</p>
+      <p class="en" lang="en">Alongside the original exit tickets, each lecture now includes a plain-language explanation, a question and its interpretation, and a textbook–lecture comparison. These reflections are drafts based on the existing notes; they should be checked against my actual classroom experience before submission.</p>
+    </div>
+    <!-- END RUBRIC ADDITION: 课堂笔记写作说明 -->
+
+
     <details>
       <summary>第 1 讲：导论与核心逻辑 / Lecture 1: Introduction &amp; Core Framework</summary>
       <div class="details-body">
@@ -549,6 +623,15 @@
         <div class="ticket"><div class="bi"><p class="zh">这节课我最大的收获是理清了物理海洋学的“What – Why – How”研究框架。为了总览全貌，我课后使用 XMind 整理了一张知识地图。</p><p class="en" lang="en">My biggest takeaway was understanding the “What – Why – How” research framework of physical oceanography. To see the bigger picture, I created a knowledge map in XMind after class.</p></div>
           <figure class="img-container"><a href="physical-oceanography.png" target="_blank" rel="noopener noreferrer"><img src="physical-oceanography.png" alt="物理海洋学知识体系思维导图 / Physical oceanography mind map" loading="lazy"></a><figcaption class="img-caption">物理海洋学知识地图 / Physical Oceanography Knowledge Map</figcaption></figure>
         </div>
+
+        <!-- BEGIN RUBRIC ADDITION: LECTURE 1 / 第 1 讲自己的话（供本人核对） -->
+        <div class="lecture-reflection" data-lecture="1">
+          <h3>✍️ 我的理解与复盘 <small lang="en">/ In My Own Words &amp; Reflection</small></h3>
+          <div class="reflection-item"><h4>① 我用自己的话解释 / My own explanation</h4><div class="bi"><p class="zh" lang="zh-CN">我会把物理海洋学比作“给海洋做体检”：先观察温度、盐度和流速等现象，再猜测背后的原因，最后用仪器和物理方程检验猜想。记住术语只是第一步，真正重要的是能解释“为什么会这样”。</p><p class="en" lang="en">I think of physical oceanography as giving the ocean a checkup: observe temperature, salinity and currents, suggest a mechanism, and test it with measurements and equations. Knowing a term is only the first step; the goal is to explain why a pattern occurs.</p></div></div>
+          <div class="reflection-item"><h4>② 容易混淆的点 → 现在的理解 / A question and how I make sense of it</h4><div class="bi"><p class="zh" lang="zh-CN">值得追问的是：两次测量发现海温不同，能不能直接说海洋变暖了？不能。测量位置、季节、深度和仪器都可能不同。要讨论变化趋势，我应先让数据在时间、空间和单位上具有可比性。</p><p class="en" lang="en">One question I should ask is whether two different temperature readings prove ocean warming. They do not: location, season, depth and instruments may differ. I must make observations comparable in time, space and units before interpreting a trend.</p></div></div>
+          <div class="reflection-item"><h4>③ 教材与课堂对照 / Textbook vs. lecture</h4><div class="bi"><p class="zh" lang="zh-CN">教材第 1 章强调研究对象与时空尺度；课堂上的 What–Why–How 框架让我知道如何组织这些知识。我用 XMind 把“现象—机制—证据”串起来，而不是按章节死记硬背。</p><p class="en" lang="en">Chapter 1 emphasizes the field and its scales; the lecture’s What–Why–How framework provides a way to organize that material. My XMind map connects phenomena, mechanisms and evidence instead of listing chapter headings.</p></div></div>
+        </div>
+        <!-- END RUBRIC ADDITION: LECTURE 1 -->
       </div>
     </details>
 
@@ -557,6 +640,15 @@
       <div class="details-body">
         <h3>🎫 出门票 <small lang="en">/ Exit Ticket</small></h3>
         <div class="ticket"><div class="bi"><p class="zh">我理解了海底地壳“年轻”的原因：洋中脊不断形成新地壳，海沟附近的俯冲作用使旧地壳消亡。我由此产生一个问题：俯冲的地壳物质最终去了哪里？查阅资料后我了解到，它们返回地幔，参与长期地质循环。</p><p class="en" lang="en">I learned why oceanic crust is “young”: new crust forms at mid-ocean ridges, while old crust is recycled through subduction near trenches. This led me to ask: Where does the subducted material ultimately go? Further reading showed me that it returns to the mantle and participates in long-term geological cycling.</p></div></div>
+
+        <!-- BEGIN RUBRIC ADDITION: LECTURE 2 / 第 2 讲自己的话（供本人核对） -->
+        <div class="lecture-reflection" data-lecture="2">
+          <h3>✍️ 我的理解与复盘 <small lang="en">/ In My Own Words &amp; Reflection</small></h3>
+          <div class="reflection-item"><h4>① 我用自己的话解释 / My own explanation</h4><div class="bi"><p class="zh" lang="zh-CN">我把洋中脊想成地壳的“生产线”，把俯冲带想成“回收站”。这样就能理解为什么大洋地壳总体比大陆地壳年轻。海底地形也不是静止的背景板：海岭和海峡会改变深层海水能够走的路线。</p><p class="en" lang="en">I picture a mid-ocean ridge as a crust-making conveyor belt and a subduction zone as a recycling station. That helps explain the relative youth of oceanic crust. Bathymetry is not just a backdrop: ridges and sills can redirect or restrict deep-water pathways.</p></div></div>
+          <div class="reflection-item"><h4>② 容易混淆的点 → 现在的理解 / A question and how I make sense of it</h4><div class="bi"><p class="zh" lang="zh-CN">一个有趣的问题是：海底山脊明明在几千米深处，为什么会影响整个海盆的环流？我现在会从“通道和门槛”的角度思考：深层水团并不能任意穿过高于其所在深度的地形障碍。</p><p class="en" lang="en">Why can a ridge thousands of meters below the surface affect circulation across a basin? I now think in terms of passages and sills: deep water cannot simply flow through a topographic barrier that rises above its level.</p></div></div>
+          <div class="reflection-item"><h4>③ 教材与课堂对照 / Textbook vs. lecture</h4><div class="bi"><p class="zh" lang="zh-CN">教材第 2 章重点介绍海盆形状、测深与板块构造；课堂从“洋壳为什么年轻”引出了物质循环。我把两者连起来理解：地质过程塑造地形，地形又约束海水运动。</p><p class="en" lang="en">Chapter 2 focuses on basin geometry, bathymetry and plate tectonics; the lecture prompted a question about crustal recycling. Together they show how geological processes shape topography, which then constrains ocean flow.</p></div></div>
+        </div>
+        <!-- END RUBRIC ADDITION: LECTURE 2 -->
       </div>
     </details>
 
@@ -567,6 +659,15 @@
         <div class="ticket"><div class="bi"><p class="zh">这节课我理解了“位温”和“混合增密”。老师展示了如何使用代码处理位温分布并计算混合增密，我保存了当时的 PPT 截图。</p><p class="en" lang="en">In this lecture I developed a clearer understanding of potential temperature and cabbeling. The instructor demonstrated how to process potential-temperature distributions and calculate cabbeling using code; I saved a screenshot of the relevant slides.</p></div>
           <figure class="img-container"><a href="ticket-mixing.png" target="_blank" rel="noopener noreferrer"><img src="ticket-mixing.png" alt="位温与混合增密课堂截图 / Class slide on potential temperature and cabbeling" loading="lazy"></a><figcaption class="img-caption">位温与混合增密 / Potential Temperature &amp; Cabbeling</figcaption></figure>
         </div>
+
+        <!-- BEGIN RUBRIC ADDITION: LECTURE 3 / 第 3 讲自己的话（供本人核对） -->
+        <div class="lecture-reflection" data-lecture="3">
+          <h3>✍️ 我的理解与复盘 <small lang="en">/ In My Own Words &amp; Reflection</small></h3>
+          <div class="reflection-item"><h4>① 我用自己的话解释 / My own explanation</h4><div class="bi"><p class="zh" lang="zh-CN">我把现场温度理解为水团“此时此地的体温”，把位温理解为“把不同深度的水团放到相同参考压力下再比较”。这样一来，深海原位温度较高不一定意味着它在热力学上比浅水更暖。</p><p class="en" lang="en">In-situ temperature is a parcel’s temperature where it actually sits; potential temperature is a way to compare parcels after referencing them to the same pressure. A higher deep in-situ temperature does not automatically mean a parcel is thermodynamically warmer than a shallower one.</p></div></div>
+          <div class="reflection-item"><h4>② 容易混淆的点 → 现在的理解 / A question and how I make sense of it</h4><div class="bi"><p class="zh" lang="zh-CN">我最想解释清楚的是：两种海水混合后，为什么有时会比两端元都更密？关键不是简单地把温度和盐度取平均，而是密度对温度、盐度的响应并非完全线性，这就是混合增密的物理基础。</p><p class="en" lang="en">Why can a mixture become denser than either endmember? Simply averaging temperature and salinity is not enough. Seawater density responds nonlinearly to those properties, providing the physical basis for cabbeling.</p></div></div>
+          <div class="reflection-item"><h4>③ 教材与课堂对照 / Textbook vs. lecture</h4><div class="bi"><p class="zh" lang="zh-CN">教材第 3 章用状态方程、位温和盐度体系解释海水性质；课堂的代码演示把抽象概念变成可计算、可画图的量。我会先确认压力参考，再比较不同水团的温盐与密度。</p><p class="en" lang="en">Chapter 3 explains the equation of state, potential temperature and salinity scales; the lecture’s coding demonstration made them measurable and plottable. I would check the pressure reference before comparing water masses.</p></div></div>
+        </div>
+        <!-- END RUBRIC ADDITION: LECTURE 3 -->
       </div>
     </details>
 
@@ -579,6 +680,15 @@
           <div class="bi"><p class="zh"><strong>2. 副热带与副极地：</strong>副热带地区存在永久性温跃层（约 200–1,000 m）与盐度最大值；副极地地区可出现温度最小值。</p><p class="en" lang="en"><strong>2. Subtropical versus subpolar regions:</strong> Subtropical waters feature a permanent thermocline (roughly 200–1,000 m) and salinity maxima; subpolar regions may exhibit temperature minima.</p></div>
           <div class="bi"><p class="zh"><strong>3. 表层盐度最大区域：</strong>通常位于蒸发大于降水的副热带海域。</p><p class="en" lang="en"><strong>3. Highest surface salinity:</strong> Typically found in subtropical regions where evaporation exceeds precipitation.</p></div>
         </div>
+
+        <!-- BEGIN RUBRIC ADDITION: LECTURE 4 / 第 4 讲自己的话（供本人核对） -->
+        <div class="lecture-reflection" data-lecture="4">
+          <h3>✍️ 我的理解与复盘 <small lang="en">/ In My Own Words &amp; Reflection</small></h3>
+          <div class="reflection-item"><h4>① 我用自己的话解释 / My own explanation</h4><div class="bi"><p class="zh" lang="zh-CN">我把 T–S 图看作水团的“特征名片”：温度和盐度组合能帮助辨认它，但不能只凭一个点就断定它来自哪里。还需要结合海域位置、垂向断面和其他示踪量，才能把水团的故事讲完整。</p><p class="en" lang="en">A T–S diagram is like a water mass’s calling card: temperature and salinity help identify it, but one point cannot prove its origin. I also need location, vertical sections and other tracers to tell the fuller story.</p></div></div>
+          <div class="reflection-item"><h4>② 容易混淆的点 → 现在的理解 / A question and how I make sense of it</h4><div class="bi"><p class="zh" lang="zh-CN">混合层为什么不是全年固定的 50–200 米？我现在理解，表层加热容易加强层结，而冬季冷却和风浪可能加深混合层。教材给出的典型范围不能当成每个海区、每个季节的硬性边界。</p><p class="en" lang="en">Why is mixed-layer depth not fixed at 50–200 m all year? Surface heating can strengthen stratification, while winter cooling and storms can deepen mixing. A typical textbook range is not a universal boundary for every region and season.</p></div></div>
+          <div class="reflection-item"><h4>③ 教材与课堂对照 / Textbook vs. lecture</h4><div class="bi"><p class="zh" lang="zh-CN">教材第 4 章强调全球温盐分布、剖面和水团；课堂则用混合层、副热带高盐与副极地结构等具体问题帮助记忆。我补充的理解是：表层盐度还受洋流输送和混合影响，不能只看蒸发减降水。</p><p class="en" lang="en">Chapter 4 emphasizes global distributions, sections and water masses; the lecture highlights mixed layers and regional contrasts. I would add that surface salinity is also shaped by advection and mixing, not only evaporation minus precipitation.</p></div></div>
+        </div>
+        <!-- END RUBRIC ADDITION: LECTURE 4 -->
       </div>
     </details>
 
@@ -591,6 +701,15 @@
           <div class="bi"><p class="zh"><strong>5. 北大西洋为何比北太平洋更咸：</strong>北大西洋副热带海域的蒸发–降水平衡，以及地中海高盐水的影响，都是值得关注的因素。</p><p class="en" lang="en"><strong>5. Why the North Atlantic is saltier than the North Pacific:</strong> The subtropical Atlantic's evaporation–precipitation balance and the influence of saline Mediterranean outflow are among the relevant factors.</p></div>
           <div class="bi"><p class="zh"><strong>6. 季节差异：</strong>海表温度季节变化通常在温带较明显，在热带及某些极地海区相对较弱。</p><p class="en" lang="en"><strong>6. Seasonal variability:</strong> Seasonal sea-surface temperature variations are typically pronounced in temperate regions and relatively weaker in the tropics and some polar regions.</p></div>
         </div>
+
+        <!-- BEGIN RUBRIC ADDITION: LECTURE 5 / 第 5 讲自己的话（供本人核对） -->
+        <div class="lecture-reflection" data-lecture="5">
+          <h3>✍️ 我的理解与复盘 <small lang="en">/ In My Own Words &amp; Reflection</small></h3>
+          <div class="reflection-item"><h4>① 我用自己的话解释 / My own explanation</h4><div class="bi"><p class="zh" lang="zh-CN">我把海面想成一本同时记录“热量”和“淡水”的账本：阳光给海洋加热，蒸发带走热量并让剩下的海水更咸；降水则往往稀释表层盐度。风不仅搅动海水，还会驱动表层输送。</p><p class="en" lang="en">I picture the sea surface as two linked ledgers, one for heat and one for freshwater. Sunlight adds heat, evaporation removes heat and leaves saltier water behind, and rain tends to freshen the surface. Wind also mixes and transports water.</p></div></div>
+          <div class="reflection-item"><h4>② 容易混淆的点 → 现在的理解 / A question and how I make sense of it</h4><div class="bi"><p class="zh" lang="zh-CN">如果某海区净热通量为正，海表温度为什么仍可能下降？因为海流能把冷水带来，混合也能把下层冷水卷上来，混合层深度还会变化。所以我不能把一个通量数字直接等同于海温变化。</p><p class="en" lang="en">If net surface heat flux is positive, why might sea-surface temperature still fall? Cold-water advection, vertical mixing and changes in mixed-layer depth can offset surface heating. One flux number does not determine the local temperature tendency by itself.</p></div></div>
+          <div class="reflection-item"><h4>③ 教材与课堂对照 / Textbook vs. lecture</h4><div class="bi"><p class="zh" lang="zh-CN">教材第 5 章把热量、盐度收支与风应力放在同一框架中；课堂侧重四类热通量和海盆盐度差异。北大西洋偏咸需要结合大尺度淡水输送来解释，不能只归因于地中海出流水。</p><p class="en" lang="en">Chapter 5 treats heat, salt and wind forcing together; the lecture highlights heat-flux components and basin salinity contrasts. The saltier Atlantic also requires a basin-scale freshwater-budget explanation, not just Mediterranean outflow.</p></div></div>
+        </div>
+        <!-- END RUBRIC ADDITION: LECTURE 5 -->
       </div>
     </details>
 
@@ -603,6 +722,15 @@
           <div class="bi"><p class="zh"><strong>随堂测验：EOF 的目的。</strong>正确答案是 B：识别数据集中的主导空间模态及其时间变化。</p><p class="en" lang="en"><strong>In-class quiz: What is the purpose of EOF analysis?</strong> Correct answer: B — to identify dominant spatial patterns in a dataset and their temporal evolution.</p></div>
           <figure class="img-container"><a href="ticket-eof.png" target="_blank" rel="noopener noreferrer"><img src="ticket-eof.png" alt="EOF 课堂测验截图 / EOF quiz slide" loading="lazy"></a><figcaption class="img-caption">EOF 随堂测验 / EOF In-Class Quiz</figcaption></figure>
         </div>
+
+        <!-- BEGIN RUBRIC ADDITION: LECTURE 6 / 第 6 讲自己的话（供本人核对） -->
+        <div class="lecture-reflection" data-lecture="6">
+          <h3>✍️ 我的理解与复盘 <small lang="en">/ In My Own Words &amp; Reflection</small></h3>
+          <div class="reflection-item"><h4>① 我用自己的话解释 / My own explanation</h4><div class="bi"><p class="zh" lang="zh-CN">我把 EOF 想成把一部很长的海洋变化影片，压缩成几张最常出现的“空间画面”，再记录每张画面何时变强、何时变弱。它很擅长总结数据，但不负责自动告诉我造成这些变化的原因。</p><p class="en" lang="en">I think of EOF analysis as compressing a long movie of ocean variability into a few recurring spatial frames, then tracking when each frame becomes stronger or weaker. It summarizes patterns efficiently but does not automatically identify their causes.</p></div></div>
+          <div class="reflection-item"><h4>② 容易混淆的点 → 现在的理解 / A question and how I make sense of it</h4><div class="bi"><p class="zh" lang="zh-CN">为什么“第一 EOF 解释方差最多”不等于“它就是最重要的物理驱动”？因为 EOF 排序依据的是统计方差，不是因果关系。我还需要检查季节循环是否去除、数据是否加权，并寻找独立的物理证据。</p><p class="en" lang="en">Why does the leading EOF not necessarily reveal the dominant forcing? EOFs are ranked by statistical variance, not causality. I would check seasonal-cycle removal, spatial weighting and independent physical evidence before interpreting a mode.</p></div></div>
+          <div class="reflection-item"><h4>③ 教材与课堂对照 / Textbook vs. lecture</h4><div class="bi"><p class="zh" lang="zh-CN">教材第 6 章介绍统计、频谱、空间映射与 EOF；课堂的 EOF 测验让我明确其目的。课堂还问到了温跃层维持问题，我把它与第 4、5 章的热输送和混合联系起来理解。</p><p class="en" lang="en">Chapter 6 covers statistics, spectra, mapping and EOFs; the quiz clarifies what EOF analysis does. The lecture’s thermocline question also connects back to heat transport and mixing in Chapters 4 and 5.</p></div></div>
+        </div>
+        <!-- END RUBRIC ADDITION: LECTURE 6 -->
       </div>
     </details>
 
@@ -616,6 +744,15 @@
           <div class="bi"><p class="zh">结合全球地转流场图，我能更直观地识别西边界流（湾流、黑潮）和南极绕极流（ACC）的位置。</p><p class="en" lang="en">A global map of geostrophic currents helps me visualize the locations of western boundary currents (the Gulf Stream and Kuroshio) and the Antarctic Circumpolar Current (ACC).</p></div>
           <figure class="img-container"><a href="global-geostrophic-velocity.png" target="_blank" rel="noopener noreferrer"><img src="global-geostrophic-velocity.png" alt="全球地转流场 / Global geostrophic velocity field" loading="lazy"></a><figcaption class="img-caption">全球地转流场 / Global Geostrophic Velocity Field</figcaption></figure>
         </div>
+
+        <!-- BEGIN RUBRIC ADDITION: LECTURE 7 / 第 7 讲自己的话（供本人核对） -->
+        <div class="lecture-reflection" data-lecture="7">
+          <h3>✍️ 我的理解与复盘 <small lang="en">/ In My Own Words &amp; Reflection</small></h3>
+          <div class="reflection-item"><h4>① 我用自己的话解释 / My own explanation</h4><div class="bi"><p class="zh" lang="zh-CN">我现在不把“风吹，海水就顺风走”当成完整答案。风先施加应力，地球自转使运动偏转，压强梯度又与科氏力形成近似平衡。大洋内部的输送必须在边界闭合，才会出现强劲的西边界流。</p><p class="en" lang="en">I no longer think “the wind blows, so the water follows the wind” is a complete explanation. Wind exerts stress, rotation deflects motion, and pressure gradients can balance Coriolis forces. Interior transport must close at basin boundaries, helping produce intense western boundary currents.</p></div></div>
+          <div class="reflection-item"><h4>② 容易混淆的点 → 现在的理解 / A question and how I make sense of it</h4><div class="bi"><p class="zh" lang="zh-CN">埃克曼输送与地转流都受科氏力影响，它们为什么不是同一回事？埃克曼输送涉及风应力和摩擦层内的垂向积分；地转流主要描述压强梯度与科氏力的平衡。我应先分清作用力和适用深度。</p><p class="en" lang="en">Ekman transport and geostrophic flow both involve rotation, but they are not the same balance. Ekman transport integrates the wind-driven frictional layer, whereas geostrophic flow balances horizontal pressure gradients against Coriolis force. I need to identify the forces and depth range first.</p></div></div>
+          <div class="reflection-item"><h4>③ 教材与课堂对照 / Textbook vs. lecture</h4><div class="bi"><p class="zh" lang="zh-CN">教材第 7 章提供地转、热成风、涡度与 Sverdrup 平衡的动力学框架；课堂通过水柱伸缩和全球流场图帮助我把方程与湾流、黑潮等真实洋流联系起来。</p><p class="en" lang="en">Chapter 7 develops geostrophy, thermal wind, vorticity and Sverdrup balance; the lecture’s water-column sketches and current maps help connect equations to real currents such as the Gulf Stream and Kuroshio.</p></div></div>
+        </div>
+        <!-- END RUBRIC ADDITION: LECTURE 7 -->
       </div>
     </details>
 
@@ -632,6 +769,15 @@
             <a class="action" href="https://youhaoyu152-ux.github.io/pptx_guide.html" target="_blank" rel="noopener noreferrer">📖 查看 PPTX SKILL.md 逐行解读 / Read the Line-by-Line Guide</a>
           </div>
         </div>
+
+        <!-- BEGIN RUBRIC ADDITION: LECTURE 8 / 第 8 讲自己的话（供本人核对） -->
+        <div class="lecture-reflection" data-lecture="8">
+          <h3>✍️ 我的理解与复盘 <small lang="en">/ In My Own Words &amp; Reflection</small></h3>
+          <div class="reflection-item"><h4>① 我用自己的话解释 / My own explanation</h4><div class="bi"><p class="zh" lang="zh-CN">我把不同海洋波动理解为海洋传递信息的不同方式：有的由表面张力恢复，有的由重力恢复，有的依赖层结中的浮力，还有的与地球自转和纬度变化有关。不能看到“波”就默认是风浪。</p><p class="en" lang="en">I see ocean waves as different ways the ocean carries disturbances. Some rely on surface tension, some on gravity, some on buoyancy in stratified water, and others on rotation and its variation with latitude. A wave is not automatically a wind wave.</p></div></div>
+          <div class="reflection-item"><h4>② 容易混淆的点 → 现在的理解 / A question and how I make sense of it</h4><div class="bi"><p class="zh" lang="zh-CN">为什么同一列波进入浅海后会变慢？对浅水长波，传播速度近似 c = √(gh)；水深变浅时速度下降。如果周期基本不变，波长 λ = cT 也会缩短。这个推理比只背公式更容易记住。</p><p class="en" lang="en">Why does a wave slow as it enters shallow water? For long shallow-water waves, c ≈ √(gh), so decreasing depth reduces speed. If the period stays approximately constant, λ = cT also decreases. This physical chain is easier to remember than an isolated formula.</p></div></div>
+          <div class="reflection-item"><h4>③ 教材与课堂对照 / Textbook vs. lecture</h4><div class="bi"><p class="zh" lang="zh-CN">教材第 8 章集中讨论重力波、潮汐和海岸过程；课堂扩展到 23 种海洋与大气波动，其中罗斯贝波还需要联系第 7 章的 β 效应。这是课堂内容超出单章范围的一个具体例子。</p><p class="en" lang="en">Chapter 8 focuses on gravity waves, tides and coastal processes; the lecture extends the comparison to 23 oceanic and atmospheric wave types. Rossby waves also connect to the beta effect in Chapter 7, illustrating an extension beyond one textbook chapter.</p></div></div>
+        </div>
+        <!-- END RUBRIC ADDITION: LECTURE 8 -->
       </div>
     </details>
 
@@ -771,6 +917,39 @@
           <p class="en" lang="en">This proposal is still an investigation map, not a solved case with measured findings. What excites me most is not a striking carbon-sink number but a number that survives scrutiny. <strong>If I eventually take this study to sea, I want to learn not simply how green the water becomes, but how much carbon actually remains—and where.</strong></p>
         </div>
 
+
+        <!-- BEGIN RUBRIC ADDITION: 让非专业读者也能理解故事 / Story 1 reader guide -->
+        <div class="reader-guide" id="ghost-carbon-plain-language">
+          <h3>🗣️ 30 秒讲给朋友听 <small lang="en">/ Explain the Mystery in 30 Seconds</small></h3>
+          <div class="bi">
+            <p class="zh" lang="zh-CN">长江口出现藻华，说明浮游植物可能正在吸收更多碳，但“海水变绿”并不能证明这些碳会长期留在海里。河流带来的颗粒、海底重新卷起的沉积物，也可能进入捕获器。我设计的实验想用水团观测、碳收支和颗粒来源指纹，分清<strong>哪些变化来自藻华、哪些来自物理输送</strong>。即使颗粒沉过混合层，也不能直接把它算成永久碳汇。</p>
+            <p class="en" lang="en">A bloom near the Yangtze Estuary may increase biological carbon uptake, but green water does not prove that carbon stays in the ocean for years. River particles and resuspended seabed material can also enter a sediment trap. My proposed study combines water-mass observations, carbon budgets and particle fingerprints to distinguish <strong>bloom-driven changes from physical transport</strong>. Sinking below the mixed layer is not proof of permanent carbon storage.</p>
+          </div>
+          <h4>术语小抄：认识这六组词 / Six terms made simple</h4>
+          <div class="reader-glossary">
+            <div class="reader-term"><strong>NCP · 净群落生产</strong><p>整个生物群落固定的碳减去呼吸消耗。<span class="en" lang="en">Carbon fixed by the community minus carbon consumed by respiration.</span></p></div>
+            <div class="reader-term"><strong>DIC · 溶解无机碳</strong><p>溶在海水里的无机碳“储量”，会受生物活动和水体混合共同影响。<span class="en" lang="en">Inorganic carbon dissolved in seawater, influenced by both biology and mixing.</span></p></div>
+            <div class="reader-term"><strong>POC · 颗粒有机碳</strong><p>附着在生物或碎屑颗粒上的有机碳；沉降不等于长期封存。<span class="en" lang="en">Organic carbon in particles; sinking does not guarantee long-term storage.</span></p></div>
+            <div class="reader-term"><strong>REEs · 稀土元素</strong><p>可用作判断颗粒是否受到海底沉积物再悬浮影响的线索。<span class="en" lang="en">Chemical clues that may help identify resuspended seabed material.</span></p></div>
+            <div class="reader-term"><strong>δ¹³C 与 C/N · 来源指纹</strong><p>结合碳同位素与碳氮比，帮助区分藻源和陆源颗粒，但需检验端元是否可区分。<span class="en" lang="en">Carbon isotopes and carbon-to-nitrogen ratios help distinguish sources when endmembers are separable.</span></p></div>
+            <div class="reader-term"><strong>C0、A1、A2 · 三站位</strong><p>一个连续观测核心站，加上近岸和外海两个辅助取样站。<span class="en" lang="en">One continuously monitored core station plus nearshore and offshore supporting stations.</span></p></div>
+          </div>
+        </div>
+        <details class="peer-check">
+          <summary>👥 给同学或家人的三道复述题 / Three Questions for a Peer Reader</summary>
+          <div class="details-body">
+            <p>请先让一位没有学过物理海洋学的同学或家人读故事，再让对方<strong>不看原文</strong>回答：</p>
+            <p class="en" lang="en">Ask a reader without an oceanography background to read the story and answer without looking back:</p>
+            <ol>
+              <li>为什么藻华出现，不等于已经形成长期碳汇？<span class="en" lang="en">Why does an algal bloom not automatically mean long-term carbon storage?</span></li>
+              <li>捕获器里的颗粒可能来自哪三种来源？<span class="en" lang="en">What are the three possible origins of particles in the trap?</span></li>
+              <li>这个实验打算用哪些观测和化学线索把它们区分开？<span class="en" lang="en">Which observations and chemical clues could help separate those origins?</span></li>
+            </ol>
+            <p class="peer-honesty">📝 试读记录：请在实际邀请同学或家人试读后，记录其能否复述以及最难理解的词；当前网页不声称已完成真人试读。<span class="en" lang="en">Peer-readback status: not yet verified. Record actual feedback after a real reader completes the test.</span></p>
+          </div>
+        </details>
+        <!-- END RUBRIC ADDITION: Story 1 reader guide -->
+
         <details class="story-appendix">
           <summary>🧪 科学家附录：关键公式与证据边界 / Scientist's Notes: Equations &amp; Limits</summary>
           <div class="details-body">
@@ -820,6 +999,14 @@
         <div class="story-text bi"><p class="zh">这张地图后来还帮我串起了“幽灵碳”实验：营养盐脉冲属于河口过程，NCP 属于生物碳收支，海气 CO₂ 交换受风与碳酸盐体系影响，而 POC 的下沉又与混合和水团运动有关。原本分散的课程内容，终于能共同解释一个研究问题。</p><p class="en" lang="en">The map later helped me connect the ghost-carbon proposal: nutrient pulses belong to estuarine dynamics, NCP to biological carbon cycling, air–sea CO₂ exchange to wind and carbonate chemistry, and POC sinking to particle transport and water-mass motion. Suddenly, separate lectures became tools for one research question.</p></div>
         <figure class="img-container"><a href="physical-oceanography.png" target="_blank" rel="noopener noreferrer"><img src="physical-oceanography.png" alt="物理海洋学知识体系思维导图 / Physical oceanography knowledge map" loading="lazy"></a><figcaption class="img-caption">我的物理海洋学知识地图 / My Physical Oceanography Knowledge Map</figcaption></figure>
         <p class="story-final">科学学习最有趣的瞬间，往往不是记住一个答案，而是发现两个看似无关的问题竟然彼此相连。<br><span lang="en">The most exciting part of learning science is often not memorizing an answer, but discovering that two seemingly unrelated questions are connected.</span></p>
+
+        <!-- BEGIN RUBRIC ADDITION: Story 2 reader-friendly summary -->
+        <div class="reader-guide">
+          <h3>💬 一句话复述 <small lang="en">/ One-Sentence Retelling</small></h3>
+          <div class="bi"><p class="zh" lang="zh-CN">我把课本里看似零散的概念用“谁影响谁、为什么”的箭头连成知识地图，再用它来设计长江口碳循环问题的研究思路。</p><p class="en" lang="en">I connected scattered textbook ideas with arrows explaining cause and effect, then used that knowledge map to design a research question about carbon cycling in the Yangtze Estuary.</p></div>
+        </div>
+        <!-- END RUBRIC ADDITION: Story 2 reader-friendly summary -->
+
       </div>
     </details>
   </section>
