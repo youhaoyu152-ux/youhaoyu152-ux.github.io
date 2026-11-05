@@ -52,6 +52,10 @@
     .contact-list li { padding: 8px 0; }
     a { color: #0969da; }
     video { display: block; width: 100%; max-width: 680px; margin: 0 auto; border-radius: 8px; }
+    /* AI use transparency / 人工智能使用声明 */
+    .ai-disclosure .ai-disclosure-body { background: #f6f8fa; border-left: 4px solid #0969da; border-radius: 0 8px 8px 0; padding: 18px 20px; }
+    .ai-disclosure .ai-disclosure-body .bi + .bi { margin-top: 16px; }
+    .ai-disclosure a { overflow-wrap: anywhere; }
     footer { text-align: center; color: #57606a; font-size: 13px; padding: 24px 0; }
     @media (max-width: 600px) {
       .container { padding: 18px 12px; }
@@ -1023,6 +1027,25 @@
     <div class="note"><span class="date">2026-10</span><div class="bi"><p class="zh">完成了《长江口藻华事件新增 NCP 实验方案》的设计，并将其发布在本网站。</p><p class="en" lang="en">Completed my experimental design for bloom-related NCP in the Yangtze River Estuary and published it on this website.</p></div></div>
   </section>
 
+  <!-- AI Use Disclosure / 人工智能使用声明 -->
+  <section id="ai-disclosure" class="ai-disclosure" aria-labelledby="ai-disclosure-heading">
+    <h2 id="ai-disclosure-heading">🤖 AI 使用声明 <small lang="en">/ AI Use Disclosure</small></h2>
+    <div class="ai-disclosure-body">
+      <div class="bi">
+        <p class="zh" lang="zh-CN"><strong>AI 辅助范围：</strong>本网站在部分科学概念解释、文字整理与润色、中英翻译、课堂反思初稿、HTML/CSS 代码编写，以及故事会视频和配音制作过程中使用了生成式人工智能工具辅助。这些辅助不代表相关内容全部由 AI 独立创作，也不应被理解为已经完成的科研成果。</p>
+        <p class="en" lang="en"><strong>Scope of AI assistance:</strong> Generative AI tools have assisted with some scientific explanations, text organization and editing, Chinese–English translation, initial drafts of classroom reflections, HTML/CSS development, and the production of story videos and narration. This assistance does not mean that all content was created independently by AI, nor does it constitute completed scientific research.</p>
+      </div>
+      <div class="bi">
+        <p class="zh" lang="zh-CN"><strong>学术诚信与内容核实：</strong>AI 生成内容可能存在错误、遗漏或不准确的表述。课堂反思应以作者真实的学习经历为准，涉及科学事实、公式和引用时，应以教材、原始文献及可靠资料核对。网站中的长江口藻华研究是实验设计方案，并非已经完成的实地观测或经过验证的研究结论。</p>
+        <p class="en" lang="en"><strong>Academic integrity and verification:</strong> AI-generated material may contain errors, omissions, or imprecise statements. Personal reflections should accurately represent the author's learning experience, while scientific facts, equations, and references should be checked against textbooks, original publications, and reliable sources. The Yangtze Estuary algal-bloom project presented here is an experimental proposal, not a completed field study or a validated research finding.</p>
+      </div>
+      <div class="bi">
+        <p class="zh" lang="zh-CN"><strong>使用说明：</strong>本站内容仅用于课程学习、交流与展示，不替代教材或专业研究资料。如发现内容错误、引用不当或版权问题，欢迎通过下方联系方式反馈。</p>
+        <p class="en" lang="en"><strong>Purpose and feedback:</strong> This website is intended for coursework, learning, and communication, and does not replace textbooks or scholarly sources. If you notice factual errors, attribution issues, or copyright concerns, please use the contact details below to get in touch.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- Contact / 联系方式 -->
   <section>
     <h2>📬 联系方式 <small lang="en">/ Contact</small></h2>
@@ -1033,7 +1056,7 @@
     </ul>
   </section>
 
-  <footer>© 2026 YHY · 物理海洋学与科学编程 / Physical Oceanography &amp; Scientific Programming<br>由 GitHub Pages 托管 / Hosted on GitHub Pages</footer>
+  <footer>© 2026 YHY · 物理海洋学与科学编程 / Physical Oceanography &amp; Scientific Programming<br>由 GitHub Pages 托管 / Hosted on GitHub Pages<br><a href="#ai-disclosure">AI 使用声明 / AI Use Disclosure</a></footer>
 </div>
 </body>
 </html>
